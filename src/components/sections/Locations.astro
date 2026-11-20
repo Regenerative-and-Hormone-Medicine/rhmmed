@@ -1,0 +1,44 @@
+---
+// Clinic cards: photo + name + address / hours / phone (source: .section.is-location).
+import Button from '../Button.astro';
+import ArrowSm from '../../icons/arrow-sm.svg';
+interface Info { label: string; lines: string[]; link: { text: string; href: string } | null }
+interface Props { heading: string; cards: { name: string; image: { src: string; alt: string } | null; infos: Info[]; buttons: { text: string; href: string }[] }[] }
+const p = Astro.props;
+---
+
+<section class="pt-20 pb-[7.5rem] max-md:pb-20">
+  <div class="container-site flex flex-col gap-20 max-md:gap-12">
+    <h2 set:html={p.heading} />
+    <div class="flex flex-col gap-20 max-md:gap-16">
+      {p.cards.map((c) => (
+        <div class="flex justify-between gap-20 max-lg:flex-col-reverse max-md:gap-12">
+          <div class="w-full max-w-[26.625rem] overflow-hidden rounded-2xl max-md:max-w-none">
+            {c.image && <img src={c.image.src} alt={c.image.alt} class="size-full object-cover" loading="lazy" />}
+          </div>
+          <div class="flex w-full flex-col justify-between max-lg:gap-8">
+            <div class="flex justify-between border-t border-bg-dark pt-6 max-sm:flex-col max-sm:gap-12">
+              <h3 class="text-h2 w-full max-w-[15rem]">{c.name}</h3>
+              <div class="flex w-full max-w-[16.25rem] flex-col gap-8">
+                {c.infos.map((i) => (
+                  <div class="flex flex-col gap-2.5">
+                    <h4 class="text-body-m">{i.label}</h4>
+                    {i.link && (
+                      <a href={i.link.href} target="_blank" rel="noopener" class="flex items-center gap-1.5 text-ink-70">
+                        <span>{i.link.text}</span><ArrowSm class="size-3" width="12" height="12" />
+                      </a>
+                    )}
+                    {i.lines.map((l) => <div class="text-body-r text-ink-70" set:html={l} />)}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div class="flex flex-col items-start gap-6 max-sm:items-stretch">
+              {c.buttons.map((b) => <Button href={b.href}>{b.text}</Button>)}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

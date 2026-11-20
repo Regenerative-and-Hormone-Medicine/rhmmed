@@ -1,0 +1,61 @@
+---
+import Logo from '../icons/logo.svg';
+import Facebook from '../icons/facebook.svg';
+import Instagram from '../icons/instagram.svg';
+import { footerColumns } from '../data/nav';
+interface Props { minimal?: boolean; blurb?: string }
+const { minimal = false, blurb } = Astro.props;
+---
+
+<footer class="pt-[6.28125rem] pb-[3.125rem]">
+  <div class="container-site flex flex-col gap-[3.125rem]">
+    <div class="flex justify-between max-lg:flex-col max-lg:items-start max-lg:gap-10">
+      <div class="flex gap-20 max-md:flex-wrap max-md:gap-12">
+        <div class="flex w-full max-w-[22.6875rem] flex-col items-start gap-6">
+          <a href="/" aria-label="Regenerative and Hormone Medicine Homepage" class="flex w-full max-w-[10rem] items-center text-ink">
+            <Logo width="100%" />
+          </a>
+          {minimal ? (
+          <div class="flex flex-col gap-2.5">
+            <p class="text-body-r text-ink-70" set:html={blurb} />
+          </div>
+          ) : (
+          <div class="flex flex-col gap-2.5">
+            <div class="text-[1.125rem] font-medium text-black">Care designed around you</div>
+            <p class="text-body-r text-ink-70">
+              Accessible nationwide through our telemedicine platform and/or in person, you’ll receive physician-led, personalized care focused on understanding what’s happening beneath the surface. Through listening, advanced testing, and thoughtful guidance, we help you move forward with clarity and long-term health in mind.
+            </p>
+          </div>
+          )}
+        </div>
+      </div>
+      {!minimal && <div class="flex gap-20 max-md:flex-wrap max-md:gap-12">
+        {footerColumns.map((col, i) => (
+          <div class="flex flex-col items-start gap-4">
+            <div class="text-label text-ink-70">{col.title}</div>
+            {col.links.map((l) => (
+              <a href={l.href} class="text-[.9375rem] leading-none font-medium text-blue-dark transition-colors duration-200 hover:text-ink-70">{l.label}</a>
+            ))}
+            {i === footerColumns.length - 1 && (
+              <div class="flex items-center gap-5">
+                <a href="https://www.facebook.com/RSMedicine01" aria-label="Facebook" class="-mb-1 inline-block w-[21px] transition-colors duration-200 hover:text-blue"><Facebook class="inline align-baseline" width="100%" /></a>
+                <a href="https://www.instagram.com/regenerativeandhormonemedicine/" aria-label="Instagram" class="-mb-1 inline-block w-[21px] transition-colors duration-200 hover:text-blue"><Instagram class="inline align-baseline" width="100%" /></a>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>}
+    </div>
+    <div class="h-px w-full bg-bg-dark"></div>
+    <div class="flex items-center justify-between max-md:flex-wrap max-md:gap-10">
+      <div class="text-[.875rem] text-ink-70">© Regenerative &amp; Hormone Medicine. All rights reserved.</div>
+      <a href="https://www.legitscript.com/websites/?checker_keywords=rhmmed.com" class="flex size-[3.75rem] items-center justify-center" target="_blank" rel="noopener">
+        <img src="https://static.legitscript.com/seals/49224477.png" alt="Verify Approval for www.rhmmed.com" class="size-[3.75rem] object-contain" width="60" height="60" />
+      </a>
+      <div class="flex items-center gap-[3.75rem] max-sm:flex-wrap max-sm:gap-8">
+        <a href="/privacy-policy" class="text-[.875rem] text-ink-70 transition-colors duration-200 hover:text-black">Privacy Policy</a>
+        <a href="/terms-of-use" class="text-[.875rem] text-ink-70 transition-colors duration-200 hover:text-black">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>

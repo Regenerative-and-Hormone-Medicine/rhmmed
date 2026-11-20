@@ -1,0 +1,144 @@
+---
+// "Cheating Death" free-chapters hero: paper texture, book visual, inline signup (Formspark "Book" form + Botpoison).
+// The book is the live site's WebGL 3D book (src/scripts/book3d.ts); the static image shows until WebGL is ready,
+// and stays if WebGL is unavailable. On load the copy, form and header are hidden until the book pops in (as live).
+import Rich from '../Rich.astro';
+interface Props {
+  heading: string; body: string; image: { src: string; alt: string } | null; fields: { label: string; placeholder: string }[];
+  submit: string; consent: string; done: { label: string; heading: string; body: string; note: string } | null; fail: string;
+}
+const p = Astro.props;
+const names = ['Your-First-and-Last-Name', 'Email', 'Phone'];
+const types = ['text', 'email', 'tel'];
+---
+
+<script is:inline>
+  // Intro (live: head custom code): hide the hero copy, form and header until the 3D book pops in.
+  (function () { var r = document.documentElement; if (matchMedia('(prefers-reduced-motion: reduce)').matches) return; r.classList.add('book-intro'); setTimeout(function () { if (r.classList.contains('book-intro')) { r.classList.remove('book-intro'); r.classList.add('book-revealed'); } }, 4000); })();
+</script>
+
+<section id="reserve" class="book-hero relative overflow-hidden pt-32 pb-20 max-md:pt-28 max-md:pb-16">
+  <div class="container-site flex flex-col items-center gap-x-12 gap-y-10">
+    <div class="bk-head flex max-w-[54rem] flex-col items-center gap-x-5 gap-y-6 text-center">
+      <h1 class="text-h1" set:html={p.heading} />
+      <Rich class="text-body-l max-w-[40rem] text-ink-70" html={p.body} />
+    </div>
+    <div class="flex w-full flex-col items-center gap-x-12 gap-y-6 max-lg:gap-8">
+      <div class="book-visual relative mx-auto w-full max-w-[26rem]">
+        <div class="-mt-10">
+          <div class="book3d" data-book3d data-cover="/images/site/6ae8ce870c7058ec42ee2139_cheating-death-cover.jpg">
+            {p.image && <img src={p.image.src} alt={p.image.alt} width="520" height="546" class="book3d__fallback" fetchpriority="high" />}
+          </div>
+        </div>
+      </div>
+      <div class="bk-card flex w-full flex-col gap-6 rounded-2xl pb-[15px]">
+        <form id="book-form" class="mx-auto flex w-full max-w-[64rem] flex-wrap items-center justify-center gap-3" novalidate>
+          {p.fields.map((f, i) => (
+            <div class="flex-[13rem]">
+              <label for={'book-' + names[i]} class="sr-only">{f.label}</label>
+              <input id={'book-' + names[i]} name={names[i]} type={types[i]} placeholder={f.placeholder} maxlength="256" required class="book-input" />
+            </div>
+          ))}
+          <div aria-hidden="true" class="absolute -left-[9999px]"><input type="text" name="website" autocomplete="off" tabindex="-1" value="" /></div>
+          <input name="last_page" type="hidden" />
+          <button type="submit" class="shrink-0 cursor-pointer rounded-pill bg-black px-[22px] py-3 text-btn text-white disabled:opacity-60 max-md:w-full max-md:basis-full" data-wait="Please wait...">{p.submit}</button>
+          <Rich class="mx-auto mt-4 w-full max-w-[40rem] text-center text-[.75rem] leading-[1.4] font-medium tracking-[.02em] text-[#0b142880] uppercase [&_a]:underline" html={p.consent} />
+        </form>
+        {p.done && (
+          <div id="book-done" hidden class="mx-auto w-full max-w-[36rem] rounded-3xl border border-[#0b142814] bg-white/70 px-8 py-9 text-center shadow-[0_24px_60px_-30px_#281e1459]">
+            <div class="flex flex-col items-center gap-3 text-center">
+              <div class="bk-pop mb-1 flex size-12 items-center justify-center rounded-full bg-[#0b1428] text-[1.25rem] leading-none text-white">✓</div>
+              <div class="text-[.75rem] font-semibold tracking-[.08em] text-[#b4682a] uppercase">{p.done.label}</div>
+              <div class="text-h4">{p.done.heading}</div>
+              <Rich class="text-body-m text-ink-70" html={p.done.body} />
+              <p class="mt-1 text-[.8125rem] text-[#0b142880]">{p.done.note}</p>
+            </div>
+          </div>
+        )}
+        <div id="book-fail" hidden class="mx-auto mt-4 w-full max-w-[36rem] rounded-full bg-[#a3322a14] px-5 py-3">
+          <p class="text-center text-[.875rem] text-[#a3322a]">{p.fail}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .book3d { position: relative; width: 100%; max-width: 460px; margin: 0 auto; aspect-ratio: 1 / 1.05; cursor: grab; touch-action: pan-y; }
+  .book3d:active { cursor: grabbing; }
+  .book3d__canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .6s; }
+  .book3d__fallback { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .6s; }
+  .book3d.is-3d .book3d__canvas { opacity: 1; }
+  .book3d.is-3d .book3d__fallback { opacity: 0; }
+  @media (max-width: 767px) { .book3d { max-width: 320px; } }
+  html.book-intro [data-header], html.book-intro .bk-head, html.book-intro .bk-card, html.book-intro .book3d__fallback { opacity: 0; }
+  html.book-intro .book3d__canvas { transition: none; }
+  html.book-intro .book3d:not(.is-3d)::after {
+    content: ''; position: absolute; left: 50%; top: 50%; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%;
+    border: 2px solid #0b14281f; border-top-color: #0b1428; animation: bk-spin .8s linear infinite;
+  }
+  html.book-revealed .bk-head { animation: bk-up .9s cubic-bezier(.2,.7,.2,1) backwards; }
+  html.book-revealed .bk-card { animation: bk-up .9s cubic-bezier(.2,.7,.2,1) .18s backwards; }
+  html.book-revealed [data-header] { animation: bk-fade .8s ease .35s backwards; }
+  #book-done { animation: bk-up .6s cubic-bezier(.2,.7,.2,1) backwards; }
+  .bk-pop { animation: bk-pop .5s cubic-bezier(.3,1.6,.5,1) .2s backwards; }
+  @keyframes bk-pop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
+  @keyframes bk-spin { to { transform: rotate(360deg); } }
+  @keyframes bk-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes bk-fade { from { opacity: 0; } to { opacity: 1; } }
+</style>
+
+<style>
+  .book-hero {
+    background: #efe9dd url('/images/site/6ae8ce872a4e396b91860614_paper-texture.jpg') repeat;
+    background-size: 768px;
+  }
+  .book-visual { background: radial-gradient(closest-side, #ed994d38, #ed994d14 55%, #ed994d00) 50% / 100% 100% no-repeat; }
+  .book-input {
+    width: 100%; height: 3.5rem; border-radius: 999px; border: 1px solid #0b14281f; background: #ffffffbf; color: #0b1428;
+    padding: 0 1.25rem; font-size: 1.125rem;
+  }
+</style>
+
+<script>
+  import '../../scripts/book3d';
+</script>
+
+<script>
+  import { FORMS, submitToFormspark, splitName, validPhone } from '../../lib/formspark';
+  const form = document.getElementById('book-form') as HTMLFormElement | null;
+  if (form) {
+    const done = document.getElementById('book-done');
+    const fail = document.getElementById('book-fail')!;
+    const button = form.querySelector('button')!;
+    const phone = form.elements.namedItem('Phone') as HTMLInputElement;
+    const last = form.elements.namedItem('last_page') as HTMLInputElement;
+    try { last.value = sessionStorage.getItem('last_page') || ''; } catch {}
+    phone.addEventListener('input', () => phone.setCustomValidity(''));
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const v = (n: string) => ((form.elements.namedItem(n) as HTMLInputElement | null)?.value ?? '').trim();
+      if (v('website')) return;
+      phone.setCustomValidity(validPhone(phone.value) ? '' : 'Please enter a valid phone number.');
+      if (!form.checkValidity()) return form.reportValidity();
+      const label = button.textContent;
+      button.disabled = true;
+      button.textContent = button.dataset.wait!;
+      fail.hidden = true;
+      try {
+        const full = v('Your-First-and-Last-Name');
+        await submitToFormspark(FORMS.book, {
+          ...splitName(full), name: full, email: v('Email'), phone: v('Phone'), last_page: v('last_page'),
+          website: v('website'), form_name: 'Book',
+        });
+        form.hidden = true;
+        if (done) { done.hidden = false; done.setAttribute('tabindex', '-1'); done.focus({ preventScroll: true }); }
+      } catch (err) {
+        console.error('[Book] Submission failed:', err);
+        button.disabled = false;
+        button.textContent = label;
+        fail.hidden = false;
+      }
+    });
+  }
+</script>

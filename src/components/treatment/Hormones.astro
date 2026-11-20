@@ -1,0 +1,29 @@
+---
+import Rich from '../Rich.astro';
+// "Testosterone / Estrogen & Progesterone" explainer with icon checks and a chart (source: .section.is-testoteron).
+import type { Img } from './types';
+interface Props { heading: string; body: string; checks: { icon: Img; text: string }[]; image: Img }
+const p = Astro.props;
+---
+
+<section class="bg-bg-light py-[6.25rem] max-lg:py-32 max-md:py-16">
+  <div class="container-site flex flex-col items-center gap-[3.75rem] text-center max-lg:gap-16 max-sm:gap-12">
+    <div class="flex flex-col items-center gap-[3.125rem]">
+      <div class="flex w-full max-w-[41.5rem] flex-col items-center gap-6">
+        <h2 set:html={p.heading} />
+        <div class="rich text-body-m text-ink-70" set:html={p.body} />
+      </div>
+      <div class="grid grid-cols-4 items-start gap-20 max-md:gap-8 max-sm:grid-cols-2">
+        {p.checks.map((c) => (
+          <div class="flex w-full max-w-[9.375rem] flex-col items-center gap-2.5">
+            {c.icon && <img src={c.icon.src} alt="" class="aspect-square w-8" />}
+            <Rich class="text-body-m" html={c.text} />
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="flex w-full max-w-[55.375rem] flex-col gap-2.5 max-lg:max-w-none">
+      {p.image && <img src={p.image.src} alt={p.image.alt} loading="lazy" />}
+    </div>
+  </div>
+</section>

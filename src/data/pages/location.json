@@ -1,0 +1,207 @@
+{
+ "path": "/location",
+ "title": "Location",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "",
+ "sections": [
+  {
+   "type": "pageHero",
+   "big": true,
+   "leftMax": "423px",
+   "rightMax": "423px",
+   "label": "locations",
+   "heading": "Where you can find us",
+   "body": "If you prefer in person over telemedicine, visit RHM at one of our three specialized offices and work with a physician-led team focused and dedicated to helping you feel &amp; function at your best.",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "locations",
+   "heading": "Our locations",
+   "cards": [
+    {
+     "name": "Santa Monica",
+     "image": {
+      "src": "/images/site/69c3c10b4f212ede9a6a412b_santa-monica.avif",
+      "alt": "RHM Santa Monica clinic interior, representing in-person hormone health and wellness care"
+     },
+     "infos": [
+      {
+       "label": "How to find us in",
+       "lines": [],
+       "link": {
+        "text": "Google Maps",
+        "href": "https://maps.app.goo.gl/A8Trs7SPqRXfWSJF7"
+       }
+      },
+      {
+       "label": "Address",
+       "lines": [
+        "2701 Ocean Park Blvd, Suite #114 Santa Monica, CA 90405"
+       ],
+       "link": null
+      },
+      {
+       "label": "Our work schedule",
+       "lines": [
+        "Monday 9:00 AM - 5:00 PM",
+        "Tuesday 9:00 AM - 5:00 PM",
+        "Wednesday 9:00 AM - 5:00 PM",
+        "Thursday 9:00 AM - 5:00 PM",
+        "Friday 9:00 AM - 5:00 PM"
+       ],
+       "link": null
+      },
+      {
+       "label": "Phone",
+       "lines": [
+        "(310) 452-3206"
+       ],
+       "link": null
+      }
+     ],
+     "buttons": [
+      {
+       "text": "Book VIP call",
+       "href": "/scheduling"
+      }
+     ]
+    },
+    {
+     "name": "The Woodlands",
+     "image": {
+      "src": "/images/site/69c3c10b066724382c07fe57_the-woodlands.avif",
+      "alt": "RHM The Woodlands clinic entrance, representing in-person hormone optimization and patient care"
+     },
+     "infos": [
+      {
+       "label": "How to find us in",
+       "lines": [],
+       "link": {
+        "text": "Google Maps",
+        "href": "https://maps.app.goo.gl/CeEQ52ejyLabD6dCA"
+       }
+      },
+      {
+       "label": "Address",
+       "lines": [
+        "10655 Six Pines Dr, Suite #110<br>The Woodlands, TX 77380"
+       ],
+       "link": null
+      },
+      {
+       "label": "Our work schedule",
+       "lines": [
+        "Monday 9:00 AM - 5:00 PM",
+        "Tuesday 9:00 AM - 5:00 PM",
+        "Wednesday 9:00 AM - 5:00 PM",
+        "Thursday 9:00 AM - 5:00 PM",
+        "Friday 9:00 AM - 5:00 PM"
+       ],
+       "link": null
+      },
+      {
+       "label": "Phone",
+       "lines": [
+        "(832) 552-1688"
+       ],
+       "link": null
+      }
+     ],
+     "buttons": [
+      {
+       "text": "Book VIP call",
+       "href": "/scheduling"
+      }
+     ]
+    },
+    {
+     "name": "RHM at The Fix",
+     "image": {
+      "src": "/images/site/69c56504fbea2ac754dedb27_fix_office.avif",
+      "alt": "RHM at The Fix clinic entrance, representing hormone health, wellness care, and patient support"
+     },
+     "infos": [
+      {
+       "label": "How to find us in",
+       "lines": [],
+       "link": {
+        "text": "Google Maps",
+        "href": "https://maps.app.goo.gl/otDcSLZoRHLe1Kpm8"
+       }
+      },
+      {
+       "label": "Address",
+       "lines": [
+        "501 Rio Grande Pl <br>Aspen, CO 81611"
+       ],
+       "link": null
+      },
+      {
+       "label": "Our work schedule",
+       "lines": [
+        "Monday 10:00 AM - 5:00 PM",
+        "Tuesday 10:00 AM - 5:00 PM",
+        "Wednesday 10:00 AM - 5:00 PM",
+        "Thursday 10:00 AM - 5:00 PM",
+        "Friday 10:00 AM - 5:00 PM",
+        "Saturday 10:00 AM - 5:00 PM"
+       ],
+       "link": null
+      },
+      {
+       "label": "Phone",
+       "lines": [
+        "(310) 452-3206"
+       ],
+       "link": null
+      }
+     ],
+     "buttons": [
+      {
+       "text": "Book vip call",
+       "href": "/scheduling"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "telehealth",
+   "label": "Telehealth",
+   "heading": "Personalized care, available remotely",
+   "body": "Our telehealth services allow eligible patients to access consultations, follow-ups, and ongoing care from home, making personalized treatment more accessible and convenient.",
+   "buttons": [
+    {
+     "text": "Learn more",
+     "href": "/telehealth"
+    }
+   ],
+   "image": {
+    "src": "/images/site/69c3c28af6489176c8dc87f7_personalized-care.avif",
+    "alt": "Doctor and patient using laptop, representing remote telehealth care, hormone treatment, and wellness support"
+   }
+  },
+  {
+   "type": "finalCta",
+   "heading": "Start your journey to personalized, long-term health",
+   "points": [
+    "Ongoing support focused on long-term health",
+    "Advanced testing and clear next steps",
+    "Physician-led care"
+   ],
+   "buttons": [
+    {
+     "text": "Book Vip Call",
+     "href": "/scheduling"
+    }
+   ],
+   "topPad": false
+  }
+ ]
+}

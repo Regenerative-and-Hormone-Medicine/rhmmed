@@ -1,0 +1,81 @@
+{
+ "path": "/articles/insulin-resistance-and-weight-loss",
+ "title": "Insulin Resistance and Weight Loss in Women | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Insulin resistance and weight loss: why cutting calories won't move the scale, how high insulin blocks fat loss in women, and what to check with your doctor.",
+ "sections": [
+  {
+   "type": "articleHero",
+   "imageAlt": "Two women walking and talking about Insuline Resistance",
+   "category": "Weight Loss Resistance"
+  },
+  {
+   "type": "articleBody"
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start with clarity before starting a protocol.",
+   "points": [
+    "Personalized, physician-led evaluation",
+    "Advanced testing and clear next steps",
+    "Careful sourcing and medical supervision"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a3067a58cb125b7fb9b4818_peptide_cta.avif",
+    "alt": "Woman sitting in gym after workout, representing personalized peptide therapy, recovery, and wellness care"
+   }
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Related Articles",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/pcos-belly-fat",
+     "title": "PCOS Belly Fat",
+     "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
+     "category": "PCOS",
+     "date": "Sep 11, 2026",
+     "image": {
+      "src": "/images/site/6abe6cafaca1c590f6b996b5_6aa2f72b165ff1135617bf3e_Hero.avif",
+      "alt": "Woman holding her belly in mirror"
+     }
+    },
+    {
+     "href": "/articles/metabolic-testing",
+     "title": "Metabolic Testing: What It Actually Checks",
+     "summary": "Metabolic testing can mean a lot of things. Here's what RHM actually checks — and why one number rarely tells the full story.",
+     "category": "Weight Loss Resistance",
+     "date": "Aug 28, 2026",
+     "image": {
+      "src": "/images/site/6a9040972679378ad02c9ccf_resting-metabolic-rate-breathing-test.avif",
+      "alt": "Man wearing mask during metabolic rate test"
+     }
+    },
+    {
+     "href": "/articles/insulin-resistance-test",
+     "title": "Insulin Resistance Test: What It Checks (and What \"Normal\" Can Miss)",
+     "summary": "Wondering how insulin resistance is actually tested? A physician-led look at what a real panel checks, at-home options, and what the results can mean.",
+     "category": "Weight Loss Resistance",
+     "date": "Aug 19, 2026",
+     "image": {
+      "src": "/images/site/6a79f35e46371376a406d3f2_insulin-resistance-test-results.avif",
+      "alt": "Woman reading lab results at table"
+     }
+    }
+   ]
+  }
+ ]
+}

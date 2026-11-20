@@ -1,0 +1,70 @@
+{
+ "path": "/articles/thyroid-specialist-near-me",
+ "title": "Finding a Thyroid Specialist Near Me | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "A thyroid specialist isn't defined by title — it's defined by what they check. Here's what to look for when \"normal\" labs don't match how you feel.",
+ "sections": [
+  {
+   "type": "articleHero",
+   "imageAlt": "Two women talking over documents at table",
+   "category": "Thyroid"
+  },
+  {
+   "type": "articleBody"
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start with clarity before starting a protocol.",
+   "points": [
+    "Personalized, physician-led evaluation",
+    "Advanced testing and clear next steps",
+    "Careful sourcing and medical supervision"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a3067a58cb125b7fb9b4818_peptide_cta.avif",
+    "alt": "Woman sitting in gym after workout, representing personalized peptide therapy, recovery, and wellness care"
+   }
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Related Articles",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/pcos-belly-fat",
+     "title": "PCOS Belly Fat",
+     "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
+     "category": "PCOS",
+     "date": "Sep 11, 2026",
+     "image": {
+      "src": "/images/site/6abe6cafaca1c590f6b996b5_6aa2f72b165ff1135617bf3e_Hero.avif",
+      "alt": "Woman holding her belly in mirror"
+     }
+    },
+    {
+     "href": "/articles/thyroid-supplements",
+     "title": "Thyroid Supplements: What Actually Helps (and Why Testing Comes First)",
+     "summary": "Thyroid supplements: what the research actually supports, what interacts with medication, and why testing comes before supplementing at RHM.",
+     "category": "Thyroid",
+     "date": "Aug 7, 2026",
+     "image": {
+      "src": "/images/site/6abe6cb0aca1c590f6b9970f_6a75f56f88c71972ca44ac94_thyroid.avif",
+      "alt": "Woman reading supplement bottle beside laptop"
+     }
+    }
+   ]
+  }
+ ]
+}

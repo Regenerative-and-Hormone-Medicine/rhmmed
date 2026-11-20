@@ -1,0 +1,23 @@
+---
+import Rich from '../Rich.astro';
+// Patient quotes (source: .section.is-voices).
+interface Props { heading: string; headingMax?: string | null; headingFull?: boolean; body: string; quotes: { quote: string; name: string }[] }
+const p = Astro.props;
+---
+
+<section class="py-32">
+  <div class="container-site flex flex-col gap-24 max-md:gap-16">
+    <div class="flex items-end justify-between gap-8 max-md:flex-col max-md:items-start">
+      <h2 class:list={[p.headingFull && 'w-full']} style={`max-width:${p.headingMax ?? '504px'}`} set:html={p.heading} />
+      <Rich class="text-body-l w-full max-w-[31.25rem] text-ink-70" html={p.body} />
+    </div>
+    <div class="grid grid-cols-3 gap-4 max-md:grid-cols-1">
+      {p.quotes.map((q) => (
+        <div class="flex h-full min-h-[393px] w-full flex-col justify-between gap-4 rounded-3xl bg-mist p-[1.875rem]">
+          <div class="rich quote-rte"><Rich class="text-h4" html={q.quote} /></div>
+          <p>{q.name}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,148 @@
+---
+import Logo from '../icons/logo.svg';
+import Button from './Button.astro';
+import { primaryNav, secondaryNav, type NavItem } from '../data/nav';
+
+interface Props {
+  /** 'light' = white text until scrolled (pages with a dark hero image). */
+  theme?: 'dark' | 'light';
+}
+const { theme = 'dark' } = Astro.props;
+const isHome = Astro.url.pathname === '/';
+
+const toneHover = (t?: NavItem['tone']) =>
+  t === 'men' ? 'lg:hover:text-slate' : t === 'women' ? 'lg:hover:text-brown' : '';
+---
+
+<header
+  data-header
+  data-theme={theme}
+  class:list={[
+    'header fixed inset-x-0 top-0 z-[999] transition-[background,color,box-shadow] duration-250',
+    theme === 'light' ? 'text-white' : 'text-black',
+  ]}
+>
+  <div class="container-site flex h-[4.375rem] items-center justify-between gap-[2%] max-sm:gap-2">
+    <a
+      href="/"
+      aria-label="Regenerative and Hormone Medicine Homepage"
+      class:list={['logo flex w-full items-center', isHome ? 'h-full max-w-[14rem]' : 'max-w-[20%]', 'max-sm:max-w-[10rem]', theme === 'light' ? '' : 'text-ink']}
+    >
+      <Logo width="100%" />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="flex h-full w-full items-center justify-between max-lg:hidden" aria-label="Main">
+      {[primaryNav, secondaryNav].map((group, gi) => (
+        <div class="flex h-full items-center">
+          {group.map((item) =>
+            item.children ? (
+              <div class="dd group/dd relative flex h-full items-center">
+                <div class="text-nav flex h-full items-center gap-2 px-[.875rem]">
+                  {item.href ? <a href={item.href}>{item.label}</a> : <button type="button" class="dd-toggle cursor-pointer uppercase" aria-expanded="false">{item.label}</button>}
+                  <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="dd-panel invisible absolute top-full left-0 pt-[1.8rem] opacity-0 group-hover/dd:visible group-hover/dd:opacity-100 group-focus-within/dd:visible group-focus-within/dd:opacity-100">
+                  <div class="overflow-hidden rounded-sm border border-[#eee] bg-white text-black">
+                    {item.children.map((c) => (
+                      <a href={c.href} class:list={['block whitespace-nowrap py-3 pr-10 pl-4 transition-colors duration-300 hover:bg-bg-light', toneHover(item.tone)]}>
+                        {c.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a href={item.href} class="text-nav flex h-full items-center px-[.875rem]">{item.label}</a>
+            ),
+          )}
+          {gi === 1 && <Button href="/scheduling" class="ml-[.875rem]">Book VIP Call</Button>}
+        </div>
+      ))}
+    </nav>
+
+    <!-- Tablet / mobile -->
+    <div class="hidden items-center gap-2 max-lg:flex max-sm:gap-1">
+      <Button href="/scheduling" size="sm" variant={theme === 'light' ? 'light' : 'dark'} class="menu-cta">Book VIP Call</Button>
+      <button type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu" class="p-[18px] max-sm:p-2.5">
+        <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    aria-label="Mobile"
+    class="hidden max-h-[calc(100vh-70px)] flex-col overflow-y-auto bg-white px-4 pt-4 pb-[100px] text-black shadow-[0_4px_40px_#00000024] max-lg:data-[open]:flex lg:!hidden"
+  >
+    {[primaryNav, secondaryNav].map((group, gi) => (
+      <div class:list={['mx-auto flex w-full max-w-[30rem] flex-col', gi === 1 && 'max-sm:gap-4']}>
+        {group.map((item) =>
+          item.children ? (
+            <details class="group/m">
+              <summary class="text-nav flex cursor-pointer list-none items-center justify-between px-[.875rem] py-4">
+                {item.href ? <a href={item.href}>{item.label}</a> : <span>{item.label}</span>}
+                <svg class="size-4 transition-transform group-open/m:rotate-180" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </summary>
+              <div class="mt-4 mb-2 overflow-hidden rounded-sm border border-[#eee] max-md:mt-5">
+                {item.children.map((c) => <a href={c.href} class="block py-3 pr-10 pl-4">{c.label}</a>)}
+              </div>
+            </details>
+          ) : (
+            <a href={item.href} class="text-nav px-[.875rem] py-4">{item.label}</a>
+          ),
+        )}
+        {gi === 1 && <Button href="/scheduling" class="w-full">Book VIP Call</Button>}
+      </div>
+    ))}
+  </nav>
+</header>
+
+<style>
+  /* Scrolled / menu-open state: white bar, ink text (source: .header-nav.is-active) */
+  [data-header].is-active { background: #fff; color: #050514; }
+  [data-header].is-active :global(.logo) { color: #050514; }
+  [data-header][data-theme='light'].is-active :global(.menu-cta) { background: #000; color: #fff; }
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]')!;
+  const menu = document.getElementById('mobile-menu')!;
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]')!;
+  const sync = () => header.classList.toggle('is-active', window.scrollY > 0 || menu.hasAttribute('data-open'));
+  window.addEventListener('scroll', sync, { passive: true });
+  sync();
+  toggle.addEventListener('click', () => {
+    const open = !menu.hasAttribute('data-open');
+    menu.toggleAttribute('data-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    sync();
+  });
+
+  // Desktop dropdowns open on hover and on keyboard focus (CSS). Keep aria-expanded in sync on the trigger (link or button);
+  // Escape closes the panel and returns focus to the trigger (data-closed holds it shut until focus/hover leave).
+  document.querySelectorAll<HTMLElement>('.dd').forEach((dd) => {
+    const t = dd.querySelector<HTMLElement>('.dd-toggle, :scope > div:first-child > a');
+    if (!t) return;
+    t.setAttribute('aria-haspopup', 'true');
+    const sync = () => t.setAttribute('aria-expanded', String(!dd.hasAttribute('data-closed') && (dd.matches(':hover') || dd.contains(document.activeElement))));
+    const reset = () => setTimeout(() => { if (!dd.matches(':hover') && !dd.contains(document.activeElement)) dd.removeAttribute('data-closed'); sync(); });
+    dd.addEventListener('mouseenter', () => { dd.removeAttribute('data-closed'); setTimeout(sync); });
+    dd.addEventListener('focusin', () => setTimeout(sync));
+    dd.addEventListener('mouseleave', reset);
+    dd.addEventListener('focusout', reset);
+    dd.addEventListener('keydown', (e) => { if (e.key === 'Escape') { dd.setAttribute('data-closed', ''); t.focus(); sync(); } });
+    sync();
+  });
+</script>
+
+<style is:global>
+  .dd[data-closed] > .dd-panel { visibility: hidden !important; opacity: 0 !important; }
+</style>

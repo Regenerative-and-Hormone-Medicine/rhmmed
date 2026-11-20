@@ -1,0 +1,74 @@
+{
+ "path": "/faq",
+ "title": "FAQ",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "",
+ "sections": [
+  {
+   "type": "pageHero",
+   "big": false,
+   "leftMax": "391px",
+   "rightMax": "423px",
+   "label": "FAQ",
+   "heading": "Answers to Your Questions",
+   "body": "Get clear answers about your symptoms, testing, and personalized treatment options.",
+   "buttons": [
+    {
+     "text": "Book Vip Call",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "faqPage",
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "Could my symptoms be hormone related?",
+     "a": "Yes! Fatigue, poor sleep, weight gain, anxiety, muscle loss, brain fog, low libido, and mood instability are among the most common signs of hormonal imbalance. These symptoms are often dismissed or chalked up to depression, stress, and aging, but they're telling you something. If you've been told your labs are normal but still don't feel like yourself, a comprehensive hormone evaluation can uncover what's really going on."
+    },
+    {
+     "q": "How do you evaluate hormonal imbalance?",
+     "a": "We start by listening. Before anything else, we want to understand your symptoms, your history, and your goals. During your initial consultation, we review your extensive lab work in the context of how you’re actually feeling, not just whether your numbers fall within a standard reference range."
+    },
+    {
+     "q": "Do you treat perimenopause, menopause, and post menopause?",
+     "a": "Absolutely. Hot flashes, night sweats, sleep disruption, mood changes, and cognitive shifts are some of the most common reasons patients come to us, and they're very treatable. We use bioidentical hormone therapy compounded specifically for your body, so you're not getting a one-size-fits-all prescription."
+    },
+    {
+     "q": "What types of testing are involved?",
+     "a": "We begin with comprehensive blood testing that evaluates your hormone levels, thyroid function, adrenal health, metabolic markers, heart health, and more. As treatment progresses, we repeat testing at regular intervals. Every treatment decision at RHM is guided by both your symptoms and your lab data, which is why we will adjust your personalized treatment when needed."
+    },
+    {
+     "q": "Is treatment personalized or one-size-fits-all?",
+     "a": "Completely personalized. Your treatment is built around your symptoms, individual history, goals, and your lab results. Whether HRT, TRT, Peptides, or any other medications and supplements, the approach is tailored to your physiology, not a standard template. This is designed to support your long-term health because there is no one-size-fits-all approach."
+    },
+    {
+     "q": "How long does it take to notice improvements?",
+     "a": "Most patients begin noticing improvements within the first few weeks. More sustained improvements typically occur around month three. Getting your hormones optimized takes some patience, but most patients tell us it's one of the best investments they've made in their health."
+    }
+   ],
+   "extra": {
+    "heading": "Additional Questions?",
+    "body": "Our patient coordination team is available to discuss any and all your questions. Call us at <a href=\"tel:+13104523206\">(310) 452-3206</a> or email <a href=\"mailto:contactus@rhmmed.com?subject=Question\">contactus@rhmmed.com</a>"
+   }
+  },
+  {
+   "type": "finalCta",
+   "heading": "Start your journey to personalized, long-term health",
+   "points": [
+    "Ongoing support focused on long-term health",
+    "Advanced testing and clear next steps",
+    "Physician-led care"
+   ],
+   "buttons": [
+    {
+     "text": "Book Vip Call",
+     "href": "/scheduling"
+    }
+   ],
+   "topPad": false
+  }
+ ]
+}

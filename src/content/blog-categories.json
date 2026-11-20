@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hormone-replacement",
+    "name": "Hormone Replacement",
+    "slug": "hormone-replacement",
+    "webflowDraft": false
+  },
+  {
+    "id": "menopause",
+    "name": "Menopause",
+    "slug": "menopause",
+    "webflowDraft": false
+  },
+  {
+    "id": "stress",
+    "name": "Stress",
+    "slug": "stress",
+    "webflowDraft": false
+  },
+  {
+    "id": "peptides",
+    "name": "Peptides",
+    "slug": "peptides",
+    "webflowDraft": false
+  },
+  {
+    "id": "perimenopause",
+    "name": "Perimenopause",
+    "slug": "perimenopause",
+    "webflowDraft": false
+  },
+  {
+    "id": "postmenopause",
+    "name": "Postmenopause",
+    "slug": "postmenopause",
+    "webflowDraft": false
+  },
+  {
+    "id": "pcos",
+    "name": "PCOS",
+    "slug": "pcos",
+    "webflowDraft": false
+  },
+  {
+    "id": "weight-loss-resistance",
+    "name": "Weight Loss Resistance",
+    "slug": "weight-loss-resistance",
+    "webflowDraft": false
+  },
+  {
+    "id": "thyroid",
+    "name": "Thyroid",
+    "slug": "thyroid",
+    "webflowDraft": false
+  },
+  {
+    "id": "inflamation",
+    "name": "Inflamation",
+    "slug": "inflamation",
+    "webflowDraft": false
+  }
+]

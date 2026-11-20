@@ -1,0 +1,183 @@
+{
+ "path": "/why-us",
+ "title": "Why us",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "",
+ "sections": [
+  {
+   "type": "hubHero",
+   "label": "Why us",
+   "heading": "A clear path to feeling better",
+   "headingStyle": "h74",
+   "headingMax": "525px",
+   "body": "We help women and men understand what’s affecting how they feel and function, then build personalized treatments for long-term health.",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling",
+     "variant": "light"
+    }
+   ],
+   "image": {
+    "src": "/images/site/69c3bdf43d8808491e16f83a_why-us.avif",
+    "alt": "Couple walking on the beach, representing personalized hormone care, long-term health, and wellness support"
+   },
+   "solid": false,
+   "imageClass": [
+    "is-hiw"
+   ],
+   "short": false,
+   "row": true,
+   "extraOverlay": "gradient"
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "base",
+    "base"
+   ],
+   "image": {
+    "src": "/images/site/69c3beb03e7897211c00aca7_why-psrmed.avif",
+    "alt": "Happy family outdoors, representing long-term hormone health, wellness, and patient care"
+   },
+   "label": "Why RHm",
+   "heading": "Why choose Regenerative &amp; Hormone Medicine",
+   "body": "A physician-led approach to hormone optimization, built on experience, precision, and trust.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "Our Mission",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "At RHM, our mission is to help people better understand what’s really happening inside their body, so they can make informed decisions about their health. Everything we do is founded in science, proven in practice."
+    },
+    {
+     "kind": "images",
+     "two": false,
+     "images": [
+      {
+       "src": "/images/site/69b2b06048ea9eefbf803753_image-105.avif",
+       "alt": "Man smiling indoors, representing hormone optimization, patient wellness, and root-cause care"
+      },
+      {
+       "src": "/images/site/69b2b060292f2e86c6682259_image-104.avif",
+       "alt": "Happy couple at the beach, representing long-term hormone health, wellness, and vitality"
+      },
+      {
+       "src": "/images/site/69b2b060d1f4dd682634612b_image-106.avif",
+       "alt": "Woman feeling energized outdoors, representing hormone balance, clarity, and long-term wellness care"
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "By focusing on root-cause care through Regenerative &amp; Hormone Optimization , we move beyond managing symptoms to support balance, clarity, and long-term health at every stage of life."
+    }
+   ]
+  },
+  {
+   "type": "team",
+   "heading": "The People Behind Your Progress",
+   "body": "Our dedicated team of licensed medical providers focus on identifying root causes, restoring balance, and guiding you through every stage of your optimization journey.",
+   "bodyMax": "658px",
+   "cards": [
+    {
+     "tag": "HORMONE REPLACEMENT, women's health, Men's Health, & Thyroid SPECIALIST",
+     "bio": "A physician assistant with over 20 years of experience across orthopedics, primary care, emergency medicine, women’s and men’s health. He specializes in hormone therapy, thyroid health, and sexual medicine, helping patients address hormone imbalances, weight management, and chronic conditions. Todd combines deep clinical expertise with a patient-focused approach to optimize long-term health and wellness.",
+     "image": {
+      "src": "/images/site/69b2b13dfedcb39ae3a1b6f1_image-111.avif",
+      "alt": "Todd Kielman, DMSC, MPAS, PA-C, RHM hormone replacement, women’s health, men’s health, and thyroid specialist"
+     },
+     "name": "Todd Kielman <br>DMSc, MPAS, PA-C"
+    },
+    {
+     "tag": "HORMONE REPLACEMENT, women's health, Men's Health, & Thyroid SPECIALIST",
+     "bio": "A Regenerative &amp; Hormone Medicine specialist dedicated to helping patients navigate complex health concerns with personalized, evidence-based care. Trained at Western University of Health Sciences and USC, he brings expertise in sports, regenerative, and functional medicine. A former competitive athlete, Dr. McClain combines clinical innovation with a passion for optimizing health and performance.",
+     "image": {
+      "src": "/images/site/69b2b13d7d2cdeea52a5a3e2_image-110.avif",
+      "alt": "Rand McClain, DO, physician founder and CEO, representing physician-led hormone optimization and personalized patient care"
+     },
+     "name": "Rand McClain, DO<br>Physician Founder &amp; CEO<br>"
+    },
+    {
+     "tag": "HORMONE REPLACEMENT, women's health, Men's Health, & Thyroid SPECIALIST",
+     "bio": "A board-certified Nurse Practitioner with over 25 years of experience specializing in women’s and men’s health. She combines evidence-based medicine with advanced hormone therapy to help patients optimize hormones, improve energy, mood, sexual health, and overall wellness. Kristin is passionate about preventative care and takes a personalized approach to help patients achieve optimal health—not just “normal.”",
+     "image": {
+      "src": "/images/site/69b2b13d512fb72ca2a473b7_image-113.avif",
+      "alt": "Kristin Sewnig, MSN, FNP-BC, RHM hormone replacement, women’s health, men’s health, and thyroid specialist"
+     },
+     "name": "Kristin Sewnig <br>MSN, FNP-BC"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "Could my symptoms be hormone related?",
+     "a": "Yes! Fatigue, poor sleep, weight gain, anxiety, muscle loss, brain fog, low libido, and mood instability are among the most common signs of hormonal imbalance. These symptoms are often dismissed or chalked up to depression, stress, and aging but they're telling you something. If you've been told your labs are normal but still don't feel like yourself, a comprehensive hormone evaluation can uncover what's really going on."
+    },
+    {
+     "q": "How do you evaluate hormonal imbalance?",
+     "a": "We start by listening. Before anything else, we want to understand your symptoms, your history, and your goals. During your initial consultation, we review your extensive lab work in the context of how you’re actually feeling, not just whether your numbers fall within a standard reference range."
+    },
+    {
+     "q": "Do you treat perimenopause and menopause symptoms?",
+     "a": "Absolutely. Hot flashes, night sweats, sleep disruption, mood changes, and cognitive shifts are some of the most common reasons patients come to us, and they're very treatable. We use bioidentical hormone therapy compounded specifically for your body, so you're not getting a one-size-fits-all prescription."
+    },
+    {
+     "q": "What types of testing are involved?",
+     "a": "We begin with comprehensive blood testing that evaluates your hormone levels, thyroid function, adrenal health, metabolic markers, heart health, and more. As treatment progresses, we repeat testing at regular intervals. Every treatment decision at RHM is guided by both your symptoms and your lab data, which is why we will adjust your personalized treatment when needed."
+    },
+    {
+     "q": "Is treatment personalized or one-size-fits-all?",
+     "a": "Completely personalized. Your treatment is built around your symptoms, individual history, goals, and your lab results. Whether HRT, TRT, Peptides, or any other medications and supplements, the approach is tailored to your physiology not a standard template. This is designed to support your long term health because there is no one-size-fits-all approach."
+    },
+    {
+     "q": "How long does it take to notice improvements?",
+     "a": "Most patients begin noticing improvements within the first few weeks. More sustained improvements typically occur around month three. Getting your hormones optimized takes some patience, but most patients tell us it's one of the best investments they've made in their health."
+    }
+   ]
+  },
+  {
+   "type": "finalCta",
+   "heading": "Start your journey to personalized, long-term health",
+   "points": [
+    "Ongoing support focused on long-term health",
+    "Advanced testing and clear next steps",
+    "Physician-led care"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "topPad": false
+  }
+ ]
+}

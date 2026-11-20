@@ -1,0 +1,149 @@
+---
+// Article detail (T6). Body, title, summary, author from the CMS collection; image alt text, CTA block and the
+// related-articles list come from the live page (src/data/articles/*.json) because the CSV export lacks them.
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/article-embeds.css';
+import Rich from '../../components/Rich.astro';
+import Button from '../../components/Button.astro';
+import CtaBlock from '../../components/treatment/CtaBlock.astro';
+import Insights from '../../components/sections/Insights.astro';
+import ArrowBack from '../../icons/arrow-back.svg';
+import ShareX from '../../icons/share-x.svg';
+import ShareFacebook from '../../icons/share-facebook.svg';
+import ShareLink from '../../icons/share-link.svg';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const a = entry.data;
+// Bodies are Webflow HTML (incl. embeds: quiz, FAQ JSON-LD) — render verbatim, not through Markdown.
+const bodyHtml = entry.body ?? '';
+const extras = (await import(`../../data/articles/articles__${a.slug}.json`)).default;
+const section = (t: string) => extras.sections.find((s: any) => s.type === t);
+const hero = section('articleHero');
+const cta = section('ctaBlock');
+const related = section('insights');
+const cats = await getCollection('blogCategories');
+const catNames = a.category.split(';').map((c) => c.trim()).filter(Boolean).map((c) => cats.find((x) => x.id === c)?.data.name ?? c);
+const author = a.author ? await getEntry('authors', a.author) : undefined;
+---
+
+<Layout title={a.metaTitle || a.title} description={a.metaDescription} ogImage={a.image} ogType="article">
+  <!-- Hero -->
+  <section class="px-4 pt-[6.25rem] max-md:flex max-md:pt-20">
+    <div class="container-site flex gap-20 rounded-3xl bg-bg-light px-14 py-[3.125rem] max-lg:flex-col max-lg:gap-12 max-lg:p-8">
+      <div class="flex w-full max-w-[38.5625rem] flex-col items-start justify-between gap-16 max-lg:gap-8">
+        <a href="/articles" class="group flex items-center gap-2">
+          <ArrowBack class="size-4 transition-transform duration-200 group-hover:-translate-x-[5px]" width="16" height="16" />
+          <div class="text-body-r">All articles</div>
+        </a>
+        <div class="flex flex-col items-start justify-end gap-8">
+          <div class="flex flex-col items-start gap-6">
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+              {catNames.map((n) => <div class="text-label rounded-sm bg-white p-2.5">{n}</div>)}
+            </div>
+            <h1 class="text-h2">{a.title}</h1>
+          </div>
+          <p class="text-body-l text-ink-70">{a.metaDescription}</p>
+          {a.heroBtnText && a.heroBtnLink && <Button href={a.heroBtnLink}>{a.heroBtnText}</Button>}
+        </div>
+      </div>
+      <div class="w-full max-w-[43.875rem] overflow-hidden rounded-3xl">
+        <img src={a.image} alt={hero?.imageAlt ?? ''} class="size-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <section class="py-[7.5rem] max-md:py-16">
+    <div class="container-site flex justify-between gap-[6.25rem] max-lg:flex-col max-lg:gap-16">
+      <div class="w-full max-w-[23.75rem] max-lg:max-w-none">
+        <div class="sticky top-20 flex flex-col gap-8 max-lg:w-full">
+          <p class="text-h5">Share This Articles</p>
+          <div class="flex items-center gap-6">
+            <a data-share="x" href="#" class="flex size-6 items-center justify-center transition-colors duration-200 hover:text-blue" aria-label="Share on X"><ShareX width="100%" /></a>
+            <a data-share="facebook" href="#" class="flex size-6 items-center justify-center transition-colors duration-200 hover:text-blue" aria-label="Share on Facebook"><ShareFacebook width="100%" /></a>
+            <a data-share="copy" href="#" class="flex size-6 items-center justify-center transition-colors duration-200 hover:text-blue" aria-label="Copy link"><ShareLink width="100%" /></a>
+          </div>
+          <div class="h-px w-full bg-bg-dark"></div>
+          <p class="text-h5">In this article</p>
+          <nav class="toc flex max-h-[35rem] flex-col gap-4 overflow-auto" aria-label="In this article"></nav>
+        </div>
+      </div>
+      <div class="flex w-full max-w-[50rem] flex-col gap-8">
+        <div class="flex flex-col gap-5 rounded-sm border border-bg-dark bg-bg-light p-6">
+          <p class="text-h4 capitalize">Summary</p>
+          <div class="summary-rte rich" set:html={a.summary} />
+        </div>
+        <div class="blog-rte rich" set:html={bodyHtml} />
+        {author && (
+          <div class="flex flex-col gap-5 rounded-sm border border-bg-dark bg-bg-light p-6">
+            <div class="flex items-center gap-2">
+              <img src={author.data.profile} alt="" class="aspect-square w-10 rounded-full object-cover" />
+              <p class="text-h5">{author.data.name}</p>
+            </div>
+            <div class="summary-rte rich" set:html={author.data.bio} />
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  {cta && <CtaBlock {...cta} />}
+  {related && related.cards.length > 0 && <Insights heading={related.heading} button={related.button} cards={related.cards} />}
+</Layout>
+
+<script>
+  // "In this article": one link per h2 in the body, with the current section highlighted (live site: Finsweet TOC).
+  const body = document.querySelector('.blog-rte');
+  const toc = document.querySelector<HTMLElement>('.toc');
+  if (body && toc) {
+    const heads = [...body.querySelectorAll<HTMLHeadingElement>('h2')];
+    heads.forEach((h, i) => {
+      // Same slug Finsweet generates, so existing links like #do-i-need-hrt-take-the-2-minute-quiz keep working.
+      h.id ||= (h.textContent || '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'section-' + i;
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.className = 'toc-link text-base leading-6';
+      a.textContent = h.textContent;
+      toc.appendChild(a);
+    });
+    const links = [...toc.querySelectorAll('a')];
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        links.forEach((l) => l.classList.toggle('is-current', l.getAttribute('href') === '#' + e.target.id));
+      });
+    }, { rootMargin: '0px 0px -70% 0px' });
+    heads.forEach((h) => io.observe(h));
+  }
+
+  // Share links (live site: Finsweet social share + copy-to-clipboard).
+  const url = location.href.split('#')[0];
+  const title = document.title;
+  document.querySelectorAll<HTMLAnchorElement>('[data-share]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const kind = el.dataset.share;
+      if (kind === 'copy') return void navigator.clipboard?.writeText(url);
+      const share = kind === 'x'
+        ? `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`
+        : `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+      window.open(share, '_blank', 'noopener,width=600,height=500');
+    });
+  });
+</script>
+
+<style>
+  :global(.toc-link) { position: relative; display: block; color: rgba(5, 5, 20, .4); transition: color .25s ease, padding-left .25s ease; }
+  :global(.toc-link)::before {
+    content: ''; position: absolute; left: -22px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; opacity: 0;
+    background: url('/images/site/699d774aa112b946d11e737b_ArrowRight.svg') center / contain no-repeat; transition: all .25s ease;
+  }
+  :global(.toc-link.is-current) { color: #050514; padding-left: 26px; }
+  :global(.toc-link.is-current)::before { opacity: 1; left: 0; }
+</style>

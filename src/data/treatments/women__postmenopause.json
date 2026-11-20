@@ -1,0 +1,452 @@
+{
+ "path": "/women/postmenopause",
+ "title": "Postmenopause Treatment Built Around Your Body | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Postmenopause care that looks at hormones, metabolism, bone, and heart health. Book a call to build your plan.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": false,
+   "headingInCard": false,
+   "crumb": {
+    "label": "Women",
+    "href": "/women"
+   },
+   "current": "Postmenopause",
+   "currentIsH1": false,
+   "heading": "Postmenopause care for when things settled and you still didn't.",
+   "headingTag": "h1",
+   "cardLabel": "Postmenopause",
+   "body": "After menopause, lower hormone levels continue shaping how your body regulates energy, metabolism, sleep, and recovery. We look at the full picture and build care around your physiology, not your age.",
+   "cta": {
+    "text": "Book Free VIP Call",
+    "href": "/scheduling"
+   },
+   "image": {
+    "src": "/images/site/6a21964e6fe716e7b43246fc_postmenopause_hero.avif",
+    "alt": "Woman sitting at home, representing postmenopause care, hormone health, and long-term wellness support"
+   }
+  },
+  {
+   "type": "symptom",
+   "men": false,
+   "heading": "You were told the hard part was over.",
+   "body": "The dramatic swings have quieted. Things look more stable from the outside. But underneath that, you still don't feel fully settled or like yourself.",
+   "toldLabel": "You've been told:",
+   "told": [
+    "“This is just aging”",
+    "“There is nothing else to do”",
+    "“You should be able to push through”"
+   ],
+   "box": "Recovery takes longer. Sleep doesn't restore the way it used to. Your body feels different. Physically, mentally, and emotionally. It is hard to explain and even harder to dismiss.",
+   "image": null,
+   "bottom": "Stable is not the same as well",
+   "buttons": [
+    {
+     "text": "Book free vip call",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "statement",
+   "slate": false,
+   "label": "What is Postmenopause?",
+   "blocks": [
+    {
+     "tag": "h3",
+     "cls": "h1",
+     "html": "Postmenopause begins after 12 consecutive months without a menstrual period and continues for the rest of your life. Hormone levels remain lower and more stable long term, but lower and stable does not always mean your body feels optimal."
+    }
+   ]
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "814px",
+   "heading": "Postmenopause symptoms are often quieter, but more persistent.",
+   "body": "Symptoms may not feel as dramatic as they once did. But over time, changes in energy, sleep, strength, mood, libido, and recovery can quietly affect how you function day to day.",
+   "grid": [],
+   "gridKind": "signs",
+   "cards": [
+    {
+     "title": "Energy &amp; Recovery",
+     "stat": null,
+     "body": "Persistent fatigue, slower recovery, lower stamina, feeling physically flat",
+     "image": {
+      "src": "/images/site/6a219410dab2f152bf024861_postmenopause_energy.avif",
+      "alt": "Woman sitting on bed, representing postmenopause fatigue, lower energy, and hormone recovery support"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Sleep &amp; Mood",
+     "stat": null,
+     "body": "Lighter sleep, waking at night, lower motivation, anxiety, mood changes",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Weight &amp; Metabolism",
+     "stat": null,
+     "body": "Abdominal weight gain, reduced muscle tone, blood sugar changes, metabolic slowdown",
+     "image": {
+      "src": "/images/site/6a2194106efdeab3019285ea_postmenopause_weight.avif",
+      "alt": "Woman measuring her waist, representing postmenopause weight changes, metabolism shifts, and hormone imbalance"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Brain &amp; Focus",
+     "stat": null,
+     "body": "Brain fog, slower recall, reduced mental sharpness, lower focus",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Libido &amp; <a href=\"/women/sexual-health\">Sexual Health</a>",
+     "stat": null,
+     "body": "Low libido, vaginal dryness, discomfort, reduced responsiveness",
+     "image": {
+      "src": "/images/site/6a219410ea5a72a93ac3cdd8_postmenopause_libido.avif",
+      "alt": "Woman sitting awake in bed, representing postmenopause libido changes, sexual health concerns, and hormone imbalance"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Bone, Joint &amp; Body Changes",
+     "stat": null,
+     "body": "Joint discomfort, bone density concerns, hair thinning, dry skin, reduced strength",
+     "image": null,
+     "accent": true,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "blush",
+   "label": "Why it keeps compounding",
+   "heading": "Postmenopause affects more than hormone levels.",
+   "body": "Persistently lower hormone levels influence much more than reproductive function. They affect how your body regulates energy, maintains muscle, recovers from stress, manages inflammation, protects bone, and supports cardiovascular health.",
+   "grid": [
+    "is-3"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "The foundation shifts first — and everything built on it begins to follow",
+     "big": "Hormone decline",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "<p>Lower hormones accelerate muscle loss — slowing metabolism and <a href=\"/women/weight-loss-resistance\">making weight harder to manage</a></p>",
+     "big": "Muscle loss",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "As muscle decreases and insulin sensitivity shifts, the body stores more and burns less",
+     "big": "Metabolic slowdown",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Without estrogen's protective effects, inflammation increases — slowing recovery and compounding fatigue",
+     "big": "Rising Inflamation",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Silently accelerating in the background while everything else demands your attention",
+     "big": "Bone density loss",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Years of compounding hormonal, metabolic, and inflammatory changes quietly elevate the risk most women are never warned about",
+     "big": "Cardiovascular risk",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "compare",
+   "big": true,
+   "label": null,
+   "men": false,
+   "heading": "Your labs can look normal. And still miss everything that matters.",
+   "headingMax": "814px",
+   "body": "Standard panels can confirm you're in menopause. They rarely explain why you still feel exhausted, foggy, anxious, and unlike yourself.",
+   "bodyMax": "594px",
+   "heads": [
+    null,
+    null,
+    "Traditional labs"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "Evaluation",
+     "160+ biomarkers",
+     "A handful of hormone markers"
+    ],
+    [
+     "Interpretation",
+     "Systems read together",
+     "Single snapshots in isolation"
+    ],
+    [
+     "Full-Body context",
+     "<a href=\"/women/thyroid\">Thyroid</a>, cortisol, metabolism, inflammation",
+     "Rarely included"
+    ],
+    [
+     "Symptom Analysis",
+     "Connected pattern",
+     "Each symptom separately"
+    ],
+    [
+     "Clinical guidance",
+     "Physician-led, physiology-driven",
+     "Minimal context provided"
+    ],
+    [
+     "core plan",
+     "Built around your physiology",
+     "Reactive and generalized"
+    ]
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "Long-Term Health",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "Most postmenopause care stops when the hot flashes do. But changes to bone, heart, metabolism, cognition, and recovery don't stop. They accumulate quietly in ways that are far easier to address early than to reverse later."
+    },
+    {
+     "kind": "images",
+     "two": true,
+     "images": [
+      {
+       "src": "/images/site/6a2194107521b2d9b5cc61b3_postmenopause_first.avif",
+       "alt": "Woman holding a cup at home, representing postmenopause long-term health, hormone balance, and wellness care"
+      },
+      {
+       "src": "/images/site/6a219411be211864e77cd6a7_postmenopause_second.avif",
+       "alt": "Woman smiling at home, representing postmenopause wellness support, healthy aging, and hormone care"
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "This is not about managing decline. It's about protecting what you still have time to protect. At RHM, we look beyond how you feel today to how your body is positioned for the decades ahead. Postmenopause phase deserves more attention, not less."
+    }
+   ]
+  },
+  {
+   "type": "voices",
+   "heading": "Why it becomes harder to ignore",
+   "headingMax": "504px",
+   "headingFull": true,
+   "body": "At first you adapt. You tell yourself this is probably just aging. But at some point the adapting stops working and what you've been pushing through starts pushing back.",
+   "quotes": [
+    {
+     "quote": "<p>“I spent years telling myself this was just aging. I finally decided I wasn't willing to accept that.\"</p>",
+     "name": "Kassandra, 61"
+    },
+    {
+     "quote": "<p>\"I didn't want to just function. I wanted to feel like myself again. That felt worth fighting for.\"</p>",
+     "name": "Lauren, 74"
+    },
+    {
+     "quote": "<p>\"At some point I stopped waiting to feel better on my own and started demanding real answers.\"</p>",
+     "name": "May, 65"
+    }
+   ]
+  },
+  {
+   "type": "process",
+   "heading": "How RHM Treats Postmenopause",
+   "body": "",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Discovery Call",
+     "body": "Discuss symptoms, history, and whether deeper evaluation makes sense.",
+     "image": {
+      "src": "/images/site/6a20a04ac0ca93a2d3d711a4_step_.avif",
+      "alt": "Woman on a discovery call, representing hormone health consultation and symptom evaluation"
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Comprehensive Lab Evaluation",
+     "body": "Test 160+ biomarkers across hormones, thyroid, cortisol, metabolism, and inflammation.",
+     "image": {
+      "src": "/images/site/6a20b2f6ac9881d327b05f7e_blood.avif",
+      "alt": "Blood sample for comprehensive lab testing, representing hormone, thyroid, cortisol, and metabolism evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Provider Consultation",
+     "body": "Review your results with an RHM physician and understand what may be driving your symptoms.",
+     "image": {
+      "src": "/images/site/6a20b33fca8b1a9c9eaec7a0_consultation.avif",
+      "alt": "Doctor consulting with patient, representing personalized hormone health consultation and lab result review"
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Personalized Plan",
+     "body": "Get a treatment plan built around your labs, symptoms, physiology, and goals.",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing Monitoring",
+     "body": "Adjust your care over time as your body responds and your needs change.",
+     "image": {
+      "src": "/images/site/6a20b4087999ef3dd1181026_monitoring.avif",
+      "alt": "Woman on a virtual follow-up call, representing ongoing hormone care monitoring and wellness support"
+     }
+    }
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "base",
+    "none"
+   ],
+   "image": {
+    "src": "/images/site/6a20aca76c5eefd7bda386da_dr_rand.avif",
+    "alt": "RHM physician in medical scrubs, representing physician-led hormone optimization and personalized patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Physician-led care built around your long-term physiology",
+   "body": "Most hormone clinics focus on protocols. RHM evaluates the full pattern behind your symptoms and then builds care around your physiology.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start your journey to personalized postmenopause care",
+   "points": [
+    "Physician-led postmenopause care",
+    "160+ biomarkers evaluated",
+    "Hormone, metabolic, bone, and cardiovascular context"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a21cab0ff2e78e72a3ea01b_post-cta.avif",
+    "alt": "Older couple sitting together at home, representing personalized postmenopause care, hormone health, and long-term wellness support"
+   }
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "What is postmenopause?",
+     "a": "Postmenopause is the stage of life that begins after you have gone 12 consecutive months without a menstrual period. It continues for the rest of your life. Hormone levels remain lower during this stage, which can affect metabolism, bone health, cardiovascular health, sleep, mood, libido, muscle maintenance, and recovery."
+    },
+    {
+     "q": "How long does postmenopause last?",
+     "a": "<p>Postmenopause lasts for the rest of your life after menopause. <a href=\"/women/menopause\">Menopause</a> is the 12-month milestone without a period; postmenopause is everything that comes after.</p>"
+    },
+    {
+     "q": "What is the difference between menopause and postmenopause?",
+     "a": "Menopause is confirmed after 12 consecutive months without a period. Postmenopause begins after that point. In menopause, symptoms may feel more intense and dramatic. In postmenopause, symptoms often become less obvious but more persistent."
+    },
+    {
+     "q": "Why do I still feel symptoms years after menopause?",
+     "a": "Some symptoms can continue for years after menopause because lower hormone levels can keep affecting sleep, metabolism, thyroid function, inflammation, muscle mass, sexual health, mood, and recovery. Just because symptoms are common does not mean they should be ignored."
+    },
+    {
+     "q": "What are common postmenopause symptoms?",
+     "a": "Common postmenopause symptoms include fatigue, sleep disruption, brain fog, low libido, vaginal dryness, joint pain, hair thinning, abdominal weight gain, reduced muscle mass, slower recovery, mood changes, heart palpitations, dry skin, and recurring urinary or vaginal discomfort."
+    },
+    {
+     "q": "Is this just normal aging?",
+     "a": "Not always. Aging plays a role, but symptoms after menopause may also be connected to hormones, thyroid function, insulin resistance, inflammation, nutrient status, bone density, cardiovascular markers, sleep quality, and recovery capacity. A comprehensive evaluation can help separate “normal aging” from treatable physiology."
+    },
+    {
+     "q": "Can postmenopause cause weight gain?",
+     "a": "Yes. Postmenopause can contribute to weight gain, especially around the abdomen. Lower estrogen, reduced muscle mass, insulin resistance, poor sleep, inflammation, thyroid issues, and lower recovery capacity can all affect how your body stores fat and responds to diet and exercise."
+    },
+    {
+     "q": "Is it too late to address postmenopause symptoms?",
+     "a": "No. It is not too late to address symptoms, improve how you feel, or support long-term health. The right approach depends on your age, medical history, symptoms, labs, risk profile, and goals."
+    },
+    {
+     "q": "Is it too late to start HRT after menopause?",
+     "a": "Not always, but timing matters. Whether hormone therapy is appropriate depends on how long it has been since menopause, your age, symptoms, cardiovascular risk, breast cancer history, clotting risk, and overall health profile. This should be evaluated carefully with a qualified provider."
+    },
+    {
+     "q": "What if I do not want hormone therapy?",
+     "a": "<p>That is okay. Postmenopause care can include non-hormonal options, metabolic support, <a href=\"/women/thyroid\">thyroid evaluation</a>, peptide therapy when appropriate, targeted supplementation, strength training, sleep support, sexual health care, bone protection, cardiovascular risk management, and lifestyle interventions.</p>"
+    },
+    {
+     "q": "Should I be tested for osteoporosis after menopause?",
+     "a": "Yes, bone health becomes more important after menopause because lower estrogen can accelerate bone loss. A provider may recommend bone density screening and related lab work depending on your age, risk factors, medical history, and symptoms."
+    },
+    {
+     "q": "When should I see a postmenopause specialist?",
+     "a": "You should consider seeing a postmenopause specialist if symptoms are affecting your sleep, weight, energy, mood, libido, comfort, strength, focus, recovery, or quality of life — especially if you have been told everything is “normal” but still do not feel like yourself."
+    }
+   ]
+  }
+ ]
+}

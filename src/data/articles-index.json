@@ -1,0 +1,83 @@
+{
+ "hero": {
+  "label": "Free Book Chapters",
+  "heading": "What's the Point of Living Longer If You Don't Feel Alive?",
+  "body": "Tired, foggy and told it's just your age? In Cheating Death, Dr. Rand McClain explains why age alone doesn't explain how you feel, and where hormones, strength and vitality fit in. Get the introduction and Chapter 1 free, sent straight to your inbox.",
+  "button": {
+   "text": "Reserve My Free Chapters",
+   "href": "/cheating-death"
+  },
+  "image": "6ae8d2c2fb60dad63fdbb99e_cheating-death-cta.jpg",
+  "alt": "Cheating Death: The New Science of Living Longer and Better, hardcover book by Dr. Rand McClain"
+ },
+ "cardAlts": {
+  "trt-side-effects": "Man in his forties in a grey sweater at a sunlit kitchen table, chin resting on his hand, with a notebook and lab results in front of him",
+  "pt-141": "Vial labeled PT-141 bremelanotide injection on a stone tray beside an injector pen, in soft natural light",
+  "estrogen-dominance": "Woman in her forties in a cream sweater resting her chin on her hand by a sunny window, looking thoughtful",
+  "peptide-therapy": "Middle-aged man holding a coffee mug at a kitchen table with an open journal, looking thoughtfully out the window",
+  "trt-cost": "Man at a desk with a laptop and notebook, comparing TRT costs",
+  "signs-you-need-hrt": "Woman sitting on her bed by a bright window beside a notebook listing her next steps: better sleep, more energy, a hormone check",
+  "pcos-belly-fat": "Woman holding her belly in mirror",
+  "metabolic-testing": "Man wearing mask during metabolic rate test",
+  "perimenopause-weight-gain": "Woman sitting on bed looking out window",
+  "peptide-therapy-vs-trt": "Man resting on bench in home gym",
+  "lupus-rash-vs-rosacea": "Woman checking her cheek skin in mirror",
+  "perimenopause-brain-fog": "Woman rubbing temple while reading note",
+  "insulin-resistance-test": "Woman reading lab results at table",
+  "thyroid-supplements": "Woman reading supplement bottle beside laptop",
+  "pcos-weight-loss": "Woman doing dumbbell lunges at home",
+  "peptides-vs-glp-1": "peptides-vs-glp-1",
+  "thyroid-specialist-near-me": "Two women talking over documents at table",
+  "best-birth-control-for-pcos": "Birth control box and pill blister pack",
+  "insulin-resistance-and-weight-loss": "Two women walking and talking about Insuline Resistance",
+  "not-losing-weight-on-ozempic": "Woman pinching belly fat in bedroom",
+  "semaglutide-peptide": "RHM semaglutide vial on stone surface",
+  "tirzepatide-peptide": "Tirzepatide injection vial on stone slab",
+  "peptide-therapy-for-weight-loss": "Peptide Therapy for Weight Loss"
+ },
+ "order": [
+  "trt-side-effects",
+  "pt-141",
+  "estrogen-dominance",
+  "peptide-therapy",
+  "trt-cost",
+  "signs-you-need-hrt",
+  "pcos-belly-fat",
+  "metabolic-testing",
+  "perimenopause-weight-gain",
+  "peptide-therapy-vs-trt",
+  "lupus-rash-vs-rosacea",
+  "perimenopause-brain-fog",
+  "insulin-resistance-test",
+  "thyroid-supplements",
+  "pcos-weight-loss",
+  "peptides-vs-glp-1",
+  "thyroid-specialist-near-me",
+  "best-birth-control-for-pcos",
+  "insulin-resistance-and-weight-loss",
+  "not-losing-weight-on-ozempic",
+  "semaglutide-peptide",
+  "tirzepatide-peptide",
+  "peptide-therapy-for-weight-loss"
+ ],
+ "cta": {
+  "type": "ctaBlock",
+  "slate": false,
+  "heading": "Start with clarity before starting a protocol.",
+  "points": [
+   "Personalized, physician-led evaluation",
+   "Advanced testing and clear next steps",
+   "Careful sourcing and medical supervision"
+  ],
+  "buttons": [
+   {
+    "text": "Book vip call",
+    "href": "/scheduling"
+   }
+  ],
+  "image": {
+   "src": "/images/site/6a3067a58cb125b7fb9b4818_peptide_cta.avif",
+   "alt": "Woman sitting in gym after workout, representing personalized peptide therapy, recovery, and wellness care"
+  }
+ }
+}

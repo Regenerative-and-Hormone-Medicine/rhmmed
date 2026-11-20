@@ -1,0 +1,161 @@
+{
+ "path": "/patient-information",
+ "title": "Patient Information",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "",
+ "sections": [
+  {
+   "type": "hubHero",
+   "label": "Patient inforomation",
+   "heading": "Your Guide to Getting Started",
+   "headingStyle": "plain",
+   "headingMax": null,
+   "body": "We've designed a streamlined, customized approach to optimize your health outcomes through personalized care and continuous monitoring.",
+   "buttons": [
+    {
+     "text": "Book Vip Call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/69c3c1e1dbd27f2706041a11_Patient-information.avif",
+    "alt": "Couple reviewing patient information on a laptop, representing getting started with personalized hormone care and health optimization"
+   },
+   "solid": false,
+   "imageClass": [
+    "is-centered-reposnsive"
+   ],
+   "short": true,
+   "row": false,
+   "extraOverlay": "tint"
+  },
+  {
+   "type": "preparation",
+   "heading": "Before Your Visit",
+   "body": "After you VIP Call, preparation is key to maximizing the value of your initial consultation. Please complete the following steps to ensure we have all necessary information to develop your personalized treatment.",
+   "cards": [
+    {
+     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" viewBox=\"0 0 28 28\" fill=\"none\" class=\"icon-28\"><g clip-path=\"url(#clip0_1490_1596)\"><path d=\"M14 14H23.625\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M14 7H23.625\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M14 21H23.625\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M4.375 7L6.125 8.75L9.625 5.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M4.375 14L6.125 15.75L9.625 12.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M4.375 21L6.125 22.75L9.625 19.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></g><defs><clippath id=\"clip0_1490_1596\"><rect width=\"28\" height=\"28\" fill=\"currentColor\"></rect></clippath></defs></svg>",
+     "title": "Book Free VIP Call",
+     "body": "Speak with a certified hormone specialist about your symptoms and goals. During this call, we'll help you understand what may be contributing to your symptoms and explain how we partner with our patients to optimize their hormones and overall health.",
+     "buttons": [
+      {
+       "text": "Book VIP Call",
+       "href": "/scheduling"
+      }
+     ]
+    },
+    {
+     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" viewBox=\"0 0 28 28\" fill=\"none\" class=\"icon-28\"><g clip-path=\"url(#clip0_1490_1643)\"><path d=\"M10.3654 23.322C9.61118 24.0762 8.58826 24.4999 7.52165 24.4999C6.45504 24.4999 5.43212 24.0762 4.6779 23.322C3.9237 22.5678 3.5 21.5449 3.5 20.4783C3.5 19.4117 3.9237 18.3887 4.6779 17.6345L18.8124 3.5L25.3749 10.0625L22.7499 10.9375L10.3654 23.322Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M7.96484 14.3478C8.98969 13.9486 10.7845 13.6522 13.1252 14.875C15.4658 16.0978 17.2606 15.8014 18.2855 15.4022\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></g><defs><clippath id=\"clip0_1490_1643\"><rect width=\"28\" height=\"28\" fill=\"currentColor\"></rect></clippath></defs></svg>",
+     "title": "Required Lab Work, Health Questionnaire, &amp; Physical Exam",
+     "body": "After being onboarded, you will complete your lab work health questionnaire, and physical exam prior to your initial consultation. This is designed to understand your symptoms, lifestyle, history, and goals. If you have recent labs, you can submit those and if they contain all needed tests you will not need additional lab work. <strong></strong>",
+     "buttons": []
+    },
+    {
+     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" viewBox=\"0 0 28 28\" fill=\"none\" class=\"icon-28\"><g clip-path=\"url(#clip0_1490_1647)\"><path d=\"M10.5 16.625H17.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M10.5 13.125H17.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M17.5 4.375H21.875C22.1071 4.375 22.3296 4.46719 22.4937 4.63128C22.6578 4.79538 22.75 5.01794 22.75 5.25V23.625C22.75 23.8571 22.6578 24.0796 22.4937 24.2437C22.3296 24.4078 22.1071 24.5 21.875 24.5H6.125C5.89294 24.5 5.67038 24.4078 5.50628 24.2437C5.34219 24.0796 5.25 23.8571 5.25 23.625V5.25C5.25 5.01794 5.34219 4.79538 5.50628 4.63128C5.67038 4.46719 5.89294 4.375 6.125 4.375H10.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M9.625 7.875V7C9.625 5.83968 10.0859 4.72688 10.9064 3.90641C11.7269 3.08594 12.8397 2.625 14 2.625C15.1603 2.625 16.2731 3.08594 17.0936 3.90641C17.9141 4.72688 18.375 5.83968 18.375 7V7.875H9.625Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></g><defs><clippath id=\"clip0_1490_1647\"><rect width=\"28\" height=\"28\" fill=\"currentColor\"></rect></clippath></defs></svg>",
+     "title": "Meet with a Licensed Medical Provider",
+     "body": "Meet via phone, virtual, or in person with your RHM licensed medical provider to review your symptoms, health questionnaire, lab results, and to discuss any and all concerns you may have. Together you will discuss your diagnosis, and build a personalized treatment specifically for you.",
+     "buttons": []
+    },
+    {
+     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" viewBox=\"0 0 28 28\" fill=\"none\" class=\"icon-28\"><g clip-path=\"url(#clip0_1490_1653)\"><path d=\"M3.5 19.25L14 25.375L24.5 19.25\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M3.5 14L14 20.125L24.5 14\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M3.5 8.75L14 14.875L24.5 8.75L14 2.625L3.5 8.75Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></g><defs><clippath id=\"clip0_1490_1653\"><rect width=\"28\" height=\"28\" fill=\"currentColor\"></rect></clippath></defs></svg>",
+     "title": "Medications Shipped Discreetly",
+     "body": "Your medications are shipped discreetly to your home. Your RHM team will continue to monitor your progress and notify you when it’s time for refills, labs, and follow up consults. RHM continues to personalize your treatment and help you achieve your goals.<strong></strong>",
+     "buttons": []
+    }
+   ]
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": true,
+   "variant": "white",
+   "label": "Your data, secured",
+   "heading": "All patient information, lab results, and consultation notes are stored within HIPAA-compliant, encrypted systems. Your privacy and medical confidentiality are protected at every stage of care.",
+   "body": "",
+   "grid": [],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "1",
+     "big": "Encrypted digital records",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "2",
+     "big": "Secure patient portal",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "3",
+     "big": "Confidential physician access",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "4",
+     "big": "HIPAA-compliant infrastructure",
+     "reverse": false,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "Could my symptoms be hormone related?",
+     "a": "Yes! Fatigue, poor sleep, weight gain, anxiety, muscle loss, brain fog, low libido, and mood instability are among the most common signs of hormonal imbalance. These symptoms are often dismissed or chalked up to depression, stress, and aging, but they're telling you something. If you've been told your labs are normal but still don't feel like yourself, a comprehensive hormone evaluation can uncover what's really going on."
+    },
+    {
+     "q": "How do you evaluate hormonal imbalance?",
+     "a": "We start by listening. Before anything else, we want to understand your symptoms, your history, and your goals. During your initial consultation, we review your extensive lab work in the context of how you’re actually feeling, not just whether your numbers fall within a standard reference range."
+    },
+    {
+     "q": "Do you treat perimenopause, menopause, post menopause?",
+     "a": "Absolutely. Hot flashes, night sweats, sleep disruption, mood changes, and cognitive shifts are some of the most common reasons patients come to us, and they're very treatable. We use bioidentical hormone therapy compounded specifically for your body, so you're not getting a one-size-fits-all prescription."
+    },
+    {
+     "q": "What types of testing are involved?",
+     "a": "We begin with comprehensive blood testing that evaluates your hormone levels, thyroid function, adrenal health, metabolic markers, heart health, and more. As treatment progresses, we repeat testing at regular intervals. Every treatment decision at RHM is guided by both your symptoms and your lab data, which is why we will adjust your personalized treatment when needed."
+    },
+    {
+     "q": "Is treatment personalized or one-size-fits-all?",
+     "a": "Completely personalized. Your treatment is built around your symptoms, individual history, goals, and your lab results. Whether HRT, TRT, Peptides, or any other medications and supplements, the approach is tailored to your physiology not a standard template. This is designed to support your long term health because there is no one-size-fits-all approach."
+    },
+    {
+     "q": "How long does it take to notice improvements?",
+     "a": "Most patients begin noticing improvements within the first few weeks. More sustained improvements typically occur around month three. Getting your hormones optimized takes some patience, but most patients tell us it's one of the best investments they've made in their health."
+    }
+   ]
+  },
+  {
+   "type": "finalCta",
+   "heading": "Start your journey to personalized, long-term health",
+   "points": [
+    "Ongoing support focused on long-term health",
+    "Advanced testing and clear next steps",
+    "Physician-led care"
+   ],
+   "buttons": [
+    {
+     "text": "Book Vip Call",
+     "href": "/scheduling"
+    }
+   ],
+   "topPad": false
+  }
+ ]
+}

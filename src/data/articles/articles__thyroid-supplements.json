@@ -1,0 +1,70 @@
+{
+ "path": "/articles/thyroid-supplements",
+ "title": "Thyroid Supplements: What Actually Works | RHM Med",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Thyroid supplements: what the research actually supports, what interacts with medication, and why testing comes before supplementing at RHM.",
+ "sections": [
+  {
+   "type": "articleHero",
+   "imageAlt": "Woman reading supplement bottle beside laptop",
+   "category": "Thyroid"
+  },
+  {
+   "type": "articleBody"
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start with clarity before starting a protocol.",
+   "points": [
+    "Personalized, physician-led evaluation",
+    "Advanced testing and clear next steps",
+    "Careful sourcing and medical supervision"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a3067a58cb125b7fb9b4818_peptide_cta.avif",
+    "alt": "Woman sitting in gym after workout, representing personalized peptide therapy, recovery, and wellness care"
+   }
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Related Articles",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/pcos-belly-fat",
+     "title": "PCOS Belly Fat",
+     "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
+     "category": "PCOS",
+     "date": "Sep 11, 2026",
+     "image": {
+      "src": "/images/site/6abe6cafaca1c590f6b996b5_6aa2f72b165ff1135617bf3e_Hero.avif",
+      "alt": "Woman holding her belly in mirror"
+     }
+    },
+    {
+     "href": "/articles/thyroid-specialist-near-me",
+     "title": "Thyroid Specialist Near Me: What Matters (and Why \"Normal Labs\" Isn't the Finish Line)",
+     "summary": "A thyroid specialist isn't defined by title — it's defined by what they check. Here's what to look for when \"normal\" labs don't match how you feel.",
+     "category": "Thyroid",
+     "date": "Jul 20, 2026",
+     "image": {
+      "src": "/images/site/6a5e86ab271a77dddc61380f_thyroid_hero.avif",
+      "alt": "Two women talking over documents at table"
+     }
+    }
+   ]
+  }
+ ]
+}

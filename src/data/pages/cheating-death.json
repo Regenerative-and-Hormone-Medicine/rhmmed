@@ -1,0 +1,272 @@
+{
+ "path": "/cheating-death",
+ "title": "Cheating Death by Dr. Rand McClain: Read the First Chapters Free",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Your healthspan matters as much as your lifespan. Read the introduction and Chapter 1 of Cheating Death by Dr. Rand McClain, free.",
+ "sections": [
+  {
+   "type": "bookHero",
+   "heading": "Unlock My Free Cheating Death Series",
+   "body": "Start with a complimentary chapter from Dr. Rand McClain's Cheating Death, then receive exclusive insights from the chapters that follow.",
+   "image": {
+    "src": "/images/site/6ae8d3b3fe8027c6c0099820_cheating-death-3d-book-v2.png",
+    "alt": "Cheating Death: The New Science of Living Longer and Better, hardcover book by Dr. Rand McClain"
+   },
+   "fields": [
+    {
+     "label": "First name",
+     "placeholder": "Your full name"
+    },
+    {
+     "label": "Email address",
+     "placeholder": "you@example.com"
+    },
+    {
+     "label": "Mobile number",
+     "placeholder": "(555) 555-5555"
+    }
+   ],
+   "submit": "Reserve my free chapters",
+   "consent": "Free. By adding your number you agree to receive texts from RHM about the book. Message frequency varies. Msg and data rates may apply. Reply STOP to opt out. See our <a href=\"/privacy-policy\">Privacy Policy</a> and <a href=\"/terms-of-use\">Terms</a>.",
+   "done": {
+    "label": "Your chapters are reserved",
+    "heading": "You’re on the list.",
+    "body": "The introduction arrives on Nov 15th, by email and text. Chapter 1 follows a week later.",
+    "note": "Nothing to do until then. Reply STOP to any text to opt out."
+   },
+   "fail": "That didn’t go through. Check your email and number, then try again."
+  },
+  {
+   "type": "signs",
+   "grey": false,
+   "headMax": "642px",
+   "heading": "Does any of this sound familiar?",
+   "body": "Living longer is one thing. Feeling alive while you do it is another.",
+   "grid": [],
+   "gridKind": "signs",
+   "cards": [
+    {
+     "title": "“I don’t feel as young as I should.”",
+     "stat": null,
+     "body": "Fatigue, brain fog, low libido and lost strength.",
+     "image": {
+      "src": "/images/site/69c50415a158d241541bbad2_mood-stres.avif",
+      "alt": "Tired man at his desk at night, representing fatigue and brain fog"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "“I’m afraid my best years are behind me.”",
+     "stat": null,
+     "body": "Worrying about losing your independence and vitality.",
+     "image": null,
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "“My doctor says it’s just part of getting older.”",
+     "stat": null,
+     "body": "Told your labs are normal and sent home.",
+     "image": {
+      "src": "/images/site/69c5035f3603964355f35ba8_skin-hair.avif",
+      "alt": "Woman looks at herself in the mirror getting older"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "“I’m doing everything right. Why don’t I feel better?”",
+     "stat": null,
+     "body": "Diet, exercise and supplements, and you’re still stuck.",
+     "image": null,
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "“What if there are options nobody told me about?”",
+     "stat": null,
+     "body": "Wondering what you might have missed.",
+     "image": {
+      "src": "/images/site/69c507307eff20c37e3a84f2_freepik__woman-in-her-40s-sitting-comfortably-at-home-calm-__50637-1-3.avif",
+      "alt": "Woman researching the options"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Dr. Rand’s book starts with these questions.",
+     "stat": null,
+     "body": "The introduction and Chapter 1 of Cheating Death, free to read.",
+     "image": null,
+     "accent": false,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "slate",
+   "label": "Inside the introduction and Chapter 1",
+   "heading": "“This book has exactly what we all need to live longer, happier, and healthier lives.” Michael Breus, PhD",
+   "body": "",
+   "grid": [],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "01",
+     "big": "Why Dr. Rand’s time as a patient changed how he practices",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "02",
+     "big": "Why your age alone doesn’t explain how you feel",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "03",
+     "big": "Where hormones, strength and vitality fit in",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "04",
+     "big": "Why your healthspan matters as much as your lifespan",
+     "reverse": false,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "telehealth",
+   "label": "About the author",
+   "heading": "Meet Dr. Rand McClain, DO",
+   "body": "Dr. Rand leads RHM’s physician team. His own experience as a patient changed how he practices medicine, and it’s where the book begins.",
+   "buttons": [
+    {
+     "text": "Reserve my free chapters",
+     "href": "#reserve"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6ae8efdb448168311b08167f_rand.jpg",
+    "alt": ""
+   }
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "xl",
+    "xl"
+   ],
+   "image": {
+    "src": "/images/site/69c3beb03e7897211c00aca7_why-psrmed.avif",
+    "alt": "Happy family outdoors, representing long-term hormone health, wellness, and patient care"
+   },
+   "label": "Why RHM",
+   "heading": "The clinic behind the book",
+   "body": "Physician-led care that looks at 160+ biomarkers together and asks what’s optimal for you. Normal is an average. You are not an average.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "Patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "bookSteps",
+   "heading": "How it works",
+   "body": "Four steps, and you decide when (or whether) to talk to us.",
+   "steps": [
+    {
+     "num": "01",
+     "title": "Reserve your copy",
+     "body": "Tell us your name, email and number. It takes under a minute."
+    },
+    {
+     "num": "02",
+     "title": "Read the introduction",
+     "body": "It lands in your inbox and by text on November 15th."
+    },
+    {
+     "num": "03",
+     "title": "Read Chapter 1",
+     "body": "It follows a week later, the same way."
+    },
+    {
+     "num": "04",
+     "title": "Talk to us if you want to",
+     "body": "Reply to a text with a question, or book a VIP call. Nothing happens unless you ask."
+    }
+   ]
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "Questions about the book",
+   "items": [
+    {
+     "q": "Is it really free?",
+     "a": "<p>Yes. The introduction and Chapter 1 are free, and you don’t need to book anything to get them.</p>"
+    },
+    {
+     "q": "Is this the whole book?",
+     "a": "<p>No. You get the introduction and Chapter 1. The full book, Cheating Death: The New Science of Living Longer and Better, is published by BenBella Books.</p>"
+    },
+    {
+     "q": "When will I get it?",
+     "a": "<p>The introduction arrives on [launch date]. Chapter 1 follows one week later, by email and text.</p>"
+    },
+    {
+     "q": "Will someone call me?",
+     "a": "<p>Only if you ask. If you reply to one of our texts, someone from our team will write back. A call happens only if you book one.</p>"
+    },
+    {
+     "q": "Can I unsubscribe?",
+     "a": "<p>Any time. Reply STOP to any text, or use the unsubscribe link in any email.</p>"
+    },
+    {
+     "q": "Why do you need my number?",
+     "a": "<p>So we can text you when each chapter is ready, and so you can reply with questions. Message frequency varies, and you can opt out anytime.</p>"
+    }
+   ]
+  },
+  {
+   "type": "ctaBlock",
+   "slate": true,
+   "heading": "More years are only worth it if you feel alive in them.",
+   "points": [
+    "Dr. Rand’s story as a patient, and what it taught him",
+    "Why your age alone doesn’t explain how you feel",
+    "The introduction and Chapter 1, free"
+   ],
+   "buttons": [
+    {
+     "text": "Reserve my free chapters",
+     "href": "#reserve"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6ae8d2c2fb60dad63fdbb99e_cheating-death-cta.jpg",
+    "alt": ""
+   }
+  }
+ ]
+}

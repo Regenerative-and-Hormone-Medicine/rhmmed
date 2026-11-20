@@ -1,0 +1,80 @@
+---
+title: "Why am I Not Losing Weight on Ozempic? Why the Scale Stalls or Creeps Back"
+slug: "not-losing-weight-on-ozempic"
+metaTitle: "Why am I not losing weight on Ozempic? Why It Stalls"
+metaDescription: "Not losing weight on Ozempic, or gaining it back? A physician-led look at why the scale stalls: metabolic adaptation, muscle loss, thyroid, and insulin."
+heroBtnText: ""
+heroBtnLink: ""
+author: "kristin-sewnig-msn-fnp-bc"
+category: "weight-loss-resistance; peptides"
+image: "/images/cms/6a47c669407108bc00b2e31c_weight.avif"
+date: "2026-07-06"
+datePublished: "2026-07-06"
+summary: "<ul><li>Not losing weight on Ozempic, or watching it creep back after early progress, is more common than you would think, and it does not mean you are failing or that the medication stopped working. You were doing the same things that worked at first, and the scale went the wrong way anyway.</li><li>A plateau is mostly physiology. As you lose weight, your metabolism slows to defend your body's set point, and some of what you lost was muscle, which slows it further.</li><li>What a prescription rarely checks is often what is holding you back: thyroid function, cortisol, insulin resistance, and the hormone shifts of perimenopause and menopause.</li><li>The answer is rarely \"just take more.\" It is understanding what your body is actually doing, and treating that.</li></ul>"
+webflowDraft: false
+---
+
+<h2>It worked, and now the scale is going the wrong way</h2><p>For a while, it was working. The food noise went quiet, the weight came off, and your body finally felt like it was cooperating. Then it stalled. Maybe the scale has not moved in weeks. Maybe it is creeping back up, and you cannot name a single thing you are doing differently.</p><p>That shift is disorienting, and it is easy to read as failure, yours or the medication's. It is usually neither. Feeling stuck or gaining on a GLP-1 is one of the most common experiences we hear about, and it is almost never a discipline problem. Your effort was never the issue.</p><h2>A stall doesn't mean the medication failed</h2><p>It is easy to read a plateau as failure, yours or the drug's. Usually it is neither. Medications like semaglutide (Ozempic, Wegovy) and tirzepatide (Zepbound, Mounjaro) are powerful, but they act on a body that adapts. When the loss slows, the medication is often still doing its job of steadying your appetite, while your physiology quietly shifts underneath it. Understanding what is shifting is the whole game, and it is the part most people are never shown.</p><figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1535px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1535px"><div><img alt="Ozempic" src="/images/cms/6a47c54cbb214427504b85a7_ozempic.png" loading="lazy"></div></figure><h2>What's actually happening when the weight stalls</h2><p>As you lose weight, your body burns fewer calories, and it does so by more than your smaller size alone would predict. Researchers call this<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7484122/" target="_blank"> metabolic adaptation</a>: your resting metabolism drops below what your new weight would suggest, as a built-in defense of the weight you started at.</p><p>This is not a flaw in you. It is an old survival mechanism doing exactly what it evolved to do. But it means the math that worked at the start no longer holds. The same routine that once produced steady loss now produces maintenance, or slow regain.</p><h2>The muscle you lost is quietly working against you</h2><p>Here is the part that usually goes unaddressed. Weight loss is rarely all fat. A meaningful share of what comes off during GLP-1 treatment<a href="https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.124.067676" target="_blank"> can be lean muscle rather than fat</a>, with reviews estimating roughly a quarter to 40% of the loss.</p><p>Muscle is expensive tissue. It burns calories even at rest. So when you lose it, your resting metabolism falls again, on top of the adaptation already underway. This is why protecting muscle matters as much as losing fat. The goal was never just a smaller number on the scale. It was a body that works, and that means keeping the tissue that keeps your metabolism running.</p><h2>The drivers a prescription doesn't check</h2><p>A GLP-1 is one lever. It is a good one, but it pulls against a whole system, and when that system is out of balance elsewhere, the lever has less to work with. These are the drivers we see hold women back, and the ones a standard prescription rarely evaluates:</p><ul><li><strong>Thyroid.</strong> An underactive thyroid slows metabolism and makes weight loss harder. The catch is that "normal" thyroid labs are not the same as optimal thyroid function. Many women are told their<a href="/women/thyroid"> thyroid is fine</a> while they feel anything but.</li><li><strong>Cortisol and stress.</strong> Chronically elevated cortisol encourages fat storage and worsens insulin resistance, and it is easy to miss unless someone looks for it.</li><li><strong>Insulin resistance.</strong> When your cells stop responding well to insulin, your body stores fat more readily and lets go of it more reluctantly. It often sits underneath<a href="/women/weight-loss-resistance"> stubborn weight</a>, and it responds to being treated.</li><li><strong>Perimenopause and menopause.</strong> As estrogen and progesterone shift, so does where and how your body holds weight. A GLP-1 does not address that shift. A full evaluation of<a href="/women/perimenopause"> perimenopause</a> or<a href="/women/menopause"> menopause</a> can.</li></ul><p>Normal is an average. You are not an average. The real question is not whether your labs land inside a reference range, but whether your body is functioning the way it should.</p><p><strong>Dr. Rand Insight:</strong> </p><div data-rt-embed-type='true'><blockquote class="blockquote"><p><em>“When someone stalls on a GLP-1, the medication is rarely the problem. The problem is usually something we can measure and treat, that no one has measured yet.”</em></p><div class="blockquote_profile"><img src="/images/cms/6a362af7235f0819a188a49f_dr_rand.jpg" loading="lazy" alt="Profile Picture of Dr. Rand" class="profile_img"><p class="body-m fw-500 color-dark">Dr. Rand McClain</p></div></blockquote></div><h2>Sometimes it's the basics. Sometimes it's more.</h2><p>Before assuming something deeper, a few ordinary things can quietly stall progress, and they are worth reviewing with your physician:</p><ul><li>You may still be building up to an effective dose. For many people that takes a few months.</li><li>Appetite can return as your body adjusts, and portions can creep up without you noticing.</li><li>Short sleep and high stress raise hunger hormones and blunt results.</li><li>Some medications, including<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8215694/" target="_blank"> certain antidepressants, antipsychotics, steroids, and beta-blockers</a>, can promote weight gain or work against a GLP-1.</li></ul><p>If you’re wondering why you’re not losing weight on Ozempic, certain patterns suggest it is worth looking deeper rather than simply waiting or pushing harder: weight that stalls very early, weight that climbs while you are taking the medication consistently, or a stall that arrives alongside symptoms like fatigue, brain fog, or poor recovery.</p><h2>What we actually look at</h2><p>At RHM we start by listening, then we measure. A comprehensive evaluation looks across more than 160 biomarkers, including full thyroid function rather than TSH alone, cortisol and adrenal markers, fasting insulin and metabolic markers, sex hormones, inflammation, and body composition, so we can see which systems are actually holding your weight in place. From there, care is built around you, not a template, and not "just take more."</p><p>We work alongside your existing care, including whoever prescribes your GLP-1. The aim is to protect your muscle, address the drivers underneath the stall, and help the medication do what it is meant to do. If you want the fuller picture on how these medications fit into a plan, our guide to<a href="/women/peptide-therapy"> peptide therapy for women</a>, our article on<a href="/articles/semaglutide-peptide"> semaglutide</a>, and our <a href="/articles/peptides-vs-glp-1">peptides-vs-GLP-1 comparison</a> go deeper.</p><h2>What this can help</h2><p>When the real drivers are identified and treated, the goal is not a lower number for a few months. It is progress you can hold onto, protected muscle and better body composition, steadier energy, and feeling like yourself again, this time with an explanation for what was happening all along.</p><h2>Why RHM</h2><p>Most GLP-1 care is a prescription and a dose schedule, and when it stalls, the usual answer is a higher dose or "try harder." We take a different path: physician-led, whole-picture, and focused on the physiology a prescription pad cannot see. The symptoms felt real. The explanation, until now, never fully did.</p><h2>Frequently asked questions</h2><h3>Why am I gaining weight back on a GLP-1?</h3><p>Regain usually reflects physiology rather than effort. Metabolic adaptation and lost muscle lower your calorie needs, appetite can return, and drivers like thyroid function or insulin resistance may be at play. It is worth evaluating what is happening rather than assuming the medication has failed. Any medication change should be made with your physician.</p><h3>Why is my belly getting bigger on Ozempic?</h3><p>Several things can contribute, including fluid shifts, constipation (a common GLP-1 side effect), changes in body composition as muscle is lost, and hormonal drivers like cortisol and the changes of perimenopause. A sudden or marked change is worth discussing with your physician.</p><h3>Why is my semaglutide not working anymore?</h3><p>Often it still is, in the sense that it is holding your appetite steady, while your metabolism adapts underneath. If progress has genuinely stalled for several weeks, that is usually a sign to look at the drivers beneath it rather than simply to wait.</p><h3>Why am I not losing weight even though I'm doing everything right?</h3><p>When effort is not the issue, physiology usually is: metabolic adaptation, muscle loss, or an unaddressed driver like thyroid function, cortisol, or insulin resistance. These are measurable, and often treatable.</p><h3>Do you have to stay on a GLP-1 forever? Can you get off without gaining it back?</h3><p>Weight regain after stopping is common. In one extension of a major semaglutide trial, participants<a href="https://pubmed.ncbi.nlm.nih.gov/35441470/" target="_blank"> regained about two-thirds of the weight they had lost</a> within roughly a year of stopping. That does not make regain inevitable, but it does mean how you come off, and what is treated underneath, matters a great deal. This is a plan to make with your physician.</p><h3>Does a higher dose mean more weight loss?</h3><p>Not always, and if you are already at the maximum dose there is no higher one to reach. When you have hit that ceiling and progress has stalled, the answer is usually to address the physiology, not to chase a dose that does not exist.</p><h3>Could a thyroid or hormone problem be why I'm stuck?</h3><p>Often, yes. An underactive thyroid, elevated cortisol, insulin resistance, and the hormone shifts of perimenopause and menopause can all make weight loss harder, and all are things a standard prescription rarely checks. Evaluating them is frequently the missing piece.</p><h2>You don't have to guess why it stalled</h2><p>If the scale has been stuck and no one has looked past the prescription, there is usually a reason worth finding. We will help you understand what your body is actually doing, and build a plan around it. <a href="/scheduling">Book a VIP call</a> to start.</p><div data-rt-embed-type='true'><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why am I gaining weight back on a GLP-1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weight regain on a GLP-1 is often caused by metabolic adaptation rather than a lack of effort. As you lose weight, your metabolism slows, muscle loss can reduce calorie burn, appetite may gradually return, and underlying issues such as thyroid dysfunction or insulin resistance may become more noticeable. Rather than assuming the medication has stopped working, it is worth evaluating the factors contributing to the regain with your physician."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my belly getting bigger on Ozempic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A larger abdomen while taking Ozempic can have several causes, including fluid retention, constipation, changes in body composition as muscle is lost, or hormonal factors such as elevated cortisol or the changes of perimenopause. A sudden or significant increase in abdominal size should be discussed with your physician."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my semaglutide not working anymore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Semaglutide may still be reducing your appetite even if the scale has stopped moving. Over time, your metabolism adapts to weight loss, making further progress slower. If your weight has plateaued for several weeks despite consistent treatment, it may be time to evaluate underlying factors such as thyroid function, hormones, insulin resistance, or body composition with your healthcare provider."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why am I not losing weight even though I'm doing everything right?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When diet and exercise remain consistent but weight loss stalls, the cause is often physiological rather than behavioral. Metabolic adaptation, muscle loss, thyroid dysfunction, insulin resistance, elevated cortisol, or hormonal changes can all make continued weight loss more difficult. Many of these factors can be identified and treated through a comprehensive medical evaluation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you have to stay on a GLP-1 forever? Can you stop without gaining weight back?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many people regain weight after stopping a GLP-1 medication because the biological drivers of weight gain often remain. Research has shown that participants regained much of their lost weight after discontinuing semaglutide. However, regain is not inevitable. Protecting muscle, addressing metabolic and hormonal factors, and creating a long-term plan with your physician can improve your chances of maintaining results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a higher Ozempic or GLP-1 dose always lead to more weight loss?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. Increasing the dose does not guarantee additional weight loss, and every medication has a maximum approved dose. If progress has stalled despite reaching an effective dose, evaluating underlying metabolic and hormonal factors is often more beneficial than simply increasing medication."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Could a thyroid or hormone problem be preventing weight loss on Ozempic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Conditions such as hypothyroidism, insulin resistance, elevated cortisol, and the hormonal changes of perimenopause or menopause can all reduce weight loss, even while taking a GLP-1 medication. Identifying and treating these underlying issues is often an important part of overcoming a weight-loss plateau."
+      }
+    }
+  ]
+}
+</script></div>

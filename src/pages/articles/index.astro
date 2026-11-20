@@ -1,0 +1,99 @@
+---
+// Article index (T5): book-promo hero, category filter, all articles newest first.
+// Live site filters with Finsweet List Filter; here a small script does the same (an article matches any of its categories).
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+import CtaBlock from '../../components/treatment/CtaBlock.astro';
+import ArrowRoll from '../../icons/arrow-roll.svg';
+import page from '../../data/articles-index.json';
+
+import catOrder from '../../content/blog-categories.json';
+const all = await getCollection('blogCategories');
+// Keep the CMS order (as exported), not alphabetical.
+const cats = catOrder.map((c) => all.find((x) => x.id === c.id)!).filter(Boolean);
+const name = (id: string) => cats.find((c) => c.id === id)?.data.name ?? id;
+// Live order (newest first; same-day ties as Webflow sorted them), unknown articles fall back to date.
+const rank = (slug: string) => { const i = (page.order as string[]).indexOf(slug); return i < 0 ? -1 : i; };
+const articles = (await getCollection('articles')).sort((a, b) => {
+  const ra = rank(a.data.slug), rb = rank(b.data.slug);
+  if (ra >= 0 && rb >= 0) return ra - rb;
+  return (b.data.date ?? '').localeCompare(a.data.date ?? '');
+});
+const fmt = (d: string | null) => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '';
+const strip = (h: string) => h.replace(/<[^>]+>/g, '').trim();
+const alts = page.cardAlts as Record<string, string>;
+---
+
+<Layout title="Regenerative Health and Hormone Articles | RHMMed" description="Physician-led articles on hormones, metabolism, weight, thyroid health, longevity, and the physiology behind how you feel.">
+  <section>
+    <div class="container-site flex max-w-[91rem] justify-between gap-20 pt-[8.5rem] pb-24 max-lg:flex-col max-lg:gap-12">
+      <div class="flex w-full max-w-[38.5625rem] flex-col items-start justify-end gap-8 max-sm:gap-6">
+        <div class="flex flex-col items-start gap-6">
+          <div class="flex items-center rounded-sm bg-bg-light px-6 py-2.5">{page.hero.label}</div>
+          <h2 class="text-h2" set:html={page.hero.heading} />
+        </div>
+        <p class="text-body-l text-ink-70" set:html={page.hero.body} />
+        <Button href={page.hero.button.href}>{page.hero.button.text}</Button>
+      </div>
+      <div class="w-full max-w-[43.4375rem] overflow-hidden rounded-3xl">
+        <img src={`/images/site/${page.hero.image}`} alt={page.hero.alt} class="size-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-[7.5rem] max-sm:py-16">
+    <div class="container-site flex flex-col gap-[3.125rem] max-sm:gap-8">
+      <div class="filters mb-[15px] flex items-start gap-4 max-sm:flex-wrap" role="radiogroup" aria-label="Filter articles by category">
+        <button type="button" class="chip is-on -mt-[5px]" data-cat="" role="radio" aria-checked="true">All</button>
+        <div class="flex flex-wrap items-center max-sm:gap-4">
+          {cats.map((c) => <button type="button" class="chip" data-cat={c.id} role="radio" aria-checked="false">{c.data.name}</button>)}
+        </div>
+      </div>
+      <div class="grid grid-cols-[1fr_1fr] gap-6 max-lg:grid-cols-[1fr]">
+        {articles.map((a) => {
+          const ids = a.data.category.split(';').map((s) => s.trim()).filter(Boolean);
+          return (
+            <div class="card group relative grid h-full min-h-[23.0625rem] grid-cols-[1fr] gap-8 rounded-3xl bg-bg-light p-4 max-md:auto-cols-fr max-md:grid-flow-col max-sm:flex max-sm:flex-col-reverse" data-cats={ids.join(' ')}>
+              <div class="overflow-hidden rounded-2xl">
+                <img src={a.data.image} alt={alts[a.data.slug] ?? ''} class="size-full object-cover" loading="lazy" />
+              </div>
+              <div class="flex flex-col justify-between gap-6 max-md:gap-8">
+                <div class="flex flex-col items-start gap-4">
+                  <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    {ids.map((id) => <div class="flex items-center rounded-sm bg-white px-6 py-2.5">{name(id)}</div>)}
+                  </div>
+                  <a href={`/articles/${a.data.slug}`} class="text-body-l before:absolute before:inset-0 before:z-[1] before:rounded-3xl before:content-['']">{a.data.title}</a>
+                  <p class="text-body-r text-ink-70">{strip(a.data.metaDescription)}</p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="relative flex size-9 items-center justify-center overflow-hidden rounded-full bg-black text-white">
+                    <ArrowRoll class="w-4 transition-transform duration-200 group-hover:translate-x-[30px]" width="16" height="16" />
+                    <ArrowRoll class="absolute w-4 -translate-x-[30px] transition-transform duration-200 group-hover:translate-x-0" width="16" height="16" />
+                  </div>
+                  <div class="text-body-r text-ink-70">{fmt(a.data.date)}</div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+  <CtaBlock {...(page.cta as any)} />
+</Layout>
+
+<style>
+  .chip { position: relative; display: flex; align-items: center; border-radius: .5rem; background: #fff; padding: .625rem 1.5rem; }
+  .chip.is-on { background: #e3e3e3; }
+</style>
+
+<script>
+  const chips = [...document.querySelectorAll<HTMLButtonElement>('.chip')];
+  const cards = [...document.querySelectorAll<HTMLElement>('.card[data-cats]')];
+  chips.forEach((chip) => chip.addEventListener('click', () => {
+    const cat = chip.dataset.cat ?? '';
+    chips.forEach((c) => { c.classList.toggle('is-on', c === chip); c.setAttribute('aria-checked', String(c === chip)); });
+    cards.forEach((card) => { card.hidden = !!cat && !card.dataset.cats!.split(' ').includes(cat); });
+  }));
+</script>

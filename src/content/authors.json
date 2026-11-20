@@ -1,0 +1,20 @@
+[
+  {
+    "id": "rand-mcclain-do",
+    "name": "Rand McClain, DO",
+    "slug": "rand-mcclain-do",
+    "webflowDraft": false,
+    "profile": "/images/cms/6a47bf423b60a6b44a025dbb_dr_rand.avif",
+    "bio": "<p><strong>Rand McClain, DO</strong>, is a regenerative medicine and hormone replacement therapy specialist in Santa Monica, California. </p><p>With a background in sports medicine and osteopathic care, he focuses on helping patients address complex health concerns through evidence-based, personalized treatment. Dr. McClain is also the Co-founder and Chief Medical Officer of Live Cell Research and is passionate about patient education, nutrition, exercise, and longevity.</p>",
+    "link": ""
+  },
+  {
+    "id": "kristin-sewnig-msn-fnp-bc",
+    "name": "Kristin Sewnig, MSN, FNP-BC",
+    "slug": "kristin-sewnig-msn-fnp-bc",
+    "webflowDraft": false,
+    "profile": "/images/cms/6a47bff0a6efbd7096b91b62_kristin.png",
+    "bio": "<p><strong>Kristin Sewnig, MSN, FNP-BC</strong>, is a board-certified Nurse Practitioner specializing in hormone replacement therapy, menopause, thyroid health, and metabolic wellness. </p><p>With more than 25 years of clinical experience, she provides personalized, evidence-based care to help patients optimize hormones, improve quality of life, and support long-term health through preventive medicine.</p>",
+    "link": ""
+  }
+]

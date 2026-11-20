@@ -1,0 +1,32 @@
+---
+// Blog card (source: .blog-card). White on grey sections, grey on white.
+interface Props {
+  href: string;
+  title: string;
+  summary: string;
+  category: string;
+  date: string;
+  image: string;
+  alt?: string;
+  white?: boolean;
+}
+const { href, title, summary, category, date, image, alt = title, white = false } = Astro.props;
+---
+
+<div class:list={['relative flex h-full min-h-[23.0625rem] flex-col gap-8 rounded-lg p-4', white ? 'bg-white' : 'bg-bg-light']}>
+  <div class="overflow-hidden rounded-md">
+    <img src={image} alt={alt} class="size-full object-cover" loading="lazy" />
+  </div>
+  <div class="flex flex-col justify-between gap-6 max-md:gap-8">
+    <div class="flex flex-col items-start gap-4">
+      <div class="flex w-[101%] items-center justify-between gap-2">
+        <div class="flex flex-wrap items-center gap-2">
+          <div class="flex items-center rounded-sm bg-bg-light p-2.5 text-[.75rem] leading-[18px] uppercase">{category}</div>
+        </div>
+        <div class="text-body-r text-ink-70">{date}</div>
+      </div>
+      <a href={href} class="text-body-l before:absolute before:inset-0 before:z-[1] before:rounded-lg before:content-['']">{title}</a>
+      <p class="text-body-r text-ink-70">{summary}</p>
+    </div>
+  </div>
+</div>

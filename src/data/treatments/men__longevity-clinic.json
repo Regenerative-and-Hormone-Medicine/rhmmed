@@ -1,0 +1,418 @@
+{
+ "path": "/men/longevity-clinic",
+ "title": "The Longevity Clinic for Men | Physician-Led Evaluation | RHM",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "A comprehensive, physician-led longevity evaluation for men — the starting point that routes you to the right care, not a guess.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": true,
+   "headingInCard": true,
+   "crumb": {
+    "label": "Men",
+    "href": "/men"
+   },
+   "current": "Physician-led longevity clinic",
+   "currentIsH1": true,
+   "heading": "You feel fine. <span class=\"accent\">Let’s Keep it that way.</span>",
+   "headingTag": "h2",
+   "cardLabel": null,
+   "body": "Looking for a longevity doctor near you? Go beyond a standard physical with a physician-led evaluation of 160+ biomarkers designed to uncover risks, identify opportunities, and build a personalized strategy for your long-term health.",
+   "cta": {
+    "text": "Find out what's off",
+    "href": "/scheduling"
+   },
+   "image": {
+    "src": "/images/site/6aac00c539011dbcf98df331_longevity_hero.avif",
+    "alt": ""
+   }
+  },
+  {
+   "type": "symptom",
+   "men": true,
+   "heading": "Feeling fine and being fully evaluated aren’t the same thing.",
+   "body": "You can feel good, stay active, and have a “normal” physical while important changes in cardiovascular risk, metabolic health, inflammation, hormones, and other biomarkers are developing quietly beneath the surface.",
+   "toldLabel": "What You've Been Told:",
+   "told": [
+    "“Your physical came back normal.”",
+    "“Just deal with it if something new comes up.”",
+    "“This is probably just part of getting older.”"
+   ],
+   "box": "<p>Most chronic disease doesn’t begin the day you feel symptoms. We look across 160+ biomarkers to identify patterns, risks, and opportunities earlier—while you have more options to do something about them.</p>",
+   "image": null,
+   "bottom": "Don’t wait for symptoms to become your starting point.",
+   "buttons": [
+    {
+     "text": "Find out what's off",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "statement",
+   "slate": true,
+   "label": "What is a Longevity Clinic?",
+   "blocks": [
+    {
+     "tag": "h3",
+     "cls": "h1",
+     "html": "Traditional medicine asks, “Are you sick?” Longevity medicine asks, “What can we do now to help you stay healthier for longer?”"
+    }
+   ]
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "642px",
+   "heading": "Your health is changing before you can feel it.",
+   "body": "Many of the markers that shape long-term health can shift quietly for years. Looking across the systems together helps us identify patterns, understand risk, and see where there may be an opportunity to intervene earlier.",
+   "grid": [
+    "is-3"
+   ],
+   "gridKind": "causes",
+   "cards": [
+    {
+     "title": "Cardiovascular health",
+     "stat": null,
+     "body": "<p>Blood pressure and standard cholesterol only tell part of the story. A deeper look at lipids, inflammation, glucose regulation, family history, and other risk markers can provide a clearer picture of cardiovascular health.</p>",
+     "image": {
+      "src": "/images/site/6aac0092150dd46a44e55a2a_longevity_cardio.avif",
+      "alt": ""
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Body composition and strength",
+     "stat": null,
+     "body": "<p>Muscle and strength matter for more than appearance. Maintaining lean mass, strength, and healthy body composition becomes increasingly important to metabolic health, function, and independence as you age.</p>",
+     "image": null,
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Hormones and sexual health",
+     "stat": null,
+     "body": "<p>Hormones can influence sexual health, energy, muscle, body composition, mood, and <a href=\"#\">recovery</a>. We evaluate them as part of your larger health picture—not in isolation.</p>",
+     "image": {
+      "src": "/images/site/6aac009862f06ca1abc759aa_longevity_sex.avif",
+      "alt": ""
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Cognitive health",
+     "stat": null,
+     "body": "<p>Brain health doesn't begin when memory becomes a problem. <a href=\"#\">Metabolic health</a>, sleep, inflammation, cardiovascular factors, hormones, and other inputs can all influence how your brain functions over time.</p>",
+     "image": null,
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Metabolic health",
+     "stat": null,
+     "body": "<p>Insulin resistance and metabolic dysfunction can develop long before obvious symptoms. We look for changes in glucose regulation, insulin sensitivity, lipids, inflammation, and other metabolic markers.</p>",
+     "image": {
+      "src": "/images/site/6aac009f9e7444a25221e11c_longevity_metabolic.avif",
+      "alt": ""
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Energy, sleep, and recovery",
+     "stat": null,
+     "body": "<p>How you sleep, recover, and perform can reveal a lot about your overall health. <a href=\"/men/peptide-therapy\">Peptide therapy</a> may also support a personalized longevity strategy.</p>",
+     "image": null,
+     "accent": false,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "mist",
+   "label": "Why standard longevity care often falls short",
+   "heading": "Why your annual physical only tells part of the story",
+   "body": "Hormone therapy conversations changed over time as deeper analysis, updated approaches, and individualized treatment strategies evolved. Today, thoughtful hormone care considers far more than a single study or one generalized recommendation.",
+   "grid": [
+    "is-2"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "A routine physical is designed to identify current health concerns and screen for disease. Longevity medicine asks an additional question: What can we learn now that may help protect your health later?",
+     "big": "Screening for disease",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Being within a reference range doesn't always tell you how your health is changing. We look at patterns across multiple biomarkers and how those markers relate to one another.",
+     "big": "Beyond \"Normal\"",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Treatment should account for where you're headed—not just where your labs are today. Fertility, performance, body composition, sexual health, and long-term health all influence the plan.",
+     "big": "Your Goals Matter",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Cardiovascular, metabolic, hormonal, inflammatory, cognitive, and other health factors don't exist independently. Looking across systems helps your physician understand how the pieces fit together.",
+     "big": "The whole picture",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "compare",
+   "big": true,
+   "label": null,
+   "men": false,
+   "heading": "“Normal” results can still leave important questions unanswered.",
+   "headingMax": "814px",
+   "body": "Your labs can be “normal” and still not tell you where your health is headed. A longevity evaluation adds context—looking at your baseline, your trends, and how key systems are working together to help you make smarter decisions about your health now and for the years ahead.",
+   "bodyMax": "740px",
+   "heads": [
+    null,
+    null,
+    "Standard workup"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "Evaluation",
+     "160+ biomarkers",
+     "A handful of hormone markers"
+    ],
+    [
+     "Interpretation",
+     "Systems read together",
+     "Single markers in isolation"
+    ],
+    [
+     "Full-Body context",
+     "<a href=\"/articles/thyroid-supplements\">Thyroid</a>, cortisol, metabolism, inflammation, recovery",
+     "Rarely included"
+    ],
+    [
+     "Symptom Analysis",
+     "One connected pattern",
+     "Each symptom on its own"
+    ],
+    [
+     "Clinical guidance",
+     "Physician-led, physiology-driven",
+     "Minimal context"
+    ],
+    [
+     "care plan",
+     "Built around your physiology",
+     "Reactive and generalized"
+    ]
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "Why wait for something to feel wrong?",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "<p>You can feel strong, stay active, perform well, and walk out of your annual physical with no major concerns. That doesn’t mean there’s nothing worth knowing. Changes in cardiovascular risk, metabolic health, inflammation, <a href=\"#\">hormones</a>, and other biomarkers can begin long before they noticeably change how you feel. Longevity medicine gives you the opportunity to see more now—while the goal is still to protect your health, not simply respond to a problem.</p>"
+    },
+    {
+     "kind": "images",
+     "two": true,
+     "images": [
+      {
+       "src": "/images/site/6aaac55d1b3642542a839c2c_problem.avif",
+       "alt": ""
+      },
+      {
+       "src": "/images/site/6aaac56ae7feee7ea3d2f9c8_solution.avif",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "More data isn’t the goal. Better decisions are. Longevity medicine isn’t about chasing every biomarker. It’s about establishing your baseline, identifying meaningful patterns, and using that information with your physician to decide what deserves attention now, what should be tracked over time, and what doesn’t need intervention at all."
+    }
+   ]
+  },
+  {
+   "type": "voices",
+   "heading": "Why men start looking beyond the annual physical",
+   "headingMax": "504px",
+   "headingFull": true,
+   "body": "Usually, it isn’t one dramatic change. It’s a collection of smaller ones that become harder to explain away — or simply the realization that “nothing is wrong” isn’t the same as knowing where your health stands.",
+   "quotes": [
+    {
+     "quote": "<p>“I wasn’t looking for treatment. I wanted to understand where I actually stood and what I should be paying attention to.”</p>",
+     "name": "Derek, 48"
+    },
+    {
+     "quote": "<p>“Nothing was dramatically wrong. I just knew my recovery, energy, and body composition weren’t responding the way they used to.”</p>",
+     "name": "Mike, 52"
+    },
+    {
+     "quote": "<p>“My regular labs looked fine. I wanted a deeper picture rather than waiting until something became a problem.”</p>",
+     "name": "Richard, 56"
+    }
+   ]
+  },
+  {
+   "type": "process",
+   "heading": "Our Approach to Longevity Care",
+   "body": "",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Discovery Call",
+     "body": "Review your history, concerns, risk factors, and what you want to understand or improve.",
+     "image": {
+      "src": "/images/site/6a788bb4b2ad1918e63eb24f_discovery.avif",
+      "alt": ""
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Comprehensive Lab Evaluation",
+     "body": "Evaluate 160+ biomarkers across cardiovascular, metabolic, hormonal, inflammatory, and other key systems.",
+     "image": {
+      "src": "/images/site/6a20b2f6ac9881d327b05f7e_blood.avif",
+      "alt": "Blood sample for comprehensive lab testing, representing hormone, thyroid, cortisol, and metabolism evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Physician Review",
+     "body": "Your physician looks at your results in context to identify meaningful patterns and priorities.",
+     "image": {
+      "src": "/images/site/6a788c094ee5c637086b1f14_discussion.avif",
+      "alt": ""
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Personalized Plan",
+     "body": "Build a plan around what needs attention now, what to track, and what may not need intervention.",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing Monitoring",
+     "body": "Track changes over time and adjust your care as your health, results, and goals evolve.",
+     "image": {
+      "src": "/images/site/6a788c44282075cf34d4318d_monitoring.avif",
+      "alt": ""
+     }
+    }
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "xl",
+    "xl"
+   ],
+   "image": {
+    "src": "/images/site/6a20aca76c5eefd7bda386da_dr_rand.avif",
+    "alt": "RHM physician in medical scrubs, representing physician-led hormone optimization and personalized patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Physician-led longevity care built around your physiology",
+   "body": "RHM combines comprehensive testing with physician interpretation to understand how your hormones, metabolism, cardiovascular health, inflammation, and recovery work together.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "ctaBlock",
+   "slate": true,
+   "heading": "Start with a clearer picture of your health.",
+   "points": [
+    "Comprehensive, physician-led longevity evaluation",
+    "160+ biomarkers evaluated together",
+    "A plan built around your findings, goals, and long-term health"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6aac00f1aa5e2a298dc8b355_longevity_cta.avif",
+    "alt": ""
+   }
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "What is a longevity clinic?",
+     "a": "<p>A longevity clinic takes a broader view of the factors that can influence health and function over time. At RHM, that means evaluating relevant hormonal, metabolic, cardiovascular, inflammatory, and physiologic markers together, then using your history, symptoms, goals, and results to determine what deserves attention.</p>"
+    },
+    {
+     "q": "How is a longevity evaluation different from a regular physical?",
+     "a": "<p><a href=\"https://www.uspreventiveservicestaskforce.org/uspstf/\">A regular physical is essential for routine screening</a>, preventive care, and diagnosing medical problems. A longevity evaluation adds a deeper layer of testing and interpretation designed to establish a broader baseline and look at how multiple systems and risk factors interact over time. It is intended to complement, not replace, your primary medical care.</p>"
+    },
+    {
+     "q": "What does a longevity evaluation for men actually test?",
+     "a": "<p>The exact evaluation depends on the individual. RHM may evaluate more than 160 biomarkers spanning hormones, metabolic health, cardiovascular risk, inflammation, <a href=\"#\">thyroid function</a>, nutrient status, and other relevant areas. Your physician determines which results matter in the context of your history and goals.</p>"
+    },
+    {
+     "q": "Is a longevity clinic the same as testosterone therapy?",
+     "a": "<p>No. Testosterone is only one part of men's health. A longevity evaluation looks more broadly at your physiology before deciding whether any treatment is appropriate. If hormonal findings warrant additional evaluation or treatment, your physician can discuss those options with you.</p>"
+    },
+    {
+     "q": "Do I need symptoms or an existing diagnosis?",
+     "a": "<p>No. Some men seek a longevity evaluation because something has changed in how they feel or perform. Others simply want a more comprehensive understanding of their current health and a baseline they can follow over time.</p>"
+    },
+    {
+     "q": "How often should men get a longevity evaluation?",
+     "a": "<p>There is no single schedule that is appropriate for everyone. How often you should repeat testing or meet with your physician depends on your age, medical history, risk factors, initial findings, goals, and whether you are actively being treated or monitored.</p>"
+    }
+   ]
+  }
+ ]
+}

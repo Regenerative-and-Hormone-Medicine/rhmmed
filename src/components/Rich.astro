@@ -1,0 +1,9 @@
+---
+// Renders extracted rich text. Webflow rich text arrives with its own <p> tags, which can't nest inside a <p>,
+// so it gets a <div>; plain inline text keeps the <p> the source used (bare <p> has its own base size).
+interface Props { html: string | null | undefined; class?: string; style?: string; tag?: 'p' | 'div' | 'span' }
+const { html, class: cls, style, tag = 'p' } = Astro.props;
+const Tag = (html && /<(p|ul|ol|h\d)\b/.test(html) ? 'div' : tag) as 'p' | 'div' | 'span';
+---
+
+{html && <Tag class:list={['rich', cls]} style={style} set:html={html} />}

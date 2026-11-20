@@ -1,0 +1,16 @@
+---
+// /men/* and /women/* treatment pages, one per JSON file in src/data/treatments.
+import SectionPage from '../../layouts/SectionPage.astro';
+
+export function getStaticPaths() {
+  const files = import.meta.glob<{ default: any }>('../../data/treatments/*.json', { eager: true });
+  return Object.values(files).map(({ default: page }) => {
+    const [, group, slug] = page.path.split('/');
+    return { params: { group, slug }, props: { page } };
+  });
+}
+
+const { page } = Astro.props;
+---
+
+<SectionPage page={page} />

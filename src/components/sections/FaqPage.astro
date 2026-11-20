@@ -1,0 +1,57 @@
+---
+// Full FAQ list + black "Additional questions" box (source: .section.is-faq_n).
+import Plus from '../../icons/plus.svg';
+interface Props { heading: string; items: { q: string; a: string }[]; extra: { heading: string; body: string } | null }
+const p = Astro.props;
+---
+
+<section class="py-[3.75rem]">
+  <div class="container-site flex flex-col gap-[3.125rem] max-md:gap-4">
+    <h2 set:html={p.heading} />
+    <div class="flex flex-col items-start gap-8">
+      <div data-accordion class="flex w-full flex-col gap-2.5">
+        {p.items.map(({ q, a }) => (
+          <div class="acc cursor-pointer border-b border-bg-dark bg-white py-8 max-md:py-6" data-acc>
+            <button type="button" class="flex w-full items-center justify-between text-left" aria-expanded="false">
+              <span class="text-h5 max-md:!text-[1.25rem]" set:html={q} />
+              <span class="acc-icon flex size-10 shrink-0 items-center justify-center rounded-sm bg-bg-light transition-transform duration-300">
+                <Plus width="16" height="16" />
+              </span>
+            </button>
+            <div class="acc-panel grid grid-rows-[0fr] transition-[grid-template-rows] duration-300">
+              <div class="overflow-hidden">
+                <div class="h-7"></div>
+                <div class="rich text-body-m text-ink-70" set:html={a} />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {p.extra && (
+        <div class="flex flex-col gap-6 rounded-2xl bg-black p-8 text-white">
+          <p class="text-h5" set:html={p.extra.heading} />
+          <p class="text-body-m text-white/70 [&_a]:text-white [&_a]:underline" set:html={p.extra.body} />
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .acc[data-open] .acc-panel { grid-template-rows: 1fr; }
+  .acc[data-open] .acc-icon { transform: rotate(45deg); }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-accordion]').forEach((group) => {
+    if (group.dataset.bound) return;
+    group.dataset.bound = '1';
+    group.querySelectorAll<HTMLElement>('[data-acc]').forEach((item) => {
+      item.addEventListener('click', () => {
+        const open = !item.hasAttribute('data-open');
+        group.querySelectorAll('[data-acc]').forEach((o) => { o.removeAttribute('data-open'); o.querySelector('button')?.setAttribute('aria-expanded', 'false'); });
+        if (open) { item.setAttribute('data-open', ''); item.querySelector('button')?.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+  });
+</script>

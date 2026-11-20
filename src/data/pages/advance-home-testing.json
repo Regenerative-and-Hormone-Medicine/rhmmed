@@ -1,0 +1,217 @@
+{
+ "path": "/advance-home-testing",
+ "title": "At-Home Hormone Test Kit | RHM Med",
+ "footer": {
+  "minimal": true,
+  "blurb": "<em>Physician-led, personalized care.RHM's licensed medical providers look beyond numbers to uncover the root issues and provide you with personalized treatments.</em>"
+ },
+ "headerTheme": "dark",
+ "description": "Feeling like something is off even though you've been told everything looks “normal”? The RHM At-Home Hormone Testing Kit gives you access to key labs.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": true,
+   "headingInCard": true,
+   "crumb": null,
+   "current": "At-home hormone test kit",
+   "currentIsH1": true,
+   "heading": "Stop guessing about <span class=\"accent\">your hormones.</span> Get answers from home!",
+   "headingTag": "h2",
+   "cardLabel": null,
+   "body": "Feeling like something is off even though you’ve been told everything looks “normal”? The RHM At-Home Hormone Testing Kit gives you access to key labs without waiting for someone else to decide it’s time to look deeper. Your symptoms are information. Let’s find out what they’re telling us.",
+   "cta": {
+    "text": "Get Your At-Home Test Kit",
+    "href": "https://rhmmed.net/home-testing-checkout"
+   },
+   "image": {
+    "src": "/images/site/6ad8e9d6b448675e0b4894f6_test.avif",
+    "alt": ""
+   }
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "brown",
+   "label": "What’s inside?",
+   "heading": "Get a clearer picture of your health with our easy-to-use $227 at-home test kit.",
+   "body": "Your test measures these key health and hormone markers:",
+   "grid": [
+    "is-3"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "Helps assess kidney function and overall kidney health.",
+     "big": "Creatinine",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Estimates how well your kidneys are filtering your blood.",
+     "big": "eGFR",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Measures the percentage of your blood made up of red blood cells.",
+     "big": "Hematocrit",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Measures the oxygen-carrying protein in your red blood cells.",
+     "big": "Hemoglobin",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "A marker used to assess liver and bile duct health.",
+     "big": "GGT",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Measures a key hormone involved in reproductive, sexual, bone, and overall health in both women and men.",
+     "big": "Estradiol (E2)",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Measures total testosterone in the blood, an important hormone involved in energy, muscle mass, sexual health, and overall well-being.",
+     "big": "Total Testosterone",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Measures a key hormone involved in menstrual cycle regulation and reproductive health.",
+     "big": "Female Specific – Progesterone",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "A marker used to evaluate prostate health.",
+     "big": "Male Specific – Total PSA",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "carousel",
+   "heading": "Your Results Are Just the Beginning.",
+   "body": "Your labs can reveal patterns that may be contributing to how you feel—but identifying the problem is only the first step.",
+   "slides": [
+    {
+     "title": "Hormonal patterns that may be contributing to your symptoms",
+     "body": "",
+     "image": {
+      "src": "/images/site/6a22b0d0620dd06b2e7742d5_weight_loss_cta.avif",
+      "alt": "Doctor consulting with patient, representing personalized weight loss resistance care and hormone health evaluation"
+     }
+    },
+    {
+     "title": "Your metabolic health",
+     "body": "",
+     "image": {
+      "src": "/images/site/6abe3fc3338634b3c8fa9b17_card-peptide-therapy-vs-trt.avif",
+      "alt": ""
+     }
+    },
+    {
+     "title": "Kidney and liver function",
+     "body": "",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "title": "Important health markers that deserve a closer look",
+     "body": "",
+     "image": {
+      "src": "/images/site/6a788c094ee5c637086b1f14_discussion.avif",
+      "alt": ""
+     }
+    },
+    {
+     "title": "Whether your current treatment plan may need to be reevaluated",
+     "body": "",
+     "image": {
+      "src": "/images/site/6a20b33fca8b1a9c9eaec7a0_consultation.avif",
+      "alt": "Doctor consulting with patient, representing personalized hormone health consultation and lab result review"
+     }
+    },
+    {
+     "title": "What questions you should be asking next",
+     "body": "",
+     "image": {
+      "src": "/images/site/6abe1f8d37948f4c2daf48ca_physican-led.avif",
+      "alt": ""
+     }
+    }
+   ],
+   "after": {
+    "body": "The next step is doing something about it. RHM takes you beyond the numbers with personalized care designed to turn your results into a plan.",
+    "heading": "Ready to turn your results into a plan?",
+    "buttons": [
+     {
+      "text": "Start Your Care with RHM",
+      "href": "/scheduling"
+     }
+    ]
+   }
+  },
+  {
+   "type": "symptom",
+   "men": true,
+   "heading": "How it works:",
+   "body": "",
+   "toldLabel": "",
+   "told": [
+    "Order Your Kit: Purchase your $227 at-home testing kit.",
+    "Complete Your Testing: Follow the simple instructions to complete your lab testing.",
+    "Get Real Data: Your sample is processed and your results give us objective information about what may be happening beneath your symptoms.",
+    "Know What to Do Next: Use your results to make a more informed decision about your health and whether additional evaluation or treatment makes sense."
+   ],
+   "box": "",
+   "image": {
+    "src": "/images/site/6ad8f89d16fe5e37d0a35189_img.avif",
+    "alt": ""
+   },
+   "bottom": "Easy at-home collection. Real lab data. Clear next steps.",
+   "buttons": [
+    {
+     "text": "Get Your At-Home Test Kit",
+     "href": "https://rhmmed.net/home-testing-checkout"
+    }
+   ]
+  },
+  {
+   "type": "ctaBlock",
+   "slate": true,
+   "heading": "You know how you feel. Now get the data to help understand why.",
+   "points": [
+    "Easy at-home collection",
+    "Real lab data",
+    "Clear next steps"
+   ],
+   "buttons": [
+    {
+     "text": "Get Your At-Home Test Kit",
+     "href": "https://rhmmed.net/home-testing-checkout"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6ad8df4d46eb3e799ccebda9_rhm-at-home-test-kit-box.webp",
+    "alt": "RHM at-home hormone test kit box"
+   }
+  },
+  {
+   "type": "reviewsBare",
+   "pad": "is-paddings"
+  }
+ ]
+}

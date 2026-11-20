@@ -1,0 +1,57 @@
+---
+import Rich from '../Rich.astro';
+// Treatment hero (source: .section.is-women-drop-hero). Women: breadcrumb + heading above an image panel with a card.
+// Men: everything inside the card, uppercase semibold heading with a slate accent span.
+import Button from '../Button.astro';
+import type { Img, Btn } from './types';
+interface Props {
+  men: boolean; headingInCard: boolean; crumb: { label: string; href: string } | null; current: string; currentIsH1: boolean;
+  heading: string; headingTag: string; cardLabel: string | null; body: string; cta: Btn | null; image: Img;
+}
+const p = Astro.props;
+const H = (p.headingTag === 'h2' ? 'h2' : 'h1') as 'h1' | 'h2';
+const Current = p.currentIsH1 ? 'h1' : 'span';
+---
+
+<section class="bg-bg-light">
+  <div class="container-site flex flex-col gap-8 pt-[9.625rem] pb-20 max-md:pt-[7.5rem]">
+    {!p.headingInCard && (
+      <div class="relative z-[2] flex flex-col items-start gap-6 max-sm:w-full max-sm:items-stretch">
+        <p class="text-label">
+          {p.crumb && <a href={p.crumb.href} class="underline">{p.crumb.label} /</a>}
+          <span class="text-brown">{p.current}</span>
+        </p>
+        <H class="text-h2 max-w-[63.75rem] tracking-[-0.96px] normal-case" set:html={p.heading} />
+      </div>
+    )}
+    <div class:list={['relative overflow-hidden rounded-lg px-8 pb-8 max-lg:px-6 max-lg:pb-6 max-sm:px-0 max-sm:pt-80 max-sm:pb-0', p.headingInCard ? 'flex min-h-[43.625rem] pt-8' : 'pt-[11.875rem]']}>
+      <div class:list={['relative z-[1] flex max-w-[31.5rem] flex-col gap-6 rounded-lg bg-white p-6 max-md:max-w-none', p.headingInCard && 'justify-between']}>
+        {p.headingInCard && (
+          <div class="flex flex-col gap-6">
+            <div class="text-label inline-flex">
+              {p.crumb && <a href={p.crumb.href} class="underline">{p.crumb.label} /</a>}
+              <Current class="text-label text-brown">{p.current}</Current>
+            </div>
+            <H class="men-h1 text-[2.5rem] leading-[1.25] font-semibold tracking-[-0.05rem] uppercase" set:html={p.heading} />
+          </div>
+        )}
+        <div class="flex flex-col gap-8">
+          <div class="flex flex-col gap-4">
+            {p.cardLabel && <p class="text-label">{p.cardLabel}</p>}
+            <Rich class="text-body-m text-[#050514cc]" html={p.body} />
+          </div>
+          {p.cta && (
+            <div class="flex items-center gap-2.5 max-md:flex-wrap max-sm:flex-col max-sm:items-start">
+              <Button href={p.cta.href}>{p.cta.text}</Button>
+            </div>
+          )}
+        </div>
+      </div>
+      {p.image && <img src={p.image.src} alt={p.image.alt} class="absolute inset-0 z-0 size-full object-cover max-md:object-[100%_50%]" />}
+    </div>
+  </div>
+</section>
+
+<style>
+  .men-h1 :global(.accent) { color: #547a95; }
+</style>

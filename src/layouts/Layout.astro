@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Tracking from '../components/Tracking.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** 'light' for pages whose hero is a dark image (white header text until scrolled). */
+  headerTheme?: 'dark' | 'light';
+  /** Set false for pages without the site chrome (e.g. /style-guide). */
+  chrome?: boolean;
+  ogImage?: string;
+  ogType?: string;
+  footer?: { minimal?: boolean; blurb?: string } | null;
+}
+
+const { title, description, headerTheme = 'dark', chrome = true, ogImage, ogType = 'website', footer } = Astro.props;
+const canonical = new URL(Astro.url.pathname === '/' ? '' : Astro.url.pathname, 'https://www.rhmmed.com').href.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta property="og:type" content={ogType} />
+    {ogImage && <meta property="og:image" content={new URL(ogImage, 'https://www.rhmmed.com').href} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="google-site-verification" content="ri7Lby20xPl667ZCCyisSddlvqHr7EZ4EB5PSlt6xlo" />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-dark.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-light.png" media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/GeistVF.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="generator" content={Astro.generator} />
+    <Tracking />
+    <script is:inline>
+      // Remember the previous page for form submissions (live site: last_page in sessionStorage).
+      try { var c = location.href, p = sessionStorage.getItem('current_page'); if (p && p !== c) sessionStorage.setItem('last_page', p); sessionStorage.setItem('current_page', c); } catch (e) {}
+    </script>
+  </head>
+  <body>
+    {chrome && <Header theme={headerTheme} />}
+    <main>
+      <slot />
+    </main>
+    {chrome && <Footer minimal={footer?.minimal} blurb={footer?.blurb} />}
+  </body>
+</html>

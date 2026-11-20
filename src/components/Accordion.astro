@@ -1,0 +1,48 @@
+---
+// Grey rounded accordion (source: .faq-wrap). One open at a time within a [data-accordion] group.
+import Plus from '../icons/plus.svg';
+interface Props { items: { q: string; a: string }[]; class?: string }
+const { items, class: cls = '' } = Astro.props;
+---
+
+<div data-accordion class:list={['flex flex-col gap-2.5', cls]}>
+  {items.map(({ q, a }) => (
+    <div class="acc cursor-pointer rounded-md bg-bg-light p-8" data-acc>
+      <button type="button" class="flex w-full items-center justify-between text-left" aria-expanded="false">
+        <span class="text-h5" set:html={q} />
+        <span class="acc-icon flex items-center justify-center rounded-sm transition-transform duration-300">
+          <Plus width="16" height="16" />
+        </span>
+      </button>
+      <div class="acc-panel grid grid-rows-[0fr] transition-[grid-template-rows] duration-300">
+        <div class="overflow-hidden">
+          <div class="h-7"></div>
+          <p class="text-body-m text-ink-70" set:html={a} />
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .acc[data-open] .acc-panel { grid-template-rows: 1fr; }
+  .acc[data-open] .acc-icon { transform: rotate(45deg); }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-accordion]').forEach((group) => {
+    group.querySelectorAll<HTMLElement>('[data-acc]').forEach((item) => {
+      item.addEventListener('click', () => {
+        const open = !item.hasAttribute('data-open');
+        group.querySelectorAll('[data-acc]').forEach((o) => {
+          o.removeAttribute('data-open');
+          o.querySelector('button')?.setAttribute('aria-expanded', 'false');
+        });
+        if (open) {
+          item.setAttribute('data-open', '');
+          item.querySelector('button')?.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  });
+</script>

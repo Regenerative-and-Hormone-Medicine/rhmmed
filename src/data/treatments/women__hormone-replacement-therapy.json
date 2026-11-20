@@ -1,0 +1,493 @@
+{
+ "path": "/women/hormone-replacement-therapy",
+ "title": "Hormone Replacement Therapy for Women | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Hormone replacement therapy for women should be careful, monitored, and personalized to help improve sleep, mood, energy, and symptoms.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": false,
+   "headingInCard": false,
+   "crumb": {
+    "label": "Women",
+    "href": "/women"
+   },
+   "current": "Hormone Replacement Therapy",
+   "currentIsH1": false,
+   "heading": "Hormone replacement therapy designed around your symptoms, physiology, &amp; long -term health.",
+   "headingTag": "h1",
+   "cardLabel": "Hormone Replacement Therapy",
+   "body": "At RHM, HRT starts with your symptoms, labs, medical history, risk profile, and long-term health, so you can understand whether hormone therapy is right for you.",
+   "cta": {
+    "text": "Book Free VIP Call",
+    "href": "/scheduling"
+   },
+   "image": {
+    "src": "/images/site/6a2ac41510723e79b6e1e265_hrt.avif",
+    "alt": "Doctor consulting with patient, representing hormone replacement therapy, women’s health, and personalized HRT care"
+   }
+  },
+  {
+   "type": "symptom",
+   "men": false,
+   "heading": "You want clarity before making a decision.",
+   "body": "You may have heard completely different things about HRT from doctors, friends, social media, articles, or past appointments.",
+   "toldLabel": "Common Concerns:",
+   "told": [
+    "“Is HRT safe for me?”",
+    "“Am I too young or too old?”",
+    "“Will I be pressured into treatment?”",
+    "\"How do I know what is right for my body?\""
+   ],
+   "box": "<p>Certain peptides are being studied for their potential role in:</p><ul><li>Recovery and repair signaling</li><li>Sleep quality and resilience</li><li>Metabolic function</li><li>Body composition support</li><li>Inflammation modulation</li><li>Cellular communication and healing pathways</li></ul><p>But peptide therapy should begin with physiology — not marketing.</p>",
+   "image": null,
+   "bottom": "You deserve more than fear, pressure, or generic reassurance.",
+   "buttons": [
+    {
+     "text": "Book free vip call",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "statement",
+   "slate": false,
+   "label": "What is hormone replacement therapy?",
+   "blocks": [
+    {
+     "tag": "h3",
+     "cls": "h1",
+     "html": "HRT helps restore hormones your body once produced in greater amounts, but thoughtful care is about understanding when support is appropriate, how your body is functioning, and what approach best fits your long term health."
+    }
+   ]
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "814px",
+   "heading": "Hormone changes can affect more than hot flashes.",
+   "body": "Sleep, mood, energy, focus, libido, recovery, and body composition can shift together. That does not always mean hormone replacement therapy is the answer, but it may be worth evaluating.",
+   "grid": [],
+   "gridKind": "signs",
+   "cards": [
+    {
+     "title": "Hot Flashes &amp; Night Sweats",
+     "stat": null,
+     "body": "Sudden heat, sweating, disrupted sleep, or waking up uncomfortable at night",
+     "image": {
+      "src": "/images/site/6a2ac2662fdfd59d406fe1b6_hrt_night_sweats.avif",
+      "alt": "Woman experiencing hot flashes, representing hormone replacement therapy support for night sweats and menopause symptoms"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Sleep &amp; Recovery",
+     "stat": null,
+     "body": "Trouble staying asleep, waking unrefreshed, slower recovery, lower resilience",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Brain Fog &amp; Mood",
+     "stat": null,
+     "body": "Lower focus, mood changes, irritability, anxiety, or feeling less mentally sharp",
+     "image": {
+      "src": "/images/site/6a2ac266474e9dae7f606bc9_hrt_hormones.avif",
+      "alt": "Woman resting at home, representing brain fog, mood changes, irritability, and hormone imbalance"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Libido &amp; Vaginal Health",
+     "stat": null,
+     "body": "Lower desire, vaginal dryness, discomfort, or changes in <a href=\"/women/sexual-health\">sexual response</a>",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Metabolism &amp; Body Composition",
+     "stat": null,
+     "body": "<a href=\"/women/weight-loss-resistance\">Weight shifts</a>, reduced muscle tone, or feeling like your body responds differently",
+     "image": {
+      "src": "/images/site/6a2ac2661870e9c4ab3067d9_hrt_weight.avif",
+      "alt": "Woman holding her abdomen, representing metabolism changes, body composition, and hormone health"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Bone &amp; Long-Term Health",
+     "stat": null,
+     "body": "Bone density concerns, joint discomfort, or interest in long-term physiologic support",
+     "image": null,
+     "accent": true,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "blush",
+   "label": "Why the conversation around HRT changed",
+   "heading": "Much of the fear around HRT came from an older conversation that lacked important nuance.",
+   "body": "Hormone therapy conversations changed over time as deeper analysis, updated approaches, and individualized treatment strategies evolved. Today, thoughtful hormone care considers far more than a single study or one generalized recommendation.",
+   "grid": [
+    "is-3"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "<p><a href=\"/women/perimenopause\">Perimenopause</a>, <a href=\"/women/menopause\">menopause</a>, and <a href=\"/women/postmenopause\">postmenopause</a> each change the HRT conversation.</p>",
+     "big": "Timing &amp; life stage",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "The right hormone and formulation depend on symptoms, labs, history, and goals.",
+     "big": "Hormone type &amp; formulation",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Oral, transdermal, vaginal, and other methods can affect how treatment works.",
+     "big": "Delivery method &amp; absorption",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Cancer history, clotting risk, heart health, migraines, and medications all matter.",
+     "big": "Personal medical history",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "<p>Hormone replacement therapy should account for metabolism, <a href=\"/women/thyroid\">thyroid function</a>, inflammation, and recovery.</p>",
+     "big": "Risk profile &amp; physiology",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Symptoms, labs, and response over time should guide treatment changes.",
+     "big": "Ongoing monitoring &amp; adjustment",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "compare",
+   "big": true,
+   "label": null,
+   "men": false,
+   "heading": "Your labs can look normal while your physiology keeps changing.",
+   "headingMax": "814px",
+   "body": "",
+   "bodyMax": null,
+   "heads": [
+    null,
+    null,
+    "Traditional labs"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "Evaluation",
+     "160+ biomarkers",
+     "A handful of hormone markers"
+    ],
+    [
+     "Interpretation",
+     "Systems read together",
+     "Single snapshots in isolation"
+    ],
+    [
+     "Full-Body context",
+     "Thyroid, cortisol, metabolism, inflammation",
+     "Rarely included"
+    ],
+    [
+     "Symptom Analysis",
+     "Connected pattern",
+     "Each symptom separately"
+    ],
+    [
+     "Clinical guidance",
+     "Physician-led, physiology-driven",
+     "Minimal context provided"
+    ],
+    [
+     "core plan",
+     "Built around your physiology",
+     "Reactive and generalized"
+    ]
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "What often gets missed",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "Women are often left choosing between dismissal and oversimplified answers."
+    },
+    {
+     "kind": "images",
+     "two": false,
+     "images": [
+      {
+       "src": "/images/site/6a2ac26674776ab17c9fa71e_hrt_first.avif",
+       "alt": "Woman sitting thoughtfully at home, representing overlooked hormone symptoms and women’s health concerns"
+      },
+      {
+       "src": "/images/site/6a2ac2666d4b2a087a26e422_hrt_second.avif",
+       "alt": "Doctor consulting with patient, representing thoughtful hormone therapy evaluation and personalized women’s health care"
+      },
+      {
+       "src": "/images/site/6a2ac26698bed35ae8b227f1_hrt_third.avif",
+       "alt": "Woman stretching at home, representing hormone balance, improved wellbeing, and long-term women’s health support"
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "<p>At RHM, hormone therapy is evaluated thoughtfully — with attention to symptoms, labs, medical history, lifestyle, and long term health.</p>"
+    }
+   ]
+  },
+  {
+   "type": "voices",
+   "heading": "Why the decision starts to feel more urgent",
+   "headingMax": "562px",
+   "headingFull": false,
+   "body": "Over time, vague answers become harder to accept when your sleep, mood, energy, libido, and body all feel different.",
+   "quotes": [
+    {
+     "quote": "<p>“I didn’t want to be pushed into hormones. I wanted someone to explain my options clearly.” </p>",
+     "name": "Madeleine, 63"
+    },
+    {
+     "quote": "<p>“I kept hearing different opinions and still didn’t know what applied to me.” </p>",
+     "name": "Kathryn, 52"
+    },
+    {
+     "quote": "<p>“The biggest relief was realizing this could be a careful decision, not a rushed one.”</p>",
+     "name": "Ema, 46"
+    }
+   ]
+  },
+  {
+   "type": "process",
+   "heading": "How RHM Evaluates HRT",
+   "body": "",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Discovery Call",
+     "body": "We discuss your symptoms, history, goals, and concerns about HRT.",
+     "image": {
+      "src": "/images/site/6a20a04ac0ca93a2d3d711a4_step_.avif",
+      "alt": "Woman on a discovery call, representing hormone health consultation and symptom evaluation"
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Comprehensive Lab Evaluation",
+     "body": "We test 160+ biomarkers across hormones, thyroid, cortisol, metabolism, and inflammation.",
+     "image": {
+      "src": "/images/site/6a20b2f6ac9881d327b05f7e_blood.avif",
+      "alt": "Blood sample for comprehensive lab testing, representing hormone, thyroid, cortisol, and metabolism evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Physician Review",
+     "body": "An RHM physician reviews your labs, symptoms, medical history, and risk profile together.",
+     "image": {
+      "src": "/images/site/6a20b33fca8b1a9c9eaec7a0_consultation.avif",
+      "alt": "Doctor consulting with patient, representing personalized hormone health consultation and lab result review"
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Personalized care plan",
+     "body": "If HRT is appropriate, your plan is built around your body, goals, and long-term health.",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing monitoring",
+     "body": "We track symptoms, labs, side effects, and progress so care can adjust over time.",
+     "image": {
+      "src": "/images/site/6a20b4087999ef3dd1181026_monitoring.avif",
+      "alt": "Woman on a virtual follow-up call, representing ongoing hormone care monitoring and wellness support"
+     }
+    }
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "base",
+    "none"
+   ],
+   "image": {
+    "src": "/images/site/6a20aca76c5eefd7bda386da_dr_rand.avif",
+    "alt": "RHM physician in medical scrubs, representing physician-led hormone optimization and personalized patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Physician-led HRT care built around your body, not a protocol.",
+   "body": "Women often come to RHM after feeling either dismissed or rushed. We take a more careful approach — with evaluation, risk discussion, personalization, and ongoing monitoring.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Research & Insights on HRT",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/perimenopause-brain-fog",
+     "title": "Perimenopause Brain Fog: Why It Happens and What Actually Helps",
+     "summary": "Perimenopause brain fog is real, common, and usually temporary — here's why it happens and what a full hormone evaluation can do about it.",
+     "category": "Perimenopause",
+     "date": "Aug 20, 2026",
+     "image": {
+      "src": "/images/site/6abe40c53170a825ee25a7ff_card-perimenopause-brain-fog-32.webp",
+      "alt": "Perimenopause Brain Fog: Why It Happens and What Actually Helps"
+     }
+    },
+    {
+     "href": "/articles/perimenopause-weight-gain",
+     "title": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)",
+     "summary": "Perimenopause weight gain isn't about willpower. See the hormonal, metabolic, and physiological causes — and what individualized care can do.",
+     "category": "Perimenopause",
+     "date": "Aug 28, 2026",
+     "image": {
+      "src": "/images/site/6abe3fc3fcb1e77cb748ace7_card-perimenopause-weight-gain.avif",
+      "alt": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)"
+     }
+    },
+    {
+     "href": "/articles/peptide-therapy-vs-trt",
+     "title": "Peptide Therapy vs TRT: Which One Do You Need?",
+     "summary": "Peptide therapy and TRT work differently and solve different problems. See how RHM decides which fits your labs, symptoms, and goals — not a template.",
+     "category": "Peptides",
+     "date": "Aug 27, 2026",
+     "image": {
+      "src": "/images/site/6abe3fc3338634b3c8fa9b17_card-peptide-therapy-vs-trt.avif",
+      "alt": "Peptide Therapy vs TRT: Which One Do You Need?"
+     }
+    }
+   ]
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start with a careful HRT decision conversation.",
+   "points": [
+    "Physician-led hormone replacement therapy evaluation",
+    "160+ biomarkers evaluated",
+    "Symptoms, labs, medical history, risk profile, and goals reviewed together"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a2ac266ddb0f5efc6e7786e_hrt_cta.avif",
+    "alt": "Doctor speaking with patient, representing careful hormone replacement therapy decision-making and personalized care"
+   }
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "Will I be pushed into hormone replacement therapy?",
+     "a": "No. HRT is not appropriate for everyone. Recommendations are based on your symptoms, labs, medical history, risk factors, goals, and comfort level. The purpose of the consultation is to help you understand whether hormone therapy makes sense — not to push you into treatment."
+    },
+    {
+     "q": "Is HRT safe?",
+     "a": "<p>HRT can be safe and appropriate for many women when it is prescribed carefully, monitored properly, and matched to the right patient. Safety depends on your age, time since menopause, medical history, delivery method, dosage, personal risk factors, and whether you have any contraindications.</p>"
+    },
+    {
+     "q": "What about the Women’s Health Initiative study?",
+     "a": "<p>The <a href=\"#\">Women’s Health Initiative study</a> shaped much of the fear around HRT, but its findings were often oversimplified. The study included older women, many years past menopause, and used hormone types and delivery methods that do not always reflect how modern HRT is approached today. Current guidance is more nuanced and looks at timing, formulation, delivery method, and individual risk.</p>"
+    },
+    {
+     "q": "Am I too young or too old for HRT?",
+     "a": "<p>Age matters, but it is not the only factor. Some women consider HRT during perimenopause, while others consider it around menopause or after menopause. The decision depends on symptoms, menstrual stage, risk profile, medical history, and how long it has been since menopause.</p>"
+    },
+    {
+     "q": "What is the difference between HRT and bioidentical HRT?",
+     "a": "<p>HRT is the broader category of hormone therapy. Bioidentical HRT refers to hormones that are chemically identical to the hormones your body naturally produces. Some bioidentical options are FDA-approved, while others are compounded. The right option depends on your symptoms, labs, safety profile, and treatment goals.</p>"
+    },
+    {
+     "q": "Will I be monitored carefully?",
+     "a": "<p>Yes. HRT should not be a “set it and forget it” prescription. Careful monitoring may include symptom tracking, lab review, dose adjustments, side-effect checks, and ongoing evaluation of cardiovascular, metabolic, breast, uterine, and overall health risk factors where relevant.</p>"
+    },
+    {
+     "q": "Does everyone with symptoms need HRT?",
+     "a": "<p>No. Symptoms can suggest that HRT is worth evaluating, but they do not automatically mean HRT is the right answer. Some women may benefit from non-hormonal options, thyroid support, metabolic care, lifestyle changes, targeted supplementation, or other interventions.</p>"
+    },
+    {
+     "q": "How long does HRT take to work?",
+     "a": "<p>Some women notice changes in hot flashes, night sweats, or sleep within a few weeks. Other symptoms, such as mood, brain fog, libido, joint discomfort, body composition, or energy, may take longer. Timing depends on the symptom, dose, delivery method, and how your body responds.</p>"
+    },
+    {
+     "q": "What if HRT is not right for me?",
+     "a": "<p>If HRT is not right for you, there are still options. Care may include non-hormonal medications, targeted supplementation, metabolic support, thyroid evaluation, sleep support, stress physiology work, sexual health care, nutrition, strength training, and other personalized interventions.</p>"
+    },
+    {
+     "q": "What changes when hormones are properly addressed?",
+     "a": "<p>When hormones are properly addressed, women may notice improvements in sleep, hot flashes, night sweats, mood stability, brain fog, libido, vaginal comfort, energy, recovery, and overall resilience. The goal is not just to raise hormone levels — it is to support the body in a way that is appropriate, safe, and monitored.</p>"
+    }
+   ]
+  }
+ ]
+}

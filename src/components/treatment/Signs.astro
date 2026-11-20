@@ -1,0 +1,65 @@
+---
+import Rich from '../Rich.astro';
+// Symptom cards grid (source: .section.is-signs_w / .is-signs). Women: 3-col signs-grid with photo cards;
+// men: causes-grid is-3 with white / mist cards.
+import Button from '../Button.astro';
+import { accent, type Btn, type Img, type Theme } from './types';
+interface Card { title: string; stat?: string | null; body: string; image: Img; accent: boolean; mist: boolean }
+interface Props {
+  theme: Theme; grey: boolean; heading: string; body: string; grid: string[]; gridKind: 'signs' | 'causes'; cards: Card[];
+  bottom: string | null; bottomButtons: Btn[]; headMax?: string | null;
+}
+const p = Astro.props;
+const grid = p.gridKind === 'causes'
+  ? // the full-row callout bar (span 3) keeps a third implicit column at ≤991 on the source
+    `grid grid-cols-3 gap-6 max-md:flex max-md:flex-col ${p.bottom ? '' : 'max-lg:grid-cols-2'}`
+  : 'grid grid-cols-3 gap-4 max-md:grid-cols-1';
+---
+
+<section class:list={['py-[8.75rem] max-md:py-20', p.grey ? 'bg-bg-light' : 'bg-sky']}>
+  <div class="container-site flex flex-col items-center gap-[6.25rem] max-md:gap-16">
+    <div class="flex w-full flex-col items-center gap-8 text-center" style={`max-width:${p.headMax ?? (p.theme === 'men' ? '642px' : '704px')}`}>
+      <h2 set:html={p.heading} />
+      <Rich class="text-body-l max-w-[38.125rem] text-ink-70" html={p.body} />
+    </div>
+    <div class:list={[grid, 'w-full']}>
+      {p.cards.map((c) => (
+        <div
+          class:list={[
+            'sign group relative flex min-h-[27.5rem] flex-col justify-between overflow-hidden rounded-[24px] p-8 transition-[color,background-color] duration-400 max-sm:min-h-80 max-sm:p-6',
+            c.image ? 'text-white' : c.mist ? 'bg-mist text-black' : 'bg-white',
+            !c.image && (c.accent ? 'hover:bg-brown hover:text-white' : 'hover:bg-slate hover:text-white'),
+          ]}
+        >
+          <div class="relative z-[2] flex h-full flex-col justify-between">
+            <h3 class="rich text-h4 capitalize text-inherit" set:html={c.title} />
+            <div class="flex flex-col items-start gap-6 max-sm:w-full max-sm:items-stretch">
+              {c.stat ? (
+                <p class="flex flex-col items-start gap-6"><span class="text-h1 text-inherit">{c.stat}</span><span class="text-body-m" set:html={c.body} /></p>
+              ) : (
+                <div class="rich text-body-m" set:html={c.body} />
+              )}
+            </div>
+          </div>
+          {c.image && <img src={c.image.src} alt={c.image.alt} class="pointer-events-none absolute inset-0 size-full object-cover" loading="lazy" />}
+          {c.image && <div class="sign-shade pointer-events-none absolute inset-0 z-[1] bg-black/40 mix-blend-multiply transition-colors duration-400" />}
+        </div>
+      ))}
+      {p.bottom && (
+        <div class:list={['col-span-full flex w-full items-center justify-between rounded-full py-4 pr-4 pl-8 text-white max-lg:flex-col max-lg:items-start max-lg:gap-4 max-lg:rounded-[2rem] max-lg:pr-8 max-sm:rounded-2xl', accent(p.theme)]}>
+          <Rich class="text-body-m max-w-[54ch]" html={p.bottom} />
+          <div class="flex gap-2.5 max-sm:w-full max-sm:flex-col max-sm:items-start">
+            {p.bottomButtons.map((b) => <Button href={b.href}>{b.text}</Button>)}
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (min-width: 991px) {
+    .sign:hover .sign-shade { background-color: rgba(122, 75, 79, 0.7); }
+  }
+  .sign :global(h3), .sign :global(p) { color: inherit; transition: color .4s ease-out; }
+</style>

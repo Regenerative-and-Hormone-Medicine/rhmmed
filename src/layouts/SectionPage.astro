@@ -1,0 +1,80 @@
+---
+// Renders any page extracted to JSON (treatments, hubs, info pages) as an ordered list of typed sections.
+import Layout from './Layout.astro';
+import Hero from '../components/treatment/Hero.astro';
+import Symptom from '../components/treatment/Symptom.astro';
+import Statement from '../components/treatment/Statement.astro';
+import Signs from '../components/treatment/Signs.astro';
+import Standard from '../components/treatment/Standard.astro';
+import Compare from '../components/treatment/Compare.astro';
+import Missions from '../components/treatment/Missions.astro';
+import Voices from '../components/treatment/Voices.astro';
+import Process from '../components/treatment/Process.astro';
+import Why from '../components/treatment/Why.astro';
+import CtaBlock from '../components/treatment/CtaBlock.astro';
+import Faq from '../components/treatment/Faq.astro';
+import Reviews from '../components/sections/Reviews.astro';
+import Insights from '../components/sections/Insights.astro';
+import HubHero from '../components/treatment/HubHero.astro';
+import Hormones from '../components/treatment/Hormones.astro';
+import WhyWork from '../components/sections/WhyWork.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+import PageHero from '../components/sections/PageHero.astro';
+import FaqPage from '../components/sections/FaqPage.astro';
+import Legal from '../components/sections/Legal.astro';
+import Locations from '../components/sections/Locations.astro';
+import Team from '../components/sections/Team.astro';
+import Access from '../components/sections/Access.astro';
+import Preparation from '../components/sections/Preparation.astro';
+import BookHero from '../components/sections/BookHero.astro';
+import BookSteps from '../components/sections/BookSteps.astro';
+import Carousel from '../components/sections/Carousel.astro';
+import TelehealthCta from '../components/sections/TelehealthCta.astro';
+import type { Theme } from '../components/treatment/types';
+
+interface Props { page: { path: string; title: string; description: string; sections: any[]; footer?: any } }
+const { page } = Astro.props;
+const theme: Theme = page.path.startsWith('/men') ? 'men' : 'women';
+const heroImage = page.sections.find((s) => s.type === 'hero' || s.type === 'hubHero')?.image?.src;
+// Per-page header variant from the source (white text only where the live page sets it).
+const headerTheme = page.headerTheme ?? 'dark';
+---
+
+<Layout title={page.title} description={page.description} ogImage={heroImage} headerTheme={headerTheme} footer={page.footer}>
+  {page.sections.map((s) => {
+    switch (s.type) {
+      case 'hero': return <Hero {...s} />;
+      case 'hubHero': return <HubHero {...s} />;
+      case 'pageHero': return <PageHero {...s} />;
+      case 'faqPage': return <FaqPage {...s} />;
+      case 'legalHero': return <Legal heading={s.heading} />;
+      case 'legal': return <Legal html={s.html} />;
+      case 'locations': return <Locations {...s} />;
+      case 'team': return <Team {...s} />;
+      case 'access': return <Access {...s} />;
+      case 'preparation': return <Preparation {...s} />;
+      case 'bookHero': return <BookHero {...s} />;
+      case 'bookSteps': return <BookSteps {...s} />;
+      case 'carousel': return <Carousel heading={s.heading} body={s.body} slides={s.slides.map((x: any) => ({ title: x.title, body: x.body, image: x.image?.src, alt: x.image?.alt }))} after={s.after} />;
+      case 'reviewsBare': return <Reviews bare pad="py-32" />;
+      case 'telehealth': return <TelehealthCta label={s.label} heading={s.heading} body={s.body} image={s.image?.src} alt={s.image?.alt} buttons={s.buttons} />;
+      case 'hormones': return <Hormones {...s} />;
+      case 'whyWork': return <WhyWork {...s} />;
+      case 'finalCta': return <FinalCta heading={s.heading} points={s.points} topPad={s.topPad} />;
+      case 'symptom': return <Symptom theme={theme} {...s} />;
+      case 'statement': return <Statement {...s} />;
+      case 'signs': return <Signs theme={theme} {...s} />;
+      case 'standard': return <Standard {...s} />;
+      case 'compare': return <Compare {...s} />;
+      case 'missions': return <Missions {...s} />;
+      case 'voices': return <Voices {...s} />;
+      case 'process': return <Process {...s} />;
+      case 'why': return <Why {...s} />;
+      case 'reviews': return <Reviews heading={s.heading || undefined} body={s.body || undefined} />;
+      case 'insights': return <Insights heading={s.heading} button={s.button} cards={s.cards} tone={s.men ? 'mist' : 'grey'} />;
+      case 'ctaBlock': return <CtaBlock {...s} />;
+      case 'faq': return <Faq {...s} />;
+      default: return null;
+    }
+  })}
+</Layout>

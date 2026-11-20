@@ -1,0 +1,47 @@
+{
+ "path": "/articles/lupus-rash-vs-rosacea",
+ "title": "Lupus Rash vs. Rosacea: How to Tell the Difference",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Lupus rash vs. rosacea: learn the key differences in appearance, triggers, symptoms, and diagnosis—and when to see a doctor.",
+ "sections": [
+  {
+   "type": "articleHero",
+   "imageAlt": "Woman checking her cheek skin in mirror",
+   "category": "Inflamation"
+  },
+  {
+   "type": "articleBody"
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start with clarity before starting a protocol.",
+   "points": [
+    "Personalized, physician-led evaluation",
+    "Advanced testing and clear next steps",
+    "Careful sourcing and medical supervision"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a3067a58cb125b7fb9b4818_peptide_cta.avif",
+    "alt": "Woman sitting in gym after workout, representing personalized peptide therapy, recovery, and wellness care"
+   }
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Related Articles",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": []
+  }
+ ]
+}

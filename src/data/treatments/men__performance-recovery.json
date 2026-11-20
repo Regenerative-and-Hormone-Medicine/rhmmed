@@ -1,0 +1,486 @@
+{
+ "path": "/men/performance-recovery",
+ "title": "TRT Clinic Near Me for Men | Recover & Perform with RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Searching for a TRT clinic near you? RHM is physician-led — we evaluate 160+ biomarkers first, and consider TRT only if it fits. Book a consultation.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": true,
+   "headingInCard": true,
+   "crumb": {
+    "label": "Men",
+    "href": "/men"
+   },
+   "current": "Physician-Led TRT Clinic Near You",
+   "currentIsH1": true,
+   "heading": "YOUR BODY USED TO BOUNCE BACK. <span class=\"accent\">NOW IT DOESN'T.</span>",
+   "headingTag": "h2",
+   "cardLabel": null,
+   "body": "You're still showing up, but your body no longer rebuilds the way it used to. RHM evaluates your hormones, metabolism, sleep, stress, inflammation, and recovery together — then builds a plan around what we find. TRT is considered only when it fits your physiology.",
+   "cta": {
+    "text": "Book Free VIP Call",
+    "href": "/scheduling"
+   },
+   "image": {
+    "src": "/images/site/6a7660f83522274613e2a2f0_hero.avif",
+    "alt": ""
+   }
+  },
+  {
+   "type": "symptom",
+   "men": true,
+   "heading": "What you're experiencing isn't random.",
+   "body": "You're still getting everything done. Work is handled. People still rely on you. But sleep no longer restores you, stress lands harder, and the same effort produces less than it used to.",
+   "toldLabel": "What You've Been Told:",
+   "told": [
+    "\"You just need more sleep.\"",
+    "\"Work is just a lot right now, this will pass\"",
+    "\"You're just getting older.\""
+   ],
+   "box": "<p>You've been pushing through. But with time passing, your energy still doesn’t return. It’s not a discipline problem. Hormones, metabolism, sleep, stress, &amp; inflammation shift together, making effort not enough to restore the baseline you used to have.</p>",
+   "image": null,
+   "bottom": "Feeling physically older than you actually are is not something you should ignore forever.",
+   "buttons": [
+    {
+     "text": "Book free vip call",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "statement",
+   "slate": true,
+   "label": "Redefining Performance and Recovery",
+   "blocks": [
+    {
+     "tag": "h3",
+     "cls": "h1",
+     "html": "Performance and recovery are the output of hormones, metabolism, sleep, stress, inflammation, and body composition working together."
+    }
+   ]
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "642px",
+   "heading": "Performance and recovery problems rarely happen one at a time",
+   "body": "Changes in energy, sleep, body composition, stress, hormones, and recovery often overlap — which is why the pattern can feel difficult to explain.",
+   "grid": [
+    "is-3"
+   ],
+   "gridKind": "causes",
+   "cards": [
+    {
+     "title": "Sleep &amp; Reset",
+     "stat": null,
+     "body": "<p>You sleep, but do not wake up rebuilt. </p><p>‍</p><p>Your mind stays active while your body never fully resets.</p>",
+     "image": {
+      "src": "/images/site/6a78782ce8f03fbc25941657_sleep.avif",
+      "alt": ""
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Stress &amp; Mood",
+     "stat": null,
+     "body": "<p>Your tolerance is lower. Pressure that used to roll off you now shows up as irritability, tension, or exhaustion.</p>",
+     "image": null,
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Training &amp; Recovery",
+     "stat": null,
+     "body": "<p>Workouts take more out of you and recovery slows. <a href=\"/men/peptide-therapy\">Peptide therapy</a> may also be considered as part of a personalized recovery strategy.</p>",
+     "image": {
+      "src": "/images/site/6a7878f1962c0290fc6ae685_recover.avif",
+      "alt": ""
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Body Composition",
+     "stat": null,
+     "body": "<p>Muscle becomes harder to maintain while fat — especially around the midsection — becomes easier to gain.</p>",
+     "image": null,
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Energy &amp; Focus",
+     "stat": null,
+     "body": "<p>Energy that used to stay steady now arrives in crashes. Caffeine gets you moving, but never fully restores your baseline.</p>",
+     "image": {
+      "src": "/images/site/6a8f5c7be226db880b0786ad_mens-dropdown--hormone-receptors.avif",
+      "alt": ""
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Libido &amp; Drive",
+     "stat": null,
+     "body": "<p>Libido, motivation, and physical drive feel noticeably flatter, even though nothing obvious has changed.</p>",
+     "image": null,
+     "accent": false,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "mist",
+   "label": "Why standard care often falls short",
+   "heading": "You're not losing discipline. The system underneath your performance just isn't being evaluated together.",
+   "body": "",
+   "grid": [
+    "is-3"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "<p>A standard panel may check only <a href=\"#\">a handful of hormone markers</a>, leaving sleep, metabolism, cortisol, thyroid, and inflammation out.</p>",
+     "big": "Undertested",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "<p>Fatigue, low libido, weight gain, poor sleep, and slow recovery are often treated separately rather than one connected pattern.</p>",
+     "big": "Fragmented",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "<p>Everything gets reduced to one simplified explanation: tress, age, lifestyle, or testosterone.</p>",
+     "big": "Oversimplified",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "<p>Care often begins only after a marker falls outside a reference range, even when your baseline has clearly shifted.</p>",
+     "big": "Reactive",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "<p>One \"normal\" testosterone result cannot explain how your hormones, metabolism, nervous system, and recovery are interacting.</p>",
+     "big": "Too Narrow",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "<p>Because you are still functioning, the change is minimized — even when functioning now requires much more effort.</p>",
+     "big": "Dismissed",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "compare",
+   "big": true,
+   "label": null,
+   "men": false,
+   "heading": "Your labs can look normal. And still miss the pattern driving how you feel.",
+   "headingMax": "740px",
+   "body": "A standard panel compares isolated markers with population ranges. RHM evaluates how your systems interact and what those results mean in the context of your symptoms.",
+   "bodyMax": "594px",
+   "heads": [
+    null,
+    null,
+    "Traditional labs"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "Evaluation",
+     "160+ biomarkers",
+     "A handful of hormone markers"
+    ],
+    [
+     "Interpretation",
+     "Systems read together",
+     "Single markers in isolation"
+    ],
+    [
+     "Full-Body context",
+     "Thyroid, cortisol, metabolism, inflammation, recovery",
+     "Rarely included"
+    ],
+    [
+     "Symptom Analysis",
+     "One connected pattern",
+     "Each symptom on its own"
+    ],
+    [
+     "Clinical guidance",
+     "Physician-led, physiology-driven",
+     "Minimal context"
+    ],
+    [
+     "core plan",
+     "Built around your physiology",
+     "Reactive and generalized"
+    ]
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "Why your old routine stops working?",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "<p>You can eat well, train consistently, and still feel like your body is pushing back. When sleep, cortisol, hormones, metabolism, and inflammation shift together, the same effort stops producing the same result.</p>"
+    },
+    {
+     "kind": "images",
+     "two": true,
+     "images": [
+      {
+       "src": "/images/site/6a788021d6588f0a29141add_before.avif",
+       "alt": ""
+      },
+      {
+       "src": "/images/site/6a78802c412a551d481f6209_after.avif",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "Elevated stress can reduce sleep quality. Poor sleep can affect hormones and recovery. Slower recovery can contribute to inflammation and changes in body composition. The cycle reinforces itself. That is why \"sleeping more,\" \"managing stress,\" or \"pushing harder\" rarely solves this problem because it often exists across several systems at once."
+    }
+   ]
+  },
+  {
+   "type": "voices",
+   "heading": "Why it becomes harder to keep dismissing it",
+   "headingMax": "504px",
+   "headingFull": true,
+   "body": "You've explained it away as work, stress, age, or one unusually demanding stretch. But the stretch ended and the exhaustion stayed. Eventually, the explanations stop fitting.",
+   "quotes": [
+    {
+     "quote": "<p>\"I thought I just needed <br>a few better nights of sleep. Then the deadline passed and nothing changed.\"</p>",
+     "name": "Michael, 40"
+    },
+    {
+     "quote": "<p>\"I kept training harder because I assumed I had lost discipline. I was only making recovery more difficult.\"</p>",
+     "name": "John, 46"
+    },
+    {
+     "quote": "<p>\"Nothing felt serious enough to call an actual problem. I just felt like a slightly worse version of myself every month.\"</p>",
+     "name": "Eugene, 43"
+    }
+   ]
+  },
+  {
+   "type": "process",
+   "heading": "Our Approach to Performance &amp; Recovery",
+   "body": "",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Discovery Call",
+     "body": "Discuss symptoms, history, and whether deeper evaluation makes sense.",
+     "image": {
+      "src": "/images/site/6a788bb4b2ad1918e63eb24f_discovery.avif",
+      "alt": ""
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Comprehensive Lab Evaluation",
+     "body": "Test 160+ biomarkers across hormones, thyroid, metabolism, cortisol, and inflammation.",
+     "image": {
+      "src": "/images/site/6a20b2f6ac9881d327b05f7e_blood.avif",
+      "alt": "Blood sample for comprehensive lab testing, representing hormone, thyroid, cortisol, and metabolism evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Physician Review",
+     "body": "Review your labs and symptoms to identify what may be driving the pattern.",
+     "image": {
+      "src": "/images/site/6a788c094ee5c637086b1f14_discussion.avif",
+      "alt": ""
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Personalized Plan",
+     "body": "Build a plan around your physiology, with TRT considered only when appropriate.",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing Monitoring",
+     "body": "Track your response and adjust care as your needs change.",
+     "image": {
+      "src": "/images/site/6a788c44282075cf34d4318d_monitoring.avif",
+      "alt": ""
+     }
+    }
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "xl",
+    "xl"
+   ],
+   "image": {
+    "src": "/images/site/6a20aca76c5eefd7bda386da_dr_rand.avif",
+    "alt": "RHM physician in medical scrubs, representing physician-led hormone optimization and personalized patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Physician-led care built around your physiology",
+   "body": "Most men who come to RHM are already doing the work. We look deeper — at the hormone, insulin, thyroid, metabolic, inflammation, stress, and recovery patterns shaping how your body responds. Care is built around what we find and monitored as your physiology changes.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Research & Insights on TRT",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/peptide-therapy-vs-trt",
+     "title": "Peptide Therapy vs TRT: Which One Do You Need?",
+     "summary": "Peptide therapy and TRT work differently and solve different problems. See how RHM decides which fits your labs, symptoms, and goals — not a template.",
+     "category": "Peptides",
+     "date": "Aug 27, 2026",
+     "image": {
+      "src": "/images/site/6abe3fc3338634b3c8fa9b17_card-peptide-therapy-vs-trt.avif",
+      "alt": "Peptide Therapy vs TRT: Which One Do You Need?"
+     }
+    },
+    {
+     "href": "/articles/metabolic-testing",
+     "title": "Metabolic Testing: What It Actually Checks",
+     "summary": "Metabolic testing can mean a lot of things. Here's what RHM actually checks — and why one number rarely tells the full story.",
+     "category": "Weight Loss Resistance",
+     "date": "Aug 28, 2026",
+     "image": {
+      "src": "/images/site/6abe3fc43170a825ee25620d_card-metabolic-testing.avif",
+      "alt": "Metabolic Testing: What It Actually Checks"
+     }
+    },
+    {
+     "href": "/articles/insulin-resistance-test",
+     "title": "Insulin Resistance Test: What It Checks (and What \"Normal\" Can Miss)",
+     "summary": "Wondering how insulin resistance is actually tested? A physician-led look at what a real panel checks, at-home options, and what the results can mean.",
+     "category": "Weight Loss Resistance",
+     "date": "Aug 19, 2026",
+     "image": {
+      "src": "/images/site/6abe40c5e506e0e036285958_card-insulin-resistance-test-32.webp",
+      "alt": "Insulin Resistance Test: What It Checks (and What \"Normal\" Can Miss)"
+     }
+    }
+   ]
+  },
+  {
+   "type": "ctaBlock",
+   "slate": true,
+   "heading": "Start your path back to stronger energy, recovery, and performance",
+   "points": [
+    "Personalized, physician-led metabolic and hormone care",
+    "160+ biomarkers evaluated together",
+    "TRT considered only when it fits your physiology"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a7881f11f6681ee55ae2b48_cta.avif",
+    "alt": ""
+   }
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "What type of doctor treats low testosterone?",
+     "a": "<p>‍</p><p>Low testosterone can be evaluated by an endocrinologist, a urologist, your primary care physician, or a physician-led hormone clinic. The credential matters less than the approach — whoever you see should run a full hormone and metabolic panel, not just a total testosterone check, before recommending treatment.</p>"
+    },
+    {
+     "q": "‍How do I know if I have low testosterone?",
+     "a": "<p>Symptoms like low energy, reduced motivation, harder recovery from workouts, weight gain, or a lower sex drive can point toward low testosterone — but they can also point toward sleep debt, chronic stress, or a metabolic issue. <a href=\"https://medlineplus.gov/lowtestosterone.html\">Symptoms alone</a> can't confirm it. A lab panel is the only way to know what's actually happening.</p>"
+    },
+    {
+     "q": "Can low testosterone cause weight gain?",
+     "a": "<p>It can be a contributing factor. Lower testosterone is often linked to changes in body composition and how your body stores fat, but weight gain is rarely explained by one hormone alone — it's usually worth evaluating testosterone alongside metabolic markers like insulin and thyroid function.</p>"
+    },
+    {
+     "q": "Can low testosterone affect sleep?",
+     "a": "<p>Yes, and the relationship runs both directions. Low testosterone can make sleep worse, and poor sleep lowers testosterone production, since most testosterone is produced during deep sleep. That's part of why we evaluate the two together rather than treating either in isolation.</p>"
+    },
+    {
+     "q": "Is TRT the only treatment for low testosterone?",
+     "a": "<p>No. TRT is one possible treatment, and it's the right one for some men — but it isn't the starting assumption for every man who comes in with symptoms. We recommend it only after a full evaluation shows it's the right fit. Depending on what the labs show, the plan may focus on sleep, stress, or metabolic health before or alongside TRT.</p>"
+    },
+    {
+     "q": "Does RHM only treat testosterone, or will I automatically be put on TRT?",
+     "a": "<p>No. We evaluate your hormones, metabolism, stress, sleep, and inflammation together before recommending anything. TRT is one possible outcome of that evaluation, not the default. If your labs point somewhere else — or a different combination of changes is what's actually driving how you feel — that's what we'll recommend instead.</p>"
+    },
+    {
+     "q": "What's the difference between andropause and normal aging?",
+     "a": "<p>Andropause refers to the gradual decline in testosterone that can happen with age, but it isn't the same thing as normal aging on its own. The distinction matters: andropause is evaluable and often treatable, while writing symptoms off as \"just getting older\" can mean missing something that responds well to the right plan.</p>"
+    },
+    {
+     "q": "What does a comprehensive men's hormone panel actually test?",
+     "a": "<p><a href=\"/men/longevity-clinic\">A comprehensive panel</a> goes beyond total testosterone. It typically includes free testosterone, estradiol, DHEA-S, cortisol, thyroid markers, fasting insulin, and inflammatory markers, since these systems influence each other.</p>"
+    },
+    {
+     "q": "Do I need a referral to be evaluated for low testosterone?",
+     "a": "<p>Generally, no — you can schedule an evaluation directly. If you're already working with a specialist for a related condition, we can work alongside that care rather than in place of it.</p>"
+    }
+   ]
+  }
+ ]
+}

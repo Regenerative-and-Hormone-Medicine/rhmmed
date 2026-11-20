@@ -1,0 +1,24 @@
+---
+// "How it works" four-step cards on the book page (source: .section.book-steps).
+import Rich from '../Rich.astro';
+interface Props { heading: string; body: string; steps: { num: string; title: string; body: string }[] }
+const p = Astro.props;
+---
+
+<section class="py-24 max-md:py-16">
+  <div class="container-site flex flex-col items-center gap-16">
+    <div class="flex w-full max-w-[642px] flex-col items-center gap-8 text-center">
+      <h2 set:html={p.heading} />
+      <Rich class="text-body-l w-full max-w-[34rem] text-ink-70" html={p.body} />
+    </div>
+    <div class="mt-12 grid w-full grid-cols-[repeat(4,1fr)] gap-5 max-lg:grid-cols-[repeat(2,1fr)] max-md:grid-cols-[1fr]">
+      {p.steps.map((s) => (
+        <div class="flex flex-col gap-3 rounded-2xl bg-[#f4f1ea] px-6 py-7">
+          <div class="text-[.875rem] font-semibold tracking-[.08em] text-black/45">{s.num}</div>
+          <h3 class="text-h4 capitalize" set:html={s.title} />
+          <Rich class="text-body-m text-ink-70" html={s.body} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+import Rich from '../Rich.astro';
+// "Your labs can look normal" comparison table (source: .section.is-compare.is-big).
+import RhmMark from '../../icons/rhm-mark.svg';
+interface Props { heading: string; body: string; heads: (string | null)[]; rows: string[][]; big?: boolean; label?: string | null; headingMax?: string | null; bodyMax?: string | null }
+const p = Astro.props;
+const theirs = p.heads[2] ?? '';
+const field = 'flex items-center justify-center border-b border-bg-light px-4 py-[2.125rem] text-center';
+---
+
+<section class:list={[p.big === false ? 'pt-[3.75rem] pb-[6.25rem] max-md:py-16' : 'py-[6.25rem]']}>
+  <div class="container-site flex flex-col items-center gap-[6.25rem] max-md:gap-16">
+    <div class="mx-auto flex flex-col items-center gap-6 text-center">
+      {p.label && <div class="text-label">{p.label}</div>}
+      <h2 style={p.headingMax ? `max-width:${p.headingMax}` : undefined} set:html={p.heading} />
+      {p.body && <p class="text-body-l text-[#000000b3]" style={p.bodyMax ? `max-width:${p.bodyMax}` : undefined} set:html={p.body} />}
+    </div>
+    <div class="w-full">
+      <div class="sticky top-[4.325rem] grid grid-cols-3 max-md:grid-cols-2">
+        <div class:list={[field, 'justify-start bg-white text-left max-md:hidden']}></div>
+        <div class="flex flex-col items-center justify-start gap-4 rounded-t-3xl border-b border-bg-dark bg-bg-light p-4 max-md:rounded-none">
+          <RhmMark class="w-full max-w-[3.5625rem] text-ink max-md:max-w-12" width="57" />
+        </div>
+        <div class="flex flex-col items-center justify-start gap-4 border-b border-bg-light bg-white p-4">
+          <h3 class="text-h5" set:html={theirs} />
+        </div>
+      </div>
+      {p.rows.map((r, i) => {
+        const last = i === p.rows.length - 1;
+        return (
+          <div class="grid grid-cols-3 max-md:grid-cols-2">
+            <div class:list={[field, 'justify-start text-left max-md:col-span-2 max-md:justify-center', last && 'border-b-0']}><div class="text-label" set:html={r[0]} /></div>
+            <div class:list={[field, 'border-bg-dark bg-bg-light', last && 'rounded-b-3xl border-b-0 max-md:rounded-none']}><Rich class="text-body-r" html={r[1]} /></div>
+            <div class:list={[field, last && 'border-b-0']}><Rich class="text-body-r text-ink-70" html={r[2]} /></div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

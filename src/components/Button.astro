@@ -1,0 +1,31 @@
+---
+// Pill button. Hover rolls the label up and a copy in from below (source: .btn / .btn-text1 / .btn-text2).
+interface Props {
+  href: string;
+  variant?: 'dark' | 'light';
+  size?: 'md' | 'sm';
+  class?: string;
+  target?: string;
+}
+const { href, variant = 'dark', size = 'md', class: cls = '', target } = Astro.props;
+const label = await Astro.slots.render('default');
+---
+
+<a
+  href={href}
+  target={target}
+  rel={target === '_blank' ? 'noopener' : undefined}
+  class:list={[
+    'btn group relative inline-flex max-w-full shrink-0 items-center justify-center overflow-hidden whitespace-nowrap rounded-pill text-btn',
+    size === 'md' ? 'px-[22px] py-3' : 'px-[18px] py-2.5',
+    variant === 'dark' ? 'bg-black text-white' : 'bg-white text-black',
+    cls,
+  ]}
+>
+  <span class="block h-[1.25em] overflow-hidden">
+    <span class="flex flex-col transition-transform duration-350 ease-out-soft group-hover:-translate-y-1/2">
+      <span set:html={label} />
+      <span aria-hidden="true" set:html={label} />
+    </span>
+  </span>
+</a>

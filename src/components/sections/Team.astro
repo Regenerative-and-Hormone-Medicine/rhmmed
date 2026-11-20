@@ -1,0 +1,64 @@
+---
+// Provider cards: specialty pill, "+" reveals bio (hover on desktop, tap on tablet/mobile), photo, name (source: .container.is-team).
+import Rich from '../Rich.astro';
+import Plus from '../../icons/plus.svg';
+interface Card { tag: string; bio: string; image: { src: string; alt: string } | null; name: string }
+interface Props { heading: string; body: string; bodyMax?: string | null; cards: Card[] }
+const p = Astro.props;
+---
+
+<section class="bg-bg-light">
+  <div class="container-site flex flex-col gap-20 py-[8.75rem] max-md:gap-12 max-md:py-16">
+    <div class="mx-auto flex flex-col items-center gap-6 text-center">
+      <h2 set:html={p.heading} />
+      <Rich class="text-body-l w-full text-ink-70" style={`max-width:${p.bodyMax ?? '658px'}`} html={p.body} />
+    </div>
+    <div class="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-md:grid-cols-1">
+      {p.cards.map((c) => (
+        <div class="flex flex-col gap-6">
+          <div class="relative min-h-[35.5rem] overflow-hidden rounded-3xl bg-white p-6 max-lg:min-h-[27rem] max-md:min-h-[30rem] max-sm:p-4">
+            <div class="team-top relative z-[1] flex items-center justify-between gap-4 max-sm:gap-2">
+              <div class="rounded-full bg-bg-light p-3 text-[12px] font-medium text-black uppercase max-sm:text-[10px]">{c.tag}</div>
+              <button type="button" class="team-plus flex-none cursor-pointer rounded-full bg-bg-light p-3" aria-label="Show bio">
+                <Plus class="size-4 transition-transform duration-350" width="16" height="16" />
+              </button>
+              <div class="team-popup absolute top-0 z-10 w-full rounded-[10px] bg-bg-light p-5">
+                <Rich class="text-body-r" html={c.bio} />
+              </div>
+            </div>
+            {c.image && <img src={c.image.src} alt={c.image.alt} class="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full object-cover max-md:mx-auto max-md:max-h-[28rem] max-md:max-w-none max-md:object-contain" loading="lazy" />}
+          </div>
+          <h3 class="text-h4 capitalize" set:html={c.name} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-popup { opacity: 0; pointer-events: none; transform: translateY(80px); transition: transform .35s ease, opacity .35s ease; }
+  @media (min-width: 992px) {
+    .team-top:hover .team-popup { opacity: 1; pointer-events: auto; transform: translateY(70px); }
+    .team-top:hover .team-plus :global(svg) { transform: rotate(45deg); }
+  }
+  @media (max-width: 991px) {
+    .team-top.is-open .team-popup { opacity: 1; pointer-events: auto; transform: translateY(70px); }
+    .team-top.is-open .team-plus :global(svg) { transform: rotate(45deg); }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.team-plus').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      if (window.innerWidth > 991) return;
+      e.stopPropagation();
+      const top = btn.closest('.team-top')!;
+      const open = top.classList.contains('is-open');
+      document.querySelectorAll('.team-top.is-open').forEach((t) => t.classList.remove('is-open'));
+      if (!open) top.classList.add('is-open');
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!(e.target as HTMLElement).closest('.team-top')) document.querySelectorAll('.team-top.is-open').forEach((t) => t.classList.remove('is-open'));
+  });
+</script>

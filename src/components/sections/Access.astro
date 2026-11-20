@@ -1,0 +1,41 @@
+---
+// "Your location shouldn't limit your health" — copy + check list + photo with blue US-map overlay (source: .section.is-access).
+import Rich from '../Rich.astro';
+import Button from '../Button.astro';
+interface Props { heading: string; body: string; items: string[]; buttons: { text: string; href: string }[]; image: { src: string; alt: string } | null }
+const p = Astro.props;
+---
+
+<section class="bg-bg-light py-[7.5rem] max-md:py-16">
+  <div class="container-site flex justify-between max-lg:flex-col max-lg:gap-8">
+    <div class="flex w-full max-w-[34.125rem] flex-col gap-[3.125rem]">
+      <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-6">
+          <h2 set:html={p.heading} />
+          <Rich class="text-body-l text-ink-70" html={p.body} />
+        </div>
+        <ul class="flex flex-col gap-4">
+          {p.items.map((i) => <li class="access-item text-[1.25rem] leading-[1.25] max-sm:text-base" set:html={i} />)}
+        </ul>
+      </div>
+      <div class="flex items-center gap-2.5 max-md:flex-wrap max-sm:flex-col max-sm:items-start">
+        {p.buttons.map((b) => <Button href={b.href}>{b.text}</Button>)}
+      </div>
+    </div>
+    <div class="relative w-full max-w-[41.375rem] overflow-hidden rounded-3xl">
+      <div class="max-md:size-full">
+        {p.image && <img src={p.image.src} alt={p.image.alt} class="size-full object-cover max-md:object-fill max-md:px-5" loading="lazy" />}
+      </div>
+      <div class="access-overlay absolute inset-0"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .access-item { background: url('/images/site/69a834e99366bae766ac129e_Check.svg') no-repeat 0 4px / 18px 18px; padding-left: 28px; }
+  .access-overlay {
+    backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); background-color: #2d4de9b3;
+    background-image: url('/images/site/69a8368c5871a2b6865bc24c_US-Map-Dots-1.svg'); background-position: 50%; background-repeat: no-repeat;
+  }
+  @media (max-width: 767px) { .access-overlay { background-size: 93%; } }
+</style>

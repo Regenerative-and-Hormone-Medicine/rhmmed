@@ -1,0 +1,13 @@
+---
+// Single-segment pages rendered from extracted JSON: hubs (/men, /women) and info pages (src/data/pages).
+import SectionPage from '../layouts/SectionPage.astro';
+
+export function getStaticPaths() {
+  const files = import.meta.glob<{ default: any }>(['../data/hubs/*.json', '../data/pages/*.json'], { eager: true });
+  return Object.values(files).map(({ default: page }) => ({ params: { page: page.path.slice(1) }, props: { page } }));
+}
+
+const { page } = Astro.props;
+---
+
+<SectionPage page={page} />

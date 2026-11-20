@@ -1,0 +1,22 @@
+---
+// "Why people work with us" — heading/copy/button + grey accordion (source: .container.is-lr.is-btm-border).
+import Button from '../Button.astro';
+import Accordion from '../Accordion.astro';
+interface Props { heading: string; body: string; buttons: { text: string; href: string }[]; items: { q: string; a: string }[] }
+const p = Astro.props;
+---
+
+<section>
+  <div class="container-site flex items-start justify-between gap-8 border-b border-bg-light pt-[7.5rem] pb-[8.75rem] max-md:flex-col max-md:py-20">
+    <div class="flex w-full max-w-[48rem] flex-col gap-6">
+      <h2 set:html={p.heading} />
+      <div class="flex flex-col gap-[3.125rem]">
+        <p class="text-body-l text-ink-70" set:html={p.body} />
+        <div class="flex items-center gap-2.5 max-sm:flex-col max-sm:items-start">
+          {p.buttons.map((b) => <Button href={b.href}>{b.text}</Button>)}
+        </div>
+      </div>
+    </div>
+    <Accordion items={p.items} class="max-w-[37.125rem]" />
+  </div>
+</section>

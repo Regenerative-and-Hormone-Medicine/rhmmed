@@ -1,0 +1,81 @@
+{
+ "path": "/articles/pt-141",
+ "title": "PT-141 (Bremelanotide): Uses, Side Effects & Evidence | RHM",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "What is PT-141? How bremelanotide works on desire, what the trials found, side effects, who it's approved for and why the cause of low libido comes first.",
+ "sections": [
+  {
+   "type": "articleHero",
+   "imageAlt": "Vial labeled PT-141 bremelanotide injection on a stone tray beside an injector pen, in soft natural light",
+   "category": "Peptides"
+  },
+  {
+   "type": "articleBody"
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start with clarity before starting a protocol.",
+   "points": [
+    "Personalized, physician-led evaluation",
+    "Advanced testing and clear next steps",
+    "Careful sourcing and medical supervision"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a3067a58cb125b7fb9b4818_peptide_cta.avif",
+    "alt": "Woman sitting in gym after workout, representing personalized peptide therapy, recovery, and wellness care"
+   }
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Related Articles",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/peptide-therapy",
+     "title": "Peptide Therapy: The Complete Guide to What It Is, What It Can Do and Who It's For",
+     "summary": "What peptide therapy is, which peptides are FDA approved, what they can and can't do, side effects, cost and how to start safely, from RHM's physicians.",
+     "category": "Peptides",
+     "date": "Nov 9, 2026",
+     "image": {
+      "src": "/images/site/6af0b69262e0b52a668f75fc_6af0b67ceba8b1c755988867_man-reflecting-on-peptide-therapy-at-kitchen-table.jpeg",
+      "alt": "Middle-aged man holding a coffee mug at a kitchen table with an open journal, looking thoughtfully out the window"
+     }
+    },
+    {
+     "href": "/articles/peptide-therapy-vs-trt",
+     "title": "Peptide Therapy vs TRT: Which One Do You Need?",
+     "summary": "Peptide therapy and TRT work differently and solve different problems. See how RHM decides which fits your labs, symptoms, and goals — not a template.",
+     "category": "Peptides",
+     "date": "Aug 27, 2026",
+     "image": {
+      "src": "/images/site/6abe6cafaca1c590f6b996b8_6a90337cf141068a0b7100c0_man-experiencing-slower-workout-recovery.avif",
+      "alt": "Man resting on bench in home gym"
+     }
+    },
+    {
+     "href": "/articles/peptides-vs-glp-1",
+     "title": "Peptides vs GLP-1: Which One Actually Fits Your Goals?",
+     "summary": "Peptides vs GLP-1: which one actually fits your goals — appetite, muscle, or metabolism? A physician-led comparison, not a sales pitch.",
+     "category": "Peptides",
+     "date": "Jul 30, 2026",
+     "image": {
+      "src": "/images/site/6a6a66820a8ac199514aeb2f_glp-1-vs-peptides.avif",
+      "alt": "peptides-vs-glp-1"
+     }
+    }
+   ]
+  }
+ ]
+}

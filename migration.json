@@ -1,0 +1,558 @@
+{
+ "source": "https://www.rhmmed.com",
+ "stack": "astro@7 + tailwind@4",
+ "phases": [
+  {
+   "id": "survey",
+   "state": "done"
+  },
+  {
+   "id": "design-system",
+   "state": "done"
+  },
+  {
+   "id": "homepage",
+   "state": "done"
+  },
+  {
+   "id": "templates",
+   "state": "active"
+  },
+  {
+   "id": "remainder",
+   "state": "not-started"
+  }
+ ],
+ "doing": "",
+ "done": [
+  "Survey, design system, homepage (98%+)",
+  "All 56 sitemap URLs rebuilt in Astro and verified at 1440/991/767/390",
+  "CMS imported (23 articles + collections), 360 images self-hosted",
+  "Forms wired to the same Formspark endpoints; tracking carried over (production only)",
+  "Card titles are stretched links (requested)"
+ ],
+ "notDone": [
+  "Hover/keyboard checked on header, mobile menu, FAQ, filter, forms (scripts/interactions.mjs); not every page-specific widget"
+ ],
+ "needsYou": [],
+ "scores": {
+  "/": {
+   "byWidth": {
+    "1440": 98.69,
+    "991": 98.65,
+    "767": 99.55,
+    "390": 97.47
+   },
+   "worst": 97.47
+  },
+  "/advance-home-testing": {
+   "byWidth": {
+    "1440": 97.78,
+    "991": 98.06,
+    "767": 97.46,
+    "390": 98.01
+   },
+   "worst": 97.46
+  },
+  "/articles": {
+   "byWidth": {
+    "1440": 99.46,
+    "991": 99.77,
+    "767": 99.29,
+    "390": 98.9
+   },
+   "worst": 98.9
+  },
+  "/articles/best-birth-control-for-pcos": {
+   "byWidth": {
+    "1440": 99.55,
+    "991": 99.9,
+    "767": 99.94,
+    "390": 98.67
+   },
+   "worst": 98.67
+  },
+  "/articles/estrogen-dominance": {
+   "byWidth": {
+    "1440": 99.59,
+    "991": 99.51,
+    "767": 99.43,
+    "390": 98.09
+   },
+   "worst": 98.09
+  },
+  "/articles/insulin-resistance-and-weight-loss": {
+   "byWidth": {
+    "1440": 99.6,
+    "991": 99.47,
+    "767": 99.75,
+    "390": 99.44
+   },
+   "worst": 99.44
+  },
+  "/articles/insulin-resistance-test": {
+   "byWidth": {
+    "1440": 99.65,
+    "991": 99.55,
+    "767": 99.53,
+    "390": 98.81
+   },
+   "worst": 98.81
+  },
+  "/articles/lupus-rash-vs-rosacea": {
+   "byWidth": {
+    "1440": 99.9,
+    "991": 99.84,
+    "767": 99.88,
+    "390": 99.68
+   },
+   "worst": 99.68
+  },
+  "/articles/metabolic-testing": {
+   "byWidth": {
+    "1440": 99.69,
+    "991": 99.57,
+    "767": 99.9,
+    "390": 99.67
+   },
+   "worst": 99.57
+  },
+  "/articles/not-losing-weight-on-ozempic": {
+   "byWidth": {
+    "1440": 99.63,
+    "991": 99.83,
+    "767": 99.13,
+    "390": 98.02
+   },
+   "worst": 98.02
+  },
+  "/articles/pcos-belly-fat": {
+   "byWidth": {
+    "1440": 99.62,
+    "991": 99.46,
+    "767": 99.73,
+    "390": 99.36
+   },
+   "worst": 99.36
+  },
+  "/articles/pcos-weight-loss": {
+   "byWidth": {
+    "1440": 99.67,
+    "991": 99.35,
+    "767": 99.21,
+    "390": 98.64
+   },
+   "worst": 98.64
+  },
+  "/articles/peptide-therapy": {
+   "byWidth": {
+    "1440": 99.4,
+    "991": 99.33,
+    "767": 99.3,
+    "390": 98.75
+   },
+   "worst": 98.75
+  },
+  "/articles/peptide-therapy-for-weight-loss": {
+   "byWidth": {
+    "1440": 99.53,
+    "991": 99.21,
+    "767": 99.74,
+    "390": 98.46
+   },
+   "worst": 98.46
+  },
+  "/articles/peptide-therapy-vs-trt": {
+   "byWidth": {
+    "1440": 99.75,
+    "991": 99.59,
+    "767": 99.59,
+    "390": 99.22
+   },
+   "worst": 99.22
+  },
+  "/articles/peptides-vs-glp-1": {
+   "byWidth": {
+    "1440": 99.64,
+    "991": 99.3,
+    "767": 99.63,
+    "390": 99.27
+   },
+   "worst": 99.27
+  },
+  "/articles/perimenopause-brain-fog": {
+   "byWidth": {
+    "1440": 99.77,
+    "991": 99.4,
+    "767": 99.62,
+    "390": 99.54
+   },
+   "worst": 99.4
+  },
+  "/articles/perimenopause-weight-gain": {
+   "byWidth": {
+    "1440": 99.67,
+    "991": 99.51,
+    "767": 99.28,
+    "390": 99.23
+   },
+   "worst": 99.23
+  },
+  "/articles/pt-141": {
+   "byWidth": {
+    "1440": 99.43,
+    "991": 99.47,
+    "767": 99.56,
+    "390": 98.66
+   },
+   "worst": 98.66
+  },
+  "/articles/semaglutide-peptide": {
+   "byWidth": {
+    "1440": 99.52,
+    "991": 99.25,
+    "767": 99.71,
+    "390": 98.16
+   },
+   "worst": 98.16
+  },
+  "/articles/signs-you-need-hrt": {
+   "byWidth": {
+    "1440": 99.42,
+    "991": 99.23,
+    "767": 99.28,
+    "390": 98.54
+   },
+   "worst": 98.54
+  },
+  "/articles/thyroid-specialist-near-me": {
+   "byWidth": {
+    "1440": 99.69,
+    "991": 99.36,
+    "767": 99.59,
+    "390": 99.84
+   },
+   "worst": 99.36
+  },
+  "/articles/thyroid-supplements": {
+   "byWidth": {
+    "1440": 99.73,
+    "991": 99.44,
+    "767": 99.67,
+    "390": 98.79
+   },
+   "worst": 98.79
+  },
+  "/articles/tirzepatide-peptide": {
+   "byWidth": {
+    "1440": 99.52,
+    "991": 99.37,
+    "767": 99.39,
+    "390": 98.58
+   },
+   "worst": 98.58
+  },
+  "/articles/trt-cost": {
+   "byWidth": {
+    "1440": 99.74,
+    "991": 99.29,
+    "767": 99.5,
+    "390": 99.05
+   },
+   "worst": 99.05
+  },
+  "/articles/trt-side-effects": {
+   "byWidth": {
+    "1440": 99.31,
+    "991": 99.24,
+    "767": 99.64,
+    "390": 98.56
+   },
+   "worst": 98.56
+  },
+  "/cheating-death": {
+   "byWidth": {
+    "1440": 99.46,
+    "991": 99.2,
+    "767": 99.31,
+    "390": 99.24
+   },
+   "worst": 99.2
+  },
+  "/contact": {
+   "byWidth": {
+    "1440": 99.33,
+    "991": 98.72,
+    "767": 98.82,
+    "390": 99.2
+   },
+   "worst": 98.72
+  },
+  "/faq": {
+   "byWidth": {
+    "1440": 99.95,
+    "991": 99.92,
+    "767": 99.94,
+    "390": 99.91
+   },
+   "worst": 99.91
+  },
+  "/how-it-works": {
+   "byWidth": {
+    "1440": 99.77,
+    "991": 98.26,
+    "767": 99.85,
+    "390": 99.23
+   },
+   "worst": 98.26
+  },
+  "/location": {
+   "byWidth": {
+    "1440": 99.93,
+    "991": 99.94,
+    "767": 99.98,
+    "390": 98.6
+   },
+   "worst": 98.6
+  },
+  "/men": {
+   "byWidth": {
+    "1440": 99.74,
+    "991": 99.79,
+    "767": 98.89,
+    "390": 98.76
+   },
+   "worst": 98.76
+  },
+  "/men/erectile-dysfunction-clinic": {
+   "byWidth": {
+    "1440": 99.88,
+    "991": 99.66,
+    "767": 97.62,
+    "390": 99.27
+   },
+   "worst": 97.62
+  },
+  "/men/hormone-therapy": {
+   "byWidth": {
+    "1440": 99.81,
+    "991": 98.93,
+    "767": 99.78,
+    "390": 98.54
+   },
+   "worst": 98.54
+  },
+  "/men/longevity-clinic": {
+   "byWidth": {
+    "1440": 99.76,
+    "991": 98.89,
+    "767": 99.71,
+    "390": 98.5
+   },
+   "worst": 98.5
+  },
+  "/men/metabolic-health": {
+   "byWidth": {
+    "1440": 99.85,
+    "991": 99.77,
+    "767": 97.9,
+    "390": 98.39
+   },
+   "worst": 97.9
+  },
+  "/men/peptide-therapy": {
+   "byWidth": {
+    "1440": 99.63,
+    "991": 99.64,
+    "767": 99.68,
+    "390": 98.45
+   },
+   "worst": 98.45
+  },
+  "/men/performance-recovery": {
+   "byWidth": {
+    "1440": 99.88,
+    "991": 99.86,
+    "767": 99.79,
+    "390": 98.56
+   },
+   "worst": 98.56
+  },
+  "/patient-information": {
+   "byWidth": {
+    "1440": 99.8,
+    "991": 99.83,
+    "767": 99.93,
+    "390": 99.53
+   },
+   "worst": 99.53
+  },
+  "/privacy-policy": {
+   "byWidth": {
+    "1440": 99.88,
+    "991": 99.88,
+    "767": 98.71,
+    "390": 99.22
+   },
+   "worst": 98.71
+  },
+  "/scheduling": {
+   "byWidth": {
+    "1440": 99.92,
+    "991": 99.94,
+    "767": 99.92,
+    "390": 99.99
+   },
+   "worst": 99.92
+  },
+  "/telehealth": {
+   "byWidth": {
+    "1440": 99.73,
+    "991": 99.64,
+    "767": 99.42,
+    "390": 97.72
+   },
+   "worst": 97.72
+  },
+  "/terms-of-use": {
+   "byWidth": {
+    "1440": 99.52,
+    "991": 99.38,
+    "767": 98.98,
+    "390": 99.4
+   },
+   "worst": 98.98
+  },
+  "/why-us": {
+   "byWidth": {
+    "1440": 99.88,
+    "991": 99.37,
+    "767": 99.3,
+    "390": 98.69
+   },
+   "worst": 98.69
+  },
+  "/women": {
+   "byWidth": {
+    "1440": 99.88,
+    "991": 99.46,
+    "767": 98.29,
+    "390": 97.67
+   },
+   "worst": 97.67
+  },
+  "/women/endometriosis": {
+   "byWidth": {
+    "1440": 99.87,
+    "991": 99.78,
+    "767": 99.79,
+    "390": 97.64
+   },
+   "worst": 97.64
+  },
+  "/women/hormone-replacement-therapy": {
+   "byWidth": {
+    "1440": 99.76,
+    "991": 99.65,
+    "767": 99.88,
+    "390": 98.66
+   },
+   "worst": 98.66
+  },
+  "/women/inflammation": {
+   "byWidth": {
+    "1440": 99.9,
+    "991": 99.82,
+    "767": 99.8,
+    "390": 99.1
+   },
+   "worst": 99.1
+  },
+  "/women/menopause": {
+   "byWidth": {
+    "1440": 99.7,
+    "991": 98.17,
+    "767": 99.79,
+    "390": 98.88
+   },
+   "worst": 98.17
+  },
+  "/women/pcos": {
+   "byWidth": {
+    "1440": 99.79,
+    "991": 98.23,
+    "767": 99.79,
+    "390": 99.06
+   },
+   "worst": 98.23
+  },
+  "/women/peptide-therapy": {
+   "byWidth": {
+    "1440": 99.86,
+    "991": 99.77,
+    "767": 99.79,
+    "390": 99.08
+   },
+   "worst": 99.08
+  },
+  "/women/perimenopause": {
+   "byWidth": {
+    "1440": 99.76,
+    "991": 99.5,
+    "767": 99.74,
+    "390": 99.0
+   },
+   "worst": 99.0
+  },
+  "/women/postmenopause": {
+   "byWidth": {
+    "1440": 99.8,
+    "991": 98.0,
+    "767": 97.79,
+    "390": 97.59
+   },
+   "worst": 97.59
+  },
+  "/women/sexual-health": {
+   "byWidth": {
+    "1440": 99.82,
+    "991": 99.81,
+    "767": 98.1,
+    "390": 97.71
+   },
+   "worst": 97.71
+  },
+  "/women/thyroid": {
+   "byWidth": {
+    "1440": 98.61,
+    "991": 98.2,
+    "767": 99.75,
+    "390": 98.52
+   },
+   "worst": 98.2
+  },
+  "/women/weight-loss-resistance": {
+   "byWidth": {
+    "1440": 98.74,
+    "991": 99.66,
+    "767": 98.49,
+    "390": 98.48
+   },
+   "worst": 98.48
+  }
+ },
+ "decisions": {
+  "content": "Astro content collections from CSV exports",
+  "forms": "Same Formspark endpoints + Botpoison",
+  "unused-collections": "Import Newsletters/Researches as data only, no pages",
+  "images": "Self-host (default, not objected)",
+  "cheatingDeathBook": "Port the 3D WebGL book (user, 2026-11-19) — done",
+  "copyLink": "Copy the real article URL (user approved 2026-11-19)",
+  "draftArticles": "All 3 Webflow-draft articles go live with exported text (user, 2026-11-19)"
+ },
+ "checks": [
+  "3 articles (tirzepatide-peptide, pcos-belly-fat, trt-side-effects) had unpublished Webflow edits at export: the imported text may be newer than what is live. Confirm which version is correct."
+ ],
+ "openIssues": [],
+ "scoreMethod": "compare.mjs --freeze (carousels on slide 1 both sides), worst of 1440/991/767/390; 2026-11-20"
+}

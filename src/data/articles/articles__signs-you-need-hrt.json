@@ -1,0 +1,81 @@
+{
+ "path": "/articles/signs-you-need-hrt",
+ "title": "Signs You Need Hormone Replacement Therapy (HRT) | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Wondering if your symptoms are signs you need hormone replacement therapy? Take the 2-minute quiz and see when HRT may—or may not—fit you.",
+ "sections": [
+  {
+   "type": "articleHero",
+   "imageAlt": "Woman sitting on her bed by a bright window beside a notebook listing her next steps: better sleep, more energy, a hormone check",
+   "category": "Hormone Replacement"
+  },
+  {
+   "type": "articleBody"
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start with clarity before starting a protocol.",
+   "points": [
+    "Personalized, physician-led evaluation",
+    "Advanced testing and clear next steps",
+    "Careful sourcing and medical supervision"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a3067a58cb125b7fb9b4818_peptide_cta.avif",
+    "alt": "Woman sitting in gym after workout, representing personalized peptide therapy, recovery, and wellness care"
+   }
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Related Articles",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/trt-side-effects",
+     "title": "TRT Side Effects: What's Common, What's Serious, and Why Your Whole Health Matters",
+     "summary": "TRT side effects explained: acne, hematocrit, fertility, sleep apnea and heart risk, and why looking at your whole health keeps most of them small.",
+     "category": "Hormone Replacement",
+     "date": "Nov 17, 2026",
+     "image": {
+      "src": "/images/site/6afc63a9d4d67e5ab6d29775_6afc6393f044e8521e6be024_trt-side-effects-man-reflecting-hero.jpeg",
+      "alt": "Man in his forties in a grey sweater at a sunlit kitchen table, chin resting on his hand, with a notebook and lab results in front of him"
+     }
+    },
+    {
+     "href": "/articles/estrogen-dominance",
+     "title": "Estrogen Dominance: Symptoms, Causes and What Your Labs May Be Missing",
+     "summary": "Heavy periods, bloating, mood swings, sore breasts? Learn what estrogen dominance means, what drives it, which labs show it and how it's treated.",
+     "category": "Hormone Replacement",
+     "date": "Nov 9, 2026",
+     "image": {
+      "src": "/images/site/6af1d9daa0c33b4f3a47fb9a_6af1d979f39ea09efb21de4f_estrogen-dominance-woman-reflecting-hero.jpeg",
+      "alt": "Woman in her forties in a cream sweater resting her chin on her hand by a sunny window, looking thoughtful"
+     }
+    },
+    {
+     "href": "/articles/trt-cost",
+     "title": "TRT Cost: What You Actually Pay For (and What a Low Price Leaves Out)",
+     "summary": "What does TRT cost? See price ranges by type, the line items behind them, insurance and HSA/FSA options, and why the right diagnosis matters most.",
+     "category": "Hormone Replacement",
+     "date": "Oct 16, 2026",
+     "image": {
+      "src": "/images/site/6ad229f686f1a9c61acfe921_-ovek-upore-uje-tro-kove-TRT-terapije.avif",
+      "alt": "Man at a desk with a laptop and notebook, comparing TRT costs"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,430 @@
+{
+ "path": "/men/hormone-therapy",
+ "title": "Hormone Therapy for Men | Physician-Led Care | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Looking for a hormone specialist near you? RHM evaluates your full hormonal picture before recommending treatment — physician-led, not a testosterone-only clinic.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": true,
+   "headingInCard": true,
+   "crumb": {
+    "label": "Men",
+    "href": "/men"
+   },
+   "current": "Physician-led hormone therapy",
+   "currentIsH1": true,
+   "heading": "YOU’RE NOT JUST GETTING OLDER. YOUR <span class=\"accent\">HORMONES MAY BE WORKING AGAINST YOU.</span>",
+   "headingTag": "h2",
+   "cardLabel": null,
+   "body": "Looking for a hormone specialist near you? Low energy, stubborn weight, poor sleep, brain fog, and low libido can all be signs that something’s off. We look at your hormones, metabolism, symptoms, and labs to find out what’s actually going on—and build a plan around you.",
+   "cta": {
+    "text": "Find out what's off",
+    "href": "/scheduling"
+   },
+   "image": {
+    "src": "/images/site/6aaac4f9788bc262366e9f23_hero.avif",
+    "alt": ""
+   }
+  },
+  {
+   "type": "symptom",
+   "men": true,
+   "heading": "You know when something feels off.",
+   "body": "You’re still working, training, showing up, and handling what needs to be handled. But you don’t feel like you used to—and “you’re just getting older” isn’t a good enough answer.",
+   "toldLabel": "What You've Been Told:",
+   "told": [
+    "“You're just stressed.”",
+    "“This is just what happens as you get older.”",
+    "“You probably just need testosterone.”"
+   ],
+   "box": "<p>Your symptoms are information. Low energy, slower recovery, stubborn weight, brain fog, poor sleep, or changes in libido can have more than one cause. Testosterone may be part of the picture—but so can thyroid function, <a href=\"/men/metabolic-health\">metabolic health</a>, stress, recovery, and other hormones.</p>",
+   "image": null,
+   "bottom": "Don’t guess. Find out what changed.",
+   "buttons": [
+    {
+     "text": "Find out what's off",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "statement",
+   "slate": true,
+   "label": "What is Hormone Optimization?",
+   "blocks": [
+    {
+     "tag": "h3",
+     "cls": "h1",
+     "html": "Hormone optimization isn’t about chasing a testosterone number. It’s about understanding how your hormones, thyroid, metabolism, stress, and recovery work together—then treating the whole picture so you can function and feel your best."
+    }
+   ]
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "642px",
+   "heading": "When something shifts, you feel it everywhere.",
+   "body": "Hormones don't operate in isolation. Energy, strength, recovery, focus, libido, sleep, body composition, thyroid function, and metabolic health are interconnected. When several start changing at once, it's worth finding out why.",
+   "grid": [
+    "is-3"
+   ],
+   "gridKind": "causes",
+   "cards": [
+    {
+     "title": "Stress Resilience",
+     "stat": null,
+     "body": "<p>Your tolerance for physical and mental stress may drop, leaving you feeling more depleted by demands you previously handled without much thought.</p>",
+     "image": {
+      "src": "/images/site/6aaac50345b7b730d6328d8f_stress-1.avif",
+      "alt": ""
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Motivation &amp; Focus",
+     "stat": null,
+     "body": "<p>Drive can feel flatter, concentration less consistent, and tasks that once felt automatic may require more effort.</p>",
+     "image": null,
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Libido &amp; Sexual Performance",
+     "stat": null,
+     "body": "<p>Changes in testosterone and other hormones can affect sexual desire, performance, and the sense of physical confidence you used to take for granted.</p>",
+     "image": {
+      "src": "/images/site/6aaac515702c7b550f03cc6f_train-1.avif",
+      "alt": ""
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Body Composition",
+     "stat": null,
+     "body": "<p>Muscle can become harder to maintain while abdominal fat becomes easier to gain — even when your training and eating habits haven't changed much.</p>",
+     "image": null,
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Energy &amp; Recovery",
+     "stat": null,
+     "body": "<p>Energy becomes less reliable, and workouts, travel, or stressful weeks take longer to recover from than they used to.</p>",
+     "image": {
+      "src": "/images/site/6aaac536120de6a526706ba0_energy.avif",
+      "alt": ""
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Sleep, Thyroid &amp; Metabolism",
+     "stat": null,
+     "body": "<p>Hormones don't operate independently. Sleep quality, <a href=\"/articles/thyroid-specialist-near-me\">thyroid function</a>, metabolic health, and stress physiology can all influence how you feel — and can contribute to the same symptoms often blamed on testosterone alone.</p>",
+     "image": null,
+     "accent": false,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "mist",
+   "label": "Why a testosterone number is not the full story",
+   "heading": "The problem isn't always low testosterone. It's what hasn't been evaluated together.",
+   "body": "",
+   "grid": [
+    "is-2"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "Low energy, poor recovery, weight changes, or low libido can point to testosterone—but they can also have other causes. We look at the broader picture before deciding what treatment makes sense.",
+     "big": "Testosterone-First",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Total testosterone is only one piece. Free testosterone, estradiol, SHBG, thyroid markers, metabolic health, symptoms, and other relevant labs help us understand what’s actually happening.",
+     "big": "More Than One Lab Value",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Treatment should account for where you're headed—not just where your labs are today. Fertility, performance, body composition, sexual health, and long-term health all influence the plan.",
+     "big": "Your Goals Matter",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Your treatment shouldn't run on autopilot. We monitor how you feel, how your labs respond, and how your goals change—then adjust accordingly.",
+     "big": "Care That Evolves With You",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "compare",
+   "big": true,
+   "label": null,
+   "men": false,
+   "heading": "The goal isn't to get you on testosterone. The goal is to figure out what your body actually needs.",
+   "headingMax": "814px",
+   "body": "A hormone evaluation should look beyond total testosterone alone. RHM evaluates testosterone alongside estradiol, SHBG, DHEA-S, cortisol, thyroid function, and the broader physiologic picture — so treatment is based on <a href=\"/articles/peptide-therapy-vs-trt\">what your body actually needs</a>.",
+   "bodyMax": "740px",
+   "heads": [
+    null,
+    null,
+    "Standard workup"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "Evaluation",
+     "160+ biomarkers",
+     "Often centered on total testosterone"
+    ],
+    [
+     "Interpretation",
+     "Hormones and related systems read together",
+     "Individual markers considered in isolation"
+    ],
+    [
+     "Full-Body context",
+     "Thyroid, cortisol, metabolism, sleep, stress, and recovery considered",
+     "Broader contributors may receive less attention"
+    ],
+    [
+     "FERTILITY PLANNING",
+     "Discussed &amp; planned for before treatment begins",
+     "Often addressed after treatment is underway"
+    ],
+    [
+     "TREATMENT PATH",
+     "TRT only when the evaluation indicates it",
+     "Standardized testosterone protocols may be the primary option"
+    ],
+    [
+     "ONGOING CARE",
+     "Physician-led monitoring and plan adjustment",
+     "Often refill-based with limited adjustment"
+    ]
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "You can’t outwork what you haven’t identified.",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "<p>You can keep training harder, cleaning up your diet, adding supplements, sleeping more, and trying to power through. But when your baseline has changed, more effort isn’t always the answer.</p>"
+    },
+    {
+     "kind": "images",
+     "two": true,
+     "images": [
+      {
+       "src": "/images/site/6aaac55d1b3642542a839c2c_problem.avif",
+       "alt": ""
+      },
+      {
+       "src": "/images/site/6aaac56ae7feee7ea3d2f9c8_solution.avif",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "This is where we stop guessing. Low testosterone may be part of the picture—or it may not be. The goal is to understand what changed, why you feel different, and what actually needs attention. That means looking beyond a single lab value and evaluating the patterns across your symptoms, labs, lifestyle, and physiology before deciding what treatment makes sense. You shouldn't have to work twice as hard just to feel half as good."
+    }
+   ]
+  },
+  {
+   "type": "voices",
+   "heading": "Why it becomes harder to keep dismissing it",
+   "headingMax": "504px",
+   "headingFull": true,
+   "body": "At first, the explanations seem reasonable: stress, poor sleep, getting older, working too much. But when the same changes keep showing up month after month, they become harder to explain away.",
+   "quotes": [
+    {
+     "quote": "<p>“I kept telling myself I was just tired from work. But even with more rest, my energy and recovery still weren't what they used to be.”</p>",
+     "name": "Michael, 53"
+    },
+    {
+     "quote": "<p>“I thought I just needed to train harder. Instead, recovery got slower, motivation felt flatter, and maintaining strength became harder.”</p>",
+     "name": "Daniel, 48"
+    },
+    {
+     "quote": "<p>“I assumed it was just aging. Then lower energy, less drive, and changes in my body started adding up.”</p>",
+     "name": "Robert, 56"
+    }
+   ]
+  },
+  {
+   "type": "process",
+   "heading": "Our Approach to Metabolic Health",
+   "body": "",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Discovery Call",
+     "body": "Talk through what’s changed, what you’re experiencing, your health history, and what you want to improve.",
+     "image": {
+      "src": "/images/site/6a788bb4b2ad1918e63eb24f_discovery.avif",
+      "alt": ""
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Comprehensive Lab Evaluation",
+     "body": "<a href=\"/how-it-works\">Evaluate 160+ biomarkers</a> across hormones, thyroid function, metabolism, cortisol, inflammation, and other relevant systems.",
+     "image": {
+      "src": "/images/site/6a20b2f6ac9881d327b05f7e_blood.avif",
+      "alt": "Blood sample for comprehensive lab testing, representing hormone, thyroid, cortisol, and metabolism evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Physician Review",
+     "body": "Your physician reviews your labs alongside your symptoms and goals to identify the patterns that may be contributing to how you feel.",
+     "image": {
+      "src": "/images/site/6a788c094ee5c637086b1f14_discussion.avif",
+      "alt": ""
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Personalized Plan",
+     "body": "<a href=\"/why-us\">Create a treatment plan</a> around your physiology — whether that involves TRT, supporting natural hormone production, addressing other contributing factors, or a combination.",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing Monitoring",
+     "body": "Track how you feel, how your biomarkers respond, and how your goals change over time so your care can evolve with you.",
+     "image": {
+      "src": "/images/site/6a788c44282075cf34d4318d_monitoring.avif",
+      "alt": ""
+     }
+    }
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "xl",
+    "xl"
+   ],
+   "image": {
+    "src": "/images/site/6a20aca76c5eefd7bda386da_dr_rand.avif",
+    "alt": "RHM physician in medical scrubs, representing physician-led hormone optimization and personalized patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Physician-led hormone care built around your physiology",
+   "body": "We evaluate testosterone alongside your broader hormonal, metabolic, and thyroid picture — then build and monitor a plan around your labs, symptoms, fertility goals, and long-term health.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "ctaBlock",
+   "slate": true,
+   "heading": "Start your path back to feeling like yourself",
+   "points": [
+    "Personalized, physician-led hormone care",
+    "160+ biomarkers evaluated together",
+    "A plan built around your labs, symptoms, fertility goals, and long-term health"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6aaac57daed586032a1a00e6_hormone_optimization_cta.avif",
+    "alt": ""
+   }
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "What is hormone optimization?",
+     "a": "<p>Hormone optimization means evaluating your full hormonal picture — testosterone, estradiol, DHEA-S, cortisol, and thyroid function together — rather than testing one marker in isolation, then building a plan around what that evaluation actually shows.</p>"
+    },
+    {
+     "q": "Is hormone therapy for men the same as TRT?",
+     "a": "<p>Not exactly. TRT is one form of hormone therapy — testosterone replacement specifically. Hormone therapy for men is broader. Depending on what your evaluation shows, treatment may involve TRT, support for your body's natural testosterone production, or addressing metabolic and recovery factors first.</p>"
+    },
+    {
+     "q": "What's the difference between a hormone specialist and a testosterone clinic?",
+     "a": "<p>A testosterone clinic is generally centered around one hormone and one treatment path. A hormone specialist evaluates your broader hormonal and metabolic picture — including thyroid, cortisol, estradiol, and more — before recommending treatment.</p>"
+    },
+    {
+     "q": "What is andropause?",
+     "a": "<p>Andropause refers to the gradual decline in testosterone that can occur with age. Symptoms can overlap with other hormonal, metabolic, sleep, and stress-related changes, which is why evaluation matters before assuming testosterone is the cause.</p>"
+    },
+    {
+     "q": "Are the symptoms of andropause the same as low testosterone?",
+     "a": "<p>They can overlap, but they're not automatically the same thing. Fatigue, lower motivation, reduced recovery, and changes in body composition can have several causes. Lab testing and clinical evaluation help determine what's actually contributing.</p>"
+    },
+    {
+     "q": "Will hormone therapy affect my fertility?",
+     "a": "<p>It can, depending on the treatment. Testosterone therapy specifically can affect sperm production and natural hormone signaling. That's why fertility goals should be discussed before treatment begins — especially if you're younger or considering having children in the future.</p>"
+    },
+    {
+     "q": "Do I need TRT, or could something else explain how I feel?",
+     "a": "<p>Possibly. TRT is one potential outcome of a full evaluation, not the default. If your results point toward thyroid, metabolic, sleep, stress, or recovery-related factors instead — or alongside testosterone — those may need to be addressed as part of your plan.</p>"
+    },
+    {
+     "q": "What does a hormone evaluation actually check?",
+     "a": "<p><a href=\"/men/longevity-clinic\">A comprehensive evaluation</a> can include total and free testosterone, estradiol, SHBG, DHEA-S, cortisol, and thyroid markers, alongside the broader metabolic and physiologic picture. Looking at these together provides more context than a single testosterone result.</p>"
+    },
+    {
+     "q": "Do I need a referral to see a hormone specialist?",
+     "a": "<p>Generally, no. You can schedule an evaluation directly. If you're already seeing another specialist for a related condition, RHM can work alongside that care rather than replacing it.</p>"
+    }
+   ]
+  }
+ ]
+}

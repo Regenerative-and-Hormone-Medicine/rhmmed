@@ -1,0 +1,36 @@
+---
+import Rich from '../Rich.astro';
+// "What you're experiencing" (source: .section.is-symptom).
+import Button from '../Button.astro';
+import { accent, type Btn, type Theme } from './types';
+interface Props { theme: Theme; heading: string; body: string; toldLabel: string; told: string[]; box: string; bottom: string; buttons: Btn[]; image?: { src: string; alt: string } | null }
+const p = Astro.props;
+---
+
+<section class="py-32 max-md:py-20">
+  <div class="container-site flex flex-col gap-8">
+    <div class="grid grid-cols-2 gap-x-8 gap-y-[3.75rem] max-lg:gap-x-4 max-lg:gap-y-8 max-sm:grid-cols-1 max-sm:gap-y-4">
+      <div class="col-span-2 flex flex-col gap-6 max-sm:col-span-1">
+        <h2 class="text-h2" set:html={p.heading} />
+        <Rich class="rich max-w-[43.875rem] text-[#000000b3]" html={p.body} />
+      </div>
+      <div class:list={['flex flex-col justify-center gap-4 rounded-2xl p-6', p.theme === 'men' ? 'bg-mist' : 'bg-bg-light']}>
+        {p.toldLabel && <p class="text-label text-ink-70">{p.toldLabel}</p>}
+        <ul class="pl-6 list-disc">
+          {p.told.map((t) => <li class="text-body-r mb-4 border-b border-ink/10 pb-4 last:mb-0" set:html={t} />)}
+        </ul>
+      </div>
+      {p.box ? (
+        <div class:list={['rich text-h4 capitalize rounded-2xl p-8 text-white', accent(p.theme), p.theme === 'men' && '[&_a]:underline']} set:html={p.box} />
+      ) : p.image && (
+        <img src={p.image.src} alt={p.image.alt} class="size-full rounded-2xl object-cover" loading="lazy" />
+      )}
+    </div>
+    <div class:list={['flex items-center justify-between rounded-full py-4 pr-4 pl-8 text-white max-lg:flex-col max-lg:items-start max-lg:gap-4 max-lg:rounded-[2rem] max-lg:pr-8 max-sm:rounded-2xl', accent(p.theme), p.theme === 'men' && 'gap-2']}>
+      <p class:list={['text-body-m', p.theme === 'men' && 'max-w-[44ch]']} set:html={p.bottom} />
+      <div class="flex gap-2.5 max-sm:w-full max-sm:flex-col max-sm:items-start">
+        {p.buttons.map((b) => <Button href={b.href}>{b.text}</Button>)}
+      </div>
+    </div>
+  </div>
+</section>

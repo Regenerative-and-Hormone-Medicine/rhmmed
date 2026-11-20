@@ -1,0 +1,31 @@
+---
+// Legal pages: centred grey title band + long rich text (source: .is-pp_hero / .is-pp / .pp-rte).
+interface Props { heading?: string; html?: string }
+const { heading, html } = Astro.props;
+---
+
+{heading !== undefined && (
+  <section class="bg-bg-light pt-40 pb-[6.25rem] max-md:pt-32 max-md:pb-16">
+    <div class="container-site flex items-center justify-center text-center">
+      <h1 set:html={heading} />
+    </div>
+  </section>
+)}
+{html !== undefined && (
+  <section class="pt-24 pb-[6.25rem] max-md:py-16">
+    <div class="container-site flex max-w-[70rem] flex-col gap-16">
+      <div class="flex flex-col items-start gap-5">
+        <div class="pp-rte" set:html={html} />
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .pp-rte :global(h3) { padding-bottom: 2rem; }
+  .pp-rte :global(p), .pp-rte :global(ul) { padding-bottom: 1.25rem; }
+  .pp-rte :global(ul) { padding-left: 1.5rem; list-style: disc; }
+  .pp-rte :global(li) { font-size: 1.25rem; line-height: 1.25; margin-bottom: 1rem; }
+  .pp-rte :global(li:last-child) { margin-bottom: 0; } /* measured on the live page */
+  .pp-rte :global(a) { font-weight: 500; text-decoration: underline; }
+</style>

@@ -1,0 +1,500 @@
+{
+ "path": "/women/menopause",
+ "title": "Menopause Care to Feel Like Yourself Again | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Menopause care that looks beyond estrogen with 160+ biomarkers. Find what changed and start your personalized plan.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": false,
+   "headingInCard": false,
+   "crumb": {
+    "label": "Women",
+    "href": "/women"
+   },
+   "current": "Menopause",
+   "currentIsH1": false,
+   "heading": "Menopause care for when symptoms didn't end when your period did.",
+   "headingTag": "h1",
+   "cardLabel": "Menopause",
+   "body": "Menopause affects hormones, thyroid, cortisol, metabolism, and recovery — not just estrogen. RHM evaluates them together with 160+ biomarkers, then builds a personalized treatment plan around your physiology.",
+   "cta": {
+    "text": "Book Free VIP Call",
+    "href": "/scheduling"
+   },
+   "image": {
+    "src": "/images/site/6a20b7f6f1001edd8e568210_menopause_hero.avif",
+    "alt": "Woman experiencing menopause symptoms, representing personalized hormone care and women’s wellness support"
+   }
+  },
+  {
+   "type": "symptom",
+   "men": false,
+   "heading": "What you’re experiencing isn’t random.",
+   "body": "You expected things to settle after your period stopped. Instead, sleep feels lighter. Energy feels less reliable. Your body responds differently to stress, food, exercise, and normal daily demands. Nothing may feel dramatic enough to explain it. Just a growing sense that you don’t feel like yourself.",
+   "toldLabel": "You've been told:",
+   "told": [
+    "“It's just a part of aging”",
+    "“Your labs look normal”",
+    "“You should be able to push through”"
+   ],
+   "box": "But you've been pushing. And it isn't working. Because what you're experiencing isn't a mindset problem. It's a physiological one. And it deserves more than reassurance.",
+   "image": null,
+   "bottom": "Symptoms affecting how you sleep, think, and function deserve a closer look.",
+   "buttons": [
+    {
+     "text": "Book free vip call",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "statement",
+   "slate": false,
+   "label": "What is Menopause?",
+   "blocks": [
+    {
+     "tag": "h3",
+     "cls": "h1",
+     "html": "Menopause is the point when you have gone 12 months without a period. It usually happens between ages 45 and 55, but the effects can continue for years after your final cycle."
+    }
+   ]
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "704px",
+   "heading": "Menopause symptoms rarely happen one at a time.",
+   "body": "Sleep, energy, mood, weight, libido, and recovery often shift together — which is why symptoms can feel connected and harder to explain over time.",
+   "grid": [],
+   "gridKind": "signs",
+   "cards": [
+    {
+     "title": "Sleep &amp; Night Sweats",
+     "stat": null,
+     "body": "Lighter sleep, night sweats, waking at 3am, trouble falling back asleep",
+     "image": {
+      "src": "/images/site/6a20afaf82ed205eb9f63c14_8d36ea79e6b983a44c2afdbb9e0abeb0_Perimenopause-Sleep-Symptoms.avif",
+      "alt": "Woman experiencing sleep problems at night, representing perimenopause symptoms and hormone changes"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Energy, Mood &amp; Focus",
+     "stat": null,
+     "body": "Fatigue, brain fog, depression, anxiety, irritability, low motivation",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Weight &amp; Metabolism",
+     "stat": null,
+     "body": "<a href=\"/women/weight-loss-resistance\">Weight gain</a>, abdominal fat, slower recovery, changes in muscle tone",
+     "image": {
+      "src": "/images/site/6a20afaf6811d301a6e0782d_5de794dccbad4f366fa496c9567b1f53_Perimenopause-Weight-Changes.avif",
+      "alt": "Woman experiencing perimenopause weight changes, representing metabolism shifts and hormone health support"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Skin, Hair &amp; Body Changes",
+     "stat": null,
+     "body": "Hair thinning, dry skin, joint discomfort, changes in body composition",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Libido &amp; <a href=\"/women/sexual-health\">Sexual Health</a>",
+     "stat": null,
+     "body": "Low libido, dryness, discomfort, reduced responsiveness",
+     "image": {
+      "src": "/images/site/6a20b6f403128578c493f7a1_menopause_libido.avif",
+      "alt": "Woman experiencing menopause libido changes, representing sexual health, discomfort, and hormone imbalance"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Hormonal Changes",
+     "stat": null,
+     "body": "Hot flashes, palpitations, mood shifts, feeling physically or emotionally flat",
+     "image": null,
+     "accent": true,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "blush",
+   "label": "Why standard care often falls short",
+   "heading": "Menopause affects more than just estrogen.",
+   "body": "Estrogen matters, but it is only one part of the puzzle. How you feel during menopause is also influenced by thyroid function, cortisol, inflammation, metabolic health, sleep quality, and recovery capacity.",
+   "grid": [
+    "is-3"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "FSH alone doesn't show the full picture",
+     "big": "Undertested",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "fewer than 2 hours of menopause training in most medical schools",
+     "big": "Undertrained",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "reference ranges built for populations, not you",
+     "big": "Averaged",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "symptoms treated separately, pattern never seen",
+     "big": "Fragmented",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "normal labs used to end the conversation",
+     "big": "Dismissed",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "<p><a href=\"/women/thyroid\">thyroid</a>, cortisol, and metabolism rarely evaluated</p>",
+     "big": "Incomplete",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "compare",
+   "big": true,
+   "label": null,
+   "men": false,
+   "heading": "Your labs can look normal. And still miss everything that matters.",
+   "headingMax": "814px",
+   "body": "Standard panels can confirm you're in menopause. They rarely explain why you still feel exhausted, foggy, anxious, and unlike yourself.",
+   "bodyMax": "594px",
+   "heads": [
+    null,
+    null,
+    "Traditional labs"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "Evaluation",
+     "160+ biomarkers",
+     "A handful of hormone markers"
+    ],
+    [
+     "Interpretation",
+     "Systems read together",
+     "Single snapshots in isolation"
+    ],
+    [
+     "Full-Body context",
+     "Thyroid, cortisol, metabolism, inflammation",
+     "Rarely included"
+    ],
+    [
+     "Symptom Analysis",
+     "Connected pattern",
+     "Each symptom separately"
+    ],
+    [
+     "Clinical guidance",
+     "Physician-led, physiology-driven",
+     "Minimal context provided"
+    ],
+    [
+     "core plan",
+     "Built around your physiology",
+     "Reactive and generalized"
+    ]
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "Why menopause can last longer than expected?",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "<p>Most women are told menopause is a phase with a finish line. What they aren't told is that for many women, that finish line doesn't arrive on schedule. <a href=\"https://pubmed.ncbi.nlm.nih.gov/19188852/\">Research shows</a> the average duration of symptoms is 7.4 years — and for women who began experiencing them during perimenopause, nearly 12.</p>"
+    },
+    {
+     "kind": "images",
+     "two": false,
+     "images": [
+      {
+       "src": "/images/site/6a20b6f485db82533b60d3bd_menopause_first.avif",
+       "alt": ""
+      },
+      {
+       "src": "/images/site/6a20b6f4b1880a1b6956cd57_menopause_second.avif",
+       "alt": ""
+      },
+      {
+       "src": "/images/site/6a20b6f43c714751e8ac0f1c_menopause_third.avif",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "The hormonal shifts that began during perimenopause continue reshaping how your body regulates sleep, metabolism, stress, and recovery long after your final period. If you're years into this and still don't feel like yourself — you're not behind. You're just not getting the full picture yet."
+    }
+   ]
+  },
+  {
+   "type": "voices",
+   "heading": "Why it becomes harder to “push through”",
+   "headingMax": "504px",
+   "headingFull": true,
+   "body": "At some point, adapting around how you feel stops being sustainable. It's not that the symptoms get dramatically worse. It's that combined, the weight of it all becomes too heavy",
+   "quotes": [
+    {
+     "quote": "<p>\"I spent three years convinced it was stress. By the time I got answers, I had missed so much of my own life.\"</p>",
+     "name": "Kathy, 54"
+    },
+    {
+     "quote": "<p>“Nothing felt dramatic enough to explain. I just kept waking up a little less like myself every day.\"</p>",
+     "name": "Helen, 52"
+    },
+    {
+     "quote": "<p>“Every appointment ended with 'your labs look normal.' Nobody ever asked how I actually felt.\"</p>",
+     "name": "Laura, 49"
+    }
+   ]
+  },
+  {
+   "type": "process",
+   "heading": "How RHM Treats Menopause",
+   "body": "",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Discovery Call",
+     "body": "Discuss symptoms, history, and whether deeper evaluation makes sense.",
+     "image": {
+      "src": "/images/site/6a20a04ac0ca93a2d3d711a4_step_.avif",
+      "alt": "Woman on a discovery call, representing hormone health consultation and symptom evaluation"
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Comprehensive Lab Evaluation",
+     "body": "Test 160+ biomarkers across hormones, thyroid, cortisol, metabolism, and inflammation.",
+     "image": {
+      "src": "/images/site/6a20b2f6ac9881d327b05f7e_blood.avif",
+      "alt": "Blood sample for comprehensive lab testing, representing hormone, thyroid, cortisol, and metabolism evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Provider Consultation",
+     "body": "Review your results with an RHM physician and understand what may be driving your symptoms.",
+     "image": {
+      "src": "/images/site/6a20b33fca8b1a9c9eaec7a0_consultation.avif",
+      "alt": "Doctor consulting with patient, representing personalized hormone health consultation and lab result review"
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Personalized Plan",
+     "body": "Get a treatment plan built around your labs, symptoms, physiology, and goals.",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing Monitoring",
+     "body": "Adjust your care over time as your body responds and your needs change.",
+     "image": {
+      "src": "/images/site/6a20b4087999ef3dd1181026_monitoring.avif",
+      "alt": "Woman on a virtual follow-up call, representing ongoing hormone care monitoring and wellness support"
+     }
+    }
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "xl",
+    "xl"
+   ],
+   "image": {
+    "src": "/images/site/6a20aca76c5eefd7bda386da_dr_rand.avif",
+    "alt": "RHM physician in medical scrubs, representing physician-led hormone optimization and personalized patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Physician-led care built around your physiology",
+   "body": "Many hormone clinics rely on standardized protocols. RHM looks at how hormones, thyroid, cortisol, metabolism, inflammation, and recovery work together — then builds care around your labs, symptoms,",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Research & Insights on Menopause",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/perimenopause-weight-gain",
+     "title": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)",
+     "summary": "Perimenopause weight gain isn't about willpower. See the hormonal, metabolic, and physiological causes — and what individualized care can do.",
+     "category": "Perimenopause",
+     "date": "Aug 28, 2026",
+     "image": {
+      "src": "/images/site/6abe3fc3fcb1e77cb748ace7_card-perimenopause-weight-gain.avif",
+      "alt": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)"
+     }
+    },
+    {
+     "href": "/articles/perimenopause-brain-fog",
+     "title": "Perimenopause Brain Fog: Why It Happens and What Actually Helps",
+     "summary": "Perimenopause brain fog is real, common, and usually temporary — here's why it happens and what a full hormone evaluation can do about it.",
+     "category": "Perimenopause",
+     "date": "Aug 20, 2026",
+     "image": {
+      "src": "/images/site/6abe40c53170a825ee25a7ff_card-perimenopause-brain-fog-32.webp",
+      "alt": "Perimenopause Brain Fog: Why It Happens and What Actually Helps"
+     }
+    },
+    {
+     "href": "/articles/not-losing-weight-on-ozempic",
+     "title": "Why am I Not Losing Weight on Ozempic? Why the Scale Stalls or Creeps Back",
+     "summary": "Not losing weight on Ozempic, or gaining it back? A physician-led look at why the scale stalls: metabolic adaptation, muscle loss, thyroid, and insulin.",
+     "category": "Weight Loss Resistance",
+     "date": "Jul 6, 2026",
+     "image": {
+      "src": "/images/site/6abe3fc3c7d02b27c9bb1b93_card-not-losing-weight-on-ozempic.avif",
+      "alt": "Why am I Not Losing Weight on Ozempic? Why the Scale Stalls or Creeps Back"
+     }
+    }
+   ]
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start your journey to personalized, long-term health",
+   "points": [
+    "Physician-led care for perimenopause symptoms",
+    "160+ biomarkers across hormones, thyroid, cortisol, metabolism, and inflammation",
+    "A personalized plan that evolves as your body changes"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a21cab54a28f5a3e001e17d_menopause-cta.avif",
+    "alt": "Couple reviewing health information on a laptop, representing personalized hormone care and long-term wellness support"
+   }
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "What age does menopause usually start?",
+     "a": "Menopause usually occurs between ages 45 and 55, with the average age around 51. Some women reach menopause earlier or later depending on genetics, medical history, lifestyle, surgery, medications, and overall health patterns."
+    },
+    {
+     "q": "How long do menopause symptoms last?",
+     "a": "Menopause itself is confirmed after 12 consecutive months without a period, but symptoms can last for years before and after that point. Hot flashes, sleep disruption, mood changes, weight gain, vaginal dryness, and brain fog may continue well into postmenopause for some women."
+    },
+    {
+     "q": "What is the difference between menopause and perimenopause?",
+     "a": "<p><a href=\"/women/perimenopause\">Perimenopause</a> is the transition leading up to menopause, when hormones fluctuate and symptoms often begin. Menopause is the milestone reached after 12 consecutive months without a period. <a href=\"#\">Postmenopause</a> is the stage after menopause.</p>"
+    },
+    {
+     "q": "Is it normal to still have symptoms years after menopause?",
+     "a": "Yes, many women continue experiencing symptoms after menopause. That does not mean you should simply accept them. Persistent symptoms may be connected to hormones, thyroid function, metabolism, cortisol, inflammation, sleep, recovery, or other underlying patterns that deserve a closer look."
+    },
+    {
+     "q": "What are common menopause symptoms?",
+     "a": "Common menopause symptoms include hot flashes, night sweats, sleep disruption, fatigue, brain fog, anxiety, mood changes, weight gain, loss of muscle tone, low libido, vaginal dryness, joint pain, hair thinning, and heart palpitations."
+    },
+    {
+     "q": "Is menopause only about estrogen?",
+     "a": "No. Estrogen matters, but menopause can also affect thyroid function, metabolism, cortisol patterns, inflammation, sleep quality, muscle mass, bone health, cardiovascular health, and recovery capacity. That is why symptoms often feel connected instead of isolated."
+    },
+    {
+     "q": "Why am I gaining weight after menopause?",
+     "a": "Postmenopausal weight gain can be influenced by hormone changes, reduced muscle mass, insulin resistance, thyroid function, sleep disruption, chronic stress, inflammation, and lower recovery capacity. For many women, the same diet and exercise routine no longer creates the same result."
+    },
+    {
+     "q": "Can menopause affect anxiety and brain fog?",
+     "a": "Yes. Hormonal changes, poor sleep, cortisol patterns, thyroid function, and metabolic changes can all affect mood, focus, memory, and mental clarity. Many women describe feeling less sharp, more anxious, or less emotionally steady during and after menopause."
+    },
+    {
+     "q": "Do I need hormone therapy for menopause?",
+     "a": "Not always. Some women may benefit from hormone therapy, while others may need non-hormonal support, metabolic care, thyroid evaluation, targeted supplementation, lifestyle changes, or other interventions. RHM builds care around your symptoms, labs, history, and goals."
+    },
+    {
+     "q": "What if I do not want hormone therapy?",
+     "a": "That is okay. Menopause care does not have to start or end with hormone therapy. RHM can evaluate other systems that may be contributing to symptoms, including thyroid, metabolism, inflammation, sleep, cortisol, nutrition, and recovery."
+    },
+    {
+     "q": "How does RHM evaluate menopause symptoms?",
+     "a": "RHM evaluates menopause symptoms through a comprehensive review of your symptoms, medical history, lifestyle patterns, and lab work. The goal is to understand what is driving how you feel instead of treating one symptom or one lab marker in isolation."
+    },
+    {
+     "q": "When should I see a menopause specialist?",
+     "a": "You should consider seeing a menopause specialist if symptoms are affecting your sleep, weight, mood, focus, libido, energy, comfort, or quality of life — especially if you have been told everything is “normal” but you still do not feel like yourself."
+    }
+   ]
+  }
+ ]
+}

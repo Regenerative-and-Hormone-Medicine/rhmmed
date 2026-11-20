@@ -1,0 +1,22 @@
+---
+// "Research & Insights" — heading, button, 3 article cards (source: .container.is-inner-resources).
+import Button from '../Button.astro';
+import ArticleCard from '../ArticleCard.astro';
+interface Card { href: string; title: string; summary: string; category: string; date: string; image: { src: string; alt: string } | null }
+interface Props { heading?: string; button?: { text: string; href: string } | null; cards: Card[]; tone?: 'grey' | 'mist' }
+const { heading = 'Research & Insights', button = { text: 'View articles', href: '/articles' }, cards, tone = 'grey' } = Astro.props;
+---
+
+<section class:list={[tone === 'mist' ? 'bg-mist' : 'bg-bg-light']}>
+  <div class="container-site flex flex-col gap-[3.125rem] py-[7.5rem]">
+    <div class="flex items-end justify-between gap-8 max-md:flex-col max-md:items-start max-md:gap-4">
+      <h2 class="w-full max-w-[31.5rem]">{heading}</h2>
+      {button && <Button href={button.href}>{button.text}</Button>}
+    </div>
+    <div class="grid grid-cols-3 gap-4 max-md:grid-cols-1">
+      {cards.map((c) => (
+        <ArticleCard href={c.href} title={c.title} summary={c.summary} category={c.category} date={c.date} image={c.image?.src ?? ''} alt={c.image?.alt} white />
+      ))}
+    </div>
+  </div>
+</section>

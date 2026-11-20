@@ -1,0 +1,31 @@
+---
+// Coloured CTA band: white card with checklist + photo (source: .container.is-cta-2-grid).
+import Button from '../Button.astro';
+import type { Btn, Img } from './types';
+interface Props { slate: boolean; heading: string; points: string[]; buttons: Btn[]; image: Img }
+const p = Astro.props;
+---
+
+<section class:list={['py-32 text-white max-md:py-16', p.slate ? 'bg-slate' : 'bg-brown']}>
+  <div class="container-site grid grid-cols-2 gap-4 max-md:grid-cols-1 max-md:gap-0">
+    <div class="flex flex-col justify-center gap-6 rounded-2xl bg-white p-10 text-black max-md:rounded-t-none">
+      <h2 set:html={p.heading} />
+      <div class="flex max-w-[28.5rem] flex-col gap-[3.125rem]">
+        <ul class="flex flex-col gap-4">
+          {p.points.map((pt) => <li class="check text-body-m md:text-[1.25rem]" set:html={pt} />)}
+        </ul>
+        <div class="flex items-center gap-2.5 max-md:flex-wrap max-sm:flex-col max-sm:items-start">
+          {p.buttons.map((b) => <Button href={b.href}>{b.text}</Button>)}
+        </div>
+      </div>
+    </div>
+    {p.image && <img src={p.image.src} alt={p.image.alt} class="size-full rounded-2xl object-cover max-md:order-first max-md:rounded-b-none" loading="lazy" />}
+  </div>
+</section>
+
+<style>
+  .check {
+    padding-left: 2.125rem;
+    background: url('/images/site/6989f1f49e95bc8ff3f2bcfd_checkmark.svg') no-repeat 0 0.25rem / 1.125rem 1.125rem;
+  }
+</style>

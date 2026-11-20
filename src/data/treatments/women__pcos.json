@@ -1,0 +1,492 @@
+{
+ "path": "/women/pcos",
+ "title": "PCOS Doctor & Treatment Built Around You | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "PCOS treatment at RHM evaluates hormones, insulin resistance, thyroid, inflammation, metabolism, and symptoms together for more personalized care.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": false,
+   "headingInCard": false,
+   "crumb": {
+    "label": "Women",
+    "href": "/women"
+   },
+   "current": "PCOS Treatment",
+   "currentIsH1": false,
+   "heading": "PCOS care for when symptom management is no longer enough.",
+   "headingTag": "h1",
+   "cardLabel": "PCOS Treatment",
+   "body": "Many women are told to manage PCOS symptoms without understanding what drives them. At RHM, we evaluate hormones, insulin resistance, thyroid function, inflammation, metabolism, stress, and long-term goals to build more personalized care.",
+   "cta": {
+    "text": "Book Free VIP Call",
+    "href": "/scheduling"
+   },
+   "image": {
+    "src": "/images/site/6a33edfe03425fc6dabd5fd4_pcos_hero.avif",
+    "alt": "Doctor consulting with patient, representing personalized PCOS treatment, hormone health, and insulin resistance care"
+   }
+  },
+  {
+   "type": "symptom",
+   "men": false,
+   "heading": "Managing symptoms is not the same as understanding why they happen.",
+   "body": "Cycles feel unpredictable. Weight feels harder to lose. Cravings feel overwhelming. Energy crashes hit harder than they should.",
+   "toldLabel": "Common Concerns:",
+   "told": [
+    "“Just lose weight”",
+    "“Birth control should help”",
+    "“Your labs look normal”"
+   ],
+   "box": "<p>PCOS symptoms rarely happen in isolation. Hormones, metabolism, inflammation, and insulin signaling often overlap together.</p>",
+   "image": null,
+   "bottom": "PCOS care should begin with understanding the full picture.",
+   "buttons": [
+    {
+     "text": "Book free vip call",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "statement",
+   "slate": false,
+   "label": "What is PCOS?",
+   "blocks": [
+    {
+     "tag": "h3",
+     "cls": "h1",
+     "html": "PCOS is a metabolic and hormonal condition where insulin resistance, androgens, inflammation, metabolism, and ovarian function can affect each other at the same time."
+    }
+   ]
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "814px",
+   "heading": "PCOS symptoms rarely happen one at a time.",
+   "body": "Hormonal, metabolic, inflammatory, and insulin-related changes often overlap — which is why symptoms can feel connected.",
+   "grid": [],
+   "gridKind": "signs",
+   "cards": [
+    {
+     "title": "Irregular Cycles",
+     "stat": null,
+     "body": "Periods that are unpredictable, absent, heavy, or difficult to track.",
+     "image": {
+      "src": "/images/site/6a341585c57a87fd97068fcb_pcos-irregular-cycles.avif",
+      "alt": "Woman experiencing abdominal discomfort, representing PCOS irregular cycles and hormone imbalance"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Weight Resistance",
+     "stat": null,
+     "body": "<a href=\"/women/weight-loss-resistance\">Weight that does not respond</a> proportionally to food, exercise, or effort.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Cravings &amp; Energy Crashes",
+     "stat": null,
+     "body": "Blood sugar swings that make cravings feel physical, not psychological.",
+     "image": {
+      "src": "/images/site/6a341588bdf8cd1036010670_pcos-cravings.avif",
+      "alt": "Woman eating at home, representing PCOS cravings, energy crashes, and blood sugar imbalance"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Skin &amp; Hair Changes",
+     "stat": null,
+     "body": "Acne, hair thinning, unwanted hair growth, or skin changes that keep returning.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Inflammation &amp; Fatigue",
+     "stat": null,
+     "body": "Feeling puffy, inflamed, foggy, tired, or harder to recover than expected.",
+     "image": {
+      "src": "/images/site/6a341585cbe69c20204d5cad_pcos-fatigue.avif",
+      "alt": "Woman feeling fatigued at home, representing PCOS inflammation, low energy, and hormone imbalance"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Hormonal Imbalance",
+     "stat": null,
+     "body": "Androgen, <a href=\"/women/thyroid\">thyroid</a>, cortisol, and reproductive hormone patterns that may interact together.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "blush",
+   "label": "Why standard care often falls short?",
+   "heading": "You are not failing. The full picture may not be getting evaluated.<br>",
+   "body": "",
+   "grid": [
+    "is-3"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "<p>Cycles, acne, weight, and fertility are often treated separately.</p>",
+     "big": "Too Symptom-Based",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Insulin, thyroid, inflammation, and metabolism are rarely reviewed together.",
+     "big": "Underevaluated",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "“Just lose weight” ignores the physiology making weight harder.",
+     "big": "Oversimplified",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "PCOS is often treated as ovarian, even when metabolism is central.",
+     "big": "Too Narrow",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "<p>Care often starts after symptoms worsen instead of identifying patterns early.</p>",
+     "big": "Reactive",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Many women are given the same protocol, despite different PCOS drivers.",
+     "big": "Generalized",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "compare",
+   "big": true,
+   "label": null,
+   "men": false,
+   "heading": "Effective PCOS care begins by identifying the physiologic patterns beneath the symptoms.",
+   "headingMax": "814px",
+   "body": "",
+   "bodyMax": null,
+   "heads": [
+    null,
+    null,
+    "Traditional labs"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "Evaluation",
+     "160+ biomarkers",
+     "Limited or symptom-based intake"
+    ],
+    [
+     "Interpretation",
+     "Systems read together",
+     "Symptoms reviewed separately"
+    ],
+    [
+     "Full-Body context",
+     "Insulin, hormones, thyroid, inflammation, metabolism",
+     "Often focused on cycles or fertility"
+    ],
+    [
+     "Weight &amp; cravings",
+     "Metabolic drivers evaluated",
+     "Often treated as behavior alone"
+    ],
+    [
+     "Treatment approach",
+     "Built around your physiology",
+     "Standardized protocol"
+    ],
+    [
+     "core plan",
+     "Monitored and adjusted over time",
+     "Reactive and generalized"
+    ]
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "What is often missed",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "PCOS care should look beyond the loudest symptom."
+    },
+    {
+     "kind": "images",
+     "two": false,
+     "images": [
+      {
+       "src": "/images/site/6a33ee0dc398896cb6e58801_pcos_1.avif",
+       "alt": "Woman looking in the mirror, representing PCOS acne, skin changes, and hormone imbalance"
+      },
+      {
+       "src": "/images/site/6a33ee153b6709217e80ef2c_pcos_2.avif",
+       "alt": "Woman reviewing health information, representing PCOS lab evaluation, hormone health, and personalized care planning"
+      },
+      {
+       "src": "/images/site/6a33ee1e1ef58ecea7b7f2fc_pcos_3.avif",
+       "alt": "Woman stretching at home, representing PCOS wellness support, hormone balance, and improved wellbeing"
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "<p>At RHM, we evaluate your symptoms, labs, insulin signaling, hormones, metabolism, thyroid function, inflammation patterns, and long-term health goals together before building your care plan.</p>"
+    }
+   ]
+  },
+  {
+   "type": "voices",
+   "heading": "You can only compensate for so long before managing symptoms is no longer enough.",
+   "headingMax": "562px",
+   "headingFull": false,
+   "body": "You may already be paying attention to the food, the workouts, the sleep, the cravings, and the cycles. But when symptoms continue stacking together, it may point to a deeper physiologic pattern.",
+   "quotes": [
+    {
+     "quote": "<p>“I was eating well, exercising consistently, and still felt like my metabolism was not responding normally.”</p>",
+     "name": "Michelle, 51"
+    },
+    {
+     "quote": "<p>“I kept hearing that my labs were normal, but nothing about the way I felt seemed normal.”</p>",
+     "name": "Dana, 48"
+    },
+    {
+     "quote": "<p>“I did not want another quick fix. I wanted to understand the full pattern behind the symptoms.”</p>",
+     "name": "Rachel, 66"
+    }
+   ]
+  },
+  {
+   "type": "process",
+   "heading": "How RHM evaluates PCOS",
+   "body": "",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Discovery Call",
+     "body": "We review your PCOS symptoms, cycle patterns, weight changes, cravings, energy, history, and goals.",
+     "image": {
+      "src": "/images/site/6a20a04ac0ca93a2d3d711a4_step_.avif",
+      "alt": "Woman on a discovery call, representing hormone health consultation and symptom evaluation"
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Comprehensive Lab Evaluation",
+     "body": "We test 160+ biomarkers across insulin, hormones, thyroid, cortisol, metabolism, inflammation, and recovery.",
+     "image": {
+      "src": "/images/site/6a20b2f6ac9881d327b05f7e_blood.avif",
+      "alt": "Blood sample for comprehensive lab testing, representing hormone, thyroid, cortisol, and metabolism evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Physician Review",
+     "body": "An RHM physician reviews your labs, symptoms, history, risk profile, and long-term health goals together.",
+     "image": {
+      "src": "/images/site/6a20b33fca8b1a9c9eaec7a0_consultation.avif",
+      "alt": "Doctor consulting with patient, representing personalized hormone health consultation and lab result review"
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Personalized care plan",
+     "body": "Your plan is built around your physiology, not a standard PCOS protocol.",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing monitoring",
+     "body": "We track symptoms, labs, cycles, cravings, energy, weight response, side effects, and progress over time.",
+     "image": {
+      "src": "/images/site/6a20b4087999ef3dd1181026_monitoring.avif",
+      "alt": "Woman on a virtual follow-up call, representing ongoing hormone care monitoring and wellness support"
+     }
+    }
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "base",
+    "none"
+   ],
+   "image": {
+    "src": "/images/site/6a20aca76c5eefd7bda386da_dr_rand.avif",
+    "alt": "RHM physician in medical scrubs, representing physician-led hormone optimization and personalized patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Physician-led care built around your physiology",
+   "body": "RHM starts with the pattern underneath your symptoms. We evaluate insulin resistance, hormones, inflammation, metabolism, thyroid function, stress physiology, and recovery together — then build care around what your body is actually doing.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Research & Insights on PCOS",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/pcos-belly-fat",
+     "title": "PCOS Belly Fat",
+     "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
+     "category": "PCOS",
+     "date": "Sep 11, 2026",
+     "image": {
+      "src": "/images/site/6abe6cafaca1c590f6b996b5_6aa2f72b165ff1135617bf3e_Hero.avif",
+      "alt": "Woman holding her belly in mirror"
+     }
+    },
+    {
+     "href": "/articles/pcos-weight-loss",
+     "title": "How to Lose Weight With PCOS: What Actually Works, and Why It's Been Harder for You",
+     "summary": "How to lose weight with PCOS when standard advice hasn't worked: the physiology most plans miss, and a physician-led way to find what's driving it.",
+     "category": "PCOS",
+     "date": "Jul 31, 2026",
+     "image": {
+      "src": "/images/site/6abe6cb0aca1c590f6b99709_6a6a6a9c0a8ac199514d8921_losing_weight_pcos.avif",
+      "alt": "Woman doing dumbbell lunges at home"
+     }
+    },
+    {
+     "href": "/articles/best-birth-control-for-pcos",
+     "title": "Best Birth Control for PCOS — and the Treatment Options Beyond It",
+     "summary": "The pill isn't the only path with PCOS. A physician-led comparison of birth control options and what else actually helps — beyond the prescription pad.",
+     "category": "PCOS",
+     "date": "Jul 15, 2026",
+     "image": {
+      "src": "/images/site/6a58059cd7a2d781b8f9f424_birth_control_pills.avif",
+      "alt": "Birth control box and pill blister pack"
+     }
+    }
+   ]
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start with clarity before committing to another protocol.",
+   "points": [
+    "Personalized, physician-led PCOS evaluation",
+    "Insulin, hormones, metabolism, and inflammation reviewed together",
+    "Advanced testing and clear next steps"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a3067a58cb125b7fb9b4818_peptide_cta.avif",
+    "alt": "Woman sitting in gym after workout, representing personalized peptide therapy, recovery, and wellness care"
+   }
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "Is PCOS only a hormone problem?",
+     "a": "Not usually. For many women, PCOS involves hormones, insulin resistance, inflammation, metabolism, thyroid function, and stress physiology working together. That is why treating only one symptom often does not address the full pattern."
+    },
+    {
+     "q": "Why does weight feel so difficult with PCOS?",
+     "a": "<p>PCOS can make weight harder to manage because insulin resistance, androgen changes, inflammation, sleep disruption, cravings, and metabolic shifts can all affect how your body stores fat and responds to diet and exercise. It is not just a discipline problem.</p>"
+    },
+    {
+     "q": "Can I have PCOS if my labs were called “normal”?",
+     "a": "<p>Yes. PCOS can still be present even if previous labs were called “normal,” especially if testing was limited or not interpreted alongside your symptoms. A deeper evaluation may look at insulin, androgens, thyroid markers, inflammation, metabolic health, cycle patterns, and clinical symptoms together.</p>"
+    },
+    {
+     "q": "Is birth control the only treatment option?",
+     "a": "<p>No. Birth control may help manage cycles or symptoms for some women, but it is not the only option. PCOS treatment may also include insulin-sensitizing support, nutrition, lifestyle changes, inositol, metformin, GLP-1 medications when appropriate, hormone support, inflammation management, thyroid evaluation, and stress physiology support.</p>"
+    },
+    {
+     "q": "Can PCOS affect more than fertility?",
+     "a": "<p>Yes. PCOS can affect cycles, skin, hair growth, scalp hair thinning, weight, cravings, mood, energy, insulin sensitivity, inflammation, and long-term metabolic health. Fertility matters, but PCOS is not only a fertility condition.</p>"
+    },
+    {
+     "q": "Why do cravings feel so intense?",
+     "a": "<p>Cravings with PCOS are often connected to insulin resistance and blood sugar instability. When glucose and insulin patterns fluctuate, your body may push you toward fast energy, especially sugar or refined carbohydrates. Poor sleep, stress, inflammation, and under-eating protein can make cravings stronger.</p>"
+    },
+    {
+     "q": "What are the main PCOS subtypes?",
+     "a": "<p>The four commonly discussed PCOS patterns are insulin-resistant PCOS, inflammatory PCOS, adrenal PCOS, and post-pill PCOS. These are not always perfectly separate, and some women have overlap. Identifying the dominant pattern can help guide a more personalized treatment plan.</p>"
+    },
+    {
+     "q": "Can PCOS be reversed?",
+     "a": "<p>PCOS is usually managed rather than “cured,” but many symptoms and metabolic patterns can improve significantly with the right care. Cycles, cravings, weight resistance, skin symptoms, inflammation, insulin sensitivity, and energy may improve when the underlying physiology is addressed.</p>"
+    },
+    {
+     "q": "What labs should be checked for PCOS?",
+     "a": "<p>A deeper PCOS workup may include fasting insulin, fasting glucose, HbA1c, HOMA-IR, lipid panel, total and free testosterone, DHEA-S, SHBG, LH, FSH, estradiol, progesterone, thyroid markers, inflammatory markers, vitamin D, ferritin, and other labs based on symptoms and medical history.</p>"
+    },
+    {
+     "q": "Will I automatically be prescribed medication?",
+     "a": "<p>No. Medication is not automatic. RHM evaluates your symptoms, labs, history, goals, and PCOS pattern before making recommendations. Some patients may benefit from medication, while others may start with nutrition, lifestyle, supplements, metabolic support, inflammation work, or hormone-focused care.</p>"
+    }
+   ]
+  }
+ ]
+}

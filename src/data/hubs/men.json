@@ -1,0 +1,376 @@
+{
+ "path": "/men",
+ "title": "Men’s Health Care for Energy, Drive & Performance",
+ "footer": null,
+ "headerTheme": "light",
+ "description": "Men’s health care that looks deeper at hormones, energy, libido, weight, and performance. Book a VIP call to get clear next steps.",
+ "sections": [
+  {
+   "type": "hubHero",
+   "label": "Men’s care",
+   "heading": "Personalized care for men’s <span class=\"accent\">health</span> and <span class=\"accent\">performance</span>",
+   "headingStyle": "large",
+   "headingMax": "623px",
+   "body": "We help men understand what’s affecting their energy, libido, and performance by building personalized treatments for long-term health.",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/69c3be27df338c4141de7890_Men-hero.avif",
+    "alt": "Man smiling outdoors, representing men’s health, hormone optimization, energy, and performance care"
+   },
+   "solid": true,
+   "imageClass": [
+    "is-men"
+   ],
+   "short": false,
+   "row": false,
+   "extraOverlay": "tint"
+  },
+  {
+   "type": "signs",
+   "grey": false,
+   "headMax": "642px",
+   "heading": "When something feels off",
+   "body": "Changes in how you feel or perform are common in men and are often linked. Understanding these patterns is the first step toward clarity.",
+   "grid": [],
+   "gridKind": "signs",
+   "cards": [
+    {
+     "title": "Mood, stress, &amp; sleep",
+     "stat": null,
+     "body": "Sleep issues, stress, and mood changes are closely connected and can strongly impact energy and daily performance.",
+     "image": {
+      "src": "/images/site/69c50415a158d241541bbad2_mood-stres.avif",
+      "alt": "Man feeling stressed at home, representing mood changes, sleep issues, stress, and men’s hormone health"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Sexual performance &amp; libido",
+     "stat": "~52%",
+     "body": "~52% of men report sexual dysfunction such as <a href=\"/men/erectile-dysfunction-clinic\">ED, low libido, or performance issues</a>.",
+     "image": null,
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Weight &amp; metabolism",
+     "stat": null,
+     "body": "Nearly half of adult men experience weight issues, which is strongly linked to <a href=\"/men/metabolic-health\">metabolic health</a>, appetite regulation, and weight changes.",
+     "image": {
+      "src": "/images/site/69c3beaf5b40d4b38bec0ba2_Weight-and-metabolism.avif",
+      "alt": "Man measuring his waist, representing weight gain, metabolism changes, and men’s hormone imbalance"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Muscle strength &amp; recovery",
+     "stat": null,
+     "body": "Muscle strength and recovery are closely tied to hormones, metabolism, and overall health. Changes in these areas often point to a broader imbalance.",
+     "image": null,
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Hair &amp; appearance",
+     "stat": null,
+     "body": "Changes in hair or skin often reflect underlying hormonal or metabolic shifts—visible signs that many men notice before identifying the root cause.",
+     "image": {
+      "src": "/images/site/69c3beafc2079a0abcc41ea2_hair-and-apperance.avif",
+      "alt": "Man checking his hair, representing hair changes, appearance concerns, and men’s hormone health"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Energy, focus, &amp; drive",
+     "stat": "~40%",
+     "body": "~40% of men experience persistent fatigue or low energy that affects daily life.",
+     "image": null,
+     "accent": false,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "slate",
+   "label": "Why hormones may be part of the picture",
+   "heading": "Hormones influence many systems at once, including energy, mood, metabolism, &amp; sleep. When they’re out of balance, symptoms often appear together rather than on their own.",
+   "body": "",
+   "grid": [],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "1",
+     "big": "Hormones influence how your body uses energy",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "2",
+     "big": "They affect sleep, mood, libido, &amp; mental clarity",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "3",
+     "big": "They play a role in muscle, weight, &amp; recovery",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "4",
+     "big": "Changes often develop gradually over time",
+     "reverse": false,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "hormones",
+   "heading": "Testosterone:<br> the key player for men",
+   "body": "Testosterone is the primary male hormone, produced mainly in the testes, it influences nearly every system in your body.",
+   "checks": [
+    {
+     "icon": {
+      "src": "/images/site/69bd355e6cd99807a8bef296_Lightning.svg",
+      "alt": ""
+     },
+     "text": "Energy &amp; stamina"
+    },
+    {
+     "icon": {
+      "src": "/images/site/69bd355e5a98135bf9674656_Barbell.svg",
+      "alt": ""
+     },
+     "text": "Muscle &amp; body composition"
+    },
+    {
+     "icon": {
+      "src": "/images/site/69bd355ef03722278a927ca1_Brain.svg",
+      "alt": ""
+     },
+     "text": "Mood &amp; mental clarity"
+    },
+    {
+     "icon": {
+      "src": "/images/site/69bd355ebb07485e75885335_Heart.svg",
+      "alt": ""
+     },
+     "text": "Sexual function &amp; drive"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a0b1ec4562f2e85b4e7eb53_testosterone_LEVEL.png",
+    "alt": "Chart showing testosterone levels and testosterone deficiency in men by age from 18 to 80"
+   }
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "xl",
+    "xl"
+   ],
+   "image": {
+    "src": "/images/site/69c3beb03e7897211c00aca7_why-psrmed.avif",
+    "alt": "Happy family outdoors, representing long-term hormone health, wellness, and patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Why choose Regenerative &amp; Hormone Medicine",
+   "body": "A physician-led approach to hormone optimization, built on experience, precision, and trust.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "whyWork",
+   "heading": "Why men work with us",
+   "body": "When men understand that medicine is not one-size-fits-all, they partner with us to find answers no one else has been able to explain.",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "items": [
+    {
+     "q": "Energy &amp; Fatigue",
+     "a": "Feeling drained, low on energy, or struggling to get through the day."
+    },
+    {
+     "q": "Mood &amp; Mental Clarity",
+     "a": "Brain fog, irritability, forgetfulness, or difficulty staying focused."
+    },
+    {
+     "q": "Sleep &amp; Recovery",
+     "a": "Trouble falling asleep, staying asleep, or waking up unrested."
+    },
+    {
+     "q": "Weight &amp; Metabolism",
+     "a": "Unexpected weight changes or difficulty maintaining a healthy weight."
+    },
+    {
+     "q": "Performance &amp; Drive",
+     "a": "Low motivation, decreased libido, reduced stamina, or feeling less driven than before."
+    },
+    {
+     "q": "Hormone Balance",
+     "a": "When estrogen, testosterone, thyroid, and/or other hormones are not optimized you just don’t feel like yourself."
+    }
+   ]
+  },
+  {
+   "type": "compare",
+   "big": false,
+   "label": "compare",
+   "men": true,
+   "heading": "Regenerative &amp; Hormone Medicine vs Others",
+   "headingMax": null,
+   "body": "",
+   "bodyMax": null,
+   "heads": [
+    null,
+    null,
+    "Telemedicine Only Companies"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "NUMBER OF LABS INCLUDED",
+     "Extensive (160+ Biomarkers)",
+     "Minimal (~60 Biomarkers)"
+    ],
+    [
+     "PERSONALIZED TREATMENT &amp; DOSING",
+     "Fully personalized, based on you and your symptoms",
+     "One-size-fits-all"
+    ],
+    [
+     "CONSULTS WITH LICENSED MEDICAL PROVIDER VIA PHONE, VIDEO, OR IN PERSON",
+     "Direct access to licensed medical providers for every phase of care",
+     "Limited provider interaction, often handled by support staff, and rotating prescribers"
+    ],
+    [
+     "ROOT-CAUSE FOCUS",
+     "Yes (we look for why symptoms happen)",
+     "No (one-size-fits-all)"
+    ],
+    [
+     "LEVEL OF CARE",
+     "Physician-led personalized treatments<br>",
+     "Online protocol-based programs"
+    ],
+    [
+     "COST AND FINE PRINT",
+     "Transparent pricing with no fine print<br>",
+     "Hidden fees, add-ons, and limited treatment options"
+    ],
+    [
+     "MALE HEALTH EXPERTS",
+     "Specialized care for Low Testosterone, Chronic Stress and Cortisol Imbalances, Insulin Resistance and Metabolic Disruptions, Complex Hormone cases",
+     "General hormone programs with limited male-specific expertise"
+    ],
+    [
+     "Thyroid experts",
+     "Yes",
+     "No"
+    ],
+    [
+     "PORTAL ACCESS 24/7",
+     "Yes",
+     "Yes"
+    ],
+    [
+     "PHYSICIAN GUIDED PEPTIDE THERAPY",
+     "Yes",
+     "Some"
+    ],
+    [
+     "DISCREET SHIPPING NATIONWIDE",
+     "Yes",
+     "Some"
+    ]
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from real patients we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "Could my symptoms be hormone related?",
+     "a": "<p>Yes. Fatigue, poor sleep, weight gain, anxiety, muscle loss, brain fog, low libido, changes in sexual performance, and mood changes can all be associated with hormonal imbalance. These symptoms are often attributed to stress or aging, but comprehensive testing can help identify whether testosterone, thyroid, metabolic health, or other factors may be contributing.</p>"
+    },
+    {
+     "q": "How do you evaluate hormonal imbalance?",
+     "a": "<p>We start by listening. Before anything else, we want to understand your symptoms, health history, and goals. During your initial consultation, we review your extensive lab work in the context of how you’re actually feeling, not just whether your numbers fall within a standard reference range.</p>"
+    },
+    {
+     "q": "What types of testing are involved?",
+     "a": "<p>We begin with <a href=\"/men/longevity-clinic\">comprehensive blood testing</a> that evaluates testosterone and other hormone levels, thyroid function, metabolic markers, heart health, and more. As treatment progresses, we repeat testing at regular intervals. Every treatment decision at RHM is guided by both your symptoms and your lab data.</p>"
+    },
+    {
+     "q": "Do you offer testosterone replacement therapy (TRT)?",
+     "a": "<p>Yes. <a href=\"/men/performance-recovery\">Testosterone replacement therapy</a> may be recommended when your symptoms, health history, and lab results indicate that treatment is appropriate. TRT is not a one-size-fits-all protocol — treatment and dosing are personalized and monitored by a licensed medical provider.</p>"
+    },
+    {
+     "q": "Is treatment personalized or one-size-fits-all?",
+     "a": "<p>Completely personalized. Your treatment is built around your symptoms, individual history, goals, and lab results. Whether your plan includes TRT, thyroid treatment, <a href=\"/men/peptide-therapy\">peptide therapy</a>, medications, supplements, or other approaches, treatment is tailored to your physiology rather than a standard template.</p>"
+    },
+    {
+     "q": "How long does it take to notice improvements?",
+     "a": "<p>Some patients begin noticing improvements within the first few weeks, while more sustained changes may take several months. The timeline depends on what is being treated, your starting levels, and how your body responds. Follow-up testing allows your provider to adjust treatment as needed.</p>"
+    }
+   ]
+  },
+  {
+   "type": "ctaBlock",
+   "slate": true,
+   "heading": "Start your journey to personalized, long-term health",
+   "points": [
+    "Ongoing support focused on long-term health",
+    "Advanced testing and clear next steps",
+    "Physician-led care"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a7eb6b64f61d2d0c920c363_person-looking-towards-the-better-future.avif",
+    "alt": ""
+   }
+  }
+ ]
+}

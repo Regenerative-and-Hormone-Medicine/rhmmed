@@ -1,0 +1,500 @@
+{
+ "path": "/women/perimenopause",
+ "title": "Perimenopause Care to Feel Like Yourself Again | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Perimenopause care that looks beyond estrogen with 160+ biomarkers. Find what changed and start your personalized plan.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": false,
+   "headingInCard": false,
+   "crumb": {
+    "label": "Women",
+    "href": "/women"
+   },
+   "current": "Perimenopause",
+   "currentIsH1": false,
+   "heading": "Perimenopause care for when your labs look normal but you don't feel like yourself.",
+   "headingTag": "h1",
+   "cardLabel": "Perimenopause",
+   "body": "Perimenopause affects hormones, thyroid, cortisol, and metabolism — not just estrogen. We evaluate them together with 160+ biomarkers, then build a personalized treatment plan around your physiology, not population averages.",
+   "cta": {
+    "text": "Book Free VIP Call",
+    "href": "/scheduling"
+   },
+   "image": {
+    "src": "/images/site/6a208dc49bb5cefa99a863f7_Perimenopause_hero.avif",
+    "alt": "Woman experiencing perimenopause symptoms, representing personalized hormone care and women’s wellness support"
+   }
+  },
+  {
+   "type": "symptom",
+   "men": false,
+   "heading": "What you’re experiencing isn’t random.",
+   "body": "It didn't happen all at once. Sleep got lighter. Energy dropped. Your mood became harder to predict. Nothing dramatic, just a quiet sense that something had shifted.",
+   "toldLabel": "You've been told:",
+   "told": [
+    "“It's just stress”",
+    "“Your labs look normal”",
+    "\"This is just what your 40s feel like\"s"
+   ],
+   "box": "You've been pushing through. And you still don't feel like yourself. This isn't a burnout problem. It's a physiological one. You do not have to accept feeling this way simply because you've been told it's normal.",
+   "image": null,
+   "bottom": "But feeling unlike yourself is not something you should ignore.",
+   "buttons": [
+    {
+     "text": "Book free vip call",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "statement",
+   "slate": false,
+   "label": "What is Perimenopause?",
+   "blocks": [
+    {
+     "tag": "h3",
+     "cls": "h1",
+     "html": "Perimenopause is the hormonal transition leading up to menopause, typically beginning between ages 35 and 45. It affects far more than estrogen alone."
+    }
+   ]
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "704px",
+   "heading": "Perimenopause symptoms rarely happen one at a time",
+   "body": "Hormonal, metabolic, <a href=\"/women/thyroid\">thyroid</a>, and stress-related changes often overlap — which is why symptoms can feel difficult to explain and increasingly connected over time.",
+   "grid": [],
+   "gridKind": "signs",
+   "cards": [
+    {
+     "title": "Sleep &amp; Night Sweats",
+     "stat": null,
+     "body": "Waking at 3am. Lighter sleep that never restores. Night sweats that leave you exhausted before the day begins.",
+     "image": {
+      "src": "/images/site/6a20afaf82ed205eb9f63c14_8d36ea79e6b983a44c2afdbb9e0abeb0_Perimenopause-Sleep-Symptoms.avif",
+      "alt": "Woman experiencing sleep problems at night, representing perimenopause symptoms and hormone changes"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Energy, Mood &amp; Focus",
+     "stat": null,
+     "body": "Anxiety that came from nowhere. Brain fog that makes simple things harder. Irritability you don't recognize in yourself.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Weight &amp; Metabolism",
+     "stat": null,
+     "body": "<a href=\"/women/weight-loss-resistance\">Weight</a> that appeared without explanation and won't respond to anything that used to work — especially around the middle.",
+     "image": {
+      "src": "/images/site/6a20afaf6811d301a6e0782d_5de794dccbad4f366fa496c9567b1f53_Perimenopause-Weight-Changes.avif",
+      "alt": "Woman experiencing perimenopause weight changes, representing metabolism shifts and hormone health support"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Skin &amp; Hair",
+     "stat": null,
+     "body": "Hair that's thinning. Skin that feels different. Changes you notice every day that nobody has connected to what's happening hormonally.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Libido &amp; <a href=\"/women/sexual-health\">Sexual Health</a>",
+     "stat": null,
+     "body": "Desire that has quietly faded. Dryness and discomfort that make intimacy harder. A disconnection that goes beyond the physical.",
+     "image": {
+      "src": "/images/site/6a20afaf03128578c491bd11_19d878c59ab30849cb0aff42dedc48f4_Perimenopause-Libido-and-Sexual-Health.avif",
+      "alt": "Woman experiencing perimenopause libido changes, representing sexual health and hormone wellness support"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Hormonal Changes",
+     "stat": null,
+     "body": "Irregular cycles. Heavier periods. Hot flashes. Palpitations. Your body signaling — loudly or quietly — that something has shifted.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "blush",
+   "label": "Why standard care often falls short:",
+   "heading": "You're not imagining it. It's just not being looked at properly.",
+   "body": "",
+   "grid": [
+    "is-3"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "Hormone levels fluctuate daily during perimenopause. A single lab snapshot misses the pattern entirely",
+     "big": "Undertested",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Most physicians receive fewer than 2 hours of menopause training, and perimenopause gets even less",
+     "big": "Undertrained",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Symptoms are blamed on stress, anxiety, or depression before hormones are ever considered",
+     "big": "Misread",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Thyroid, cortisol, and metabolism shift simultaneously during perimenopause and are rarely evaluated together",
+     "big": "Fragmented",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Standard care looks for menopause, inadvertently missing the years of transition happening before it.",
+     "big": "Too Narrow",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Because cycles haven't stopped yet, symptoms are minimized or treated as unrelated",
+     "big": "Dismissed",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "compare",
+   "big": true,
+   "label": null,
+   "men": false,
+   "heading": "Your labs can look normal. And still miss everything that matters.",
+   "headingMax": "814px",
+   "body": "Standard panels can confirm you're in menopause. They rarely explain why you still feel exhausted, foggy, anxious, and unlike yourself.",
+   "bodyMax": "594px",
+   "heads": [
+    null,
+    null,
+    "Traditional labs"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "Evaluation",
+     "160+ biomarkers",
+     "A handful of hormone markers"
+    ],
+    [
+     "Interpretation",
+     "Systems read together",
+     "Single snapshots in isolation"
+    ],
+    [
+     "Full-Body context",
+     "Thyroid, cortisol, metabolism, inflammation",
+     "Rarely included"
+    ],
+    [
+     "Symptom Analysis",
+     "Connected pattern",
+     "Each symptom separately"
+    ],
+    [
+     "Clinical guidance",
+     "Physician-led, physiology-driven",
+     "Minimal context provided"
+    ],
+    [
+     "core plan",
+     "Built around your physiology",
+     "Reactive and generalized"
+    ]
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "Why are more women experiencing this earlier?",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "<p>This isn't your mother's timeline. A generation ago, perimenopause typically arrived in the mid to late 40s. <a href=\"#\">Research now shows</a> many women begin experiencing hormone-related symptoms years before menopause officially begins.</p>"
+    },
+    {
+     "kind": "images",
+     "two": false,
+     "images": [
+      {
+       "src": "/images/site/6a20af1c6a02d33d6fb49b8e_perimenopause_first.avif",
+       "alt": "Woman feeling stressed at home, representing perimenopause symptoms, chronic stress, and hormone imbalance"
+      },
+      {
+       "src": "/images/site/6a20af1cf4789f3ef5622b7f_perimenopause_second.avif",
+       "alt": "Woman holding a cup at home, representing early perimenopause hormone changes and women’s wellness"
+      },
+      {
+       "src": "/images/site/6a20af1c85db82533b5e3e84_perimenopause_third.avif",
+       "alt": "Woman smiling at home, representing perimenopause wellness support, hormone balance, and improved wellbeing"
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "Chronic stress. Poor sleep. Blood sugar instability. Environmental toxins. Years of running on empty. They are physiological burdens that quietly erode the hormonal reserve your body needs to navigate this transition smoothly. By the time perimenopause starts, many women's systems are already depleted. The transition doesn't create the problem. It reveals it."
+    }
+   ]
+  },
+  {
+   "type": "voices",
+   "heading": "Why it becomes harder to keep dismissing it",
+   "headingMax": "504px",
+   "headingFull": true,
+   "body": "You've been explaining it away. The stress. The season. The age. Everyone feels this way. But the exhaustion is too consistent. The mood shifts too unpredictable. The explanations stopped fitting a while ago. It's not dramatic. It's just relentless.",
+   "quotes": [
+    {
+     "quote": "<p>\"I was 38 when it started. My doctor told me I was too young for perimenopause. I spent two more years thinking I was falling apart.\"</p>",
+     "name": "Megan, 40"
+    },
+    {
+     "quote": "<p>\"I kept showing up. Work, kids... everything. Nobody knew how much it was costing me just to get through a normal day.\"</p>",
+     "name": "Lauren, 46"
+    },
+    {
+     "quote": "<p>\"I didn't feel sick enough to push for answers. I just felt like a slightly worse version of myself. For years.\"</p>",
+     "name": "Rachel, 43"
+    }
+   ]
+  },
+  {
+   "type": "process",
+   "heading": "How RHM Treats Perimenopause",
+   "body": "",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Discovery Call",
+     "body": "Discuss symptoms, history, and whether deeper evaluation makes sense.",
+     "image": {
+      "src": "/images/site/6a20a04ac0ca93a2d3d711a4_step_.avif",
+      "alt": "Woman on a discovery call, representing hormone health consultation and symptom evaluation"
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Comprehensive Lab Evaluation",
+     "body": "Test 160+ biomarkers across hormones, thyroid, cortisol, metabolism, and inflammation.",
+     "image": {
+      "src": "/images/site/6a20b2f6ac9881d327b05f7e_blood.avif",
+      "alt": "Blood sample for comprehensive lab testing, representing hormone, thyroid, cortisol, and metabolism evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Provider Consultation",
+     "body": "Review your results with an RHM physician and understand what may be driving your symptoms.",
+     "image": {
+      "src": "/images/site/6a20b33fca8b1a9c9eaec7a0_consultation.avif",
+      "alt": "Doctor consulting with patient, representing personalized hormone health consultation and lab result review"
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Personalized Plan",
+     "body": "Get a treatment plan built around your labs, symptoms, physiology, and goals.",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing Monitoring",
+     "body": "Adjust your care over time as your body responds and your needs change.",
+     "image": {
+      "src": "/images/site/6a20b4087999ef3dd1181026_monitoring.avif",
+      "alt": "Woman on a virtual follow-up call, representing ongoing hormone care monitoring and wellness support"
+     }
+    }
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "xl",
+    "xl"
+   ],
+   "image": {
+    "src": "/images/site/6a20aca76c5eefd7bda386da_dr_rand.avif",
+    "alt": "RHM physician in medical scrubs, representing physician-led hormone optimization and personalized patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Physician-led care built around your physiology",
+   "body": "Most hormone clinics follow standardized protocols. RHM evaluates the interaction between hormones, thyroid, metabolism, cortisol, inflammation, and recovery — then builds treatment around your specific physiology.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Research & Insights on Perimenopause",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/estrogen-dominance",
+     "title": "Estrogen Dominance: Symptoms, Causes and What Your Labs May Be Missing",
+     "summary": "Heavy periods, bloating, mood swings, sore breasts? Learn what estrogen dominance means, what drives it, which labs show it and how it's treated.",
+     "category": "Hormone Replacement",
+     "date": "Nov 9, 2026",
+     "image": {
+      "src": "/images/site/6af1d9daa0c33b4f3a47fb9a_6af1d979f39ea09efb21de4f_estrogen-dominance-woman-reflecting-hero.jpeg",
+      "alt": "Woman in her forties in a cream sweater resting her chin on her hand by a sunny window, looking thoughtful"
+     }
+    },
+    {
+     "href": "/articles/perimenopause-weight-gain",
+     "title": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)",
+     "summary": "Perimenopause weight gain isn't about willpower. See the hormonal, metabolic, and physiological causes — and what individualized care can do.",
+     "category": "Perimenopause",
+     "date": "Aug 28, 2026",
+     "image": {
+      "src": "/images/site/6a903a7d69efe3355e9f5430_woman-noticing-perimenopause-weight-gain-in-mirror.avif",
+      "alt": "Woman sitting on bed looking out window"
+     }
+    },
+    {
+     "href": "/articles/perimenopause-brain-fog",
+     "title": "Perimenopause Brain Fog: Why It Happens and What Actually Helps",
+     "summary": "Perimenopause brain fog is real, common, and usually temporary — here's why it happens and what a full hormone evaluation can do about it.",
+     "category": "Perimenopause",
+     "date": "Aug 20, 2026",
+     "image": {
+      "src": "/images/site/6a82f7647a2ddf2fbc0c3da5_perimenopause_brain_fog_hero_img-1.avif",
+      "alt": "Woman rubbing temple while reading note"
+     }
+    }
+   ]
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start your journey to personalized, long-term health",
+   "points": [
+    "Personalized, physician-led care",
+    "Advanced testing and clear next steps",
+    "Ongoing support focused on long-term health"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a21cac50bd1c17166da8d62_CTA-perimenopause.avif",
+    "alt": "Couple reviewing health information on a laptop, representing personalized hormone care and long-term wellness support"
+   }
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "What age does perimenopause usually start?",
+     "a": "Perimenopause usually begins in a woman’s 40s, but some women start noticing symptoms in their mid-to-late 30s. The timing varies because hormones, thyroid function, cortisol, metabolism, inflammation, stress, and lifestyle patterns can all affect how the transition shows up."
+    },
+    {
+     "q": "How long does perimenopause last?",
+     "a": "Perimenopause can last a few months to several years. For many women, it lasts around 4 years, but some experience symptoms for closer to 8–10 years before reaching menopause."
+    },
+    {
+     "q": "What is the difference between perimenopause and menopause?",
+     "a": "<p>Perimenopause is the transition leading up to <a href=\"/women/menopause\">menopause</a>, when hormones fluctuate and symptoms often begin. Menopause is confirmed after 12 consecutive months without a period. In simple terms: perimenopause is the transition; menopause is the milestone.</p>"
+    },
+    {
+     "q": "What are the most common perimenopause symptoms?",
+     "a": "Some of the common perimenopause symptoms include irregular periods, heavier bleeding, hot flashes, night sweats, sleep disruption, anxiety, mood changes, brain fog, fatigue, weight gain, low libido, vaginal dryness, joint pain, hair thinning, and heart palpitations."
+    },
+    {
+     "q": "Why do my labs look normal if I have perimenopause symptoms?",
+     "a": "Hormones can fluctuate significantly during perimenopause, so a single “normal” lab result may not explain what is happening. At RHM, testing looks beyond one hormone reading and evaluates 160+ biomarkers across hormones, thyroid, cortisol, metabolism, and inflammation."
+    },
+    {
+     "q": "Is perimenopause only about estrogen?",
+     "a": "No. Estrogen and progesterone are important, but perimenopause can also affect thyroid function, cortisol patterns, insulin sensitivity, inflammation, sleep, mood, and metabolism. That is why symptoms often feel connected instead of isolated."
+    },
+    {
+     "q": "Can perimenopause cause weight gain?",
+     "a": "Yes. Perimenopause can contribute to weight gain, especially around the midsection. Hormone changes, insulin resistance, thyroid dysfunction, poor sleep, chronic stress, lower muscle mass, and inflammation can all affect how your body stores fat and responds to diet and exercise."
+    },
+    {
+     "q": "Can I still get pregnant during perimenopause?",
+     "a": "Yes. You can still ovulate during perimenopause, even if your cycles are irregular. Pregnancy is still possible until you have reached menopause, which is defined as 12 consecutive months without a period."
+    },
+    {
+     "q": "Do I need hormone therapy for perimenopause?",
+     "a": "Not always. Some women may benefit from hormone therapy, while others may need support for thyroid function, metabolism, cortisol, inflammation, sleep, nutrition, or other underlying patterns. RHM builds treatment around your labs, symptoms, history, and goals."
+    },
+    {
+     "q": "Will I need to stay on hormone therapy forever?",
+     "a": "Not necessarily. If hormone therapy is appropriate, the plan should be monitored and adjusted over time. Perimenopause is a moving target, so treatment may change as your body responds and as you move closer to menopause."
+    },
+    {
+     "q": "How does RHM evaluate perimenopause?",
+     "a": "RHM evaluates perimenopause by looking at symptoms, medical history, lifestyle patterns, and comprehensive lab work. The goal is to understand the pattern underneath your symptoms instead of treating one number or one complaint in isolation."
+    },
+    {
+     "q": "When should I see a perimenopause specialist?",
+     "a": "You should consider seeing a perimenopause specialist if your symptoms are affecting your sleep, mood, weight, energy, focus, libido, periods, or quality of life — especially if you have been told your labs are “normal” but you still do not feel like yourself."
+    }
+   ]
+  }
+ ]
+}

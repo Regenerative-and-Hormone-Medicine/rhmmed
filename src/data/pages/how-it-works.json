@@ -1,0 +1,199 @@
+{
+ "path": "/how-it-works",
+ "title": "How it works",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "",
+ "sections": [
+  {
+   "type": "pageHero",
+   "big": false,
+   "leftMax": "487px",
+   "rightMax": "480px",
+   "label": "How it works",
+   "heading": "A Structured Path to Measurable Results",
+   "body": "We guide you through a structured, step-by-step process designed to uncover the root of your symptoms and optimize your health with precision and care. Each phase builds on the last to ensure safe, personalized, and measurable results.",
+   "buttons": []
+  },
+  {
+   "type": "process",
+   "heading": "What working with us looks like",
+   "body": "A simple process designed to bring clarity and guide you toward a personalized plan.",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Book Free VIP Call",
+     "body": "Speak with a certified hormone specialist about your symptoms and goals. During this call, we'll help you understand what may be contributing to your symptoms and explain how we partner with our patients to optimize their hormones and overall health.",
+     "image": {
+      "src": "/images/site/69c507307eff20c37e3a84f2_freepik__woman-in-her-40s-sitting-comfortably-at-home-calm-__50637-1-3.avif",
+      "alt": "Woman on phone, representing free VIP call for hormone health consultation and personalized care"
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Complete Health Questionnaire and Lab Work",
+     "body": "After being onboarded, you will complete your lab work and health questionnaire prior to your initial consultation. This is designed to understand your symptoms, lifestyle, history, and performance goals. If you have recent labs, you can submit those and if they contain all needed tests you will not need new lab work.",
+     "image": {
+      "src": "/images/site/69a1ab6be4e4a752d07c27b8_3248ea83edf8275e6998a2791660a298_freepik__woman-in-her-40s-sitting-comfortably-at-home-calm-__50637-1.avif",
+      "alt": "Patient completing health questionnaire, representing lab work, medical history review, and hormone health evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Meet with a Licensed Medical Provider",
+     "body": "Meet via phone, video, or in person with your RHM licensed medical provider to review your symptoms, health questionnaire, lab results, and to discuss any and all concerns you may have. Together you will discuss your diagnosis, and we will build a personalized treatment plan specifically for you.",
+     "image": {
+      "src": "/images/site/69c507303a83ebbf48249f9d_freepik__woman-in-her-40s-sitting-comfortably-at-home-calm-__50637-1-2.avif",
+      "alt": "Patient meeting with medical provider by video call, representing licensed hormone health consultation and personalized treatment planning"
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Start your personalized treatment plan",
+     "body": "Your medications are shipped discreetly to your home. Your RHM team will continue to monitor your progress and notify you when it’s time for refills, labs, and follow up consults. All of this is so that we can together personalize your treatment to achieve your desired goals.",
+     "image": {
+      "src": "/images/site/69c50730d27769d32c40f0ff_freepik__woman-in-her-40s-sitting-comfortably-at-home-calm-__50637-1.avif",
+      "alt": "Woman receiving treatment at home, representing personalized hormone treatment plan and ongoing wellness care"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing Treatment",
+     "body": "Your RHM team will communicate when it is time for your follow up labs and consultations. We are also here 24/7 via your patient portal if you have questions or concerns.",
+     "image": {
+      "src": "/images/site/69c507304f87697008502d09_freepik__woman-in-her-40s-sitting-comfortably-at-home-calm-__50637-1-1.avif",
+      "alt": "Doctor holding patient’s hands, representing ongoing hormone treatment, patient support, and follow-up care"
+     }
+    }
+   ]
+  },
+  {
+   "type": "compare",
+   "big": false,
+   "label": "compare",
+   "men": false,
+   "heading": "Regenerative &amp; Hormone Medicine vs Others",
+   "headingMax": null,
+   "body": "",
+   "bodyMax": null,
+   "heads": [
+    null,
+    null,
+    "Telemedicine Only Companies"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "NUMBER OF LABS INCLUDED",
+     "Extensive (160+ Biomarkers)",
+     "Minimal (~60 Biomarkers)"
+    ],
+    [
+     "PERSONALIZED TREATMENT &amp; DOSING",
+     "Fully personalized, based on you and your symptoms",
+     "One-size-fits-all"
+    ],
+    [
+     "CONSULTS WITH LICENSED MEDICAL PROVIDER VIA PHONE, VIDEO, OR IN PERSON",
+     "Direct access to licensed medical providers for every phase of care",
+     "Limited provider interaction, often handled by support staff, and rotating prescribers"
+    ],
+    [
+     "ROOT-CAUSE FOCUS",
+     "Yes (we look for why symptoms happen)",
+     "No (one-size-fits-all)"
+    ],
+    [
+     "LEVEL OF CARE",
+     "Physician-led personalized treatments<br>",
+     "Online protocol-based programs"
+    ],
+    [
+     "COST AND FINE PRINT",
+     "Transparent pricing with no fine print<br>",
+     "Hidden fees, add-ons, and limited treatment options"
+    ],
+    [
+     "FEMALE HEALTH EXPERTS",
+     "Specialized care for perimenopause, menopause, postmenopause, PCOS, Thyroid, and Complex Hormone cases",
+     "General hormone programs with limited female specific expertise"
+    ],
+    [
+     "Thyroid experts",
+     "Yes",
+     "No"
+    ],
+    [
+     "PORTAL ACCESS 24/7",
+     "Yes",
+     "Yes"
+    ],
+    [
+     "PHYSICIAN GUIDED PEPTIDE THERAPY",
+     "Yes",
+     "Some"
+    ],
+    [
+     "DISCREET SHIPPING NATIONWIDE",
+     "Yes",
+     "Some"
+    ]
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "md",
+    "md"
+   ],
+   "image": {
+    "src": "/images/site/69c3beb03e7897211c00aca7_why-psrmed.avif",
+    "alt": "Happy family outdoors, representing long-term hormone health, wellness, and patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Why choose Regenerative &amp; Hormone Medicine",
+   "body": "A physician-led approach to hormone optimization, built on experience, precision, and trust.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "finalCta",
+   "heading": "Start your journey to personalized, long-term health",
+   "points": [
+    "Ongoing support focused on long-term health",
+    "Advanced testing and clear next steps",
+    "Physician-led care"
+   ],
+   "buttons": [
+    {
+     "text": "Book Vip Call",
+     "href": "/scheduling"
+    }
+   ],
+   "topPad": false
+  }
+ ]
+}

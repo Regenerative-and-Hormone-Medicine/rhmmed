@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+
+const colors = [
+  ['ink', '#050514', 'Headings, primary text'],
+  ['ink-70', '#050514b3', 'Paragraph text'],
+  ['black', '#000000', 'Buttons, body default'],
+  ['neutral-darker', '#222222', 'Nav dropdown toggles'],
+  ['bg-light', '#f0f0f0', 'Grey section background'],
+  ['bg-dark', '#e3e3e3', 'Cards on grey, borders'],
+  ['white', '#ffffff', 'Base background'],
+  ['blue', '#2d62ff', 'Links, focus'],
+  ['blue-dark', '#080331', 'Brand dark'],
+  ['blue-light', '#d9e5ff', 'Brand tint'],
+  ['pink', '#dd23bb', 'Brand accent'],
+  ['slate', '#547a95', 'Men causes section, hero accent word'],
+  ['plum', '#5d4b87', 'Women causes section'],
+  ['brown', '#7a4b4f', 'CTA block section'],
+  ['sky', '#e1edf8', 'Men signs section'],
+  ['mist', '#e5ebef', 'Men section tint'],
+];
+
+const type = [
+  ['text-h1', 'H1 — 54 / 120% / -1.62px · 40 ≤767 · 32 ≤479'],
+  ['text-h2', 'H2 — 48 / 110% · 32 ≤767'],
+  ['text-h3', 'H3 — 36 / 120% · 24 ≤767'],
+  ['text-h4', 'H4 — 28 / 130% · 24 ≤767'],
+  ['text-h5', 'H5 — 24 / 130% · 14 ≤767'],
+  ['text-body-l', 'Body L — 22 / 122.7% · 16 ≤767'],
+  ['text-body-m', 'Body M — 20 / 125% · 16 ≤767'],
+  ['text-body-r', 'Body R — 16 / 125%'],
+  ['text-nav', 'Nav link — 14 / 500 / uppercase'],
+  ['text-label', 'Label — 12 / 500 / +0.48px / uppercase'],
+  ['text-btn', 'Button — 12 / 600 / uppercase'],
+];
+
+const spacing = ['0.5rem', '1rem', '1.5rem', '2rem', '3.125rem', '3.75rem', '5rem', '6.25rem', '7.5rem', '8rem', '8.75rem', '10rem'];
+const radii = [['sm', '8px'], ['md', '16px'], ['lg', '24px'], ['pill', '1000px']];
+---
+
+<Layout title="Style guide — RHM" chrome={false}>
+  <main class="container-site py-20">
+    <p class="text-label text-ink-70">Design system</p>
+    <h1 class="text-h1 mt-4 mb-16 text-ink">RHM style guide</h1>
+
+    <h2 class="text-h4 mb-6 normal-case">Colour</h2>
+    <div class="mb-20 grid grid-cols-2 gap-4 md:grid-cols-4">
+      {colors.map(([name, hex, role]) => (
+        <div class="overflow-hidden rounded-md border border-bg-dark">
+          <div class="h-20" style={`background:${hex}`} />
+          <div class="p-3">
+            <p class="text-body-r font-medium">{name}</p>
+            <p class="text-label text-ink-70">{hex}</p>
+            <p class="mt-1 text-sm text-ink-70">{role}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-h4 mb-6 normal-case">Type — Geist (self-hosted, variable)</h2>
+    <div class="mb-20 flex flex-col gap-8">
+      {type.map(([cls, desc]) => (
+        <div class="border-b border-bg-dark pb-6">
+          <p class="text-label mb-2 text-ink-70">.{cls} · {desc}</p>
+          <p class={`${cls} text-ink`}>Personalized care, available remotely</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-h4 mb-6 normal-case">Spacing rhythm (most-used values on the source)</h2>
+    <div class="mb-20 flex flex-col gap-3">
+      {spacing.map((s) => (
+        <div class="flex items-center gap-4">
+          <span class="text-label w-20 text-ink-70">{s}</span>
+          <span class="h-4 bg-slate" style={`width:${s}`} />
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-h4 mb-6 normal-case">Radii</h2>
+    <div class="mb-20 flex flex-wrap gap-6">
+      {radii.map(([n, v]) => (
+        <div class="text-center">
+          <div class="size-28 bg-bg-light" style={`border-radius:${v}`} />
+          <p class="text-label mt-2 text-ink-70">{n} · {v}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-h4 mb-6 normal-case">Buttons (hover to see the label roll)</h2>
+    <div class="mb-20 flex flex-wrap items-center gap-4 rounded-lg bg-bg-light p-8">
+      <Button href="/scheduling">Book VIP Call</Button>
+      <Button href="/scheduling" size="sm">Book VIP Call</Button>
+      <Button href="/articles" variant="light">View articles</Button>
+    </div>
+
+    <h2 class="text-h4 mb-6 normal-case">Breakpoints</h2>
+    <ul class="text-body-r mb-20 list-disc pl-6 text-ink-70">
+      <li>Desktop: ≥ 992px (default styles)</li>
+      <li>Tablet: ≤ 991px → <code>max-lg:</code></li>
+      <li>Mobile landscape: ≤ 767px → <code>max-md:</code></li>
+      <li>Mobile portrait: ≤ 479px → <code>max-sm:</code></li>
+      <li>Container: 84rem max, 2rem gutters (1.5rem ≤767, 1rem ≤479) → <code>.container-site</code></li>
+    </ul>
+  </main>
+</Layout>

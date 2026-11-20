@@ -1,0 +1,98 @@
+---
+import Rich from '../Rich.astro';
+// 5-step process carousel with step indicator (source: .section.is-process). Autoplays every 5s, next slide
+// peeks in from the right on desktop, inactive slides dim to 30%.
+import Button from '../Button.astro';
+import type { Btn, Img } from './types';
+interface Props { heading: string; body: string; buttons: Btn[]; steps: { label: string; title: string; body: string; image: Img }[] }
+const p = Astro.props;
+---
+
+<section class="process overflow-x-clip py-32 max-md:py-24 max-sm:py-20">
+  <div class="container-site grid grid-cols-[minmax(0,1fr)_minmax(0,42.5rem)] grid-rows-[1fr_auto] gap-20 max-lg:grid-cols-1 max-lg:grid-rows-none">
+    <div class="relative z-10 flex w-full max-w-[31.25rem] flex-col gap-[3.125rem] max-lg:max-w-none">
+      <div class="flex flex-col gap-6">
+        <h2 class="max-w-[24.75rem]" set:html={p.heading} />
+        {p.body && <Rich class="text-body-l text-ink-70" html={p.body} />}
+      </div>
+      <div class="flex items-center gap-2.5 max-md:flex-wrap max-sm:flex-col max-sm:items-start">
+        {p.buttons.map((b) => <Button href={b.href}>{b.text}</Button>)}
+      </div>
+    </div>
+    <div class="process-right relative row-span-2 w-full max-w-[42.5rem] max-lg:row-span-1">
+      <div class="swiper process-swiper">
+        <div class="swiper-wrapper">
+          {p.steps.map((s) => (
+            <div class="swiper-slide">
+              <div class="slide-wrap relative flex min-h-[35rem] flex-col justify-end overflow-hidden rounded-3xl p-8 text-white transition-opacity duration-200">
+                {s.image && <img src={s.image.src} alt={s.image.alt} class="absolute inset-0 size-full object-cover" loading="lazy" />}
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/0 to-black/80" />
+                <div class="relative z-[2] flex flex-col items-start gap-4">
+                  <div class="text-label">{s.label}</div>
+                  <h3 class="text-h4 capitalize text-white" set:html={s.title} />
+                  <Rich class="text-body-l" html={s.body} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    <div class="pag relative z-[9] flex items-end gap-4 self-end max-md:grid max-md:grid-cols-2">
+      {p.steps.map((_, i) => (
+        <button type="button" class="pag-step flex w-full cursor-pointer flex-col gap-4" data-step={i} aria-label={`Step ${i + 1}`}>
+          <span class="flex flex-col items-center justify-between gap-2 text-center">
+            <span class="pag-text text-label opacity-0 transition-opacity duration-200">Step</span>
+            <span class="pag-num text-[1.25rem] leading-[1.1] text-black/30 transition-[font-size] duration-200">{i + 1}</span>
+          </span>
+          <span class="flex h-[6px] w-full overflow-hidden rounded-[10px] bg-bg-dark"><span class="pag-fill block size-full origin-left scale-x-0 rounded-[10px] bg-black" /></span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Desktop: let the next slide peek in on the right, mask everything to the left of the column. */
+  @media (min-width: 992px) {
+    .process-right::before {
+      content: ''; position: absolute; top: 0; left: -2000px; width: 2000px; height: 100%; background: #fff; z-index: 5; pointer-events: none;
+    }
+    .process-right :global(.process-swiper) { overflow: visible !important; margin-left: -220px; padding-left: 220px; }
+  }
+  .slide-wrap.is-inactive { opacity: 0.3; }
+  .pag-step.is-active .pag-num { color: #050514; font-size: 3rem; }
+  .pag-step.is-active .pag-text { opacity: 1; }
+  .pag-step.is-animating .pag-fill { animation: step-fill 5000ms linear forwards; }
+  @keyframes step-fill { to { transform: scaleX(1); } }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import 'swiper/css';
+  document.querySelectorAll<HTMLElement>('.process').forEach((root) => {
+    const el = root.querySelector<HTMLElement>('.process-swiper')!;
+    const steps = [...root.querySelectorAll<HTMLElement>('.pag-step')];
+    const AUTOPLAY = 5000;
+    let timer: ReturnType<typeof setTimeout>;
+    const swiper = new Swiper(el, { slidesPerView: 1, speed: 700, spaceBetween: 32 });
+    const setActive = (i: number) => {
+      steps.forEach((s, j) => {
+        s.classList.toggle('is-active', i === j);
+        s.classList.remove('is-animating');
+      });
+      void steps[i]?.offsetWidth;
+      steps[i]?.classList.add('is-animating');
+      swiper.slides.forEach((sl, j) => sl.querySelector('.slide-wrap')?.classList.toggle('is-inactive', i !== j));
+    };
+    const autoplay = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => swiper.slideTo(swiper.activeIndex + 1 >= swiper.slides.length ? 0 : swiper.activeIndex + 1), AUTOPLAY);
+    };
+    setActive(0);
+    autoplay();
+    steps.forEach((s, i) => s.addEventListener('click', () => swiper.slideTo(i)));
+    swiper.on('slideChangeTransitionStart', () => { setActive(swiper.activeIndex); autoplay(); });
+    swiper.on('touchEnd', autoplay);
+  });
+</script>

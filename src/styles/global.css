@@ -1,0 +1,223 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   RHM design tokens — read from rhmmed.com computed styles (Nov 2026).
+   See CLAUDE.md for roles. Do not invent new values; add a token.
+   ------------------------------------------------------------------ */
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/GeistVF.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Webflow breakpoints. Source is desktop-first, so use max-* variants:
+     max-lg = ≤991 (tablet), max-md = ≤767 (mobile landscape), max-sm = ≤479 (mobile portrait). */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+
+  --font-sans: 'Geist', Arial, sans-serif;
+
+  /* Ink & neutrals */
+  --color-ink: #050514;           /* headings / primary text */
+  --color-ink-70: #050514b3;      /* paragraph text */
+  --color-black: #000;            /* buttons, body default */
+  --color-white: #fff;
+  --color-neutral-darker: #222;
+  --color-bg-light: #f0f0f0;      /* grey section background */
+  --color-bg-dark: #e3e3e3;       /* cards on grey, borders */
+
+  /* Brand */
+  --color-blue: #2d62ff;
+  --color-blue-dark: #080331;
+  --color-blue-light: #d9e5ff;
+  --color-pink: #dd23bb;
+
+  /* Section palette (used as full-bleed section backgrounds) */
+  --color-slate: #547a95;         /* men "causes", home hero accent word */
+  --color-plum: #5d4b87;          /* women "causes" */
+  --color-brown: #7a4b4f;         /* CTA block */
+  --color-sky: #e1edf8;           /* men "signs" */
+  --color-mist: #e5ebef;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 1000px;
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* Layout */
+  --container-site: 84rem;        /* 1344px incl. padding */
+}
+
+/* Type scale — each utility carries its own responsive steps, as on the source. */
+@utility text-h1 {
+  font-size: 3.375rem;
+  line-height: 1.2;
+  letter-spacing: -0.10125rem;
+  font-weight: 400;
+  @media (max-width: 767px) { font-size: 2.5rem; }
+  @media (max-width: 479px) { font-size: 2rem; }
+}
+@utility text-h2 {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 400;
+  @media (max-width: 767px) { font-size: 2rem; }
+}
+@utility text-h3 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 400;
+  @media (max-width: 767px) { font-size: 1.5rem; }
+}
+@utility text-h4 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  font-weight: 400;
+  @media (max-width: 767px) { font-size: 1.5rem; }
+}
+@utility text-h5 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 400;
+  @media (max-width: 767px) { font-size: 0.875rem; }
+}
+@utility text-body-l {
+  font-size: 1.375rem;
+  line-height: 1.22727;
+  @media (max-width: 767px) { font-size: 1rem; }
+}
+@utility text-body-m {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  @media (max-width: 767px) { font-size: 1rem; }
+}
+@utility text-body-r {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+@utility text-label {
+  font-size: 0.75rem;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  text-transform: uppercase;
+}
+@utility text-btn {
+  font-size: 0.75rem;
+  line-height: 1.25;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@utility text-nav {
+  font-size: 0.875rem;
+  line-height: 1.26667;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Site container: 84rem max, 2rem gutters → 1.5rem ≤767 → 1rem ≤479 */
+@utility container-site {
+  width: 100%;
+  max-width: var(--container-site);
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (max-width: 767px) { padding-inline: 1.5rem; }
+  @media (max-width: 479px) { padding-inline: 1rem; }
+}
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-black);
+    background: var(--color-white);
+  }
+  h1, h2, h3, h4, h5, h6 { color: var(--color-ink); font-weight: 400; }
+  h1 { font-size: 3.375rem; line-height: 1.2; letter-spacing: -0.10125rem; }
+  h2 { font-size: 3rem; line-height: 1.1; text-transform: capitalize; }
+  /* Bare <p> on the source is body-m (20/1.25) at every width; links inside paragraphs are underlined. */
+  p { font-size: 1.25rem; line-height: 1.25; }
+  p a { text-decoration: underline; }
+  h3 { font-size: 2.25rem; line-height: 1.2; }
+  h4 { font-size: 1.75rem; line-height: 1.3; }
+  h5 { font-size: 1.5rem; line-height: 1.3; }
+  /* Element sizes at ≤767 differ from the .text-h* utilities — the source sets them via body variables. */
+  @media (max-width: 767px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2.25rem; }
+    h3 { font-size: 1.725rem; }
+    h4 { font-size: 1.25rem; }
+    h5 { font-size: 1rem; }
+  }
+}
+
+/* Rich text copied from Webflow (treatment pages, articles) */
+@layer components {
+  .rich a { text-decoration: underline; }
+  /* Source: .heading-style-h1 p / .heading-style-h4 p follow the h1/h4 variables (no 479 step for h1). */
+  .text-h1 p { font-size: 3.375rem; line-height: 1.2; }
+  .text-body-r p { font-size: 1rem; }
+  .text-h4 p { font-size: 1.75rem; line-height: 1.75rem; margin: 1rem 0; }
+  /* .symptom_box.heading-style-h4 li */
+  .text-h4 ul { padding-left: 1.5rem; list-style: disc; }
+  .text-h4 li { font-size: 1.75rem; line-height: 1.25; margin-bottom: .75rem; }
+  /* .stories-rte p (patient quotes) */
+  .quote-rte p { font-size: 1.75rem; line-height: 1.3; margin: 0; }
+  @media (max-width: 767px) {
+    .text-h1 p { font-size: 2.5rem; }
+    .text-h4 p { font-size: 1.5rem; line-height: 1.5rem; }
+    .text-h4 li { font-size: 1.5rem; }
+    .quote-rte p { font-size: 1.5rem; }
+  }
+  /* Source global embed: first/last child of any rich text loses its outer margin. */
+  .rich.rich > :first-child { margin-top: 0; }
+  .rich.rich > :last-child { margin-bottom: 0; }
+}
+
+/* Article rich text (source: .blog-rte / .summary_rte) */
+@layer components {
+  /* No font size on the container (as source): embeds like the quiz inherit the 16/24 body default. */
+  .blog-rte :where(h2), .summary-rte :where(h2) { color: #000; margin: 2rem 0; font-size: 2.25rem; line-height: 1.2; }
+  .blog-rte :where(h3), .summary-rte :where(h3) { color: #000; margin: 2rem 0; font-size: 1.75rem; line-height: 1.3; }
+  .blog-rte :where(h4), .summary-rte :where(h4) { margin: 2rem 0; }
+  .blog-rte :where(p) { color: #050514b3; margin-top: 1rem; }
+  .summary-rte :where(p) { color: #050514e6; margin-top: 1rem; }
+  .blog-rte :where(ul), .summary-rte :where(ul) { display: flex; flex-direction: column; gap: .5rem; margin-top: 1rem; padding-left: 1.5rem; list-style: disc; }
+  .blog-rte :where(ol), .summary-rte :where(ol) { margin-top: 1rem; padding-left: 1.5rem; list-style: decimal; }
+  .blog-rte :where(li), .summary-rte :where(li) { font-size: 1.25rem; line-height: 1.25; }
+  .blog-rte :where(li) { color: #050514b3; margin-bottom: 0; }
+  .summary-rte :where(li) { color: #050514e6; margin-bottom: 0; }
+  .blog-rte :where(a), .summary-rte :where(a) { color: #000; text-decoration: underline; }
+  .blog-rte :where(img) { border-radius: 1.5rem; }
+  /* Webflow rich-text figures */
+  .blog-rte :where(figure) { margin: 2rem 0; position: relative; max-width: 60%; }
+  .blog-rte :where(figure.w-richtext-align-fullwidth) { width: 100%; max-width: 100% !important; text-align: center; display: block; }
+  .blog-rte :where(figure.w-richtext-align-fullwidth > div) { display: inline-block; padding-bottom: inherit; }
+  .blog-rte :where(figure img) { display: inline-block; max-width: 100%; }
+  .blog-rte :where(blockquote) { margin-top: 2rem; padding: 0 1.25rem; border-left: .25rem solid #e2e2e2; font-size: 1.25rem; line-height: 1.5; }
+  .blog-rte :where(blockquote.blockquote) {
+    display: flex; flex-direction: column; gap: 1rem; padding: 1rem; border: 1px solid #e3e3e3; border-radius: .5rem;
+    background: #f0f0f0; font-style: italic;
+  }
+  .blog-rte :where(.blockquote_profile) { display: flex; align-items: center; gap: .5rem; font-style: normal; }
+  .blog-rte :where(blockquote *) { margin: 0 !important; }
+  .blog-rte :where(blockquote img) { border-radius: 50% !important; }
+  .blog-rte :where(.profile_img) { width: 100%; max-width: 5rem; }
+  .blog-rte :where(.fw-500) { font-weight: 500; }
+  .blog-rte :where(h1, h2, h3, h4, [id]) { scroll-margin-top: 90px; }
+  @media (max-width: 767px) {
+    .blog-rte :where(h2), .summary-rte :where(h2) { font-size: 1.8rem; }
+    .blog-rte :where(h3), .summary-rte :where(h3) { font-size: 1.2rem; }
+  }
+}

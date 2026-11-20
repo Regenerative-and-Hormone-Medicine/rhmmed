@@ -1,0 +1,70 @@
+{
+ "path": "/articles/perimenopause-brain-fog",
+ "title": "Perimenopause Brain Fog: What Helps | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Perimenopause brain fog is real, common, and usually temporary — here's why it happens and what a full hormone evaluation can do about it.",
+ "sections": [
+  {
+   "type": "articleHero",
+   "imageAlt": "Woman rubbing temple while reading note",
+   "category": "Perimenopause"
+  },
+  {
+   "type": "articleBody"
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start with clarity before starting a protocol.",
+   "points": [
+    "Personalized, physician-led evaluation",
+    "Advanced testing and clear next steps",
+    "Careful sourcing and medical supervision"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a3067a58cb125b7fb9b4818_peptide_cta.avif",
+    "alt": "Woman sitting in gym after workout, representing personalized peptide therapy, recovery, and wellness care"
+   }
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Related Articles",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/estrogen-dominance",
+     "title": "Estrogen Dominance: Symptoms, Causes and What Your Labs May Be Missing",
+     "summary": "Heavy periods, bloating, mood swings, sore breasts? Learn what estrogen dominance means, what drives it, which labs show it and how it's treated.",
+     "category": "Hormone Replacement",
+     "date": "Nov 9, 2026",
+     "image": {
+      "src": "/images/site/6af1d9daa0c33b4f3a47fb9a_6af1d979f39ea09efb21de4f_estrogen-dominance-woman-reflecting-hero.jpeg",
+      "alt": "Woman in her forties in a cream sweater resting her chin on her hand by a sunny window, looking thoughtful"
+     }
+    },
+    {
+     "href": "/articles/perimenopause-weight-gain",
+     "title": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)",
+     "summary": "Perimenopause weight gain isn't about willpower. See the hormonal, metabolic, and physiological causes — and what individualized care can do.",
+     "category": "Perimenopause",
+     "date": "Aug 28, 2026",
+     "image": {
+      "src": "/images/site/6a903a7d69efe3355e9f5430_woman-noticing-perimenopause-weight-gain-in-mirror.avif",
+      "alt": "Woman sitting on bed looking out window"
+     }
+    }
+   ]
+  }
+ ]
+}

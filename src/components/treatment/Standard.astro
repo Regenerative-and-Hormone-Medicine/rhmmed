@@ -1,0 +1,42 @@
+---
+// "Why standard care falls short" (source: .section.is-causes + variants).
+interface Props {
+  variant: 'slate' | 'blush' | 'mist' | 'brown' | 'white'; big?: boolean; lightCards?: boolean; label: string; heading: string; body: string; grid: string[];
+  cards: { small: string; big: string; reverse?: boolean; icon?: { src: string; alt: string } | null }[]; signsGrid?: boolean; stacked?: boolean; headingMax?: string | null;
+}
+const p = Astro.props;
+const dark = p.variant === 'slate' || p.variant === 'brown';
+const bg = { slate: 'bg-slate', blush: 'bg-[#e6dbda]', mist: 'bg-mist', brown: 'bg-brown', white: 'bg-white' }[p.variant];
+const labelColor = { slate: 'text-white/70', blush: 'text-ink-70', mist: 'text-[#05051499]', brown: 'text-white/70', white: 'text-[#05051499]' }[p.variant];
+const grid = p.stacked
+  ? '!flex flex-col !gap-0'
+  : p.signsGrid
+  ? 'grid-cols-3 !gap-4 max-md:grid-cols-1'
+  : p.grid.includes('is-3')
+  ? 'grid-cols-3 max-lg:grid-cols-2 max-md:flex max-md:flex-col'
+  : p.grid.includes('is-2')
+    ? 'grid-cols-[1fr_1fr_1fr_1fr] max-lg:grid-cols-[1fr_1fr]'
+    : 'grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1';
+---
+
+<section class:list={['py-40 max-md:py-20', p.big && 'pb-[12.5rem] max-md:pb-24 max-sm:pb-20', bg, dark ? 'text-white' : 'text-black']}>
+  <div class="container-site flex flex-col gap-16">
+    <h2 class:list={['text-h4', labelColor]} set:html={p.label} />
+    <div class="flex flex-col gap-20 max-md:gap-12">
+      <div class="flex flex-col gap-8">
+        <h3 class:list={['rich text-h1', dark ? 'text-white' : 'text-ink', p.variant === 'mist' && 'capitalize']} style={p.headingMax ? `max-width:${p.headingMax}` : undefined} set:html={p.heading} />
+        {p.body && <p class:list={['rich text-body-l max-w-[43.875rem]', dark ? 'text-white/70' : 'text-ink-70']} set:html={p.body} />}
+      </div>
+      {p.cards.length > 0 && (
+        <div class:list={['grid gap-6', grid]}>
+          {p.cards.map((c) => (
+            <div class:list={['flex justify-between rounded-[24px] p-[1.875rem] text-black', p.stacked && 'items-center text-center', p.lightCards ? 'bg-bg-light' : 'bg-white', c.reverse === false ? 'flex-col gap-[3.125rem]' : 'flex-col-reverse gap-[3.75rem]']}>
+              {c.icon ? <img src={c.icon.src} alt={c.icon.alt} class="w-full max-w-[7.5rem]" loading="lazy" /> : <div class="rich text-body-r" set:html={c.small} />}
+              <p class:list={['text-h4 capitalize', p.lightCards && 'max-w-[16.25rem]']} set:html={c.big} />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

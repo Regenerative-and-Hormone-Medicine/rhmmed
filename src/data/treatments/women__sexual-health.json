@@ -1,0 +1,448 @@
+{
+ "path": "/women/sexual-health",
+ "title": "Female Sexual Health Care | RHMMed",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Female sexual health care for changes in desire, comfort, arousal, dryness, and intimacy, guided by hormones, labs, and full-body physiology.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": false,
+   "headingInCard": false,
+   "crumb": {
+    "label": "Women",
+    "href": "/women"
+   },
+   "current": "Sexual health",
+   "currentIsH1": false,
+   "heading": "Sexual health care rooted in physiology, not embarrassment.",
+   "headingTag": "h1",
+   "cardLabel": "Sexual health",
+   "body": "Sexual health changes are rarely about hormones alone. At RHM, we look at desire, comfort, arousal, tissue health, stress, sleep, metabolism, and the full physiologic picture.",
+   "cta": {
+    "text": "Book Free VIP Call",
+    "href": "/scheduling"
+   },
+   "image": {
+    "src": "/images/site/6a2acb416aac559c5256566d_sexua_hero.avif",
+    "alt": "Couple relaxing at home, representing female sexual health, hormone balance, and private wellness care"
+   }
+  },
+  {
+   "type": "symptom",
+   "men": false,
+   "heading": "Your body may be trying to tell you something.",
+   "body": "Desire may feel quieter. Intimacy may feel different. Your body may not respond the way it once did.",
+   "toldLabel": "What you’ve been told",
+   "told": [
+    "“It’s just stress”",
+    "“This is just part of getting older”",
+    "“This is normal with aging”"
+   ],
+   "box": "But if something feels different, it deserves more than a quick explanation. It deserves a closer look.",
+   "image": null,
+   "bottom": "Desire, comfort, and connection deserve a real conversation.",
+   "buttons": [
+    {
+     "text": "Book free vip call",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "statement",
+   "slate": false,
+   "label": "What is female sexual health?",
+   "blocks": [
+    {
+     "tag": "h3",
+     "cls": "h1",
+     "html": "Female sexual health is about far more than libido alone. Hormones, nervous system regulation, tissue health, stress, sleep, metabolism, and overall physiologic wellbeing all play a role."
+    }
+   ]
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "814px",
+   "heading": "Sexual health symptoms rarely happen in isolation.",
+   "body": "Desire, comfort, arousal, responsiveness, and confidence are connected — which is why symptoms can feel hard to explain.",
+   "grid": [],
+   "gridKind": "signs",
+   "cards": [
+    {
+     "title": "Low Desire",
+     "stat": null,
+     "body": "Less interest in intimacy, even when nothing feels wrong in your relationship.",
+     "image": {
+      "src": "/images/site/6a2acb65a98997e4999e183c_sexual_low_desire.avif",
+      "alt": "Woman lying in bed with partner, representing low desire, intimacy concerns, and female sexual health support"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Lower responsiveness",
+     "stat": null,
+     "body": "Your mind may be present, but your body no longer follows the same signal.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Discomfort &amp; Dryness",
+     "stat": null,
+     "body": "Pain, dryness, or irritation that makes intimacy harder to enjoy.",
+     "image": {
+      "src": "/images/site/6a2acb65ab9b2914fb3db3f1_sexual_dryness.avif",
+      "alt": "Woman sitting at home, representing discomfort, dryness, hormone changes, and female sexual health care"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Body Disconnection",
+     "stat": null,
+     "body": "Feeling less connected, confident, or present in your body.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Arousal Changes",
+     "stat": null,
+     "body": "Less sensitivity, slower arousal, or difficulty feeling fully engaged.",
+     "image": {
+      "src": "/images/site/6a2acb655a5fc097292fc681_sexual_arousal.avif",
+      "alt": "Woman resting in bed, representing arousal changes, low sensitivity, and female sexual wellness support"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Hormonal Shifts",
+     "stat": null,
+     "body": "Changes during <a href=\"/women/perimenopause\">perimenopause</a>, <a href=\"/women/menopause\">menopause</a>, stress, or <a href=\"/women/thyroid\">thyroid imbalance</a>.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "blush",
+   "label": "Why This Can Feel Confusing",
+   "heading": "You are not imagining it. Many women are simply never given the time to have a full conversation.",
+   "body": "",
+   "grid": [
+    "is-3"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "<p>Changes often happen gradually over time.</p>",
+     "big": "Quietly Progressive",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Stress, sleep, nervous system health, and tissue changes can all play a role.",
+     "big": "More Than Hormones",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Many women are never given space to discuss these symptoms openly.",
+     "big": "Hard To Talk About",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Symptoms are often blamed on stress, aging, or relationship dynamics alone.",
+     "big": "Easy To Dismiss",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "<p>Desire, comfort, confidence, and responsiveness often influence one another.</p>",
+     "big": "Deeply Connected",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "No two experiences with hormonal or sexual health look exactly the same.",
+     "big": "Different For Every Woman",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "compare",
+   "big": true,
+   "label": null,
+   "men": false,
+   "heading": "Your labs can look normal while your physiology keeps changing.",
+   "headingMax": "814px",
+   "body": "",
+   "bodyMax": null,
+   "heads": [
+    null,
+    null,
+    "Traditional labs"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "Evaluation",
+     "160+ biomarkers",
+     "A handful of hormone markers"
+    ],
+    [
+     "Interpretation",
+     "Systems read together",
+     "Single snapshots in isolation"
+    ],
+    [
+     "Full-Body context",
+     "Thyroid, cortisol, metabolism, inflammation",
+     "Rarely included"
+    ],
+    [
+     "Symptom Analysis",
+     "Connected pattern",
+     "Each symptom separately"
+    ],
+    [
+     "Clinical guidance",
+     "Physician-led, physiology-driven",
+     "Minimal context provided"
+    ],
+    [
+     "core plan",
+     "Built around your physiology",
+     "Reactive and generalized"
+    ]
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "The conversation many women never get",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "Desire, comfort, and connection are medical concerns — not something to dismiss."
+    },
+    {
+     "kind": "images",
+     "two": false,
+     "images": [
+      {
+       "src": "/images/site/6a2acb6594c894604a6f8346_sexual_first.avif",
+       "alt": "Woman holding a cup at home, representing female sexual health, comfort, and hormone wellness support"
+      },
+      {
+       "src": "/images/site/6a2acb655eea0e6c299192e4_sexual_second.avif",
+       "alt": "Couple kissing at home, representing intimacy, connection, and female sexual health"
+      },
+      {
+       "src": "/images/site/6a2acb65f8bdb72cc786a807_sexual_third.avif",
+       "alt": "Woman stretching in bed, representing comfort, wellbeing, and female sexual health support"
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "<p>At RHM, female sexual health is evaluated thoughtfully and comprehensively — with attention to hormones, tissue health, stress physiology, nervous system patterns, metabolism, and your overall quality of life.</p>"
+    }
+   ]
+  },
+  {
+   "type": "voices",
+   "heading": "When your body shifts, intimacy can shift with it.",
+   "headingMax": "562px",
+   "headingFull": false,
+   "body": "Sexual health is shaped by hormones, sleep, stress, blood flow, tissue health, metabolism, and nervous system regulation. When those systems shift, desire, comfort, arousal, and connection can shift too.That deserves care.",
+   "quotes": [
+    {
+     "quote": "<p>“I still loved my partner. I just did not feel connected to my body the same way.”</p>",
+     "name": "Dana, 62"
+    },
+    {
+     "quote": "<p>“I kept telling myself it was stress. But something had clearly changed.”</p>",
+     "name": "Kathy, 47"
+    },
+    {
+     "quote": "<p>“I did not feel broken. I just did not feel like myself anymore.”</p>",
+     "name": "Rachel, 56"
+    }
+   ]
+  },
+  {
+   "type": "process",
+   "heading": "How RHM evaluates female sexual health",
+   "body": "",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Private Discovery Call",
+     "body": "We discuss what has changed, including desire, comfort, arousal, dryness, confidence, and how connected you feel to your body.",
+     "image": {
+      "src": "/images/site/6a20a04ac0ca93a2d3d711a4_step_.avif",
+      "alt": "Woman on a discovery call, representing hormone health consultation and symptom evaluation"
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Comprehensive Lab Evaluation",
+     "body": "We test 160+ biomarkers across hormones, thyroid, cortisol, metabolism, inflammation, and other systems that may affect sexual health.",
+     "image": {
+      "src": "/images/site/6a20b2f6ac9881d327b05f7e_blood.avif",
+      "alt": "Blood sample for comprehensive lab testing, representing hormone, thyroid, cortisol, and metabolism evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Physician Review",
+     "body": "An RHM physician reviews your symptoms, labs, history, medications, risk profile, and goals together.",
+     "image": {
+      "src": "/images/site/6a20b33fca8b1a9c9eaec7a0_consultation.avif",
+      "alt": "Doctor consulting with patient, representing personalized hormone health consultation and lab result review"
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Personalized care plan",
+     "body": "Your plan is built around what may be driving the issue, with hormonal and non-hormonal options considered when appropriate.",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing monitoring",
+     "body": "We track symptoms, labs, comfort, side effects, and progress so your care can adjust as your body changes.",
+     "image": {
+      "src": "/images/site/6a20b4087999ef3dd1181026_monitoring.avif",
+      "alt": "Woman on a virtual follow-up call, representing ongoing hormone care monitoring and wellness support"
+     }
+    }
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "base",
+    "none"
+   ],
+   "image": {
+    "src": "/images/site/6a20aca76c5eefd7bda386da_dr_rand.avif",
+    "alt": "RHM physician in medical scrubs, representing physician-led hormone optimization and personalized patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Physician-led care built around your physiology",
+   "body": "Many women are told their symptoms are normal, emotional, or just part of aging. RHM takes a different approach. We evaluate sexual health as part of your broader physiology — including hormones, tissue health, metabolism, thyroid function, sleep, stress, and recovery.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start with a private conversation that takes your symptoms seriously.",
+   "points": [
+    "Personalized, physician-led evaluation",
+    "Private, respectful consultation",
+    "Hormones, tissue health, stress, and metabolism reviewed together"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a2acb65db97cbd0910e9c53_sexual_cta.avif",
+    "alt": "Couple relaxing together at home, representing private female sexual health consultation and personalized hormone care"
+   }
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "Is it normal for desire to change over time?",
+     "a": "Yes, changes in desire are common. But common does not mean they should be ignored, especially when they affect comfort, confidence, intimacy, or how connected you feel to your body."
+    },
+    {
+     "q": "What if I feel uncomfortable bringing sexual health up?",
+     "a": "<p>That is completely understandable. Many women feel awkward, embarrassed, or unsure how to describe what has changed. At RHM, this conversation is private, respectful, and medical — not judgmental, rushed, or uncomfortable.</p>"
+    },
+    {
+     "q": "Can hormones really affect intimacy and desire?",
+     "a": "<p>Yes. Estrogen, testosterone, thyroid hormones, cortisol, and other physiologic patterns can affect desire, arousal, lubrication, tissue comfort, mood, energy, and responsiveness. Sexual health is rarely controlled by one hormone alone.</p>"
+    },
+    {
+     "q": "What if my relationship is healthy but things still feel different?",
+     "a": "<p>That can happen. Low desire, discomfort, or reduced responsiveness does not always mean something is wrong in the relationship. Hormones, tissue health, nervous system regulation, stress, sleep, thyroid function, and metabolism can all change how your body responds.</p>"
+    },
+    {
+     "q": "Is discomfort during intimacy just part of aging?",
+     "a": "<p>No. Discomfort during intimacy is common, especially during perimenopause, <a href=\"/women/menopause\">menopause</a>, and <a href=\"/women/postmenopause\">postmenopause</a>, but it should not be dismissed as “just aging.” Vaginal dryness, tissue changes, pelvic floor issues, hormone shifts, inflammation, and other factors may be treatable.</p>"
+    },
+    {
+     "q": "Will I automatically be prescribed hormones?",
+     "a": "<p>No. Hormones are not automatic. RHM evaluates your symptoms, labs, history, risk profile, comfort level, and goals before making recommendations. Treatment may include hormonal or non-hormonal options depending on what is actually driving the issue.</p>"
+    },
+    {
+     "q": "Can low libido be a sign of a hormonal problem?",
+     "a": "<p>Yes. Low libido can be connected to estrogen, testosterone, thyroid function, cortisol patterns, sleep disruption, stress, medications, metabolic changes, or perimenopause and menopause. A proper evaluation helps identify whether hormones are part of the picture.</p>"
+    },
+    {
+     "q": "What labs should be checked for low libido or sexual health concerns?",
+     "a": "<p>A deeper workup may include estrogen, progesterone, testosterone, SHBG, DHEA-S, thyroid markers, cortisol patterns, metabolic markers, inflammatory markers, nutrient status, and other labs depending on your symptoms and medical history.</p>"
+    },
+    {
+     "q": "Is PT-141 an option for women?",
+     "a": "<p><a href=\"https://pubmed.ncbi.nlm.nih.gov/12851303/\">PT-141</a>, also known as bremelanotide, may be an option for some women with desire or arousal concerns, but it is not right for everyone. It works through nervous system signaling rather than <a href=\"/women/hormone-replacement-therapy\">hormone replacement</a>, so candidacy, side effects, medical history, and goals need to be evaluated carefully.</p>"
+    },
+    {
+     "q": "What changes when the underlying physiology improves?",
+     "a": "<p>When the underlying physiology is properly supported, women may notice improvements in desire, comfort, lubrication, arousal, responsiveness, confidence, mood, energy, and connection with their body. The goal is not to force intimacy — it is to address what may be making it feel different, uncomfortable, or disconnected.</p>"
+    }
+   ]
+  }
+ ]
+}

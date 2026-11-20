@@ -1,0 +1,46 @@
+---
+import Rich from '../Rich.astro';
+// Full-bleed image hero for /men and /women (source: .section.is-men_hero). Header is white over it.
+import Button from '../Button.astro';
+import type { Btn, Img } from './types';
+interface Props { label: string; heading: string; body: string; buttons: Btn[]; image: Img; solid: boolean; imageClass: string[]; headingStyle?: 'large' | 'light' | 'h74' | 'plain'; headingMax?: string | null; short?: boolean; row?: boolean; extraOverlay?: 'tint' | 'gradient' | null }
+const p = Astro.props;
+const pos = p.imageClass.includes('is-men') ? 'max-md:object-[40%_50%] max-sm:object-[60%_50%]' : 'max-md:object-[50%_50%]';
+---
+
+<section class:list={['relative overflow-hidden', p.short ? '' : 'min-h-svh max-md:min-h-0 max-md:py-20 max-sm:py-0']}>
+  <div class:list={['container-site relative z-[2] flex gap-20 pt-[10.125rem] pb-20 text-white',
+    p.short ? 'min-h-[36.25rem] flex-row items-end justify-between max-md:min-h-0 max-md:flex-col max-md:items-start max-md:pt-32 max-md:pb-12 max-sm:px-4'
+            : p.row
+              ? 'min-h-svh flex-row items-end justify-between max-md:min-h-0 max-md:flex-col max-md:items-start max-md:justify-end max-md:gap-8 max-md:pt-16 max-md:pb-0 max-sm:px-4 max-sm:pt-28 max-sm:pb-16'
+              : 'min-h-svh flex-col justify-between max-md:min-h-0 max-md:pt-16 max-md:pb-0 max-sm:px-4 max-sm:pt-28 max-sm:pb-16']}>
+    <div class:list={['relative z-[2] flex flex-col items-start gap-6 max-sm:w-full max-sm:items-stretch', p.short && 'w-full max-w-[24.4375rem]']}>
+      <div class="text-label">{p.label}</div>
+      <h1
+        class:list={[
+          'hub-h1 w-full text-white',
+          p.headingStyle === 'large' && 'text-[4.625rem] leading-[1.05] font-semibold uppercase max-md:text-[3rem] max-sm:text-[2rem]',
+          p.headingStyle === 'light' && 'text-[4.625rem] leading-[1.2] font-light max-md:text-[3rem] max-sm:text-[2rem]',
+          p.headingStyle === 'h74' && 'text-[4.625rem] leading-[1.2] max-md:text-[3rem] max-sm:text-[2.5rem]',
+        ]}
+        style={p.headingMax ? `max-width:${p.headingMax}` : undefined}
+        set:html={p.heading}
+      />
+    </div>
+    <div class="flex w-full max-w-[26.4375rem] flex-col items-start gap-8">
+      <Rich class="text-body-l" html={p.body} />
+      <div class="flex items-center gap-2.5 max-md:flex-wrap max-sm:flex-col max-sm:items-start">
+        {p.buttons.map((b) => <Button href={b.href} variant={b.variant}>{b.text}</Button>)}
+      </div>
+    </div>
+  </div>
+  <div class="absolute inset-0 rounded-[24px]">
+    {p.image && <img src={p.image.src} alt={p.image.alt} class:list={['absolute inset-0 w-full object-cover max-md:h-full', p.short ? 'h-full' : 'h-svh', pos]} />}
+    <div class:list={['pointer-events-none absolute size-full', p.solid ? 'bg-black/30' : 'bg-gradient-to-b from-transparent to-black/60']}></div>
+    {p.extraOverlay && <div class:list={['pointer-events-none absolute inset-0', p.extraOverlay === 'tint' ? 'bg-[#05051457]' : 'bg-gradient-to-b from-black/0 to-black/70']}></div>}
+  </div>
+</section>
+
+<style>
+  .hub-h1 :global(.accent) { color: #d1e8ff; }
+</style>

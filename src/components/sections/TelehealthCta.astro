@@ -1,0 +1,38 @@
+---
+// Grey section, white card + image (source: .container.is-telehealth).
+import Button from '../Button.astro';
+interface Props {
+  label?: string;
+  heading?: string;
+  body?: string;
+  image?: string;
+  alt?: string;
+  buttons?: { text: string; href: string }[];
+}
+const {
+  label = 'Telehealth',
+  heading = 'Personalized care, available remotely',
+  body = 'Our telehealth services allow patients to access consultations, follow-ups, and ongoing care from home, making personalized treatment more accessible and convenient.',
+  image = '/images/site/69c3c28af6489176c8dc87f7_personalized-care.avif',
+  alt = 'Doctor and patient using laptop, representing remote telehealth care, hormone treatment, and wellness support',
+  buttons = [{ text: 'Book VIP Call', href: '/scheduling' }],
+} = Astro.props;
+---
+
+<section class="bg-bg-light">
+  <div class="container-site grid grid-cols-2 gap-6 py-[8.75rem] max-md:grid-cols-1 max-md:py-20">
+    <div class="flex flex-col gap-32 rounded-lg bg-white px-[3.125rem] py-[3.625rem] max-sm:gap-16 max-sm:p-8">
+      <div class="flex flex-col items-start gap-[1.53125rem]">
+        <div class="text-label text-black">{label}</div>
+        <h2 class="text-black">{heading}</h2>
+        <p class="text-body-l text-ink-70">{body}</p>
+      </div>
+      <div class="flex items-center gap-2.5 max-sm:flex-col max-sm:items-start">
+        {buttons.map((b) => <Button href={b.href}>{b.text}</Button>)}
+      </div>
+    </div>
+    <div class="overflow-hidden rounded-lg">
+      <img src={image} alt={alt} class="size-full object-cover" loading="lazy" />
+    </div>
+  </div>
+</section>

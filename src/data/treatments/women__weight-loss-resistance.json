@@ -1,0 +1,590 @@
+{
+ "path": "/women/weight-loss-resistance",
+ "title": "Weight Loss Resistance Care to Get Your Body Responding",
+ "footer": null,
+ "headerTheme": "dark",
+ "description": "Weight loss resistance care for stubborn weight, cravings, and low energy. Book a call to find what changed.",
+ "sections": [
+  {
+   "type": "hero",
+   "men": false,
+   "headingInCard": false,
+   "crumb": {
+    "label": "Women",
+    "href": "/women"
+   },
+   "current": "Weight Loss Resistance",
+   "currentIsH1": false,
+   "heading": "Weight loss resistance starts with physiology. So does the solution.",
+   "headingTag": "h1",
+   "cardLabel": "Weight Loss Resistance",
+   "body": "You're not doing anything wrong. Your physiology has changed. We find out exactly how and build care around it.",
+   "cta": {
+    "text": "Book Free VIP Call",
+    "href": "/scheduling"
+   },
+   "image": {
+    "src": "/images/site/6a22aee1395f94867b309bc0_weight_resistance_hero.avif",
+    "alt": "Woman walking outdoors, representing weight loss resistance, metabolism support, and hormone health"
+   }
+  },
+  {
+   "type": "symptom",
+   "men": false,
+   "heading": "You have tried to do everything right.",
+   "body": "You adjusted your diet. Increased your activity. Stayed consistent longer than most people would. And still, your body is not responding the way it used to.",
+   "toldLabel": "You've been told:",
+   "told": [
+    "“You just need to be stricter”",
+    "“Eat less and move more”",
+    "“Your labs look normal”"
+   ],
+   "box": "Weight feels harder to lose. Easier to gain. Energy crashes harder. Recovery feels slower. The things that used to work now barely move the needle.",
+   "image": null,
+   "bottom": "But effort is not always the missing piece.",
+   "buttons": [
+    {
+     "text": "Book free vip call",
+     "href": "/scheduling"
+    }
+   ]
+  },
+  {
+   "type": "statement",
+   "slate": false,
+   "label": "What is Weight Loss Resistance?",
+   "blocks": [
+    {
+     "tag": "h3",
+     "cls": "h1",
+     "html": "Weight loss resistance isn't about willpower or effort. It happens when the underlying systems that regulate how your body burns fat, stores energy, and responds to food and exercise have shifted and no amount of trying harder changes that."
+    }
+   ]
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "814px",
+   "heading": "Weight loss resistance often shows up as more than weight gain.",
+   "body": "Many women first notice that their body feels less predictable. Energy, cravings, recovery, body composition, and motivation all begin changing together.",
+   "grid": [],
+   "gridKind": "signs",
+   "cards": [
+    {
+     "title": "Weight &amp; Body Composition",
+     "stat": null,
+     "body": "Unexplained weight gain, harder fat loss, abdominal weight gain, reduced muscle tone",
+     "image": {
+      "src": "/images/site/6a22af14695953f63b603d01_weight_body-comp.avif",
+      "alt": "Woman looking at her body, representing weight gain, body composition changes, and hormone imbalance"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Energy &amp; Cravings",
+     "stat": null,
+     "body": "Energy crashes, stronger cravings, blood sugar swings, feeling drained after meals",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Metabolism",
+     "stat": null,
+     "body": "Slower response to diet and exercise, metabolic slowdown, less predictable results",
+     "image": {
+      "src": "/images/site/6a22af14c25daea330269c7f_weight_metabolism.avif",
+      "alt": "Woman running outdoors, representing metabolism, weight loss resistance, and hormone health"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Recovery &amp; Resilience",
+     "stat": null,
+     "body": "Slower recovery from workouts, lower stamina, feeling more physically taxed",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Hormones &amp; Mood",
+     "stat": null,
+     "body": "Changes during perimenopause or menopause, lower motivation, mood shifts, disrupted sleep",
+     "image": {
+      "src": "/images/site/6a22af14002f0c015b5eceb7_weight_hormones.avif",
+      "alt": "Woman resting at home, representing hormone changes, mood shifts, low motivation, and disrupted sleep"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Thyroid &amp; Inflammation",
+     "stat": null,
+     "body": "Feeling cold, puffy, inflamed, tired, or “off” even when basic labs look normal",
+     "image": null,
+     "accent": true,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "blush",
+   "label": "Why it keeps compounding",
+   "heading": "Weight loss resistance is rarely caused by one isolated issue.",
+   "body": "When several systems shift together, the combined effect on how your body burns fat and stores energy is far greater than any single cause. That is why the same habits that used to work suddenly stop producing results.",
+   "grid": [
+    "is-3"
+   ],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "Your body stores more and burns less regardless of what you eat",
+     "big": "Insulin resistance",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Declining estrogen and testosterone shift where fat is stored and how efficiently it burns",
+     "big": "Hormonal changes",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Even subtle underperformance slows metabolism in ways no amount of diet or exercise can fully override",
+     "big": "Thyroid dysfunction",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Chronic stress keeps your body in storage mode — especially around the middle",
+     "big": "Cortisol dysregulation",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "As systems compound, the metabolism that once responded to effort simply stops cooperating",
+     "big": "Metabolic slowdown",
+     "reverse": true,
+     "icon": null
+    },
+    {
+     "small": "Elevated inflammation disrupts hormonal signaling and makes recovery harder — compounding everything else",
+     "big": "Inflammation",
+     "reverse": true,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": "1040px"
+  },
+  {
+   "type": "compare",
+   "big": true,
+   "label": null,
+   "men": false,
+   "heading": "Your labs can look normal while your physiology keeps changing.",
+   "headingMax": "814px",
+   "body": "",
+   "bodyMax": null,
+   "heads": [
+    null,
+    null,
+    "Traditional labs"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "Evaluation",
+     "160+ biomarkers",
+     "A handful of hormone markers"
+    ],
+    [
+     "Interpretation",
+     "Systems read together",
+     "Single snapshots in isolation"
+    ],
+    [
+     "Full-Body context",
+     "<a href=\"/women/thyroid\">Thyroid</a>, cortisol, metabolism, inflammation",
+     "Rarely included"
+    ],
+    [
+     "Symptom Analysis",
+     "Connected pattern",
+     "Each symptom separately"
+    ],
+    [
+     "Clinical guidance",
+     "Physician-led, physiology-driven",
+     "Minimal context provided"
+    ],
+    [
+     "core plan",
+     "Built around your physiology",
+     "Reactive and generalized"
+    ]
+   ]
+  },
+  {
+   "type": "missions",
+   "compact": true,
+   "label": "Why Standard Advice Falls Short",
+   "blocks": [
+    {
+     "kind": "h1",
+     "html": "“Eat less, move more” does not explain what many women are actually experiencing."
+    },
+    {
+     "kind": "images",
+     "two": false,
+     "images": [
+      {
+       "src": "/images/site/6a22af14b797ac116756ca0c_weight_first.avif",
+       "alt": "Woman sitting with laptop, representing weight loss resistance, low energy, and metabolic health challenges"
+      },
+      {
+       "src": "/images/site/6a22af145f5bbb85daab63fa_weight_second.avif",
+       "alt": "Healthy meal bowl with vegetables and protein, representing metabolic health and weight loss support"
+      },
+      {
+       "src": "/images/site/6a22af14c25daea330269c7c_weight_third.avif",
+       "alt": "Woman exercising with weights, representing weight loss resistance, strength training, and metabolic health"
+      }
+     ]
+    },
+    {
+     "kind": "h1",
+     "html": "Weight loss resistance is a physiologic pattern, not a discipline problem. We evaluate the systems that influence how your body stores fat, burns fuel, and responds to effort. Because the answer was never about trying harder."
+    }
+   ]
+  },
+  {
+   "type": "voices",
+   "heading": "Why it becomes harder to ignore",
+   "headingMax": "504px",
+   "headingFull": true,
+   "body": "At first, many women adapt. You push through fatigue. You normalize slower results. You work around lower energy. You tell yourself you probably just need to try harder. But over time, the disconnect between effort and response starts affecting more than weight.",
+   "quotes": [
+    {
+     "quote": "<p>“I spent years telling myself this was just aging. I finally decided I wasn't willing to accept that.\"</p>",
+     "name": "Michelle, 47"
+    },
+    {
+     "quote": "<p>\"I didn't want to just function. I wanted to feel like myself again. That felt worth fighting for.\"</p>",
+     "name": "Dana, 52"
+    },
+    {
+     "quote": "<p>\"At some point I stopped waiting to feel better on my own and started demanding real answers.\"</p>",
+     "name": "Rachel, 44"
+    }
+   ]
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "brown",
+   "label": "Long-Term Metabolic Health",
+   "heading": "When insulin, hormones, thyroid function, inflammation, recovery, and body composition shift together, the impact can extend beyond the scale.",
+   "body": "When several systems shift together, the combined effect on how your body burns fat and stores energy is far greater than any single cause. That is why the same habits that used to work suddenly stop producing results.",
+   "grid": [],
+   "signsGrid": false,
+   "cards": [
+    {
+     "small": "",
+     "big": "Energy stability",
+     "reverse": false,
+     "icon": {
+      "src": "/images/site/6a281ae8eaba2510eb5bf8c5_energy_stability.svg",
+      "alt": ""
+     }
+    },
+    {
+     "small": "",
+     "big": "Muscle maintenance",
+     "reverse": false,
+     "icon": {
+      "src": "/images/site/6a281aef47d0c16109747c5d_muscle_maintenance.svg",
+      "alt": ""
+     }
+    },
+    {
+     "small": "",
+     "big": "Recovery capacity",
+     "reverse": false,
+     "icon": {
+      "src": "/images/site/6a281af83050874ab9267e40_recovery_capacity.svg",
+      "alt": ""
+     }
+    },
+    {
+     "small": "",
+     "big": "Blood sugar regulation",
+     "reverse": false,
+     "icon": {
+      "src": "/images/site/6a281afec2d376a2c7dc2caa_blood_sugar_regulation.svg",
+      "alt": ""
+     }
+    },
+    {
+     "small": "",
+     "big": "Inflammation response",
+     "reverse": false,
+     "icon": {
+      "src": "/images/site/6a281b0674884dae52cf356e_inflammation.svg",
+      "alt": ""
+     }
+    },
+    {
+     "small": "",
+     "big": "Long-term metabolic health",
+     "reverse": false,
+     "icon": {
+      "src": "/images/site/6a281b0e3d4c2a36735cbed8_long_term_metabolic.svg",
+      "alt": ""
+     }
+    }
+   ],
+   "stacked": true,
+   "headingMax": "1040px"
+  },
+  {
+   "type": "process",
+   "heading": "How RHM Treats Weight Loss Resistance",
+   "body": "",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "steps": [
+    {
+     "label": "Step 1",
+     "title": "Discovery Call",
+     "body": "Discuss symptoms, history, and whether deeper evaluation makes sense.",
+     "image": {
+      "src": "/images/site/6a20a04ac0ca93a2d3d711a4_step_.avif",
+      "alt": "Woman on a discovery call, representing hormone health consultation and symptom evaluation"
+     }
+    },
+    {
+     "label": "Step 2",
+     "title": "Comprehensive Lab Evaluation",
+     "body": "Test 160+ biomarkers across hormones, thyroid, cortisol, metabolism, and inflammation.",
+     "image": {
+      "src": "/images/site/6a20b2f6ac9881d327b05f7e_blood.avif",
+      "alt": "Blood sample for comprehensive lab testing, representing hormone, thyroid, cortisol, and metabolism evaluation"
+     }
+    },
+    {
+     "label": "Step 3",
+     "title": "Provider Consultation",
+     "body": "Review your results with an RHM physician and understand what may be driving your symptoms.",
+     "image": {
+      "src": "/images/site/6a20b33fca8b1a9c9eaec7a0_consultation.avif",
+      "alt": "Doctor consulting with patient, representing personalized hormone health consultation and lab result review"
+     }
+    },
+    {
+     "label": "Step 4",
+     "title": "Personalized Plan",
+     "body": "Get a treatment plan built around your labs, symptoms, physiology, and goals.",
+     "image": {
+      "src": "/images/site/6a20b3826d7df8d54a318ffd_plan.avif",
+      "alt": "Medical provider reviewing patient data, representing personalized hormone treatment planning"
+     }
+    },
+    {
+     "label": "Step 5",
+     "title": "Ongoing Monitoring",
+     "body": "Adjust your care over time as your body responds and your needs change.",
+     "image": {
+      "src": "/images/site/6a20b4087999ef3dd1181026_monitoring.avif",
+      "alt": "Woman on a virtual follow-up call, representing ongoing hormone care monitoring and wellness support"
+     }
+    }
+   ]
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "base",
+    "none"
+   ],
+   "image": {
+    "src": "/images/site/6a20aca76c5eefd7bda386da_dr_rand.avif",
+    "alt": "RHM physician in medical scrubs, representing physician-led hormone optimization and personalized patient care"
+   },
+   "label": "Why RHM",
+   "heading": "Physician-led care built around your metabolic physiology.",
+   "body": "Most women who come to RHM are already trying. We look deeper at the hormone, insulin, thyroid, metabolic, inflammation, stress, and recovery patterns that may be affecting how their body responds.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "insights",
+   "men": false,
+   "heading": "Research & Insights on Peptide Therapy",
+   "button": {
+    "text": "View articles",
+    "href": "/articles"
+   },
+   "cards": [
+    {
+     "href": "/articles/pcos-belly-fat",
+     "title": "PCOS Belly Fat",
+     "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
+     "category": "PCOS",
+     "date": "Sep 11, 2026",
+     "image": {
+      "src": "/images/site/6abe6cafaca1c590f6b996b5_6aa2f72b165ff1135617bf3e_Hero.avif",
+      "alt": "Woman holding her belly in mirror"
+     }
+    },
+    {
+     "href": "/articles/metabolic-testing",
+     "title": "Metabolic Testing: What It Actually Checks",
+     "summary": "Metabolic testing can mean a lot of things. Here's what RHM actually checks — and why one number rarely tells the full story.",
+     "category": "Weight Loss Resistance",
+     "date": "Aug 28, 2026",
+     "image": {
+      "src": "/images/site/6a9040972679378ad02c9ccf_resting-metabolic-rate-breathing-test.avif",
+      "alt": "Man wearing mask during metabolic rate test"
+     }
+    },
+    {
+     "href": "/articles/insulin-resistance-test",
+     "title": "Insulin Resistance Test: What It Checks (and What \"Normal\" Can Miss)",
+     "summary": "Wondering how insulin resistance is actually tested? A physician-led look at what a real panel checks, at-home options, and what the results can mean.",
+     "category": "Weight Loss Resistance",
+     "date": "Aug 19, 2026",
+     "image": {
+      "src": "/images/site/6a79f35e46371376a406d3f2_insulin-resistance-test-results.avif",
+      "alt": "Woman reading lab results at table"
+     }
+    },
+    {
+     "href": "/articles/insulin-resistance-and-weight-loss",
+     "title": "Insulin Resistance and Weight Loss in Women",
+     "summary": "Insulin resistance and weight loss: why cutting calories won't move the scale, how high insulin blocks fat loss in women, and what to check with your doctor.",
+     "category": "Weight Loss Resistance",
+     "date": "Jul 9, 2026",
+     "image": {
+      "src": "/images/site/6a4fdb5b99bd0eb030dbad8b_22fd23ed-12f5-45d3-b72c-bbeb17693eef.avif",
+      "alt": "Two women walking and talking about Insuline Resistance"
+     }
+    },
+    {
+     "href": "/articles/not-losing-weight-on-ozempic",
+     "title": "Why am I Not Losing Weight on Ozempic? Why the Scale Stalls or Creeps Back",
+     "summary": "Not losing weight on Ozempic, or gaining it back? A physician-led look at why the scale stalls: metabolic adaptation, muscle loss, thyroid, and insulin.",
+     "category": "Weight Loss Resistance",
+     "date": "Jul 6, 2026",
+     "image": {
+      "src": "/images/site/6a47c669407108bc00b2e31c_weight.avif",
+      "alt": "Woman pinching belly fat in bedroom"
+     }
+    },
+    {
+     "href": "/articles/semaglutide-peptide",
+     "title": "Semaglutide Peptide: What It Is, and How It Works",
+     "summary": "Is semaglutide a peptide? Yes, and the GLP-1 behind Ozempic, Wegovy, and Rybelsus. A physician-led look at what it is, how it works, and who it's for. Book a call.",
+     "category": "Peptides",
+     "date": "Jul 2, 2026",
+     "image": {
+      "src": "/images/site/6a466c5303f24336305c94ee_semiglutide-2.avif",
+      "alt": "RHM semaglutide vial on stone surface"
+     }
+    }
+   ]
+  },
+  {
+   "type": "ctaBlock",
+   "slate": false,
+   "heading": "Start your journey to personalized weight loss resistance care.",
+   "points": [
+    "Physician-led metabolic and hormone care",
+    "160+ biomarkers evaluated",
+    "Insulin, hormone, thyroid, cortisol, inflammation, and recovery context"
+   ],
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a22b0d0620dd06b2e7742d5_weight_loss_cta.avif",
+    "alt": "Doctor consulting with patient, representing personalized weight loss resistance care and hormone health evaluation"
+   }
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "Why am I gaining weight even though my habits have not changed?",
+     "a": "Hormone shifts, insulin resistance, thyroid dysfunction, inflammation, chronic stress, sleep disruption, reduced muscle mass, and metabolic changes can all affect how your body regulates weight and responds to effort — even when your routines stay consistent."
+    },
+    {
+     "q": "Why does it feel like my body stopped responding?",
+     "a": "<p>Because the relationship between effort and outcome can change when the underlying physiology changes. If insulin, hormones, thyroid, cortisol, inflammation, or recovery are out of balance, your body may store fat more easily, burn fuel less efficiently, and recover more slowly than it used to.</p>"
+    },
+    {
+     "q": "Is this just about calories?",
+     "a": "Calories matter, but they are not the whole story. The standard “eat less, move more” advice assumes your body responds predictably to calorie changes. Insulin resistance, hormone shifts, thyroid dysfunction, inflammation, poor sleep, and chronic stress can all change how your body uses and stores energy."
+    },
+    {
+     "q": "Why does weight resistance often begin during perimenopause or menopause?",
+     "a": "<p><a href=\"/women/perimenopause\">Perimenopause</a> and <a href=\"/women/menopause\">menopause</a> can affect estrogen, progesterone, insulin sensitivity, thyroid function, cortisol patterns, muscle mass, sleep, and recovery. These changes can make weight easier to gain and harder to lose, especially around the abdomen.</p>"
+    },
+    {
+     "q": "How do I know if my weight gain is hormonal?",
+     "a": "Hormonal weight gain often shows up with other symptoms, such as irregular cycles, hot flashes, night sweats, fatigue, brain fog, low libido, mood changes, poor sleep, sugar cravings, or stubborn abdominal weight. Testing can help identify whether hormones, thyroid, insulin, cortisol, or inflammation are part of the pattern."
+    },
+    {
+     "q": "What labs should be checked if I cannot lose weight?",
+     "a": "A deeper workup may include fasting insulin, fasting glucose, HbA1c, HOMA-IR, thyroid markers such as TSH, free T3, free T4, reverse T3, thyroid antibodies, cortisol markers, inflammatory markers like hs-CRP, ferritin, sex hormones, metabolic markers, and nutrient levels. At RHM, testing looks at 160+ biomarkers and interprets them alongside your symptoms."
+    },
+    {
+     "q": "Why am I in a calorie deficit but not losing weight?",
+     "a": "A calorie deficit may not lead to predictable weight loss if your body is dealing with insulin resistance, thyroid dysfunction, chronic stress, poor sleep, inflammation, hormone changes, low muscle mass, or impaired recovery. The issue may not be effort — it may be that your body is no longer responding the way it used to."
+    },
+    {
+     "q": "Will I automatically be prescribed medication or GLP-1 therapy?",
+     "a": "<p>No. RHM is not a prescription-first weight loss clinic. <a href=\"#\">GLP-1 medications</a> may be appropriate for some patients, but they are not automatic. The right plan depends on your symptoms, labs, medical history, risk profile, goals, and what your body is most likely to respond to.</p>"
+    },
+    {
+     "q": "What changes when the underlying physiology improves?",
+     "a": "When the underlying physiology is better supported, the body may begin responding more predictably again. Energy, cravings, sleep, recovery, body composition, inflammation, and weight regulation can all improve when the right systems are addressed together instead of treating weight as a willpower problem."
+    }
+   ]
+  }
+ ]
+}

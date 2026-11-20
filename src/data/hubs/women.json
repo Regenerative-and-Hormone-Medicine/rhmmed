@@ -1,0 +1,372 @@
+{
+ "path": "/women",
+ "title": "Women’s Hormone Care to Feel Like Yourself",
+ "footer": null,
+ "headerTheme": "light",
+ "description": "Women’s hormone care for energy, sleep, weight, mood, and libido changes. Book a VIP call to find what’s driving it.",
+ "sections": [
+  {
+   "type": "hubHero",
+   "label": "women’s care",
+   "heading": "Personalized care for women’s health and wellbeing",
+   "headingStyle": "light",
+   "headingMax": "740px",
+   "body": "We help women understand what’s affecting their energy, metabolism, and sleep by building personalized treatments for long-term health.",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "image": {
+    "src": "/images/site/69ccdb1c68ad6c92382627d4_women_hero.avif",
+    "alt": "Women smiling together, representing personalized women’s health and hormone care"
+   },
+   "solid": true,
+   "imageClass": [
+    "is-women"
+   ],
+   "short": false,
+   "row": false,
+   "extraOverlay": "tint"
+  },
+  {
+   "type": "signs",
+   "grey": true,
+   "headMax": "642px",
+   "heading": "Common Hormonal Symptoms in Women",
+   "body": "Changes in hormones can affect energy, sleep, metabolism, mood, libido and overall well-being.",
+   "grid": [],
+   "gridKind": "signs",
+   "cards": [
+    {
+     "title": "Skin, Hair, &amp; Thyroid-Related Changes",
+     "stat": null,
+     "body": "Hormonal and thyroid changes can impact skin, hair health, and metabolism, often signaling deeper imbalance.",
+     "image": {
+      "src": "/images/site/69c5035f3603964355f35ba8_skin-hair.avif",
+      "alt": "Woman experiencing skin and hair changes related to women’s hormone and thyroid health"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Perimenopause, Menopause, &amp; Postmenopause",
+     "stat": "~60%",
+     "body": "of women experience hormonal changes affecting energy, sleep, mood, libido, &amp; body temperature.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Energy, Mood, &amp; Focus",
+     "stat": null,
+     "body": "Hormone shifts can affect energy, mood swings, and focus, making daily life harder.",
+     "image": {
+      "src": "/images/site/69c3c0a89bbc612ff3e77352_energy-mood-and-focus.avif",
+      "alt": "Woman practicing yoga by the ocean, representing improved energy, mood, focus, and women’s hormone health"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Sleep &amp; Night Sweats",
+     "stat": null,
+     "body": "Hormonal fluctuations can disrupt sleep and trigger night sweats, affecting recovery, energy, and daily focus.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    },
+    {
+     "title": "Weight &amp; Metabolism",
+     "stat": null,
+     "body": "Many <a href=\"/women/weight-loss-resistance\">women gain weight</a> or face metabolism shifts as hormones change through midlife.",
+     "image": {
+      "src": "/images/site/69c3c0a8b36fa767aec72b2b_weight-and-metabolism.avif",
+      "alt": "Woman measuring her waist, representing hormonal weight changes and metabolism support for women"
+     },
+     "accent": false,
+     "mist": false
+    },
+    {
+     "title": "Sexual &amp; Intimate Health",
+     "stat": "~50%",
+     "body": "of women report reduced libido, dryness, and changes in comfort and intimacy.",
+     "image": null,
+     "accent": true,
+     "mist": false
+    }
+   ],
+   "bottom": null,
+   "bottomButtons": []
+  },
+  {
+   "type": "standard",
+   "big": false,
+   "lightCards": false,
+   "variant": "blush",
+   "label": "Could hormones be behind this?",
+   "heading": "Hormones influence many systems at once, including energy, mood, metabolism, &amp; sleep. When they’re out of balance, symptoms often appear together rather than on their own.",
+   "body": "",
+   "grid": [],
+   "signsGrid": true,
+   "cards": [
+    {
+     "small": "1",
+     "big": "Hormones influence how your body uses energy",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "2",
+     "big": "They affect sleep quality, mood, &amp; mental clarity",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "3",
+     "big": "They play a role in weight, muscle, &amp; recovery",
+     "reverse": false,
+     "icon": null
+    },
+    {
+     "small": "4",
+     "big": "Hormonal changes often develop over time",
+     "reverse": false,
+     "icon": null
+    }
+   ],
+   "stacked": false,
+   "headingMax": null
+  },
+  {
+   "type": "hormones",
+   "heading": "Estrogen &amp; Progesterone: <br>the key players for women",
+   "body": "<p>These hormones are produced by the ovaries and are influenced by multiple systems. When hormone levels shift, especially during <a href=\"/women/perimenopause\">perimenopause</a>, <a href=\"/women/menopause\">menopause</a>, and <a href=\"/women/postmenopause\">postmenopause</a>, many women may experience the exact symptoms you are experiencing.</p>",
+   "checks": [
+    {
+     "icon": {
+      "src": "/images/site/69bd355e6cd99807a8bef296_Lightning.svg",
+      "alt": ""
+     },
+     "text": "Energy &amp; stamina"
+    },
+    {
+     "icon": {
+      "src": "/images/site/69bd355e5a98135bf9674656_Barbell.svg",
+      "alt": ""
+     },
+     "text": "Muscle &amp; body composition"
+    },
+    {
+     "icon": {
+      "src": "/images/site/69bd35b8961a2591028296a6_MoonStars.svg",
+      "alt": ""
+     },
+     "text": "Mood &amp; mental clarity"
+    },
+    {
+     "icon": {
+      "src": "/images/site/69bd35b84ac67b485c04adc9_PersonArmsSpread.svg",
+      "alt": ""
+     },
+     "text": "Sexual function &amp; drive"
+    }
+   ],
+   "image": {
+    "src": "/images/site/6a0b1dfa1bf7ebe7bcfd6588_estrogen_level.png",
+    "alt": "Chart showing estrogen levels and estrogen deficiency in women by age from 18 to 80"
+   }
+  },
+  {
+   "type": "why",
+   "spacers": [
+    "xl",
+    "xl"
+   ],
+   "image": {
+    "src": "/images/site/69c3c0a80ef8d147917fcda4_why-psrmed.avif",
+    "alt": "Woman feeling energized outdoors, representing hormone optimization, wellness, and improved quality of life"
+   },
+   "label": "Why RHM",
+   "heading": "Why choose Regenerative &amp; Hormone Medicine",
+   "body": "A physician-led approach to hormone optimization, built on experience, precision, and trust.",
+   "stats": [
+    {
+     "value": "573+",
+     "label": "5-star patient reviews"
+    },
+    {
+     "value": "160+",
+     "label": "Biomarkers evaluated per patient"
+    },
+    {
+     "value": "20+",
+     "label": "Years of hormone optimization experience"
+    }
+   ]
+  },
+  {
+   "type": "compare",
+   "big": false,
+   "label": "compare",
+   "men": false,
+   "heading": "Regenerative &amp; Hormone Medicine vs Others",
+   "headingMax": null,
+   "body": "",
+   "bodyMax": null,
+   "heads": [
+    null,
+    null,
+    "Telemedicine Only Companies"
+   ],
+   "oursImage": null,
+   "rows": [
+    [
+     "NUMBER OF LABS INCLUDED",
+     "Extensive (160+ Biomarkers)",
+     "Minimal (~60 Biomarkers)"
+    ],
+    [
+     "PERSONALIZED TREATMENT &amp; DOSING",
+     "Fully personalized, based on you and your symptoms",
+     "One-size-fits-all"
+    ],
+    [
+     "CONSULTS WITH LICENSED MEDICAL PROVIDER VIA PHONE, VIDEO, OR IN PERSON",
+     "Direct access to licensed medical providers for every phase of care",
+     "Limited provider interaction, often handled by support staff, and rotating prescribers"
+    ],
+    [
+     "ROOT-CAUSE FOCUS",
+     "Yes (we look for why symptoms happen)",
+     "No (one-size-fits-all)"
+    ],
+    [
+     "LEVEL OF CARE",
+     "Physician-led personalized treatments<br>",
+     "Online protocol-based programs"
+    ],
+    [
+     "COST AND FINE PRINT",
+     "Transparent pricing with no fine print<br>",
+     "Hidden fees, add-ons, and limited treatment options"
+    ],
+    [
+     "FEMALE HEALTH EXPERTS",
+     "Specialized care for perimenopause, menopause, postmenopause, PCOS, Thyroid, and Complex Hormone cases",
+     "General hormone programs with limited female specific expertise"
+    ],
+    [
+     "Thyroid experts",
+     "Yes",
+     "No"
+    ],
+    [
+     "PORTAL ACCESS 24/7",
+     "Yes",
+     "Yes"
+    ],
+    [
+     "PHYSICIAN GUIDED PEPTIDE THERAPY",
+     "Yes",
+     "Some"
+    ],
+    [
+     "DISCREET SHIPPING NATIONWIDE",
+     "Yes",
+     "Some"
+    ]
+   ]
+  },
+  {
+   "type": "whyWork",
+   "heading": "Why Women work with us",
+   "body": "When women understand that medicine is not one-size-fits-all, they partner with us to find answers no one else has been able to explain.",
+   "buttons": [
+    {
+     "text": "Book vip call",
+     "href": "/scheduling"
+    }
+   ],
+   "items": [
+    {
+     "q": "Energy &amp; Fatigue",
+     "a": "Feeling drained, low on energy, or struggling to get through the day."
+    },
+    {
+     "q": "Mood &amp; Mental Clarity",
+     "a": "Brain fog, irritability, forgetfulness, or difficulty staying focused."
+    },
+    {
+     "q": "Sleep &amp; Recovery",
+     "a": "Trouble falling asleep, staying asleep, or waking up unrested."
+    },
+    {
+     "q": "Weight &amp; Metabolism",
+     "a": "Unexpected weight changes or difficulty maintaining a healthy weight."
+    },
+    {
+     "q": "Performance &amp; Drive",
+     "a": "Low motivation, decreased libido, reduced stamina, or feeling less driven than before."
+    },
+    {
+     "q": "Hormone Balance",
+     "a": "When estrogen, testosterone, thyroid, and/or other hormones are not optimized you just don’t feel like yourself."
+    }
+   ]
+  },
+  {
+   "type": "reviews",
+   "heading": "Real experiences from people we’ve helped",
+   "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+  },
+  {
+   "type": "faq",
+   "men": false,
+   "heading": "FAQ",
+   "items": [
+    {
+     "q": "Could my symptoms be hormone related?",
+     "a": "Yes! Fatigue, poor sleep, weight gain, anxiety, muscle loss, brain fog, low libido, and mood instability are among the most common signs of hormonal imbalance. These symptoms are often dismissed or chalked up to depression, stress, and aging but they're telling you something. If you've been told your labs are normal but still don't feel like yourself, a comprehensive hormone evaluation can uncover what's really going on."
+    },
+    {
+     "q": "How do you evaluate hormonal imbalance?",
+     "a": "We start by listening. Before anything else, we want to understand your symptoms, your history, and your goals. During your initial consultation, we review your extensive lab work in the context of how you’re actually feeling, not just whether your numbers fall within a standard reference range."
+    },
+    {
+     "q": "Do you treat perimenopause and menopause symptoms?",
+     "a": "Absolutely. Hot flashes, night sweats, sleep disruption, mood changes, and cognitive shifts are some of the most common reasons patients come to us, and they're very treatable. We use bioidentical hormone therapy compounded specifically for your body, so you're not getting a one-size-fits-all prescription."
+    },
+    {
+     "q": "What types of testing are involved?",
+     "a": "We begin with comprehensive blood testing that evaluates your hormone levels, thyroid function, adrenal health, metabolic markers, heart health, and more. As treatment progresses, we repeat testing at regular intervals. Every treatment decision at RHM is guided by both your symptoms and your lab data, which is why we will adjust your personalized treatment when needed."
+    },
+    {
+     "q": "Is treatment personalized or one-size-fits-all?",
+     "a": "Completely personalized. Your treatment is built around your symptoms, individual history, goals, and your lab results. Whether HRT, TRT, Peptides, or any other medications and supplements the approach is tailored to your physiology not a standard template. This is designed to support your long term health because there is no one size fits all approach."
+    },
+    {
+     "q": "How long does it take to notice improvements?",
+     "a": "Most patients begin noticing improvements within the first few weeks. More sustained improvements typically occur around month three (3). Getting your hormones optimized takes some patience, but most patients tell us it's one of the best investments they've made in their health."
+    }
+   ]
+  },
+  {
+   "type": "finalCta",
+   "heading": "Start your journey to personalized, long-term health",
+   "points": [
+    "Ongoing support focused on long-term health",
+    "Advanced testing and clear next steps",
+    "Physician-led care"
+   ],
+   "buttons": [
+    {
+     "text": "Book Vip Call",
+     "href": "/scheduling"
+    }
+   ],
+   "topPad": false
+  }
+ ]
+}

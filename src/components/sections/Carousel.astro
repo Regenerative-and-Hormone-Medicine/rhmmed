@@ -1,0 +1,87 @@
+---
+// Centered heading + Swiper carousel of photo slides; only the active slide shows its text (source: .container.is-swiper-cent).
+// Used on the homepage (Solutions CMS) and /advance-home-testing.
+import ArrowLeft from '../../icons/arrow-left.svg';
+import ArrowRight from '../../icons/arrow-right.svg';
+import Button from '../Button.astro';
+interface Props {
+  heading: string; body: string; slides: { title: string; body?: string; image: string; alt?: string }[];
+  after?: { body: string; heading: string; buttons: { text: string; href: string }[] } | null;
+}
+const { heading, body, slides, after } = Astro.props;
+---
+
+  <section class="overflow-x-clip">
+    <div class="container-site flex flex-col items-center gap-20 py-[7.5rem] max-md:py-20">
+      <div class="flex flex-col items-center gap-6">
+        <div class="flex max-w-[50rem] flex-col items-center gap-6 text-center">
+          <h2 class="max-w-[25ch]" set:html={heading} />
+          <p class="text-body-l text-ink-70" set:html={body} />
+        </div>
+      </div>
+      <div class="relative flex w-full flex-col items-center">
+        <div class="swiper solutions w-full max-w-[48.75rem] !overflow-visible">
+          <div class="swiper-wrapper">
+            {slides.map((s) => (
+              <div class="swiper-slide relative !flex min-h-[26.25rem] !max-w-[48.75rem] flex-col items-start justify-end gap-4 overflow-hidden rounded-[24px] p-8">
+                <img src={s.image} alt={s.alt ?? ''} class="absolute inset-0 size-full object-cover" loading="lazy" />
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
+                <div class="slide-text relative z-[1] flex flex-col items-start gap-4 text-white transition-opacity">
+                  <h3 class="text-h4 text-white capitalize" set:html={s.title} />
+                  {s.body && <p class="text-body-m" set:html={s.body} />}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="pointer-events-none absolute top-1/2 right-1/2 z-[1] flex w-full max-w-[54.5rem] translate-x-1/2 -translate-y-1/2 items-center justify-between max-lg:pointer-events-auto max-lg:static max-lg:mt-4 max-lg:w-auto max-lg:translate-none max-lg:justify-end max-lg:gap-2 max-lg:self-end">
+          <button type="button" class="sol-prev pointer-events-auto flex size-9 items-center justify-center rounded-full bg-black text-white transition-opacity" aria-label="Previous"><ArrowLeft class="w-4" width="16" height="16" /></button>
+          <button type="button" class="sol-next pointer-events-auto flex size-9 items-center justify-center rounded-full bg-black text-white transition-opacity" aria-label="Next"><ArrowRight class="w-4" width="16" height="16" /></button>
+        </div>
+        <div class="sol-pagination mt-6 flex w-fit items-center justify-center gap-[5px] self-center"></div>
+      </div>
+      {after && (
+        <div class="flex max-w-[50rem] flex-col items-center gap-6 text-center">
+          <p class="text-body-l text-ink-70" set:html={after.body} />
+          <h3 set:html={after.heading} />
+          <div class="flex items-center gap-2.5 max-sm:flex-col max-sm:items-start">
+            {after.buttons.map((b) => <Button href={b.href}>{b.text}</Button>)}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+
+<style>
+  /* Solutions pagination: grey dots, active one is a pill that fills over the 5s autoplay delay */
+  :global(.sol-pagination .swiper-pagination-bullet) {
+    width: 10px; height: 10px; margin: 0 !important; border-radius: 999px; background: #e3e3e3; opacity: 1;
+    position: relative; overflow: hidden; transition: width 220ms ease, background 220ms ease;
+  }
+  :global(.sol-pagination .swiper-pagination-bullet-active) { width: 20px; }
+  :global(.sol-pagination .swiper-pagination-bullet-active)::before {
+    content: ''; position: absolute; inset: 0; width: 0; background: #050514; animation: bullet-grow 5s linear forwards;
+  }
+  @keyframes bullet-grow { to { width: 100%; } }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+  import 'swiper/css';
+
+  // Solutions carousel: only the active slide shows its text.
+  const syncText = (s: Swiper) => s.slides.forEach((el, idx) => {
+    (el.querySelector('.slide-text') as HTMLElement).style.opacity = idx === s.activeIndex ? '1' : '0';
+  });
+  new Swiper('.swiper.solutions', {
+    modules: [Autoplay, Navigation, Pagination],
+    speed: 600,
+    spaceBetween: 56,
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    pagination: { el: '.sol-pagination', clickable: true },
+    navigation: { nextEl: '.sol-next', prevEl: '.sol-prev' },
+    on: { init: syncText, slideChange: syncText },
+  });
+</script>
