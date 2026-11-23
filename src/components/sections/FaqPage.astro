@@ -43,15 +43,5 @@ const p = Astro.props;
 </style>
 
 <script>
-  document.querySelectorAll<HTMLElement>('[data-accordion]').forEach((group) => {
-    if (group.dataset.bound) return;
-    group.dataset.bound = '1';
-    group.querySelectorAll<HTMLElement>('[data-acc]').forEach((item) => {
-      item.addEventListener('click', () => {
-        const open = !item.hasAttribute('data-open');
-        group.querySelectorAll('[data-acc]').forEach((o) => { o.removeAttribute('data-open'); o.querySelector('button')?.setAttribute('aria-expanded', 'false'); });
-        if (open) { item.setAttribute('data-open', ''); item.querySelector('button')?.setAttribute('aria-expanded', 'true'); }
-      });
-    });
-  });
+  import '../../scripts/accordion.ts';
 </script>

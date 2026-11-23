@@ -1,0 +1,103 @@
+# rhmmed.com launch checklist — Webflow → Astro
+
+Follows the `site-launch` skill. `[x]` done and checked · `[ ]` open · `[~]` partly done / see note · `[-]` skipped, reason given.
+Staging = `npx astro build` served by `npx wrangler pages dev dist` (a Cloudflare Pages emulator, used before the move to Vercel was
+decided; re-run the redirect/404/URL tests on a Vercel preview). Last updated 2026-11-23.
+
+**Going live, DNS changes, pushing and anything on the live Webflow site need Evgenii's OK, asked once with this status.**
+
+## 1. Before the migration
+
+- [x] **URL inventory**: `docs/url-inventory.csv`. All 56 live sitemap URLs with status, title, meta description, H1,
+      canonical, robots and schema, plus the new URL/status/schema. All 56 are 200 on live and on staging. (`scripts/seo-crawl.mjs`)
+- [-] **GSC clicks/impressions**: no Search Console access found from here. Columns are in the CSV as `n/a`. Needed to rank
+      the top 50 URLs for post-live testing; ask Evgenii/Steve for access (the property is verified with the
+      `google-site-verification` tag already carried over).
+- [x] **URL map + 301 plan**: `docs/redirects.csv` → `vercel.json`. Every live URL keeps its path (no redirect needed).
+      Added: the live `/blog → /articles`; `/blog/:slug → /articles/:slug` (the live share button copies `/blog/<slug>`
+      links, which 404 today); 20 pre-Webflow URLs found in the Wayback Machine that 404 on live now (/about, /meet-the-team/*,
+      /testosterone-therapy, /telemedicine, /santa-monica-office, /rsm-at-the-fix…) each sent to the closest page, never all
+      to the homepage. 5 with no relevant page (/orthovisc, /sports-injury, /hiv-muscle-wasting, /Accessibility, /article66) stay 404.
+      All one hop, tested on staging.
+- [x] **Definition of done**: all 56 URLs at the same paths, ≥97% visual match at 1440/991/767/390 (`migration.json`), same
+      copy and CMS content, both forms posting to the same Formspark endpoints with Botpoison, the same tracking (GTM, GA4,
+      PostHog, Meta pixel, GHL), the booking and reviews embeds working, SEO parity or better (below), no 4xx in the crawl.
+
+## 2. Technical SEO
+
+- [x] One H1 per page. Same as live; `/articles` and `/scheduling` have none on live either (kept, see MIGRATION.md).
+- [~] Titles/descriptions are on every indexable page and identical to live. **Copied as-is: 3 titles over 60 chars**
+      (`/men/longevity-clinic` 61, `/cheating-death` 64, `/articles/trt-side-effects` 68) **and 5 descriptions over 155**
+      (`/men/metabolic-health`, `/men/hormone-therapy`, `/articles/insulin-resistance-and-weight-loss`,
+      `/articles/semaglutide-peptide`, `/articles/tirzepatide-peptide`). **10 pages have no meta description on live**
+      (/why-us, /location, /how-it-works, /faq, /telehealth, /patient-information, /contact, /privacy-policy, /terms-of-use,
+      /scheduling). Client copy; writing them is a content change that needs approval.
+- [x] Self-referencing canonicals on every page (`https://www.rhmmed.com/<path>`, no trailing slash, as live). Fixed: the
+      homepage canonical was `/index` with the new file output.
+- [x] No stray noindex. `noindex, follow` only where live has it (`/privacy-policy`, `/terms-of-use`) plus `/style-guide`
+      and the 404 page. No hreflang (English only).
+- [x] `sitemap.xml` generated from the routes and the CMS (`src/pages/sitemap.xml.ts`): 54 URLs, the live 56 minus the two
+      noindex legal pages. `robots.txt` points to it.
+- [x] Structured data, validated at validator.schema.org with 0 errors/0 warnings (home, FAQ, treatment page, article):
+      Organization site-wide (new); FAQPage on the 19 treatment/hub pages (copied from live); BlogPosting on all 23 articles
+      (generated from the CMS; fixes live's `&#39;` escaping and CDN image URLs); article FAQPage embeds kept; FAQPage now also
+      on /faq, /why-us, /telehealth, /patient-information, /cheating-death from their visible Q&A.
+- [~] OG/Twitter: title and description on every page; og:image on 47 pages (live has 24). Several hero images are **AVIF**,
+      which LinkedIn/Facebook/Slack don't render. Convert the og:image to JPG at cutover (post-live check in section 6).
+      Favicon and apple-touch icon are in place.
+- [~] Images: alt coverage same as live. 85 `<img>` have no alt attribute at all and 554 of 612 have no width/height
+      (`docs/ui-audit.md`). Article cards now carry intrinsic sizes.
+- [x] Performance (mobile, 4× CPU throttle, local server): CLS 0.000 on /, /men, /women/menopause, /articles/pt-141, /contact.
+      **/articles: 0.885 → 0.000** (live: 0.918) after adding image sizes to the cards. Local LCP 0.5–0.6s is only indicative;
+      re-measure on the real host (PageSpeed Insights) on staging/after go-live.
+- [x] Internal links: every internal link points at a live sitemap URL (0 links to non-sitemap paths, 0 relying on redirects).
+- [x] Content parity: titles, descriptions, canonicals and H1s are identical to live on all 56 URLs (crawl diff). No FAQ
+      entries or schema lost (schema diff: nothing missing vs live). Copy parity was checked during the build (extractor misses: 0).
+
+## 3. AEO pass — details in `docs/aeo-pass.md`
+
+- [x] Baseline 2026-11-23: Google AI Mode names RHM first; Perplexity doesn't name it. Google's text still says
+      "Regenerative / Sports Medicine" and "Houston". Check the Business Profile.
+- [-] ChatGPT baseline not run (would send a prompt from Evgenii's account).
+- [~] First 40–60 words: proposals written for /, /men, /women, /why-us, /telehealth. **Not applied; needs approval.**
+- [~] Question H2s: proposals written; plus a source error on /men/hormone-therapy ("Our Approach to Metabolic Health").
+      **Not applied; needs approval.**
+- [x] FAQ: FAQPage schema now on every page with a visible FAQ.
+- [x] robots.txt allows the AI crawlers by name. **At cutover: check Cloudflare AI-bot blocking / Vercel Firewall.**
+- [x] llms.txt written (`public/llms.txt`), facts only from the site, replacing Webflow's auto-generated dump.
+- [ ] Re-run the baseline about 4 weeks after launch.
+
+## 4. Before going live
+
+- [x] Clean-up: no lorem/TODO/placeholder text in `src/`. `/style-guide` is noindex and out of the sitemap (kept as the
+      design-token reference). Stray build folders (`dist-wip*`) exist only in the original folder, not in git.
+- [x] Real 404 page (`src/pages/404.astro`, same copy as live's). Tested: unknown URLs return 404.
+- [~] Internal audit: `docs/ui-audit.md` (19 fix-before-launch, 31 later). **Fixed and verified today:** FAQ accordions on
+      /men, /women, /telehealth didn't open on click (two scripts toggling each click) — one shared script now; collapsed
+      answers are `inert` with `aria-controls`; skip link; `scroll-padding-top` under the fixed header; form `autocomplete`
+      and `role="alert"` on errors; RHM column label in the compare table; reduced-motion CSS and paused background videos for
+      reduced-motion users. **Still open:** mobile menu Escape/rotation scroll lock, team bios by keyboard on desktop,
+      share buttons as real buttons, filter chips' radio semantics, carousel autoplay pause/A11y module, 3D book label,
+      /cheating-death intro focus. None of these change how the site looks.
+- [x] Interaction checks: `node scripts/interactions.mjs`, 17/17 pass on the fixed build (dropdowns, keyboard, mobile menu,
+      accordion, filter, both forms; Formspark intercepted, nothing sent). Accordions click-tested on /men, /women,
+      /telehealth, /why-us, /faq, /women/menopause, /.
+- [~] Visual regression after today's changes: 11 routes re-scored identical to the previous run; pages touched by the fixes
+      re-checked (see MIGRATION.md). Homepage 1440 varies with the hero video frame (known residual).
+- [-] Forms: real submission + delivery not tested. A real submit emails the client's inbox. Do one test submission per form
+      on the production URL on launch day, with the client warned, or route a test through Steve.
+- [~] Analytics: the same tags as live (GTM-MNGP32KD, GA4 G-D9VW2K0DPP, PostHog, Meta pixel 928258004184901, GHL),
+      production builds only. Note: GA4 loads directly *and* GTM is present, the same as live; check GTM doesn't also fire GA4
+      (double counting). No consent banner on live; none added. Search Console verification tag carried over.
+- [ ] Platform: **Vercel** project (not created; the move to Vercel + Sanity was decided 2026-11-23). `vercel.json` has the
+      redirects, `cleanUrls` and `trailingSlash: false`. Add `www.rhmmed.com` + apex redirect and SSL. DNS is on Cloudflare today,
+      so either point the records at Vercel (proxy off) or move the nameservers.
+- [ ] **Sanity**: content moves from the CSV-built collections to Sanity before launch. Not started.
+- [x] 301s tested on staging: all 29 rules in `docs/redirects.csv` (24 redirects land on a 200 in one hop, 5 stay 404) + all 56 live URLs return 200 (no trailing-slash or `.html` hops
+      except the intended 308 from `/men/` → `/men`).
+- [ ] Client review and sign-off (through Evgenii).
+- [ ] **Ask Evgenii once to go live**, with this checklist.
+
+## 5–7. Go live, post-live, after launch
+
+Not started. Needs Evgenii's go-ahead (section 4 last item).

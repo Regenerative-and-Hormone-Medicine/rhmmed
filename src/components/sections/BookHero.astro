@@ -36,7 +36,7 @@ const types = ['text', 'email', 'tel'];
           {p.fields.map((f, i) => (
             <div class="flex-[13rem]">
               <label for={'book-' + names[i]} class="sr-only">{f.label}</label>
-              <input id={'book-' + names[i]} name={names[i]} type={types[i]} placeholder={f.placeholder} maxlength="256" required class="book-input" />
+              <input id={'book-' + names[i]} name={names[i]} type={types[i]} autocomplete={types[i] === 'email' ? 'email' : types[i] === 'tel' ? 'tel' : 'name'} spellcheck={types[i] === 'email' ? 'false' : undefined} placeholder={f.placeholder} maxlength="256" required class="book-input" />
             </div>
           ))}
           <div aria-hidden="true" class="absolute -left-[9999px]"><input type="text" name="website" autocomplete="off" tabindex="-1" value="" /></div>
@@ -55,7 +55,7 @@ const types = ['text', 'email', 'tel'];
             </div>
           </div>
         )}
-        <div id="book-fail" hidden class="mx-auto mt-4 w-full max-w-[36rem] rounded-full bg-[#a3322a14] px-5 py-3">
+        <div id="book-fail" role="alert" hidden class="mx-auto mt-4 w-full max-w-[36rem] rounded-full bg-[#a3322a14] px-5 py-3">
           <p class="text-center text-[.875rem] text-[#a3322a]">{p.fail}</p>
         </div>
       </div>

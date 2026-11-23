@@ -135,7 +135,12 @@
 }
 
 @layer base {
-  html { -webkit-font-smoothing: antialiased; }
+  html { -webkit-font-smoothing: antialiased; scroll-padding-top: 4.375rem; }
+  /* Reduced motion (launch a11y pass): drop movement, keep short fades. No effect for other visitors. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+    *:not(.duration-200) { transition-duration: 0.01ms !important; }
+  }
   body {
     font-family: var(--font-sans);
     font-size: 1rem;

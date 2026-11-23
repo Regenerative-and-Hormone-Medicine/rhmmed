@@ -1,0 +1,16 @@
+---
+// Not-found page. Same copy and layout as the live Webflow utility page (no header/footer there either).
+// Vercel serves dist/404.html with a real 404 status.
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Not Found" chrome={false} noindex>
+  <section class="flex min-h-screen items-center justify-center px-4">
+    <div class="flex w-full max-w-80 flex-col items-center text-center">
+      <img src="/images/site/page-not-found.svg" alt="" width="47" height="59" class="mb-5" />
+      <h3 class="mb-5">Page Not Found</h3>
+      <div>The page you are looking for doesn't exist or has been moved</div>
+      <a href="/" class="mt-5 block w-full rounded-pill bg-black py-3 text-btn text-white">Go Home</a>
+    </div>
+  </section>
+</Layout>

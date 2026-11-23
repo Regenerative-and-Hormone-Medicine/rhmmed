@@ -13,6 +13,7 @@ Machine-readable status: `migration.json`. Measurement: `node scripts/compare.mj
 | 2. Homepage | **done** — 98.06% |
 | 3. Other templates | **active** — all 56 URLs built; final verification pass running, outliers being fixed |
 | 4. Remainder | started — see "Open items" at the bottom |
+| 5. Launch prep | **active** — `docs/launch-checklist.md` (sections 1–4 of the site-launch checklist) |
 
 **All 56 sitemap URLs now exist in the rebuild** (plus `/style-guide`). Per-route scores: see "Scores" below.
 
@@ -421,3 +422,20 @@ The 4 below are capture-timing artefacts (autoplaying carousel / scroll-driven i
 | `/women/sexual-health` | 99.82 | 99.81 | 98.1 | 97.71 | **97.71** |
 | `/women/thyroid` | 98.61 | 98.2 | 99.75 | 98.52 | **98.2** |
 | `/women/weight-loss-resistance` | 98.74 | 99.66 | 98.49 | 98.48 | **98.48** |
+
+## Launch prep (2026-11-23)
+
+Full status: `docs/launch-checklist.md`. What changed in the code:
+- URL format: `trailingSlash: 'never'` + `build.format: 'file'`. `/men` serves directly (tested on a Cloudflare Pages emulator; Vercel `cleanUrls` behaves the same); `/men/` and
+  `/men.html` 308 to `/men`. 11 routes re-scored identical afterwards.
+- SEO: Organization JSON-LD site-wide; live head schema copied (`src/data/schema/`, 19 pages); BlogPosting generated per
+  article; FAQPage built from visible Q&A on 5 pages that lacked it; `noindex` restored on /privacy-policy and /terms-of-use
+  (live has it, the rebuild had dropped it); homepage canonical fixed; `sitemap.xml`, `robots.txt`, `llms.txt`, 404 page.
+- Redirects: `docs/redirects.csv` → `vercel.json` (live `/blog` rule, `/blog/:slug`, 20 pre-Webflow URLs).
+- Bug fixed: FAQ accordions on /men, /women, /telehealth didn't open on click (two scripts on one page). Now one shared module.
+- Accessibility, no visual change: inert closed panels, skip link, scroll padding, form autocomplete, alert role on form
+  errors, reduced-motion handling, compare-table label.
+- /articles mobile CLS 0.885 → 0 (intrinsic sizes on card images; live is 0.918).
+
+**Source quirks found and kept:** `/men/hormone-therapy` has an H2 "Our Approach to Metabolic Health"; `/men` FAQ schema lists 5
+questions but the page shows 6; 10 pages have no meta description; 3 titles over 60 chars, 5 descriptions over 155.

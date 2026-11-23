@@ -31,3 +31,6 @@ dist-wip/
 
 dist-wip2/
 dist-wip3/
+dist-check/
+dist-wip*/
+.wrangler/

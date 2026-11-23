@@ -65,7 +65,11 @@ Section vertical padding on the source comes from this set: 3.75, 5, 6.25, 7.5, 
 | `/articles` | `src/pages/articles/index.astro` | Articles collection + `src/data/articles-index.json` |
 | `/articles/<slug>` (23) | `src/pages/articles/[slug].astro` | Articles/Authors/Categories + `src/data/articles/*.json` |
 | `/contact`, `/scheduling` | own `.astro` pages | forms / booking iframe |
-| `/style-guide` | `src/pages/style-guide.astro` | tokens (not in the live sitemap) |
+| `/style-guide` | `src/pages/style-guide.astro` | tokens (not in the live sitemap; noindex) |
+| 404 | `src/pages/404.astro` | live copy; served with a real 404 |
+| `/sitemap.xml` | `src/pages/sitemap.xml.ts` | generated from routes + CMS; noindex pages excluded |
+| `/robots.txt`, `/llms.txt` | `public/` | AI crawlers allowed |
+| redirects | `vercel.json` | 301 map generated from `docs/redirects.csv` |
 
 Layouts: `Layout.astro` (shell, header, footer, tracking) and `SectionPage.astro` (renders a JSON list of typed sections with
 `src/components/sections/*` and `treatment/*`). Nav lives in `src/data/nav.ts`.
@@ -77,12 +81,23 @@ To change copy on a treatment/info page, edit its JSON; on an article, edit its 
 **URLs are fixed.** Backlinks point at article URLs (e.g. `/articles/perimenopause-weight-gain`, `/articles/signs-you-need-hrt`).
 Never rename a route without a planned redirect.
 
-**Deploy:** none yet. The live site is still Webflow (served via Cloudflare). This repo builds to static files (`npm run build` → `dist/`)
-and has no host, deploy config or git remote. Going live = pick a host, set redirects, move the domain — only when Evgenii asks.
+**SEO wiring:** `Layout.astro` takes `noindex` and `schema` (JSON-LD objects) and adds Organization site-wide. Treatment/hub
+schema is copied from live into `src/data/schema/` (`node scripts/fetch-schema.mjs`); FAQ pages without it get FAQPage built
+from their visible Q&A; articles get BlogPosting from the CMS. Noindex pages are listed in `src/data/seo.ts`.
+URLs have no trailing slash (`trailingSlash: 'never'`, `build.format: 'file'` → `dist/men.html`). Don't change that: it is
+what keeps `/men` a 200 with no redirect (with `cleanUrls` + `trailingSlash: false` in vercel.json).
+
+**Deploy:** none yet. The live site is still Webflow (served via Cloudflare). Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
+**Sanity** (replacing the CSV-built content collections). Redirects live in `vercel.json`, generated from `docs/redirects.csv`.
+Staging tests so far ran on a Cloudflare Pages emulator; re-run them on a Vercel preview deployment. Launch status: `docs/launch-checklist.md` (with `docs/url-inventory.csv`, `docs/redirects.csv`,
+`docs/aeo-pass.md`, `docs/ui-audit.md`). Going live, DNS and pushing need Evgenii's OK, asked once with the checklist.
 
 ## Components
 
 - `src/components/Button.astro` — black pill (`variant="light"` for white), `size="sm"` for header. Label rolls on hover.
+- Accordions (`Accordion.astro`, `treatment/Faq.astro`, `sections/FaqPage.astro`) share one script, `src/scripts/accordion.ts`.
+  Never give a component its own copy: two copies on one page bind twice and the item opens and closes on the same click.
+- `src/lib/img-size.ts` reads an image's intrinsic size at build time; spread it on `<img>` (`{...size}`) to prevent layout shift.
 
 The `/style-guide` route renders every token. Update it when you add one.
 

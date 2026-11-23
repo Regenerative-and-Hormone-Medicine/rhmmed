@@ -16,15 +16,15 @@ import Reviews from '../components/sections/Reviews.astro';
           <form id="contact-form" class="flex flex-col gap-4" novalidate>
             <div class="flex flex-col">
               <label for="name" class="text-label mb-1">Name</label>
-              <input class="field" maxlength="256" name="name" placeholder="John Doe" type="text" id="name" required />
+              <input class="field" maxlength="256" name="name" placeholder="John Doe" type="text" id="name" autocomplete="name" required />
             </div>
             <div class="flex flex-col">
               <label for="Email" class="text-label mb-1">Email address</label>
-              <input class="field" maxlength="256" name="Email" placeholder="johndoe@email.com" type="email" id="Email" required />
+              <input class="field" maxlength="256" name="Email" placeholder="johndoe@email.com" type="email" id="Email" autocomplete="email" spellcheck="false" required />
             </div>
             <div class="flex flex-col">
               <label for="Phone-Number" class="text-label mb-1">Phone number</label>
-              <input class="field" maxlength="256" name="Phone-Number" placeholder="+123 456 789" type="tel" id="Phone-Number" required />
+              <input class="field" maxlength="256" name="Phone-Number" placeholder="+123 456 789" type="tel" id="Phone-Number" autocomplete="tel" required />
             </div>
             <div class="flex flex-col">
               <label for="Message" class="text-label mb-1">Message</label>
@@ -36,7 +36,7 @@ import Reviews from '../components/sections/Reviews.astro';
             <button type="submit" class="self-start rounded-pill bg-black px-[22px] py-3 text-btn text-white disabled:opacity-60" data-wait="Please wait...">Contact us</button>
           </form>
           <div id="contact-success" hidden class="p-5 text-left" tabindex="-1">Thank you! Your submission has been received!</div>
-          <div id="contact-fail" hidden class="mt-2.5 bg-[#ffdede] p-2.5">Oops! Something went wrong while submitting the form.</div>
+          <div id="contact-fail" role="alert" hidden class="mt-2.5 bg-[#ffdede] p-2.5">Oops! Something went wrong while submitting the form.</div>
         </div>
       </div>
     </div>

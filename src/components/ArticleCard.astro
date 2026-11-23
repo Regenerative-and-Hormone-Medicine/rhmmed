@@ -11,11 +11,13 @@ interface Props {
   white?: boolean;
 }
 const { href, title, summary, category, date, image, alt = title, white = false } = Astro.props;
+import { imgSize } from '../lib/img-size';
+const size = await imgSize(image);
 ---
 
 <div class:list={['relative flex h-full min-h-[23.0625rem] flex-col gap-8 rounded-lg p-4', white ? 'bg-white' : 'bg-bg-light']}>
   <div class="overflow-hidden rounded-md">
-    <img src={image} alt={alt} class="size-full object-cover" loading="lazy" />
+    <img src={image} alt={alt} {...size} class="size-full object-cover" loading="lazy" />
   </div>
   <div class="flex flex-col justify-between gap-6 max-md:gap-8">
     <div class="flex flex-col items-start gap-4">

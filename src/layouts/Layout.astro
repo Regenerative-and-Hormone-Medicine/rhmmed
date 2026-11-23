@@ -22,7 +22,7 @@ interface Props {
 
 const { title, description, headerTheme = 'dark', chrome = true, ogImage, ogType = 'website', footer, noindex = false, schema = [] } = Astro.props;
 const SITE = 'https://www.rhmmed.com';
-const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/(^|\/)index$/, '').replace(/\/$/, '');
 const canonical = path ? SITE + path : SITE;
 // Site-wide Organization (new: the live site has none). Facts only from the site itself: name, logo, social profiles.
 const organization = {
@@ -52,7 +52,7 @@ const jsonld = (o: object) => JSON.stringify(o).replace(/</g, '\\u003c');
     {ogImage && <meta property="og:image" content={new URL(ogImage, 'https://www.rhmmed.com').href} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="google-site-verification" content="ri7Lby20xPl667ZCCyisSddlvqHr7EZ4EB5PSlt6xlo" />
-    <link rel="canonical" href={canonical} />
+    {path !== "/404" && <link rel="canonical" href={canonical} />}
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
     {chrome && <script type="application/ld+json" set:html={jsonld(organization)} />}
     {schema.map((o) => <script type="application/ld+json" set:html={jsonld(o)} />)}
@@ -68,10 +68,15 @@ const jsonld = (o: object) => JSON.stringify(o).replace(/</g, '\\u003c');
     </script>
   </head>
   <body>
+    {chrome && <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-pill focus:bg-black focus:px-[22px] focus:py-3 focus:text-btn focus:text-white">Skip to content</a>}
     {chrome && <Header theme={headerTheme} />}
-    <main>
+    <main id="main">
       <slot />
     </main>
+    <script is:inline>
+      // Reduced motion: stop background videos on the poster frame (WCAG 2.2.2). Others see no change.
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+    </script>
     {chrome && <Footer minimal={footer?.minimal} blurb={footer?.blurb} />}
   </body>
 </html>

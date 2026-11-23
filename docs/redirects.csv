@@ -1,0 +1,30 @@
+old_url,new_url,type,source,status_on_live_today,reason
+/blog,/articles,301,Webflow redirect (live),301,Keep: existing live redirect
+/blog/hormonal-imbalance-when-normal-labs-arent-enough,/articles,301,Wayback,404,Archived post with no article of that name
+/blog/test-2,/articles,301,Wayback,404,Webflow test item
+/blog/test-3,/articles,301,Wayback,404,Webflow test item
+/blog/:slug,/articles/:slug,301,Live copy-link button,404,The live share button copies /blog/<slug> (404 today); send those shared links to the article
+/category/blog,/articles,301,Wayback (pre-Webflow site),404,Old blog index
+/about,/why-us,301,Wayback (pre-Webflow site),404,About page → Why us (team + mission)
+/meet-the-team,/why-us,301,Wayback (pre-Webflow site),404,Team now lives on /why-us
+/meet-the-team/*,/why-us,301,Wayback (pre-Webflow site),404,Clinician bios now on /why-us
+/mens-health,/men,301,Wayback (pre-Webflow site),404,Men's hub
+/womens-health,/women,301,Wayback (pre-Webflow site),404,Women's hub
+/testosterone-therapy,/men/hormone-therapy,301,Wayback (pre-Webflow site),404,TRT → men's hormone therapy
+/testosterone-therapy-2,/men/hormone-therapy,301,Wayback (pre-Webflow site),404,TRT → men's hormone therapy
+/bio-identical-hormone-replacement,/women/hormone-replacement-therapy,301,Wayback (pre-Webflow site),404,BHRT → women's HRT
+/faqs-hormone-replacement-therapy,/faq,301,Wayback (pre-Webflow site),404,FAQ
+/faqs-testosterone-replacement-therapy,/faq,301,Wayback (pre-Webflow site),404,FAQ
+/sexual-health,/women/sexual-health,301,Wayback (pre-Webflow site),404,Same target as the Men menu link on the live site
+/telemedicine,/telehealth,301,Wayback (pre-Webflow site),404,Renamed
+/santa-monica-office,/location,301,Wayback (pre-Webflow site),404,Office → locations page
+/the-woodlands-office,/location,301,Wayback (pre-Webflow site),404,Office → locations page
+/hipaa,/privacy-policy,301,Wayback (pre-Webflow site),404,Privacy
+/regenerative-sports-medicine-online-terms-of-use,/terms-of-use,301,Wayback (pre-Webflow site),404,Terms
+/testimonials,/why-us,301,Wayback (pre-Webflow site),404,Reviews section is on /why-us
+/services,/how-it-works,301,Wayback (pre-Webflow site),404,Closest overview page (not the homepage)
+/orthovisc,,404,Wayback (pre-Webflow site),404,Sports medicine dropped; no relevant page. Left as 404
+/sports-injury,,404,Wayback (pre-Webflow site),404,Sports medicine dropped; no relevant page. Left as 404
+/rsm-at-the-fix,/location,301,Wayback (pre-Webflow site),404,RHM at The Fix (Aspen) is one of the three offices on /location
+/hiv-muscle-wasting,,404,Wayback (pre-Webflow site),404,No relevant page. Left as 404
+/Accessibility,,404,Wayback (pre-Webflow site),404,No accessibility page exists. Left as 404

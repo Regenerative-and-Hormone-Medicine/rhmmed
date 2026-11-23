@@ -1,0 +1,133 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/blog",
+      "destination": "/articles",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/hormonal-imbalance-when-normal-labs-arent-enough",
+      "destination": "/articles",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/test-2",
+      "destination": "/articles",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/test-3",
+      "destination": "/articles",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/articles/:slug",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/blog",
+      "destination": "/articles",
+      "statusCode": 301
+    },
+    {
+      "source": "/about",
+      "destination": "/why-us",
+      "statusCode": 301
+    },
+    {
+      "source": "/meet-the-team",
+      "destination": "/why-us",
+      "statusCode": 301
+    },
+    {
+      "source": "/meet-the-team/:path*",
+      "destination": "/why-us",
+      "statusCode": 301
+    },
+    {
+      "source": "/mens-health",
+      "destination": "/men",
+      "statusCode": 301
+    },
+    {
+      "source": "/womens-health",
+      "destination": "/women",
+      "statusCode": 301
+    },
+    {
+      "source": "/testosterone-therapy",
+      "destination": "/men/hormone-therapy",
+      "statusCode": 301
+    },
+    {
+      "source": "/testosterone-therapy-2",
+      "destination": "/men/hormone-therapy",
+      "statusCode": 301
+    },
+    {
+      "source": "/bio-identical-hormone-replacement",
+      "destination": "/women/hormone-replacement-therapy",
+      "statusCode": 301
+    },
+    {
+      "source": "/faqs-hormone-replacement-therapy",
+      "destination": "/faq",
+      "statusCode": 301
+    },
+    {
+      "source": "/faqs-testosterone-replacement-therapy",
+      "destination": "/faq",
+      "statusCode": 301
+    },
+    {
+      "source": "/sexual-health",
+      "destination": "/women/sexual-health",
+      "statusCode": 301
+    },
+    {
+      "source": "/telemedicine",
+      "destination": "/telehealth",
+      "statusCode": 301
+    },
+    {
+      "source": "/santa-monica-office",
+      "destination": "/location",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-woodlands-office",
+      "destination": "/location",
+      "statusCode": 301
+    },
+    {
+      "source": "/hipaa",
+      "destination": "/privacy-policy",
+      "statusCode": 301
+    },
+    {
+      "source": "/regenerative-sports-medicine-online-terms-of-use",
+      "destination": "/terms-of-use",
+      "statusCode": 301
+    },
+    {
+      "source": "/testimonials",
+      "destination": "/why-us",
+      "statusCode": 301
+    },
+    {
+      "source": "/services",
+      "destination": "/how-it-works",
+      "statusCode": 301
+    },
+    {
+      "source": "/rsm-at-the-fix",
+      "destination": "/location",
+      "statusCode": 301
+    }
+  ]
+}
