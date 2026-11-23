@@ -1,0 +1,88 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is severe period pain normal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mild discomfort can happen during menstrual cycles, but severe pain that disrupts work, sleep, movement, or quality of life should not be considered normal. Endometriosis pain can be intense, persistent, and linked to inflammation, hormonal sensitivity, nervous system sensitization, and tissue involvement beyond the uterus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why did it take so long for someone to take my symptoms seriously?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Endometriosis is often underrecognized because its symptoms can overlap with cramps, irritable bowel syndrome (IBS), bladder conditions, pelvic floor dysfunction, hormonal changes, and chronic stress. Many women are told their pain is normal for years before receiving a more comprehensive evaluation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can endometriosis affect more than the reproductive system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Endometriosis can affect digestion, bladder function, sleep, energy, mood, recovery, inflammation, and nervous system sensitivity. It is not limited to reproductive health or menstrual pain and may affect multiple body systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do I feel exhausted all the time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fatigue associated with endometriosis may result from chronic inflammation, pain, poor sleep, heavy bleeding, iron deficiency, nervous system overload, hormonal changes, and the ongoing physical stress of managing symptoms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does pain sometimes continue between cycles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Endometriosis can create ongoing inflammation, tissue irritation, pelvic floor tension, and nervous system sensitization. As a result, pain may continue even outside of menstruation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is surgery the only treatment option?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. While surgery may be appropriate for some patients, endometriosis care may also include hormonal support, inflammation management, pain management, pelvic floor therapy, nutrition, recovery support, nervous system regulation, and coordinated care with specialists."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does RHM perform endometriosis surgery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. RHM does not perform endometriosis surgery. When surgery is appropriate, patients should be referred to a qualified gynecologic surgical specialist. RHM focuses on supporting hormonal, inflammatory, metabolic, nervous system, and recovery-related factors alongside gynecologic care when appropriate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can hormones affect endometriosis symptoms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Endometriosis is hormonally sensitive, particularly to estrogen. Hormonal patterns can influence inflammation, pain, bleeding, fatigue, mood, and symptom flares. Hormone therapy is not appropriate for every patient, but hormone evaluation is an important part of comprehensive care."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do digestive or bladder symptoms happen with endometriosis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Endometriosis can affect tissue near the bowel, bladder, pelvis, and surrounding nerves. Inflammation and nervous system sensitization may contribute to symptoms such as bloating, bowel pain, urinary urgency, bladder discomfort, pelvic pressure, and IBS-like symptoms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I automatically be prescribed hormones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Hormones are not prescribed automatically. RHM evaluates your symptoms, medical history, laboratory results, goals, risk profile, and current treatment plan before making recommendations. Depending on the evaluation, care may focus on hormone therapy, inflammation management, pelvic floor therapy, pain management, nutrition, recovery support, surgical coordination, or other appropriate interventions."
+        }
+      }
+    ]
+  }
+]

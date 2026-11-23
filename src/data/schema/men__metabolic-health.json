@@ -1,0 +1,48 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is metabolic health?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metabolic health refers to how efficiently your body regulates blood sugar, insulin, and energy use. When these systems work well, your body can access and burn stored fat efficiently; when they're not, the same diet and exercise effort often produces a smaller result."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does poor metabolic health look like in men?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It can show up as stalled weight loss despite consistent effort, fat that concentrates around the midsection, energy crashes after meals, stronger sugar or carb cravings, and muscle that's harder to build or keep. Symptoms alone can't confirm what's driving it — a lab panel is the only way to know."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is metabolic health assessed or tested?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evaluation typically includes fasting insulin, HbA1c, a lipid panel, and hormone and thyroid markers, since these systems influence each other. A single blood sugar reading gives you one data point, not the full picture."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can metabolic health be improved without medication?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For some men, addressing sleep, stress, and training load can meaningfully shift these markers. For others, the evaluation points toward additional support. We don't start from a fixed answer — the plan follows what your labs show, always alongside your physician's guidance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does metabolic health get harder to maintain with age?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hormone levels, muscle mass, and insulin sensitivity tend to shift gradually with age, which can make the same diet and exercise routine less effective over time. That shift is evaluable, not something you have to just accept — it's part of why we test for it directly instead of assuming it."
+        }
+      }
+    ]
+  }
+]

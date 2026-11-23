@@ -1,0 +1,96 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are peptides safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They can be appropriate for some patients, but “peptides” isn’t one treatment. Safety depends on what’s being used, your health history, the dose, where it comes from, and how you’re monitored. RHM treats sourcing and physician oversight as part of the treatment — not an afterthought."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are peptides the same as testosterone or other hormones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. They’re both signaling molecules, but they work differently. Peptides can act on more specific physiologic pathways, while hormones such as testosterone tend to have broader systemic effects. Peptide therapy doesn’t replace a proper hormone evaluation — or TRT when TRT is actually indicated."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will every man benefit from peptide therapy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. And that’s exactly why RHM doesn’t start with a peptide menu. Whether peptide therapy makes sense depends on your symptoms, labs, goals, medical history, and risk profile. Sometimes peptides belong in the plan. Sometimes something else deserves attention first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are peptides FDA-approved?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the specific therapy. Some peptide-based treatments are FDA-approved for specific uses. Others may be compounded under physician supervision, while some are restricted or not appropriate for clinical use. That’s why what you saw online matters less than what can be appropriately prescribed, sourced, and monitored for you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can TRT and peptide therapy be used together — or does one replace the other?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They’re not interchangeable. In some cases, peptide therapy may be considered alongside TRT or other hormone care. In others, one may not be appropriate at all. The decision should come from your labs and physiology — not from trying to build the biggest protocol possible. If testosterone appears to be part of the problem, learn more about our Performance & Recovery care, or read Peptide Therapy vs TRT."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does physician supervision matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because choosing the peptide is only one part of the decision. The dose, source, medical history, risks, and your response over time all matter. Physician oversight also helps answer a more important question: whether peptide therapy is actually the right treatment in the first place."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if a peptide source is legitimate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with who is prescribing it and where it comes from. Legitimate care should involve a licensed medical provider, an appropriate pharmacy, clear dosing instructions, quality controls, and ongoing monitoring. Be cautious with research-grade products, vague “medical-grade” claims, or anyone willing to sell you peptides without understanding your medical history first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What labs are checked before peptide therapy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on why you’re considering peptides. Your evaluation may include hormones, thyroid function, glucose and insulin, HbA1c, lipids, inflammatory markers, and other metabolic or recovery-related markers. At RHM, those results are interpreted together rather than using one marker to justify a protocol."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What changes when peptide therapy is used appropriately?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That depends on why it was prescribed. Some men may notice changes in recovery, body composition, sleep, energy, metabolic health, or inflammation-related symptoms. Results vary, and nothing is guaranteed. The point is to use peptide therapy for a specific reason — then monitor whether it’s actually helping."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I automatically be prescribed peptides?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Coming to RHM for peptide therapy doesn’t mean you leave with peptides. We first look at your symptoms, labs, history, goals, and risk profile. If something else deserves attention first — hormones, thyroid function, metabolism, sleep, inflammation, or recovery — that’s where the plan should start."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer peptide therapy in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. RHM Med is a physician-led practice in Los Angeles. The process starts with a free VIP call to understand what’s changed, what you’re trying to improve, and whether a deeper evaluation makes sense before any treatment is considered."
+        }
+      }
+    ]
+  }
+]

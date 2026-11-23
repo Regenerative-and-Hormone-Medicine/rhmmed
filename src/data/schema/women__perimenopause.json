@@ -1,0 +1,104 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What age does perimenopause usually start?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Perimenopause usually begins in a woman’s 40s, but some women start noticing symptoms in their mid-to-late 30s. The timing varies because hormones, thyroid function, cortisol, metabolism, inflammation, stress, and lifestyle patterns can all affect how the transition shows up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does perimenopause last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Perimenopause can last a few months to several years. For many women, it lasts around 4 years, but some experience symptoms for closer to 8–10 years before reaching menopause."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between perimenopause and menopause?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Perimenopause is the transition leading up to menopause, when hormones fluctuate and symptoms often begin. Menopause is confirmed after 12 consecutive months without a period. In simple terms: perimenopause is the transition; menopause is the milestone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are common perimenopause symptoms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common perimenopause symptoms include irregular periods, heavier bleeding, hot flashes, night sweats, sleep disruption, anxiety, mood changes, brain fog, fatigue, weight gain, low libido, vaginal dryness, joint pain, hair thinning, and heart palpitations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do my labs look normal if I have perimenopause symptoms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hormones can fluctuate significantly during perimenopause, so a single “normal” lab result may not explain what is happening. At RHM, testing looks beyond one hormone reading and evaluates 160+ biomarkers across hormones, thyroid, cortisol, metabolism, and inflammation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is perimenopause only about estrogen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Estrogen and progesterone are important, but perimenopause can also affect thyroid function, cortisol patterns, insulin sensitivity, inflammation, sleep, mood, and metabolism. That is why symptoms often feel connected instead of isolated."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can perimenopause cause weight gain?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Perimenopause can contribute to weight gain, especially around the midsection. Hormone changes, insulin resistance, thyroid dysfunction, poor sleep, chronic stress, lower muscle mass, and inflammation can all affect how your body stores fat and responds to diet and exercise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I still get pregnant during perimenopause?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can still ovulate during perimenopause, even if your cycles are irregular. Pregnancy is still possible until you have reached menopause, which is defined as 12 consecutive months without a period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need hormone therapy for perimenopause?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not always. Some women may benefit from hormone therapy, while others may need support for thyroid function, metabolism, cortisol, inflammation, sleep, nutrition, or other underlying patterns. RHM builds treatment around your labs, symptoms, history, and goals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I need to stay on hormone therapy forever?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. If hormone therapy is appropriate, the plan should be monitored and adjusted over time. Perimenopause is a moving target, so treatment may change as your body responds and as you move closer to menopause."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does RHM evaluate perimenopause?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RHM evaluates perimenopause by looking at symptoms, medical history, lifestyle patterns, and comprehensive lab work. The goal is to understand the pattern underneath your symptoms instead of treating one number or one complaint in isolation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I see a perimenopause specialist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You should consider seeing a perimenopause specialist if your symptoms are affecting your sleep, mood, weight, energy, focus, libido, periods, or quality of life — especially if you have been told your labs are “normal” but you still do not feel like yourself."
+        }
+      }
+    ]
+  }
+]

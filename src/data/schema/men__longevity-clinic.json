@@ -1,0 +1,56 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a longevity clinic?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A longevity clinic takes a broader view of the factors that can influence health and function over time. At RHM, that means evaluating relevant hormonal, metabolic, cardiovascular, inflammatory, and physiologic markers together, then using your history, symptoms, goals, and results to determine what deserves attention."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is a longevity evaluation different from a regular physical?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A regular physical is essential for routine screening, preventive care, and diagnosing medical problems. A longevity evaluation adds a deeper layer of testing and interpretation designed to establish a broader baseline and look at how multiple systems and risk factors interact over time. It is intended to complement, not replace, your primary medical care."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a longevity evaluation for men actually test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The exact evaluation depends on the individual. RHM may evaluate more than 160 biomarkers spanning hormones, metabolic health, cardiovascular risk, inflammation, thyroid function, nutrient status, and other relevant areas. Your physician determines which results matter in the context of your history and goals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a longevity clinic the same as testosterone therapy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Testosterone is only one part of men's health. A longevity evaluation looks more broadly at your physiology before deciding whether any treatment is appropriate. If hormonal findings warrant additional evaluation or treatment, your physician can discuss those options with you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need symptoms or an existing diagnosis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Some men seek a longevity evaluation because something has changed in how they feel or perform. Others simply want a more comprehensive understanding of their current health and a baseline they can follow over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should men get a longevity evaluation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no single schedule that is appropriate for everyone. How often you should repeat testing or meet with your physician depends on your age, medical history, risk factors, initial findings, goals, and whether you are actively being treated or monitored."
+        }
+      }
+    ]
+  }
+]

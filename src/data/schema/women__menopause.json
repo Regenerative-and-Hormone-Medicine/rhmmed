@@ -1,0 +1,104 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What age does menopause usually start?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Menopause usually occurs between ages 45 and 55, with the average age around 51. Some women reach menopause earlier or later depending on genetics, medical history, lifestyle, surgery, medications, and overall health patterns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long do menopause symptoms last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Menopause itself is confirmed after 12 consecutive months without a period, but symptoms can last for years before and after that point. Hot flashes, sleep disruption, mood changes, weight gain, vaginal dryness, and brain fog may continue well into postmenopause for some women."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between menopause and perimenopause?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Perimenopause is the transition leading up to menopause, when hormones fluctuate and symptoms often begin. Menopause is the milestone reached after 12 consecutive months without a period. Postmenopause is the stage after menopause."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it normal to still have symptoms years after menopause?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, many women continue experiencing symptoms after menopause. That does not mean you should simply accept them. Persistent symptoms may be connected to hormones, thyroid function, metabolism, cortisol, inflammation, sleep, recovery, or other underlying patterns that deserve a closer look."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are common menopause symptoms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common menopause symptoms include hot flashes, night sweats, sleep disruption, fatigue, brain fog, anxiety, mood changes, weight gain, loss of muscle tone, low libido, vaginal dryness, joint pain, hair thinning, and heart palpitations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is menopause only about estrogen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Estrogen matters, but menopause can also affect thyroid function, metabolism, cortisol patterns, inflammation, sleep quality, muscle mass, bone health, cardiovascular health, and recovery capacity. That is why symptoms often feel connected instead of isolated."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why am I gaining weight after menopause?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Postmenopausal weight gain can be influenced by hormone changes, reduced muscle mass, insulin resistance, thyroid function, sleep disruption, chronic stress, inflammation, and lower recovery capacity. For many women, the same diet and exercise routine no longer creates the same result."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can menopause affect anxiety and brain fog?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Hormonal changes, poor sleep, cortisol patterns, thyroid function, and metabolic changes can all affect mood, focus, memory, and mental clarity. Many women describe feeling less sharp, more anxious, or less emotionally steady during and after menopause."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need hormone therapy for menopause?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not always. Some women may benefit from hormone therapy, while others may need non-hormonal support, metabolic care, thyroid evaluation, targeted supplementation, lifestyle changes, or other interventions. RHM builds care around your symptoms, labs, history, and goals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I do not want hormone therapy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That is okay. Menopause care does not have to start or end with hormone therapy. RHM can evaluate other systems that may be contributing to symptoms, including thyroid, metabolism, inflammation, sleep, cortisol, nutrition, and recovery."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does RHM evaluate menopause symptoms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RHM evaluates menopause symptoms through a comprehensive review of your symptoms, medical history, lifestyle patterns, and lab work. The goal is to understand what is driving how you feel instead of treating one symptom or one lab marker in isolation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I see a menopause specialist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You should consider seeing a menopause specialist if symptoms are affecting your sleep, weight, mood, focus, libido, energy, comfort, or quality of life — especially if you have been told everything is “normal” but you still do not feel like yourself."
+        }
+      }
+    ]
+  }
+]

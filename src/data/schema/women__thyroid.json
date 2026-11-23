@@ -1,0 +1,88 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do I still feel bad if my thyroid labs are normal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard thyroid screening often looks at a limited set of markers. A normal TSH does not always explain how thyroid hormone is being produced, converted, or used, or how hormones, metabolism, inflammation, cortisol, immune activity, and recovery may be influencing your symptoms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you only evaluate TSH?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. At RHM, thyroid function is evaluated within a broader physiologic context. Depending on your situation, this may include TSH, Free T3, Free T4, Reverse T3, thyroid antibodies, hormones, cortisol, metabolic markers, and inflammatory markers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can thyroid dysfunction affect weight, brain fog, and mood?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Thyroid hormone plays an important role in energy production, metabolism, cognitive function, mood regulation, temperature control, and recovery. When thyroid signaling becomes less efficient, symptoms may include weight gain, brain fog, low motivation, fatigue, mood changes, slower recovery, and cold intolerance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I have symptoms but previous labs were fine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A normal lab result does not always explain why symptoms are persisting. At RHM, we evaluate symptoms alongside a broader set of physiologic markers to better understand what may be contributing to fatigue, weight changes, brain fog, poor recovery, and low energy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between normal and optimal thyroid function?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Normal usually means a lab value falls within a population reference range. Optimal considers how your physiology is functioning and whether those values align with how you actually feel. RHM evaluates lab results together with symptoms, hormones, metabolism, inflammation, recovery, and overall health context."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can stress and inflammation affect thyroid function?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Long-term stress, elevated cortisol, chronic inflammation, nutrient depletion, and immune activity can all influence thyroid hormone production, conversion, and signaling. Because these systems affect each other, thyroid symptoms often involve more than the thyroid itself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my symptoms are thyroid-related or hormone-related?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many thyroid and hormone symptoms overlap, including fatigue, weight gain, brain fog, mood changes, poor recovery, sleep disruption, and low motivation. RHM evaluates thyroid function alongside hormones, cortisol, metabolism, and inflammation to identify the broader physiologic pattern rather than assuming a single cause."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What labs should be checked if I am worried about my thyroid?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basic screening often starts with TSH, but a more comprehensive evaluation may include TSH, Free T3, Free T4, Reverse T3, thyroid antibodies, metabolic markers, cortisol markers, hormone markers, and inflammatory markers. At RHM, thyroid health is evaluated within a larger assessment that may include 160+ biomarkers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What changes when thyroid physiology is properly addressed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Patients commonly report improvements in energy levels, mental clarity, recovery, mood stability, body composition, exercise tolerance, and daily resilience. The goal is not simply to improve lab values, but to help you feel and function better."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I see a thyroid specialist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consider a comprehensive thyroid evaluation if you continue experiencing symptoms despite normal labs, fatigue is affecting daily life, brain fog is impacting work or focus, weight gain feels disproportionate to your habits, recovery has become slower, you have a family history of thyroid disease, or previous treatment has not resolved your symptoms."
+        }
+      }
+    ]
+  }
+]
