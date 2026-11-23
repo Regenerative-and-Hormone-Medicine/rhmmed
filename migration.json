@@ -34,14 +34,13 @@
     "CMS imported (23 articles + collections), 360 images self-hosted",
     "Forms wired to the same Formspark endpoints; tracking carried over (production only)",
     "Card titles are stretched links (requested)",
-    "Launch prep sections 1-4 (2026-11-23): URL inventory, 301 map, tech SEO parity+, AEO pass, pre-launch checks — docs/launch-checklist.md",
+    "Launch prep sections 1-4 (2026-11-23): URL inventory, 301 map, tech SEO checks, pre-launch checks (SEO/AEO content additions reverted 2026-11-23: never requested) — docs/launch-checklist.md",
     "Accordion double-binding bug fixed (/men, /women, /telehealth)"
   ],
   "notDone": [
     "Hover/keyboard checked on header, mobile menu, FAQ, filter, forms (scripts/interactions.mjs); not every page-specific widget"
   ],
   "needsYou": [
-    "Approve or reject the AEO copy proposals (docs/aeo-pass.md)",
     "Search Console access for traffic data",
     "Go-live OK once client sign-off is in"
   ],

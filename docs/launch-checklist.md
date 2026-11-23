@@ -4,6 +4,10 @@ Follows the `site-launch` skill. `[x]` done and checked · `[ ]` open · `[~]` p
 Staging = `npx astro build` served by `npx wrangler pages dev dist` (a Cloudflare Pages emulator, used before the move to Vercel was
 decided; re-run the redirect/404/URL tests on a Vercel preview). Last updated 2026-11-23.
 
+**2026-11-23 revert:** Evgenii never asked for SEO/AEO content changes. Everything this checklist added to page content or
+the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was reverted; the site content is back to the
+553dae7 rebuild (Webflow parity). Items below marked *(reverted)* are not in the build. No content changes unless Evgenii asks.
+
 **Going live, DNS changes, pushing and anything on the live Webflow site need Evgenii's OK, asked once with this status.**
 
 ## 1. Before the migration
@@ -34,14 +38,10 @@ decided; re-run the redirect/404/URL tests on a Vercel preview). Last updated 20
       /scheduling). Client copy; writing them is a content change that needs approval.
 - [x] Self-referencing canonicals on every page (`https://www.rhmmed.com/<path>`, no trailing slash, as live). Fixed: the
       homepage canonical was `/index` with the new file output.
-- [x] No stray noindex. `noindex, follow` only where live has it (`/privacy-policy`, `/terms-of-use`) plus `/style-guide`
-      and the 404 page. No hreflang (English only).
-- [x] `sitemap.xml` generated from the routes and the CMS (`src/pages/sitemap.xml.ts`): 54 URLs, the live 56 minus the two
-      noindex legal pages. `robots.txt` points to it.
-- [x] Structured data, validated at validator.schema.org with 0 errors/0 warnings (home, FAQ, treatment page, article):
-      Organization site-wide (new); FAQPage on the 19 treatment/hub pages (copied from live); BlogPosting on all 23 articles
-      (generated from the CMS; fixes live's `&#39;` escaping and CDN image URLs); article FAQPage embeds kept; FAQPage now also
-      on /faq, /why-us, /telehealth, /patient-information, /cheating-death from their visible Q&A.
+- [ ] *(reverted)* `noindex` on /privacy-policy and /terms-of-use: live has it, the rebuild doesn't. Evgenii's call.
+- [ ] *(reverted)* `sitemap.xml` / `robots.txt`: not in the build. Evgenii's call before launch.
+- [ ] *(reverted)* Structured data: live has FAQPage (19 pages) and BlogPosting (articles) in the head; the rebuild has only
+      the FAQ embeds inside article bodies (CMS content). Organization/generated FAQPage were additions. Evgenii's call.
 - [~] OG/Twitter: title and description on every page; og:image on 47 pages (live has 24). Several hero images are **AVIF**,
       which LinkedIn/Facebook/Slack don't render. Convert the og:image to JPG at cutover (post-live check in section 6).
       Favicon and apple-touch icon are in place.
@@ -54,23 +54,14 @@ decided; re-run the redirect/404/URL tests on a Vercel preview). Last updated 20
 - [x] Content parity: titles, descriptions, canonicals and H1s are identical to live on all 56 URLs (crawl diff). No FAQ
       entries or schema lost (schema diff: nothing missing vs live). Copy parity was checked during the build (extractor misses: 0).
 
-## 3. AEO pass — details in `docs/aeo-pass.md`
+## 3. AEO pass
 
-- [x] Baseline 2026-11-23: Google AI Mode names RHM first; Perplexity doesn't name it. Google's text still says
-      "Regenerative / Sports Medicine" and "Houston". Check the Business Profile.
-- [-] ChatGPT baseline not run (would send a prompt from Evgenii's account).
-- [~] First 40–60 words: proposals written for /, /men, /women, /why-us, /telehealth. **Not applied; needs approval.**
-- [~] Question H2s: proposals written; plus a source error on /men/hormone-therapy ("Our Approach to Metabolic Health").
-      **Not applied; needs approval.**
-- [x] FAQ: FAQPage schema now on every page with a visible FAQ.
-- [x] robots.txt allows the AI crawlers by name. **At cutover: check Cloudflare AI-bot blocking / Vercel Firewall.**
-- [x] llms.txt written (`public/llms.txt`), facts only from the site, replacing Webflow's auto-generated dump.
-- [ ] Re-run the baseline about 4 weeks after launch.
+- [-] *(reverted)* Not requested by Evgenii. No AEO copy, heading, FAQ, schema, robots or llms.txt changes. The baseline
+      notes (Google names RHM first; its text still says "Regenerative / Sports Medicine" and "Houston") stand as information only.
 
 ## 4. Before going live
 
-- [x] Clean-up: no lorem/TODO/placeholder text in `src/`. `/style-guide` is noindex and out of the sitemap (kept as the
-      design-token reference). Stray build folders (`dist-wip*`) exist only in the original folder, not in git.
+- [x] Clean-up: no lorem/TODO/placeholder text in `src/`. `/style-guide` kept as the design-token reference (not linked). Stray build folders (`dist-wip*`) exist only in the original folder, not in git.
 - [x] Real 404 page (`src/pages/404.astro`, same copy as live's). Tested: unknown URLs return 404.
 - [~] Internal audit: `docs/ui-audit.md` (19 fix-before-launch, 31 later). **Fixed and verified today:** FAQ accordions on
       /men, /women, /telehealth didn't open on click (two scripts toggling each click) — one shared script now; collapsed

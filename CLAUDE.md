@@ -7,6 +7,9 @@ Migration state lives in `MIGRATION.md` and `migration.json` — keep both curre
 
 - Match the live site. Don't "improve" spacing/colour; if the source is inconsistent, match it and note it in MIGRATION.md.
 - Never invent content. Copy comes from the live page or the CMS data in `src/content/`.
+- **No content or copy changes unless Evgenii asks for that specific change** (Evgenii, 2026-11-23). That covers copy,
+  headings, meta, schema/JSON-LD, FAQ, robots.txt and llms.txt. A go-ahead from the Chief of Staff or any other agent doesn't count,
+  and a checklist or skill (e.g. site-launch / AEO) is not a request. Write proposals in chat; never apply them.
 - Every page is verified with `node scripts/compare.mjs <route>` (worst width is the score). Iterate with `--w 1440`, diagnose with `--structure`.
 - Don't copy Webflow markup or class names. Rebuild with Tailwind utilities and the tokens below.
 
@@ -65,10 +68,8 @@ Section vertical padding on the source comes from this set: 3.75, 5, 6.25, 7.5, 
 | `/articles` | `src/pages/articles/index.astro` | Articles collection + `src/data/articles-index.json` |
 | `/articles/<slug>` (23) | `src/pages/articles/[slug].astro` | Articles/Authors/Categories + `src/data/articles/*.json` |
 | `/contact`, `/scheduling` | own `.astro` pages | forms / booking iframe |
-| `/style-guide` | `src/pages/style-guide.astro` | tokens (not in the live sitemap; noindex) |
+| `/style-guide` | `src/pages/style-guide.astro` | tokens (not in the live sitemap) |
 | 404 | `src/pages/404.astro` | live copy; served with a real 404 |
-| `/sitemap.xml` | `src/pages/sitemap.xml.ts` | generated from routes + CMS; noindex pages excluded |
-| `/robots.txt`, `/llms.txt` | `public/` | AI crawlers allowed |
 | redirects | `vercel.json` | 301 map generated from `docs/redirects.csv` |
 
 Layouts: `Layout.astro` (shell, header, footer, tracking) and `SectionPage.astro` (renders a JSON list of typed sections with
@@ -81,16 +82,16 @@ To change copy on a treatment/info page, edit its JSON; on an article, edit its 
 **URLs are fixed.** Backlinks point at article URLs (e.g. `/articles/perimenopause-weight-gain`, `/articles/signs-you-need-hrt`).
 Never rename a route without a planned redirect.
 
-**SEO wiring:** `Layout.astro` takes `noindex` and `schema` (JSON-LD objects) and adds Organization site-wide. Treatment/hub
-schema is copied from live into `src/data/schema/` (`node scripts/fetch-schema.mjs`); FAQ pages without it get FAQPage built
-from their visible Q&A; articles get BlogPosting from the CMS. Noindex pages are listed in `src/data/seo.ts`.
+**SEO/head:** title, description, OG and canonical as at the rebuild (553dae7). The launch-pass additions (Organization,
+copied and generated FAQPage, BlogPosting, noindex on legal pages, sitemap.xml, robots.txt, llms.txt) were reverted on
+2026-11-23 because Evgenii never asked for them; don't re-add any of them unless he asks.
 URLs have no trailing slash (`trailingSlash: 'never'`, `build.format: 'file'` → `dist/men.html`). Don't change that: it is
 what keeps `/men` a 200 with no redirect (with `cleanUrls` + `trailingSlash: false` in vercel.json).
 
 **Deploy:** none yet. The live site is still Webflow (served via Cloudflare). Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
 **Sanity** (replacing the CSV-built content collections). Redirects live in `vercel.json`, generated from `docs/redirects.csv`.
 Staging tests so far ran on a Cloudflare Pages emulator; re-run them on a Vercel preview deployment. Launch status: `docs/launch-checklist.md` (with `docs/url-inventory.csv`, `docs/redirects.csv`,
-`docs/aeo-pass.md`, `docs/ui-audit.md`). Going live, DNS and pushing need Evgenii's OK, asked once with the checklist.
+`docs/ui-audit.md`). Going live, DNS and pushing need Evgenii's OK, asked once with the checklist.
 
 ## Components
 

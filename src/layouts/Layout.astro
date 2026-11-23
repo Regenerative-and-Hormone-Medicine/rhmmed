@@ -14,27 +14,13 @@ interface Props {
   ogImage?: string;
   ogType?: string;
   footer?: { minimal?: boolean; blurb?: string } | null;
-  /** noindex,follow — the live site sets this on /privacy-policy and /terms-of-use. Also keeps the page out of sitemap.xml. */
-  noindex?: boolean;
-  /** Page-level JSON-LD objects (copied from the live page, or generated from the CMS for articles). */
-  schema?: object[];
 }
 
-const { title, description, headerTheme = 'dark', chrome = true, ogImage, ogType = 'website', footer, noindex = false, schema = [] } = Astro.props;
+const { title, description, headerTheme = 'dark', chrome = true, ogImage, ogType = 'website', footer } = Astro.props;
 const SITE = 'https://www.rhmmed.com';
+// File output (dist/men.html): strip .html/index so the canonical stays https://www.rhmmed.com/men, as on live.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/(^|\/)index$/, '').replace(/\/$/, '');
 const canonical = path ? SITE + path : SITE;
-// Site-wide Organization (new: the live site has none). Facts only from the site itself: name, logo, social profiles.
-const organization = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Regenerative & Hormone Medicine',
-  alternateName: 'RHM',
-  url: SITE,
-  logo: `${SITE}/images/site/69f20289e8439a43c8e446ff_rsm-logo-logo-grey-01-png.png`,
-  sameAs: ['https://www.facebook.com/RSMedicine01', 'https://www.instagram.com/regenerativeandhormonemedicine/'],
-};
-const jsonld = (o: object) => JSON.stringify(o).replace(/</g, '\\u003c');
 ---
 
 <!doctype html>
@@ -53,9 +39,7 @@ const jsonld = (o: object) => JSON.stringify(o).replace(/</g, '\\u003c');
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="google-site-verification" content="ri7Lby20xPl667ZCCyisSddlvqHr7EZ4EB5PSlt6xlo" />
     {path !== "/404" && <link rel="canonical" href={canonical} />}
-    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
-    {chrome && <script type="application/ld+json" set:html={jsonld(organization)} />}
-    {schema.map((o) => <script type="application/ld+json" set:html={jsonld(o)} />)}
+    <meta name="robots" content="index, follow" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-dark.png" media="(prefers-color-scheme: light)" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-light.png" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

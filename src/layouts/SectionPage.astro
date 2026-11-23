@@ -31,7 +31,6 @@ import BookSteps from '../components/sections/BookSteps.astro';
 import Carousel from '../components/sections/Carousel.astro';
 import TelehealthCta from '../components/sections/TelehealthCta.astro';
 import type { Theme } from '../components/treatment/types';
-import { NOINDEX } from '../data/seo';
 
 interface Props { page: { path: string; title: string; description: string; sections: any[]; footer?: any } }
 const { page } = Astro.props;
@@ -39,21 +38,9 @@ const theme: Theme = page.path.startsWith('/men') ? 'men' : 'women';
 const heroImage = page.sections.find((s) => s.type === 'hero' || s.type === 'hubHero')?.image?.src;
 // Per-page header variant from the source (white text only where the live page sets it).
 const headerTheme = page.headerTheme ?? 'dark';
-// Head JSON-LD copied from the live page (scripts/fetch-schema.mjs); legal pages are noindex on the live site.
-const schemaFiles = import.meta.glob<{ default: object[] }>('../data/schema/*.json', { eager: true });
-const copied = schemaFiles[`../data/schema/${page.path.slice(1).replace(/\//g, '__')}.json`]?.default ?? [];
-// Pages with a visible FAQ but no FAQPage on the live site (/faq, /why-us, /telehealth, ...): build it from the
-// same Q&A shown on the page (AEO pass, 2026-11-23). Never adds questions that aren't on the page.
-const faqItems = page.sections.filter((s) => s.type === 'faq' || s.type === 'faqPage').flatMap((s) => s.items ?? []);
-const plain = (h: string) => h.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
-const generatedFaq = !copied.some((o: any) => o['@type'] === 'FAQPage') && faqItems.length
-  ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((i: any) => ({ '@type': 'Question', name: plain(i.q), acceptedAnswer: { '@type': 'Answer', text: plain(i.a) } })) }]
-  : [];
-const schema = [...copied, ...generatedFaq];
-const noindex = NOINDEX.has(page.path);
 ---
 
-<Layout title={page.title} description={page.description} ogImage={heroImage} headerTheme={headerTheme} footer={page.footer} schema={schema} noindex={noindex}>
+<Layout title={page.title} description={page.description} ogImage={heroImage} headerTheme={headerTheme} footer={page.footer}>
   {page.sections.map((s) => {
     switch (s.type) {
       case 'hero': return <Hero {...s} />;

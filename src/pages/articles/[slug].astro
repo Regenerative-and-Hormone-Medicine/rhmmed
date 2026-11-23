@@ -30,29 +30,9 @@ const related = section('insights');
 const cats = await getCollection('blogCategories');
 const catNames = a.category.split(';').map((c) => c.trim()).filter(Boolean).map((c) => cats.find((x) => x.id === c)?.data.name ?? c);
 const author = a.author ? await getEntry('authors', a.author) : undefined;
-// BlogPosting, same fields as the live CMS template (minus its HTML-escaped text, the Webflow CDN URLs and the
-// articleBody that just repeated the description). The FAQPage JSON-LD stays where it is: inside the body embed.
-const SITE = 'https://www.rhmmed.com';
-const blogPosting = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: a.title,
-  description: a.metaDescription,
-  url: `${SITE}/articles/${a.slug}`,
-  mainEntityOfPage: `${SITE}/articles/${a.slug}`,
-  ...(a.datePublished || a.date ? { datePublished: a.datePublished || a.date } : {}),
-  ...(a.image ? { image: { '@type': 'ImageObject', url: SITE + a.image } } : {}),
-  ...(author ? { author: { '@type': 'Person', name: author.data.name, worksFor: { '@type': 'Organization', name: 'Regenerative & Hormone Medicine', url: SITE } } } : {}),
-  publisher: {
-    '@type': 'Organization',
-    name: 'Regenerative & Hormone Medicine',
-    logo: { '@type': 'ImageObject', url: `${SITE}/images/site/69f20289e8439a43c8e446ff_rsm-logo-logo-grey-01-png.png` },
-  },
-  inLanguage: 'en',
-};
 ---
 
-<Layout title={a.metaTitle || a.title} description={a.metaDescription} ogImage={a.image} ogType="article" schema={[blogPosting]}>
+<Layout title={a.metaTitle || a.title} description={a.metaDescription} ogImage={a.image} ogType="article">
   <!-- Hero -->
   <section class="px-4 pt-[6.25rem] max-md:flex max-md:pt-20">
     <div class="container-site flex gap-20 rounded-3xl bg-bg-light px-14 py-[3.125rem] max-lg:flex-col max-lg:gap-12 max-lg:p-8">

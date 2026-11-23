@@ -428,14 +428,18 @@ The 4 below are capture-timing artefacts (autoplaying carousel / scroll-driven i
 Full status: `docs/launch-checklist.md`. What changed in the code:
 - URL format: `trailingSlash: 'never'` + `build.format: 'file'`. `/men` serves directly (tested on a Cloudflare Pages emulator; Vercel `cleanUrls` behaves the same); `/men/` and
   `/men.html` 308 to `/men`. 11 routes re-scored identical afterwards.
-- SEO: Organization JSON-LD site-wide; live head schema copied (`src/data/schema/`, 19 pages); BlogPosting generated per
-  article; FAQPage built from visible Q&A on 5 pages that lacked it; `noindex` restored on /privacy-policy and /terms-of-use
-  (live has it, the rebuild had dropped it); homepage canonical fixed; `sitemap.xml`, `robots.txt`, `llms.txt`, 404 page.
+- SEO: homepage canonical fixed (file output); 404 page (live copy). **Reverted the same day** (Evgenii never asked for them):
+  Organization JSON-LD, copied head schema (19 pages), generated BlogPosting and FAQPage, `noindex` on the legal pages,
+  `sitemap.xml`, `robots.txt`, `llms.txt`, and the AEO copy proposals doc. The head is back to 553dae7. Note for Evgenii: live
+  itself has FAQPage/BlogPosting head schema and `noindex` on /privacy-policy and /terms-of-use, so the rebuild lacks those
+  (as it did at 553dae7) until he asks for them.
 - Redirects: `docs/redirects.csv` → `vercel.json` (live `/blog` rule, `/blog/:slug`, 20 pre-Webflow URLs).
 - Bug fixed: FAQ accordions on /men, /women, /telehealth didn't open on click (two scripts on one page). Now one shared module.
 - Accessibility, no visual change: inert closed panels, skip link, scroll padding, form autocomplete, alert role on form
   errors, reduced-motion handling, compare-table label.
 - /articles mobile CLS 0.885 → 0 (intrinsic sizes on card images; live is 0.918).
+
+**Known gap (pre-existing):** /articles/lupus-rash-vs-rosacea has no "Related Articles" block; live has one.
 
 **Source quirks found and kept:** `/men/hormone-therapy` has an H2 "Our Approach to Metabolic Health"; `/men` FAQ schema lists 5
 questions but the page shows 6; 10 pages have no meta description; 3 titles over 60 chars, 5 descriptions over 155.
