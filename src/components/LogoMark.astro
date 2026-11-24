@@ -1,0 +1,13 @@
+---
+// The logo SVG appears twice per page (header + footer). Its mask/pattern/image ids would be duplicated, so each
+// instance gets its own prefix (`id` prop) and the internal url(#…) / href="#…" references are rewritten to match.
+import raw from '../icons/logo.svg?raw';
+interface Props { id: string }
+const { id } = Astro.props;
+const svg = raw
+  .replace(/id="([^"]+)"/g, `id="${id}-$1"`)
+  .replace(/url\(#([^)]+)\)/g, `url(#${id}-$1)`)
+  .replace(/href="#([^"]+)"/g, `href="#${id}-$1"`)
+  .replace('<svg ', '<svg aria-hidden="true" focusable="false" ');
+---
+<Fragment set:html={svg} />

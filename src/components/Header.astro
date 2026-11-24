@@ -1,5 +1,5 @@
 ---
-import Logo from '../icons/logo.svg';
+import LogoMark from './LogoMark.astro';
 import Button from './Button.astro';
 import { primaryNav, secondaryNav, type NavItem } from '../data/nav';
 
@@ -8,7 +8,10 @@ interface Props {
   theme?: 'dark' | 'light';
 }
 const { theme = 'dark' } = Astro.props;
-const isHome = Astro.url.pathname === '/';
+// build.format 'file' can report /index.html and /men.html; normalise to /, /men.
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '').replace(/(.)\/$/, '$1') || '/';
+const isHome = path === '/';
+const current = (href?: string) => (href === path ? 'page' : undefined);
 
 const toneHover = (t?: NavItem['tone']) =>
   t === 'men' ? 'lg:hover:text-slate' : t === 'women' ? 'lg:hover:text-brown' : '';
@@ -28,44 +31,46 @@ const toneHover = (t?: NavItem['tone']) =>
       aria-label="Regenerative and Hormone Medicine Homepage"
       class:list={['logo flex w-full items-center', isHome ? 'h-full max-w-[14rem]' : 'max-w-[20%]', 'max-sm:max-w-[10rem]', theme === 'light' ? '' : 'text-ink']}
     >
-      <Logo width="100%" />
+      <LogoMark id="hdr-logo" />
     </a>
 
     <!-- Desktop nav -->
     <nav class="flex h-full w-full items-center justify-between max-lg:hidden" aria-label="Main">
       {[primaryNav, secondaryNav].map((group, gi) => (
-        <div class="flex h-full items-center">
+        <ul role="list" class="flex h-full items-center">
           {group.map((item) =>
             item.children ? (
-              <div class="dd group/dd relative flex h-full items-center">
-                <div class="text-nav flex h-full items-center gap-2 px-[.875rem]">
-                  {item.href ? <a href={item.href}>{item.label}</a> : <button type="button" class="dd-toggle cursor-pointer uppercase" aria-expanded="false">{item.label}</button>}
+              <li class="dd group/dd relative flex h-full items-center">
+                <div class="text-nav flex h-full items-center gap-1.5 px-[.875rem] whitespace-nowrap max-[1100px]:px-2">
+                  {item.href ? <a href={item.href} aria-current={current(item.href)}>{item.label}</a> : <button type="button" class="dd-toggle cursor-pointer uppercase" aria-expanded="false">{item.label}</button>}
                   <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                     <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                 </div>
-                <div class="dd-panel invisible absolute top-full left-0 pt-[1.8rem] opacity-0 group-hover/dd:visible group-hover/dd:opacity-100 group-focus-within/dd:visible group-focus-within/dd:opacity-100">
-                  <div class="overflow-hidden rounded-sm border border-[#eee] bg-white text-black">
+                <!-- Source anchors the list to the bottom of the label text (bar centre + half the 17.7px line), not the 70px bar,
+                     then pads 1.8rem: the box lands 3px under the bar. -->
+                <div class="dd-panel invisible absolute top-[calc(50%+0.5542rem)] left-0 pt-[1.8rem] opacity-0 group-hover/dd:visible group-hover/dd:opacity-100 group-focus-within/dd:visible group-focus-within/dd:opacity-100">
+                  <ul role="list" class="overflow-hidden rounded-sm border border-[#eee] bg-white text-neutral-darker">
                     {item.children.map((c) => (
-                      <a href={c.href} class:list={['block whitespace-nowrap py-3 pr-10 pl-4 transition-colors duration-300 hover:bg-bg-light', toneHover(item.tone)]}>
+                      <li><a href={c.href} aria-current={current(c.href)} class:list={['text-nav block whitespace-nowrap py-3 pr-10 pl-4 transition-colors duration-300 hover:bg-bg-light', toneHover(item.tone)]}>
                         {c.label}
-                      </a>
+                      </a></li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
-              </div>
+              </li>
             ) : (
-              <a href={item.href} class="text-nav flex h-full items-center px-[.875rem]">{item.label}</a>
+              <li class="flex h-full"><a href={item.href} aria-current={current(item.href)} class="text-nav flex h-full items-center px-[.875rem] whitespace-nowrap max-[1100px]:px-2">{item.label}</a></li>
             ),
           )}
-          {gi === 1 && <Button href="/scheduling" class="ml-[.875rem]">Book VIP Call</Button>}
-        </div>
+          {gi === 1 && <li class="flex"><Button href="/scheduling">Book VIP Call</Button></li>}
+        </ul>
       ))}
     </nav>
 
     <!-- Tablet / mobile -->
     <div class="hidden items-center gap-2 max-lg:flex max-sm:gap-1">
-      <Button href="/scheduling" size="sm" variant={theme === 'light' ? 'light' : 'dark'} class="menu-cta">Book VIP Call</Button>
+      <Button href="/scheduling" size="sm">Book VIP Call</Button>
       <button type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu" class="p-[18px] max-sm:p-2.5">
         <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
@@ -80,26 +85,27 @@ const toneHover = (t?: NavItem['tone']) =>
     class="hidden max-h-[calc(100vh-70px)] flex-col overflow-y-auto bg-white px-4 pt-4 pb-[100px] text-black shadow-[0_4px_40px_#00000024] max-lg:data-[open]:flex lg:!hidden"
   >
     {[primaryNav, secondaryNav].map((group, gi) => (
-      <div class:list={['mx-auto flex w-full max-w-[30rem] flex-col', gi === 1 && 'max-sm:gap-4']}>
+      <ul role="list" class:list={['mx-auto flex w-full max-w-[30rem] flex-col', gi === 1 && 'max-sm:gap-4']}>
         {group.map((item) =>
           item.children ? (
-            <details class="group/m">
+            <li><details class="group/m">
               <summary class="text-nav flex cursor-pointer list-none items-center justify-between px-[.875rem] py-4">
-                {item.href ? <a href={item.href}>{item.label}</a> : <span>{item.label}</span>}
-                <svg class="size-4 transition-transform group-open/m:rotate-180" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <!-- Plain label: a link inside <summary> is a nested control, and on the source a tap here only opens the list. -->
+                <span>{item.label}</span>
+                <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </summary>
-              <div class="mt-4 mb-2 overflow-hidden rounded-sm border border-[#eee] max-md:mt-5">
-                {item.children.map((c) => <a href={c.href} class="block py-3 pr-10 pl-4">{c.label}</a>)}
-              </div>
-            </details>
+              <ul role="list" class="mt-4 mb-2 overflow-hidden rounded-sm border border-[#eee] max-md:mt-5">
+                {item.children.map((c) => <li><a href={c.href} aria-current={current(c.href)} class="text-nav block py-3 pr-10 pl-4 text-neutral-darker">{c.label}</a></li>)}
+              </ul>
+            </details></li>
           ) : (
-            <a href={item.href} class="text-nav px-[.875rem] py-4">{item.label}</a>
+            <li class="flex flex-col"><a href={item.href} aria-current={current(item.href)} class="text-nav px-[.875rem] py-4">{item.label}</a></li>
           ),
         )}
-        {gi === 1 && <Button href="/scheduling" class="w-full">Book VIP Call</Button>}
-      </div>
+        {gi === 1 && <li class="flex flex-col"><Button href="/scheduling" class="w-full">Book VIP Call</Button></li>}
+      </ul>
     ))}
   </nav>
 </header>
@@ -108,7 +114,6 @@ const toneHover = (t?: NavItem['tone']) =>
   /* Scrolled / menu-open state: white bar, ink text (source: .header-nav.is-active) */
   [data-header].is-active { background: #fff; color: #050514; }
   [data-header].is-active :global(.logo) { color: #050514; }
-  [data-header][data-theme='light'].is-active :global(.menu-cta) { background: #000; color: #fff; }
 </style>
 
 <script>

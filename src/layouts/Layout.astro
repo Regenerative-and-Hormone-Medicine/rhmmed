@@ -63,7 +63,7 @@ const robots = isPreview ? 'noindex, nofollow' : live ? live.robots : 'index, fo
   <body>
     {chrome && <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-pill focus:bg-black focus:px-[22px] focus:py-3 focus:text-btn focus:text-white">Skip to content</a>}
     {chrome && <Header theme={headerTheme} />}
-    <main id="main">
+    <main id="main" class="overflow-x-clip"><!-- source: .page-wrapper { overflow-x: clip } — no sideways scroll on phones -->
       <slot />
     </main>
     <script is:inline>

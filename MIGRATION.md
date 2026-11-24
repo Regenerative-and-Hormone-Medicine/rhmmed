@@ -460,3 +460,31 @@ article body (the export does the same); `getCollection()` order isn't insertion
 og:description, robots, canonical, H1, H2, all JSON-LD): 3 differences, all present since 553dae7 — the homepage H1 also contains
 the rotating words as plain text in the build; /advance-home-testing has og:title/og:description in the build but not on live.
 sitemap.xml and robots.txt identical.
+
+## QA pass (2026-11-24, Evgenii: "dropdowns too far from the nav; QA everything incl. responsive; improve semantics")
+
+Header now matches live at every width (measured against www.rhmmed.com with Playwright):
+- Desktop dropdown panel was 29px too low. The source anchors the list to the bottom of the label text (bar centre +
+  half the 17.7px line), not the 70px bar; the box lands 3px under the bar. Items use `text-nav` (14/500 uppercase) in #222.
+- Home logo was getting the inner-page size (`Astro.url.pathname` is `/index.html` with `build.format: 'file'`); fixed.
+- Label→chevron gap 6px (was 8) and no extra margin before "Book VIP Call": every item now sits on live's x positions.
+- Tablet/phone "Book VIP Call" is always the black pill (live), also on dark-hero pages. Mobile list items 14/500 uppercase #222.
+
+Deliberate deviations from live (live is broken here; ours is not):
+- Mobile `<summary>` shows a plain label (no link inside: a link in a summary is a nested control; on live a tap only opens the list).
+- `main` has `overflow-x: clip` (live: `.page-wrapper`), so phones never scroll sideways.
+- Treatment "is-2" card grids stack to 1 column ≤479. Live stays 2-up and the right card runs off-screen (clipped).
+- Treatment hero heading in the card (`men-h1`, e.g. /advance-home-testing) scales down ≤479 only when the longest word
+  wouldn't fit; live keeps 40px and clips "GUESSING" below ~400px.
+- Legal pages: long words wrap (`overflow-wrap: anywhere`) instead of being clipped at 320px.
+- 992–1099px: nav labels don't wrap (nowrap + 8px side padding). Live wraps "Book VIP Call" onto 3 lines there.
+
+Semantics (no copy changes): nav groups and dropdowns are `<ul>/<li>`, footer columns are `<nav aria-labelledby>` lists,
+`aria-current="page"` on the current nav link, logo SVG ids unique per instance (`LogoMark.astro`; header + footer used to
+duplicate `mask0_…`), `rel="noopener"` added to new-tab links in article bodies at render.
+
+Proposals only (headings are content; need Evgenii's OK): /articles and /scheduling have no `<h1>` (live neither);
+/privacy-policy and /terms-of-use jump h1 → h3. Men menu "Sexual Health & Libido" links to /women/sexual-health (live does too).
+
+QA scripts: `scripts/qa-sweep.mjs` (every route × 5 widths: sideways scroll, console errors, failed requests, semantics,
+internal links) and `scripts/clip-check.mjs` (text cut off at the viewport edge; set `WS=320,360,375`).

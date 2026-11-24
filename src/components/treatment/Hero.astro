@@ -32,7 +32,9 @@ const Current = p.currentIsH1 ? 'h1' : 'span';
               {p.crumb && <a href={p.crumb.href} class="underline">{p.crumb.label} /</a>}
               <Current class="text-label text-brown">{p.current}</Current>
             </div>
-            <H class="men-h1 text-[2.5rem] leading-[1.25] font-semibold tracking-[-0.05rem] uppercase" set:html={p.heading} />
+            <!-- ≤479 the source keeps 40px and the longest word ("GUESSING") overflows the card and gets clipped below ~400px.
+                 Scale down only when it would leave the card: card width minus ~half its padding is 100vw − 4rem, the word is ~7.9× the font size. -->
+            <H class="men-h1 text-[2.5rem] leading-[1.25] font-semibold tracking-[-0.05rem] uppercase max-sm:text-[min(2.5rem,calc((100vw-4rem)/8))]" set:html={p.heading} />
           </div>
         )}
         <div class="flex flex-col gap-8">

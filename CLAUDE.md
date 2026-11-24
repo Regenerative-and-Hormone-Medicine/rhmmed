@@ -107,6 +107,11 @@ Staging tests so far ran on a Cloudflare Pages emulator; re-run them on a Vercel
 - `src/components/Button.astro` — black pill (`variant="light"` for white), `size="sm"` for header. Label rolls on hover.
 - Accordions (`Accordion.astro`, `treatment/Faq.astro`, `sections/FaqPage.astro`) share one script, `src/scripts/accordion.ts`.
   Never give a component its own copy: two copies on one page bind twice and the item opens and closes on the same click.
+- `src/components/LogoMark.astro` — the logo SVG with ids prefixed per instance (header + footer). Use it, not the raw
+  `logo.svg` import, or the mask/pattern ids are duplicated on the page.
+- QA: `node scripts/qa-sweep.mjs out.json` (every route × 1440/991/767/390/320: sideways scroll, console errors, failed
+  requests, semantics, internal links) and `WS=320,360,375 node scripts/clip-check.mjs <base>` (text cut off at the edge;
+  `main` clips overflow, so the sweep can't see it). Run both after layout changes. Deliberate deviations from live: MIGRATION.md "QA pass".
 - `src/lib/img-size.ts` reads an image's intrinsic size at build time; spread it on `<img>` (`{...size}`) to prevent layout shift.
 
 The `/style-guide` route renders every token. Update it when you add one.

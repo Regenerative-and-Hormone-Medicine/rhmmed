@@ -1,5 +1,5 @@
 ---
-import Logo from '../icons/logo.svg';
+import LogoMark from './LogoMark.astro';
 import Facebook from '../icons/facebook.svg';
 import Instagram from '../icons/instagram.svg';
 import { footerColumns } from '../data/nav';
@@ -13,7 +13,7 @@ const { minimal = false, blurb } = Astro.props;
       <div class="flex gap-20 max-md:flex-wrap max-md:gap-12">
         <div class="flex w-full max-w-[22.6875rem] flex-col items-start gap-6">
           <a href="/" aria-label="Regenerative and Hormone Medicine Homepage" class="flex w-full max-w-[10rem] items-center text-ink">
-            <Logo width="100%" />
+            <LogoMark id="ftr-logo" />
           </a>
           {minimal ? (
           <div class="flex flex-col gap-2.5">
@@ -31,18 +31,20 @@ const { minimal = false, blurb } = Astro.props;
       </div>
       {!minimal && <div class="flex gap-20 max-md:flex-wrap max-md:gap-12">
         {footerColumns.map((col, i) => (
-          <div class="flex flex-col items-start gap-4">
-            <div class="text-label text-ink-70">{col.title}</div>
-            {col.links.map((l) => (
-              <a href={l.href} class="text-[.9375rem] leading-none font-medium text-blue-dark transition-colors duration-200 hover:text-ink-70">{l.label}</a>
-            ))}
+          <nav aria-labelledby={`footer-col-${i}`} class="flex flex-col items-start gap-4">
+            <div id={`footer-col-${i}`} class="text-label text-ink-70">{col.title}</div>
+            <ul role="list" class="contents">
+              {col.links.map((l) => (
+                <li class="flex"><a href={l.href} class="text-[.9375rem] leading-none font-medium text-blue-dark transition-colors duration-200 hover:text-ink-70">{l.label}</a></li>
+              ))}
+            </ul>
             {i === footerColumns.length - 1 && (
               <div class="flex items-center gap-5">
                 <a href="https://www.facebook.com/RSMedicine01" aria-label="Facebook" class="-mb-1 inline-block w-[21px] transition-colors duration-200 hover:text-blue"><Facebook class="inline align-baseline" width="100%" /></a>
                 <a href="https://www.instagram.com/regenerativeandhormonemedicine/" aria-label="Instagram" class="-mb-1 inline-block w-[21px] transition-colors duration-200 hover:text-blue"><Instagram class="inline align-baseline" width="100%" /></a>
               </div>
             )}
-          </div>
+          </nav>
         ))}
       </div>}
     </div>

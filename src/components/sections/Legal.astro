@@ -15,7 +15,7 @@ const { heading, html } = Astro.props;
   <section class="pt-24 pb-[6.25rem] max-md:py-16">
     <div class="container-site flex max-w-[70rem] flex-col gap-16">
       <div class="flex flex-col items-start gap-5">
-        <div class="pp-rte" set:html={html} />
+        <div class="pp-rte w-full [overflow-wrap:anywhere]" set:html={html} />
       </div>
     </div>
   </section>

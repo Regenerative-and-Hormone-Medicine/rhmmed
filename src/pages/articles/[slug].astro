@@ -25,7 +25,9 @@ if (!entry) return new Response(null, { status: 404 });
 const a = entry.data;
 const edit = (path: string) => entry.edit?.(path) ?? {};
 // Bodies are Webflow HTML (incl. embeds: quiz, FAQ JSON-LD) — render verbatim, not through Markdown.
-const bodyHtml = entry.body ?? '';
+// New-tab links in CMS bodies get rel="noopener" when they have no rel (markup only; the copy is untouched).
+const noopener = (html?: string | null) => (html ?? '').replace(/<a\b(?![^>]*\brel=)([^>]*\btarget="_blank")/g, '<a rel="noopener"$1');
+const bodyHtml = noopener(entry.body);
 const extrasFiles = import.meta.glob<{ default: any }>('../../data/articles/*.json', { eager: true });
 const extras = extrasFiles[`../../data/articles/articles__${a.slug}.json`]?.default ?? { sections: [] };
 const section = (t: string) => extras.sections.find((s: any) => s.type === t);
@@ -82,7 +84,7 @@ const author = a.author ? await one(Astro, 'authors', a.author) : undefined;
       <div class="flex w-full max-w-[50rem] flex-col gap-8">
         <div class="flex flex-col gap-5 rounded-sm border border-bg-dark bg-bg-light p-6">
           <p class="text-h4 capitalize">Summary</p>
-          <div class="summary-rte rich" set:html={a.summary} {...edit('summary')} />
+          <div class="summary-rte rich" set:html={noopener(a.summary)} {...edit('summary')} />
         </div>
         <div class="blog-rte rich" set:html={bodyHtml} {...edit('body')} />
         {author && (
@@ -91,7 +93,7 @@ const author = a.author ? await one(Astro, 'authors', a.author) : undefined;
               <img src={author.data.profile} alt="" class="aspect-square w-10 rounded-full object-cover" />
               <p class="text-h5">{author.data.name}</p>
             </div>
-            <div class="summary-rte rich" set:html={author.data.bio} {...(author.edit?.('bio') ?? {})} />
+            <div class="summary-rte rich" set:html={noopener(author.data.bio)} {...(author.edit?.('bio') ?? {})} />
           </div>
         )}
       </div>
