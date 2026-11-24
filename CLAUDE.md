@@ -110,7 +110,7 @@ The `/style-guide` route renders every token. Update it when you add one.
 token), in KHOD's Sanity org (oZlH5hGsr) until it is transferred to an RHM-owned account at handover. Collections: articles,
 authors, blog-categories, testimonials, solutions, newsletters, researches. Newsletters and researches have no pages (by decision).
 
-- Schemas and Studio: `studio/` (`cd studio && npm install && npm run dev`). Not deployed; `sanity deploy` is a deploy and needs Evgenii's OK.
+- Schemas and Studio: `studio/` (`cd studio && npm install && npm run dev`). Hosted at https://rhmmed.sanity.studio (deployed 2026-11-24 at Evgenii's request; sign-in, project members only). Redeploy with `cd studio && npx sanity deploy`.
 - Astro reads Sanity at build time through `src/lib/sanity-loader.ts`, which returns the same entry shape the old file loaders
   did (ids without the type prefix, `category` as `a; b`, article `body` as raw HTML). Sort by `data.order` (the Webflow export
   order) where order matters; `getCollection()` doesn't keep it. A build with no Sanity documents fails on purpose.
