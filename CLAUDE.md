@@ -90,7 +90,12 @@ keep `index, follow`. Never add schema live doesn't have. (The 23 Nov launch-pas
 URLs have no trailing slash (`trailingSlash: 'never'`, `build.format: 'file'` → `dist/men.html`). Don't change that: it is
 what keeps `/men` a 200 with no redirect (with `cleanUrls` + `trailingSlash: false` in vercel.json).
 
-**Deploy:** none yet. The live site is still Webflow (served via Cloudflare). Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
+**Hosting target changed (Evgenii, 2026-11-24): Cloudflare (Pages/Workers, free plan) in RHM's own Cloudflare account**, not Vercel.
+Free plans only. KHOD already has GA4/GSC/GTM access. Still to port: `vercel.json` redirects/headers → Cloudflare `_redirects`/`_headers`,
+and the preview build's `@astrojs/vercel` adapter → `@astrojs/cloudflare`. The Vercel notes below are the earlier plan.
+Client handover asks: Notion "RHM website: moving off Webflow" (Cloudflare Administrator invite + Sanity org invite).
+
+**Deploy:** none yet. The live site is still Webflow (served via Cloudflare). Earlier target (Evgenii, 2026-11-23): **Vercel**, with content moving to
 **Sanity** (replacing the CSV-built content collections). Redirects live in `vercel.json`, generated from `docs/redirects.csv`.
 Staging tests so far ran on a Cloudflare Pages emulator; re-run them on a Vercel preview deployment. Launch status: `docs/launch-checklist.md` (with `docs/url-inventory.csv`, `docs/redirects.csv`,
 `docs/ui-audit.md`). Going live, DNS and pushing need Evgenii's OK, asked once with the checklist.
