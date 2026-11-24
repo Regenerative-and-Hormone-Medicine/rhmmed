@@ -94,7 +94,10 @@ what keeps `/men` a 200 with no redirect (with `cleanUrls` + `trailingSlash: fal
 organization, Sanity org "RHM". The domain's registrar and DNS are **GoDaddy** (ns23/ns24.domaincontrol.com), not Cloudflare. KHOD already has
 GA4/GSC/GTM access. Client asks: Notion "RHM website: moving off Webflow" (invites for Vercel, GitHub, Sanity, GoDaddy).
 
-**Deploy:** none yet. The live site is still Webflow. Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
+**Deploy (2026-11-24):** RHM's Vercel team `rhm16` (Hobby) builds https://github.com/Regenerative-and-Hormone-Medicine/rhmmed
+(public). Project `rhmmed` → https://rhmmed.vercel.app (static, no custom domain yet). Project `rhmmed-preview` →
+https://rhmmed-preview.vercel.app (env `SANITY_PREVIEW=1`, `PREVIEW_COOKIE_SECRET`; `SANITY_VIEWER_TOKEN` still to add).
+Both build on push to main. The live site is still Webflow. Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
 **Sanity** (replacing the CSV-built content collections). Redirects live in `vercel.json`, generated from `docs/redirects.csv`.
 Staging tests so far ran on a Cloudflare Pages emulator; re-run them on a Vercel preview deployment. Launch status: `docs/launch-checklist.md` (with `docs/url-inventory.csv`, `docs/redirects.csv`,
 `docs/ui-audit.md`). Going live, DNS and pushing need Evgenii's OK, asked once with the checklist.
