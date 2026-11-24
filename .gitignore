@@ -34,3 +34,6 @@ dist-wip3/
 dist-check/
 dist-wip*/
 .wrangler/
+.sanity-import/
+studio/dist/
+studio/.sanity/

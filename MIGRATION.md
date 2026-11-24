@@ -443,3 +443,12 @@ Full status: `docs/launch-checklist.md`. What changed in the code:
 
 **Source quirks found and kept:** `/men/hormone-therapy` has an H2 "Our Approach to Metabolic Health"; `/men` FAQ schema lists 5
 questions but the page shows 6; 10 pages have no meta description; 3 titles over 60 chars, 5 descriptions over 155.
+
+## Sanity, phase 1 (2026-11-24)
+
+The Webflow CMS collections moved to Sanity project `9qg5x7wu` (dataset `production`, public). `scripts/sanity-export.mjs` turns
+`src/content/` into 77 documents (23 articles, 2 authors, 10 categories, 10 testimonials, 5 solutions, 22 newsletters, 5
+researches), imported with `sanity dataset import --replace`. IDs are `<type>-<webflow id>`; article ids are the old file names.
+`src/lib/sanity-loader.ts` feeds the same collections at build time. **Check:** full `dist/` byte-identical to d7f7808 (58 pages),
+and the live text check gives the same per-URL scores as on 2026-11-23. Gotchas: the old glob loader trimmed newlines at both ends of the
+article body (the export does the same); `getCollection()` order isn't insertion order, so category chips sort by `order`.

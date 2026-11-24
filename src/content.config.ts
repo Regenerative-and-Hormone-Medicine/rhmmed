@@ -1,13 +1,15 @@
 import { defineCollection } from 'astro:content';
-import { glob, file } from 'astro/loaders';
+import { sanityLoader } from './lib/sanity-loader';
 import { z } from 'astro/zod';
 
-// Generated from the Webflow CSV exports by scripts/import-cms.py.
+// Content lives in Sanity (project 9qg5x7wu, dataset production; schemas in studio/). It was imported from the Webflow
+// CSV exports (src/content/, scripts/import-cms.py → scripts/sanity-export.mjs). src/content/ is now a frozen snapshot.
 // `webflowDraft` = the item had unpublished edits in Webflow at export time (it may still be live).
-const base = { name: z.string(), slug: z.string(), webflowDraft: z.boolean() };
+// `order` = position in the Webflow export (the CMS order); sort by it, getCollection() doesn't keep it.
+const base = { name: z.string(), slug: z.string(), webflowDraft: z.boolean(), order: z.number() };
 
 const articles = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/content/articles' }),
+  loader: sanityLoader('article', { withBody: true }),
   schema: z.object({
     title: z.string(),
     slug: z.string(),
@@ -26,32 +28,32 @@ const articles = defineCollection({
 });
 
 const authors = defineCollection({
-  loader: file('src/content/authors.json'),
+  loader: sanityLoader('author'),
   schema: z.object({ ...base, profile: z.string(), bio: z.string(), link: z.string() }),
 });
 
 const blogCategories = defineCollection({
-  loader: file('src/content/blog-categories.json'),
+  loader: sanityLoader('blogCategory'),
   schema: z.object(base),
 });
 
 const testimonials = defineCollection({
-  loader: file('src/content/testimonials.json'),
+  loader: sanityLoader('testimonial'),
   schema: z.object({ ...base, testimonial: z.string(), age: z.string(), categories: z.array(z.string()) }),
 });
 
 const solutions = defineCollection({
-  loader: file('src/content/solutions.json'),
+  loader: sanityLoader('solution'),
   schema: z.object({ ...base, image: z.string(), paragraph: z.string() }),
 });
 
 const newsletters = defineCollection({
-  loader: file('src/content/newsletters.json'),
+  loader: sanityLoader('newsletter'),
   schema: z.object({ ...base, thumb: z.string(), content: z.string(), description: z.string(), releaseDate: z.string().nullable() }),
 });
 
 const researches = defineCollection({
-  loader: file('src/content/researches.json'),
+  loader: sanityLoader('research'),
   schema: z.object({
     ...base, body: z.string(), summary: z.string(), mainImage: z.string(), thumbnail: z.string(),
     featured: z.boolean(), color: z.string(),

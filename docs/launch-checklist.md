@@ -83,7 +83,9 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
 - [ ] Platform: **Vercel** project (not created; the move to Vercel + Sanity was decided 2026-11-23). `vercel.json` has the
       redirects, `cleanUrls` and `trailingSlash: false`. Add `www.rhmmed.com` + apex redirect and SSL. DNS is on Cloudflare today,
       so either point the records at Vercel (proxy off) or move the nameservers.
-- [ ] **Sanity**: content moves from the CSV-built collections to Sanity before launch. Not started.
+- [~] **Sanity**: phase 1 done 2026-11-24. The 7 Webflow CMS collections (77 documents) are in project `9qg5x7wu` and the build
+      reads them from there; output is byte-identical to the CSV build on all 58 pages and matches live as before. Open: Portable
+      Text/images (phase 2), page JSON, Studio hosting, a Sanity → Vercel rebuild webhook, transfer to RHM's account at handover.
 - [x] 301s tested on staging: all 29 rules in `docs/redirects.csv` (24 redirects land on a 200 in one hop, 5 stay 404) + all 56 live URLs return 200 (no trailing-slash or `.html` hops
       except the intended 308 from `/men/` → `/men`).
 - [ ] Client review and sign-off (through Evgenii).

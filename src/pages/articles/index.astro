@@ -9,10 +9,8 @@ import CtaBlock from '../../components/treatment/CtaBlock.astro';
 import ArrowRoll from '../../icons/arrow-roll.svg';
 import page from '../../data/articles-index.json';
 
-import catOrder from '../../content/blog-categories.json';
-const all = await getCollection('blogCategories');
-// Keep the CMS order (as exported), not alphabetical.
-const cats = catOrder.map((c) => all.find((x) => x.id === c.id)!).filter(Boolean);
+// Keep the CMS order (Sanity `order` = the Webflow export order), not alphabetical.
+const cats = (await getCollection('blogCategories')).sort((a, b) => a.data.order - b.data.order);
 const name = (id: string) => cats.find((c) => c.id === id)?.data.name ?? id;
 // Live order (newest first; same-day ties as Webflow sorted them), unknown articles fall back to date.
 const rank = (slug: string) => { const i = (page.order as string[]).indexOf(slug); return i < 0 ? -1 : i; };
