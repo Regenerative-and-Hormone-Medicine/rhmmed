@@ -1,7 +1,7 @@
 ---
 // Article index (T5): book-promo hero, category filter, all articles newest first.
 // Live site filters with Finsweet List Filter; here a small script does the same (an article matches any of its categories).
-import { getCollection } from 'astro:content';
+import { list } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import { imgSize } from '../../lib/img-size';
 import Button from '../../components/Button.astro';
@@ -10,11 +10,11 @@ import ArrowRoll from '../../icons/arrow-roll.svg';
 import page from '../../data/articles-index.json';
 
 // Keep the CMS order (Sanity `order` = the Webflow export order), not alphabetical.
-const cats = (await getCollection('blogCategories')).sort((a, b) => a.data.order - b.data.order);
+const cats = (await list(Astro, 'blogCategories')).sort((a, b) => a.data.order - b.data.order);
 const name = (id: string) => cats.find((c) => c.id === id)?.data.name ?? id;
 // Live order (newest first; same-day ties as Webflow sorted them), unknown articles fall back to date.
 const rank = (slug: string) => { const i = (page.order as string[]).indexOf(slug); return i < 0 ? -1 : i; };
-const articles = (await getCollection('articles')).sort((a, b) => {
+const articles = (await list(Astro, 'articles')).sort((a, b) => {
   const ra = rank(a.data.slug), rb = rank(b.data.slug);
   if (ra >= 0 && rb >= 0) return ra - rb;
   return (b.data.date ?? '').localeCompare(a.data.date ?? '');

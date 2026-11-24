@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { list } from '../lib/content';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Accordion from '../components/Accordion.astro';
@@ -56,7 +56,7 @@ const why = [
 
 // Webflow's manual sort order for the Solutions collection (not present in the CSV export).
 const SOLUTIONS_ORDER = ['long-term-hormonal-support-5', 'supporting-body-function-4', 'energy-improvement-3', 'hormone-balance-2', 'personalized-hormone-care-1'];
-const solutions = (await getCollection('solutions')).sort((a, b) => SOLUTIONS_ORDER.indexOf(a.id) - SOLUTIONS_ORDER.indexOf(b.id));
+const solutions = (await list(Astro, 'solutions')).sort((a, b) => SOLUTIONS_ORDER.indexOf(a.id) - SOLUTIONS_ORDER.indexOf(b.id));
 
 // Hand-built in Webflow (static images, not CMS-bound); kept identical.
 const insights = [

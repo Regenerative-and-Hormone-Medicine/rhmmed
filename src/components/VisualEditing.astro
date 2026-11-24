@@ -1,0 +1,30 @@
+---
+// Editorial preview only (rendered by Layout when isPreview). Inside the Studio's Presentation tool it draws the
+// click-to-edit overlays, keeps the Studio's URL bar in sync and reloads the page when content changes.
+---
+
+<script>
+  import { enableVisualEditing } from '@sanity/visual-editing';
+
+  if (window.self !== window.top) {
+    enableVisualEditing({
+      history: {
+        subscribe: (navigate) => {
+          navigate({ type: 'push', url: location.pathname + location.search });
+          return () => {};
+        },
+        update: (u) => {
+          if (u.type === 'pop') history.back();
+          else if (u.url !== location.pathname + location.search) location.assign(u.url);
+        },
+      },
+      refresh: (payload) => {
+        if (payload.source === 'manual' || payload.source === 'mutation') {
+          location.reload();
+          return new Promise(() => {});
+        }
+        return false;
+      },
+    });
+  }
+</script>

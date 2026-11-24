@@ -118,6 +118,14 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
   (`/images/cms/...`). Portable Text, Sanity image assets, the treatment/hub/page JSON in `src/data/`, and a rebuild webhook are later phases.
 - `src/content/` is the frozen Webflow CSV snapshot the import came from (`node scripts/sanity-export.mjs` →
   `cd studio && npm run import`, which **replaces** the documents by id). Edit content in Sanity, not there.
+- **Editorial preview (built 2026-11-24, not deployed yet).** `SANITY_PREVIEW=1 npm run build` builds a server-rendered copy
+  (`@astrojs/vercel`) for the Studio's Presentation tool (Studio tab "Preview", origin `https://rhmmed-preview.vercel.app` in
+  `studio/sanity.config.ts`). Pages read CMS content through `src/lib/content.ts` (static build: content collections; preview:
+  per-request Sanity fetch, drafts + stega click-to-edit when the draft cookie is set by `/api/draft-mode/enable`). Static pages
+  carry `export const prerender = true`. The Visual Editing script is swapped in by the `rhm:visual-editing` alias only in
+  preview, so the static build stays byte-identical — keep it that way (diff `dist/` before/after). Preview needs env
+  `SANITY_PREVIEW=1`, `SANITY_VIEWER_TOKEN` (Sanity viewer token), `PREVIEW_COOKIE_SECRET`. **Vercel projects go in the client's
+  (RHM's) Vercel workspace, not KHOD's** (Evgenii, 2026-11-24). Redeploy the Studio only once the preview URL is live.
 - The project started on Sanity's $0 Growth Trial (until 2026-12-24, then Free). No card on file; never add one or upgrade.
 
 ## Forms

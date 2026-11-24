@@ -37,3 +37,4 @@ dist-wip*/
 .sanity-import/
 studio/dist/
 studio/.sanity/
+.vercel/

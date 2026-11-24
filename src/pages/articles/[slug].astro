@@ -1,7 +1,8 @@
 ---
 // Article detail (T6). Body, title, summary, author from the CMS collection; image alt text, CTA block and the
 // related-articles list come from the live page (src/data/articles/*.json) because the CSV export lacks them.
-import { getCollection, getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import { isPreview, list, one } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import '../../styles/article-embeds.css';
 import Rich from '../../components/Rich.astro';
@@ -18,18 +19,22 @@ export async function getStaticPaths() {
   return articles.map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
 }
 
-const { entry } = Astro.props;
+// Static build: the entry comes from getStaticPaths. Preview build (SSR): looked up per request, drafts included.
+const entry = Astro.props.entry ?? (isPreview ? (await list(Astro, 'articles')).find((e) => e.data.slug === Astro.params.slug) : undefined);
+if (!entry) return new Response(null, { status: 404 });
 const a = entry.data;
+const edit = (path: string) => entry.edit?.(path) ?? {};
 // Bodies are Webflow HTML (incl. embeds: quiz, FAQ JSON-LD) — render verbatim, not through Markdown.
 const bodyHtml = entry.body ?? '';
-const extras = (await import(`../../data/articles/articles__${a.slug}.json`)).default;
+const extrasFiles = import.meta.glob<{ default: any }>('../../data/articles/*.json', { eager: true });
+const extras = extrasFiles[`../../data/articles/articles__${a.slug}.json`]?.default ?? { sections: [] };
 const section = (t: string) => extras.sections.find((s: any) => s.type === t);
 const hero = section('articleHero');
 const cta = section('ctaBlock');
 const related = section('insights');
-const cats = await getCollection('blogCategories');
+const cats = await list(Astro, 'blogCategories');
 const catNames = a.category.split(';').map((c) => c.trim()).filter(Boolean).map((c) => cats.find((x) => x.id === c)?.data.name ?? c);
-const author = a.author ? await getEntry('authors', a.author) : undefined;
+const author = a.author ? await one(Astro, 'authors', a.author) : undefined;
 ---
 
 <Layout title={a.metaTitle || a.title} description={a.metaDescription} ogImage={a.image} ogType="article">
@@ -77,16 +82,16 @@ const author = a.author ? await getEntry('authors', a.author) : undefined;
       <div class="flex w-full max-w-[50rem] flex-col gap-8">
         <div class="flex flex-col gap-5 rounded-sm border border-bg-dark bg-bg-light p-6">
           <p class="text-h4 capitalize">Summary</p>
-          <div class="summary-rte rich" set:html={a.summary} />
+          <div class="summary-rte rich" set:html={a.summary} {...edit('summary')} />
         </div>
-        <div class="blog-rte rich" set:html={bodyHtml} />
+        <div class="blog-rte rich" set:html={bodyHtml} {...edit('body')} />
         {author && (
           <div class="flex flex-col gap-5 rounded-sm border border-bg-dark bg-bg-light p-6">
             <div class="flex items-center gap-2">
               <img src={author.data.profile} alt="" class="aspect-square w-10 rounded-full object-cover" />
               <p class="text-h5">{author.data.name}</p>
             </div>
-            <div class="summary-rte rich" set:html={author.data.bio} />
+            <div class="summary-rte rich" set:html={author.data.bio} {...(author.edit?.('bio') ?? {})} />
           </div>
         )}
       </div>
