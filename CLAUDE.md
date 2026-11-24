@@ -70,6 +70,7 @@ Section vertical padding on the source comes from this set: 3.75, 5, 6.25, 7.5, 
 | `/contact`, `/scheduling` | own `.astro` pages | forms / booking iframe |
 | `/style-guide` | `src/pages/style-guide.astro` | tokens (not in the live sitemap) |
 | 404 | `src/pages/404.astro` | live copy; served with a real 404 |
+| `/sitemap.xml`, `/robots.txt` | `public/` | copied from live (`scripts/fetch-live-head.mjs`) |
 | redirects | `vercel.json` | 301 map generated from `docs/redirects.csv` |
 
 Layouts: `Layout.astro` (shell, header, footer, tracking) and `SectionPage.astro` (renders a JSON list of typed sections with
@@ -82,9 +83,10 @@ To change copy on a treatment/info page, edit its JSON; on an article, edit it i
 **URLs are fixed.** Backlinks point at article URLs (e.g. `/articles/perimenopause-weight-gain`, `/articles/signs-you-need-hrt`).
 Never rename a route without a planned redirect.
 
-**SEO/head:** title, description, OG and canonical as at the rebuild (553dae7). The launch-pass additions (Organization,
-copied and generated FAQPage, BlogPosting, noindex on legal pages, sitemap.xml, robots.txt, llms.txt) were reverted on
-2026-11-23 because Evgenii never asked for them; don't re-add any of them unless he asks.
+**SEO/head — live is the source of truth (Evgenii, 2026-11-24).** Head JSON-LD and the robots meta are copied verbatim from
+live per page into `src/data/live-head.json`; `public/sitemap.xml` and `public/robots.txt` are live's files. Refresh all four
+with `node scripts/fetch-live-head.mjs` (don't hand-edit, don't generate new ones). Pages not on live (404, /style-guide)
+keep `index, follow`. Never add schema live doesn't have. (The 23 Nov launch-pass additions were reverted; these are copies.)
 URLs have no trailing slash (`trailingSlash: 'never'`, `build.format: 'file'` → `dist/men.html`). Don't change that: it is
 what keeps `/men` a 200 with no redirect (with `cleanUrls` + `trailingSlash: false` in vercel.json).
 

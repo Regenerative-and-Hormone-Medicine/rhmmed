@@ -94,7 +94,7 @@ const author = a.author ? await getEntry('authors', a.author) : undefined;
   </section>
 
   {cta && <CtaBlock {...cta} />}
-  {related && related.cards.length > 0 && <Insights heading={related.heading} button={related.button} cards={related.cards} />}
+  {related && (related.cards.length > 0 || related.empty) && <Insights heading={related.heading} button={related.button} cards={related.cards} empty={related.empty} />}
 </Layout>
 
 <script>

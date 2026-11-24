@@ -439,8 +439,6 @@ Full status: `docs/launch-checklist.md`. What changed in the code:
   errors, reduced-motion handling, compare-table label.
 - /articles mobile CLS 0.885 → 0 (intrinsic sizes on card images; live is 0.918).
 
-**Known gap (pre-existing):** /articles/lupus-rash-vs-rosacea has no "Related Articles" block; live has one.
-
 **Source quirks found and kept:** `/men/hormone-therapy` has an H2 "Our Approach to Metabolic Health"; `/men` FAQ schema lists 5
 questions but the page shows 6; 10 pages have no meta description; 3 titles over 60 chars, 5 descriptions over 155.
 
@@ -452,3 +450,13 @@ researches), imported with `sanity dataset import --replace`. IDs are `<type>-<w
 `src/lib/sanity-loader.ts` feeds the same collections at build time. **Check:** full `dist/` byte-identical to d7f7808 (58 pages),
 and the live text check gives the same per-URL scores as on 2026-11-23. Gotchas: the old glob loader trimmed newlines at both ends of the
 article body (the export does the same); `getCollection()` order isn't insertion order, so category chips sort by `order`.
+
+## Live parity on head files (2026-11-24, Evgenii: live is the source of truth for now)
+
+`scripts/fetch-live-head.mjs` copies live's head JSON-LD and robots meta per page (`src/data/live-head.json`, read by
+`Layout.astro`) and live's `sitemap.xml` / `robots.txt` into `public/`. /articles/lupus-rash-vs-rosacea: live renders a
+"Related Articles" section with Webflow's empty state ("No items found.") inside a `display:none` section; the build does the same
+(`Insights` `empty` prop, section `hidden` when there are no cards). **Diff vs live, 56 URLs** (title, description, og:title,
+og:description, robots, canonical, H1, H2, all JSON-LD): 3 differences, all present since 553dae7 — the homepage H1 also contains
+the rotating words as plain text in the build; /advance-home-testing has og:title/og:description in the build but not on live.
+sitemap.xml and robots.txt identical.

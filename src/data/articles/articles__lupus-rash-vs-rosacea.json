@@ -37,6 +37,7 @@
    "type": "insights",
    "men": false,
    "heading": "Related Articles",
+   "empty": "No items found.",
    "button": {
     "text": "View articles",
     "href": "/articles"

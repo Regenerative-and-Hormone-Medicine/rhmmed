@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Tracking from '../components/Tracking.astro';
+import liveHead from '../data/live-head.json';
 
 interface Props {
   title: string;
@@ -21,6 +22,10 @@ const SITE = 'https://www.rhmmed.com';
 // File output (dist/men.html): strip .html/index so the canonical stays https://www.rhmmed.com/men, as on live.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/(^|\/)index$/, '').replace(/\/$/, '');
 const canonical = path ? SITE + path : SITE;
+// Head JSON-LD and robots meta copied verbatim from live (scripts/fetch-live-head.mjs; Evgenii, 2026-11-24: live is the
+// source of truth for now). Pages not on live (404, /style-guide) keep the default robots meta.
+const live = (liveHead as Record<string, { robots: string | null; jsonld: string[] }>)[path || '/'];
+const robots = live ? live.robots : 'index, follow';
 ---
 
 <!doctype html>
@@ -39,7 +44,8 @@ const canonical = path ? SITE + path : SITE;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="google-site-verification" content="ri7Lby20xPl667ZCCyisSddlvqHr7EZ4EB5PSlt6xlo" />
     {path !== "/404" && <link rel="canonical" href={canonical} />}
-    <meta name="robots" content="index, follow" />
+    {robots && <meta name="robots" content={robots} />}
+    {live?.jsonld.map((j) => <script type="application/ld+json" set:html={j} />)}
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-dark.png" media="(prefers-color-scheme: light)" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-light.png" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

@@ -38,10 +38,10 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
       /scheduling). Client copy; writing them is a content change that needs approval.
 - [x] Self-referencing canonicals on every page (`https://www.rhmmed.com/<path>`, no trailing slash, as live). Fixed: the
       homepage canonical was `/index` with the new file output.
-- [ ] *(reverted)* `noindex` on /privacy-policy and /terms-of-use: live has it, the rebuild doesn't. Evgenii's call.
-- [ ] *(reverted)* `sitemap.xml` / `robots.txt`: not in the build. Evgenii's call before launch.
-- [ ] *(reverted)* Structured data: live has FAQPage (19 pages) and BlogPosting (articles) in the head; the rebuild has only
-      the FAQ embeds inside article bodies (CMS content). Organization/generated FAQPage were additions. Evgenii's call.
+- [x] Robots meta copied from live per page (2026-11-24, Evgenii): `noindex, follow` on /privacy-policy and /terms-of-use.
+- [x] `sitemap.xml` and `robots.txt`: live's files, byte-identical (2026-11-24, Evgenii).
+- [x] Structured data: live's head JSON-LD copied verbatim per page (42 pages; 2026-11-24, Evgenii). Article FAQ embeds come
+      with the CMS bodies. Diff vs live: 0 JSON-LD differences on 56 URLs.
 - [~] OG/Twitter: title and description on every page; og:image on 47 pages (live has 24). Several hero images are **AVIF**,
       which LinkedIn/Facebook/Slack don't render. Convert the og:image to JPG at cutover (post-live check in section 6).
       Favicon and apple-touch icon are in place.
