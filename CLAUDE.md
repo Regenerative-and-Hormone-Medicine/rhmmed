@@ -137,7 +137,12 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
   `_type`/`_key`, wraps compare-table rows and nullable cells) and must round-trip exactly. `src/data/{treatments,hubs,pages}/`
   is now the frozen import snapshot (`node scripts/pages-to-sanity.mjs` → `cd studio && npm run import:pages` **replaces** the 29
   documents: only re-run before editors start). The Sanity build was byte-identical to the JSON build (all 456 files) on 2026-11-25.
-  Not in the builder yet: the homepage, /contact, /scheduling (hand-built .astro). Preview: page routes render per request with
+  Not in the builder yet: the homepage, /contact, /scheduling (hand-built .astro).
+  **Studio look = KHOD's Studio (Evgenii, 2026-11-25):** sidebar Pages (Men's / Women's / Hubs / Info) · Content (articles,
+  testimonials, solutions, newsletters, research) · Taxonomy · People; an `@sanity/icons` icon on every block (`ICONS` in the
+  generator) and document type; "Add section" opens a thumbnail grid (`studio/static/block-previews/<type>.jpg`, one
+  screenshot per block, made by `BASE=<preview url> node scripts/gen-block-thumbs.mjs`; re-run it when a block's look changes
+  or a block is added). Pages are listed by name (meta title before " | ") with the URL underneath. Preview: page routes render per request with
   click-to-edit; `PAGE_NO_STEGA` in `src/lib/content.ts` keeps markers out of HTML, paths, layout switches, empty strings and <head>.
 - Phase 1 keeps rich text as the Webflow HTML (bodies hold embeds: quizzes, FAQ JSON-LD) and images as site paths
   (`/images/cms/...`). Portable Text, Sanity image assets, the treatment/hub/page JSON in `src/data/`, and a rebuild webhook are later phases.

@@ -9,6 +9,7 @@
     "import:pages": "sanity dataset import ../.sanity-import/pages.ndjson --dataset production --replace"
   },
   "dependencies": {
+    "@sanity/icons": "^3.8.0",
     "@sanity/vision": "^6.24.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
+import { BulbOutlineIcon, CommentIcon, DocumentTextIcon, EnvelopeIcon, SearchIcon, TagIcon, UserIcon } from '@sanity/icons';
 import { pageSchemaTypes } from './page';
 import { button, siteImage } from './sections';
 
@@ -26,6 +27,7 @@ export const schemaTypes = [
     name: 'article',
     title: 'Article',
     type: 'document',
+    icon: DocumentTextIcon,
     fields: [
       defineField({ name: 'title', type: 'string', validation: (r) => r.required() }),
       defineField({
@@ -51,30 +53,30 @@ export const schemaTypes = [
     preview: { select: { title: 'title', subtitle: 'slug.current' } },
   }),
   defineType({
-    name: 'author', title: 'Author', type: 'document',
+    name: 'author', title: 'Author', type: 'document', icon: UserIcon,
     fields: [...common, imagePath('profile', 'Profile image'), html('bio', 'Bio'), defineField({ name: 'link', type: 'string' })],
   }),
-  defineType({ name: 'blogCategory', title: 'Blog category', type: 'document', fields: common }),
+  defineType({ name: 'blogCategory', title: 'Blog category', type: 'document', icon: TagIcon, fields: common }),
   defineType({
-    name: 'testimonial', title: 'Testimonial', type: 'document',
+    name: 'testimonial', title: 'Testimonial', type: 'document', icon: CommentIcon,
     fields: [
       ...common, html('testimonial', 'Testimonial'), defineField({ name: 'age', type: 'string' }),
       defineField({ name: 'categories', type: 'array', of: [defineArrayMember({ type: 'string' })], options: { layout: 'tags' } }),
     ],
   }),
   defineType({
-    name: 'solution', title: 'Solution', type: 'document',
+    name: 'solution', title: 'Solution', type: 'document', icon: BulbOutlineIcon,
     fields: [...common, imagePath('image', 'Image'), html('paragraph', 'Paragraph')],
   }),
   defineType({
-    name: 'newsletter', title: 'Newsletter', type: 'document',
+    name: 'newsletter', title: 'Newsletter', type: 'document', icon: EnvelopeIcon,
     fields: [
       ...common, imagePath('thumb', 'Thumbnail'), html('content', 'Content'),
       defineField({ name: 'description', type: 'text', rows: 3 }), defineField({ name: 'releaseDate', type: 'date' }),
     ],
   }),
   defineType({
-    name: 'research', title: 'Research', type: 'document',
+    name: 'research', title: 'Research', type: 'document', icon: SearchIcon,
     fields: [
       ...common, html('body', 'Body'), defineField({ name: 'summary', type: 'text', rows: 3 }),
       imagePath('mainImage', 'Main image'), imagePath('thumbnail', 'Thumbnail'),

@@ -2,6 +2,7 @@
 // The page builder: one block per section component in src/components (named in each block's description).
 // Text marked HTML is rendered as-is (Webflow markup, phase 1); images are site paths (/images/site/...).
 import { defineArrayMember, defineField, defineType } from 'sanity';
+import { BarChartIcon, BlockquoteIcon, BookIcon, ClipboardIcon, CommentIcon, ComponentIcon, DocumentTextIcon, DocumentsIcon, EarthGlobeIcon, HeartIcon, HelpCircleIcon, ImagesIcon, LaunchIcon, MobileDeviceIcon, OlistIcon, PinIcon, PresentationIcon, RocketIcon, SplitVerticalIcon, StarIcon, TextIcon, ThListIcon, ThumbsUpIcon, TrendUpwardIcon, UsersIcon, WarningOutlineIcon } from '@sanity/icons';
 
 const strip = (s?: string) => (s ?? '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').trim();
 const itemPreview = {
@@ -31,7 +32,7 @@ export const button = defineType({
 
 export const sectionTypes = [
   defineType({
-    name: "hero", title: "Treatment hero", type: 'object', description: "src/components/treatment/Hero.astro",
+    name: "hero", title: "Treatment hero", type: 'object', icon: StarIcon, description: "src/components/treatment/Hero.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "men", title: "Men's theme", fieldset: 'layout', type: 'boolean' }),
@@ -52,7 +53,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Treatment hero", subtitle: "Treatment hero" }) },
   }),
   defineType({
-    name: "symptom", title: "Symptoms intro", type: 'object', description: "src/components/treatment/Symptom.astro",
+    name: "symptom", title: "Symptoms intro", type: 'object', icon: WarningOutlineIcon, description: "src/components/treatment/Symptom.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "men", title: "Men's theme", fieldset: 'layout', type: 'boolean' }),
@@ -68,7 +69,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Symptoms intro", subtitle: "Symptoms intro" }) },
   }),
   defineType({
-    name: "statement", title: "Statement", type: 'object', description: "src/components/treatment/Statement.astro",
+    name: "statement", title: "Statement", type: 'object', icon: BlockquoteIcon, description: "src/components/treatment/Statement.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "slate", fieldset: 'layout', type: 'boolean' }),
@@ -82,7 +83,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Statement", subtitle: "Statement" }) },
   }),
   defineType({
-    name: "signs", title: "Signs / causes cards", type: 'object', description: "src/components/treatment/Signs.astro",
+    name: "signs", title: "Signs / causes cards", type: 'object', icon: ThListIcon, description: "src/components/treatment/Signs.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "grey", fieldset: 'layout', type: 'boolean' }),
@@ -105,7 +106,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Signs / causes cards", subtitle: "Signs / causes cards" }) },
   }),
   defineType({
-    name: "standard", title: "Cards section", type: 'object', description: "src/components/treatment/Standard.astro",
+    name: "standard", title: "Cards section", type: 'object', icon: ComponentIcon, description: "src/components/treatment/Standard.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "big", fieldset: 'layout', type: 'boolean' }),
@@ -128,7 +129,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Cards section", subtitle: "Cards section" }) },
   }),
   defineType({
-    name: "compare", title: "Comparison table", type: 'object', description: "src/components/treatment/Compare.astro",
+    name: "compare", title: "Comparison table", type: 'object', icon: SplitVerticalIcon, description: "src/components/treatment/Compare.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "big", fieldset: 'layout', type: 'boolean' }),
@@ -145,7 +146,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Comparison table", subtitle: "Comparison table" }) },
   }),
   defineType({
-    name: "missions", title: "Mission text + images", type: 'object', description: "src/components/treatment/Missions.astro",
+    name: "missions", title: "Mission text + images", type: 'object', icon: ImagesIcon, description: "src/components/treatment/Missions.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "compact", fieldset: 'layout', type: 'boolean' }),
@@ -160,7 +161,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Mission text + images", subtitle: "Mission text + images" }) },
   }),
   defineType({
-    name: "voices", title: "Patient quotes", type: 'object', description: "src/components/treatment/Voices.astro",
+    name: "voices", title: "Patient quotes", type: 'object', icon: CommentIcon, description: "src/components/treatment/Voices.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "heading", type: 'string' }),
@@ -175,7 +176,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Patient quotes", subtitle: "Patient quotes" }) },
   }),
   defineType({
-    name: "process", title: "Process steps", type: 'object', description: "src/components/treatment/Process.astro",
+    name: "process", title: "Process steps", type: 'object', icon: OlistIcon, description: "src/components/treatment/Process.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "body", type: 'string' }),
@@ -190,7 +191,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Process steps", subtitle: "Process steps" }) },
   }),
   defineType({
-    name: "why", title: "Why RHM (stats)", type: 'object', description: "src/components/treatment/Why.astro",
+    name: "why", title: "Why RHM (stats)", type: 'object', icon: BarChartIcon, description: "src/components/treatment/Why.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "spacers", fieldset: 'layout', type: 'array', of: [{ type: 'string' }], options: { list: ["xl","base","none","md"] } }),
@@ -206,7 +207,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Why RHM (stats)", subtitle: "Why RHM (stats)" }) },
   }),
   defineType({
-    name: "reviews", title: "Reviews widget", type: 'object', description: "src/components/sections/Reviews.astro",
+    name: "reviews", title: "Reviews widget", type: 'object', icon: ThumbsUpIcon, description: "src/components/sections/Reviews.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "body", type: 'text', rows: 3 }),
@@ -214,7 +215,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Reviews widget", subtitle: "Reviews widget" }) },
   }),
   defineType({
-    name: "ctaBlock", title: "CTA block", type: 'object', description: "src/components/treatment/CtaBlock.astro",
+    name: "ctaBlock", title: "CTA block", type: 'object', icon: LaunchIcon, description: "src/components/treatment/CtaBlock.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "slate", fieldset: 'layout', type: 'boolean' }),
@@ -226,7 +227,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "CTA block", subtitle: "CTA block" }) },
   }),
   defineType({
-    name: "faq", title: "FAQ", type: 'object', description: "src/components/treatment/Faq.astro",
+    name: "faq", title: "FAQ", type: 'object', icon: HelpCircleIcon, description: "src/components/treatment/Faq.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "men", title: "Men's theme", fieldset: 'layout', type: 'boolean' }),
@@ -239,7 +240,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "FAQ", subtitle: "FAQ" }) },
   }),
   defineType({
-    name: "insights", title: "Related articles", type: 'object', description: "src/components/sections/Insights.astro",
+    name: "insights", title: "Related articles", type: 'object', icon: DocumentsIcon, description: "src/components/sections/Insights.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "men", title: "Men's theme", fieldset: 'layout', type: 'boolean' }),
@@ -257,7 +258,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Related articles", subtitle: "Related articles" }) },
   }),
   defineType({
-    name: "hubHero", title: "Hub / page hero (image)", type: 'object', description: "src/components/treatment/HubHero.astro",
+    name: "hubHero", title: "Hub / page hero (image)", type: 'object', icon: StarIcon, description: "src/components/treatment/HubHero.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "label", type: 'string' }),
@@ -276,7 +277,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Hub / page hero (image)", subtitle: "Hub / page hero (image)" }) },
   }),
   defineType({
-    name: "hormones", title: "Hormones chart", type: 'object', description: "src/components/treatment/Hormones.astro",
+    name: "hormones", title: "Hormones chart", type: 'object', icon: TrendUpwardIcon, description: "src/components/treatment/Hormones.astro",
     fields: [
       defineField({ name: "heading", type: 'text', rows: 2, description: 'HTML, rendered as-is.' }),
       defineField({ name: "body", type: 'text', rows: 6, description: 'HTML, rendered as-is.' }),
@@ -289,7 +290,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Hormones chart", subtitle: "Hormones chart" }) },
   }),
   defineType({
-    name: "whyWork", title: "Why people work with us", type: 'object', description: "src/components/sections/WhyWork.astro",
+    name: "whyWork", title: "Why people work with us", type: 'object', icon: HeartIcon, description: "src/components/sections/WhyWork.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "body", type: 'text', rows: 3 }),
@@ -302,7 +303,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Why people work with us", subtitle: "Why people work with us" }) },
   }),
   defineType({
-    name: "finalCta", title: "Final CTA", type: 'object', description: "src/components/sections/FinalCta.astro",
+    name: "finalCta", title: "Final CTA", type: 'object', icon: RocketIcon, description: "src/components/sections/FinalCta.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "heading", type: 'string' }),
@@ -313,7 +314,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Final CTA", subtitle: "Final CTA" }) },
   }),
   defineType({
-    name: "carousel", title: "Carousel", type: 'object', description: "src/components/sections/Carousel.astro",
+    name: "carousel", title: "Carousel", type: 'object', icon: PresentationIcon, description: "src/components/sections/Carousel.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "body", type: 'text', rows: 3 }),
@@ -331,7 +332,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Carousel", subtitle: "Carousel" }) },
   }),
   defineType({
-    name: "reviewsBare", title: "Reviews widget (bare)", type: 'object', description: "src/components/sections/Reviews.astro",
+    name: "reviewsBare", title: "Reviews widget (bare)", type: 'object', icon: ThumbsUpIcon, description: "src/components/sections/Reviews.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "pad", fieldset: 'layout', type: 'string', options: { list: ["is-paddings"] } }),
@@ -339,7 +340,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Reviews widget (bare)", subtitle: "Reviews widget (bare)" }) },
   }),
   defineType({
-    name: "bookHero", title: "Book sign-up hero", type: 'object', description: "src/components/sections/BookHero.astro",
+    name: "bookHero", title: "Book sign-up hero", type: 'object', icon: BookIcon, description: "src/components/sections/BookHero.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "body", type: 'text', rows: 3 }),
@@ -361,7 +362,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Book sign-up hero", subtitle: "Book sign-up hero" }) },
   }),
   defineType({
-    name: "telehealth", title: "Image + text CTA", type: 'object', description: "src/components/sections/TelehealthCta.astro",
+    name: "telehealth", title: "Image + text CTA", type: 'object', icon: MobileDeviceIcon, description: "src/components/sections/TelehealthCta.astro",
     fields: [
       defineField({ name: "label", type: 'string' }),
       defineField({ name: "heading", type: 'string' }),
@@ -372,7 +373,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Image + text CTA", subtitle: "Image + text CTA" }) },
   }),
   defineType({
-    name: "bookSteps", title: "Book steps", type: 'object', description: "src/components/sections/BookSteps.astro",
+    name: "bookSteps", title: "Book steps", type: 'object', icon: OlistIcon, description: "src/components/sections/BookSteps.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "body", type: 'string' }),
@@ -385,7 +386,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Book steps", subtitle: "Book steps" }) },
   }),
   defineType({
-    name: "pageHero", title: "Page hero (text)", type: 'object', description: "src/components/sections/PageHero.astro",
+    name: "pageHero", title: "Page hero (text)", type: 'object', icon: StarIcon, description: "src/components/sections/PageHero.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "big", fieldset: 'layout', type: 'boolean' }),
@@ -399,7 +400,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Page hero (text)", subtitle: "Page hero (text)" }) },
   }),
   defineType({
-    name: "faqPage", title: "FAQ page list", type: 'object', description: "src/components/sections/FaqPage.astro",
+    name: "faqPage", title: "FAQ page list", type: 'object', icon: HelpCircleIcon, description: "src/components/sections/FaqPage.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "items", type: 'array', of: [defineArrayMember({ type: 'object', name: "item", fields: [
@@ -414,7 +415,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "FAQ page list", subtitle: "FAQ page list" }) },
   }),
   defineType({
-    name: "locations", title: "Locations", type: 'object', description: "src/components/sections/Locations.astro",
+    name: "locations", title: "Locations", type: 'object', icon: PinIcon, description: "src/components/sections/Locations.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "cards", type: 'array', of: [defineArrayMember({ type: 'object', name: "card", fields: [
@@ -431,7 +432,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Locations", subtitle: "Locations" }) },
   }),
   defineType({
-    name: "preparation", title: "Preparation cards", type: 'object', description: "src/components/sections/Preparation.astro",
+    name: "preparation", title: "Preparation cards", type: 'object', icon: ClipboardIcon, description: "src/components/sections/Preparation.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "body", type: 'text', rows: 3 }),
@@ -445,21 +446,21 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Preparation cards", subtitle: "Preparation cards" }) },
   }),
   defineType({
-    name: "legalHero", title: "Legal page title", type: 'object', description: "src/components/sections/Legal.astro",
+    name: "legalHero", title: "Legal page title", type: 'object', icon: DocumentTextIcon, description: "src/components/sections/Legal.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
     ],
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Legal page title", subtitle: "Legal page title" }) },
   }),
   defineType({
-    name: "legal", title: "Legal text", type: 'object', description: "src/components/sections/Legal.astro",
+    name: "legal", title: "Legal text", type: 'object', icon: TextIcon, description: "src/components/sections/Legal.astro",
     fields: [
       defineField({ name: "html", title: "HTML", type: 'text', rows: 6, description: 'HTML, rendered as-is.' }),
     ],
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Legal text", subtitle: "Legal text" }) },
   }),
   defineType({
-    name: "access", title: "Access (telehealth)", type: 'object', description: "src/components/sections/Access.astro",
+    name: "access", title: "Access (telehealth)", type: 'object', icon: EarthGlobeIcon, description: "src/components/sections/Access.astro",
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "body", type: 'text', rows: 3 }),
@@ -470,7 +471,7 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Access (telehealth)", subtitle: "Access (telehealth)" }) },
   }),
   defineType({
-    name: "team", title: "Team", type: 'object', description: "src/components/sections/Team.astro",
+    name: "team", title: "Team", type: 'object', icon: UsersIcon, description: "src/components/sections/Team.astro",
     fieldsets: layout,
     fields: [
       defineField({ name: "heading", type: 'string' }),

@@ -521,3 +521,12 @@ Behaviour that deliberately differs from live:
   `dist/` from Sanity is byte-identical to the JSON build (456/456 files). Presentation: `page` locations + main-document routes.
 - Like phase 1: rich text stays HTML strings and images are site paths. Next: Portable Text + Sanity image assets, the homepage
   as builder blocks, a publish webhook → Vercel deploy hook.
+
+## Studio made to look like KHOD's (2026-11-25, Evgenii: "make sure it looks a bit like what we created for khod")
+
+- Sidebar grouped like KHOD's: Pages → Men's treatments / Women's treatments / Hubs / Info pages; Content (articles,
+  testimonials, solutions, newsletters, research); Taxonomy (blog categories); People (authors). Icons on every item.
+- Every one of the 31 blocks has an icon; "Add section" opens a grid of thumbnails (screenshots of each block on the rebuilt
+  site, `scripts/gen-block-thumbs.mjs` → `studio/static/block-previews/`), with a list view and search.
+- Pages are listed by their name (meta title up to " | ") with the URL as subtitle. Studio labels only: no site output changed.
+- Not like KHOD: KHOD's Studio is embedded in its site at /studio; RHM's is hosted at https://rhmmed.sanity.studio.
