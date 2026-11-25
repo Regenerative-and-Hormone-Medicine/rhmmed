@@ -5,7 +5,8 @@
 // Sanity needs: `_type` + `_key` on objects inside arrays, no arrays directly inside arrays, no nulls inside arrays.
 // So: a section's `type` becomes its `_type`; array objects get `_type` = the member name below; a row of the compare table
 // (string[]) becomes { _type: 'row', cells }; a nullable string in an array becomes { _type: 'cell', value }.
-// Nulls in objects are kept as nulls (Sanity stores them; a component default must not kick in where the source had null).
+// Nulls in object fields are dropped (Studio flags a stored null as "Invalid property value"). Dropping them was checked
+// byte-identical on all built files (2026-11-25): components treat a missing field like null. Nulls inside arrays stay (cells).
 
 /** Array field name → the Sanity member type its objects get. `button` and `siteImage` are shared named types. */
 export const MEMBER = {
@@ -33,7 +34,7 @@ export function encodeValue(v, field) {
 
 function encodeObject(o) {
   const out = {};
-  for (const [k, v] of Object.entries(o)) out[k] = encodeValue(v, k);
+  for (const [k, v] of Object.entries(o)) if (v !== null) out[k] = encodeValue(v, k);
   return out;
 }
 
@@ -56,7 +57,7 @@ export function decodeValue(v) {
     if (v._type === 'row') return (v.cells ?? []).map(decodeValue);
     if (v._type === 'cell') return v.value ?? null;
     const out = {};
-    for (const [k, x] of Object.entries(v)) if (!k.startsWith('_')) out[k] = decodeValue(x);
+    for (const [k, x] of Object.entries(v)) if (!k.startsWith('_') && x !== null) out[k] = decodeValue(x);
     return out;
   }
   return v;
@@ -66,9 +67,20 @@ const DOC_KEYS = new Set(['order']);
 export function decodePage(doc) {
   const out = {};
   for (const [k, v] of Object.entries(doc)) {
-    if (k.startsWith('_') || DOC_KEYS.has(k) || k === 'sections') continue;
+    if (k.startsWith('_') || DOC_KEYS.has(k) || k === 'sections' || v === null) continue;
     out[k] = decodeValue(v);
   }
   out.sections = (doc.sections ?? []).map((s) => ({ type: s._type, ...decodeValue(s) }));
   return out;
+}
+
+/** The page JSON as it reads back from Sanity: object fields that are null removed (nulls inside arrays kept). */
+export function dropNulls(v) {
+  if (Array.isArray(v)) return v.map(dropNulls);
+  if (v && typeof v === 'object') {
+    const out = {};
+    for (const [k, x] of Object.entries(v)) if (x !== null) out[k] = dropNulls(x);
+    return out;
+  }
+  return v;
 }

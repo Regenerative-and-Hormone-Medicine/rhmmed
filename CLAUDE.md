@@ -97,8 +97,11 @@ GA4/GSC/GTM access. Client asks: Notion "RHM website: moving off Webflow" (invit
 
 **Deploy (2026-11-24):** RHM's Vercel team `rhm16` (Hobby) builds https://github.com/Regenerative-and-Hormone-Medicine/rhmmed
 (public). Project `rhmmed` → https://rhmmed.vercel.app (static, no custom domain yet). Project `rhmmed-preview` →
-https://rhmmed-preview.vercel.app (env `SANITY_PREVIEW=1`, `PREVIEW_COOKIE_SECRET`; `SANITY_VIEWER_TOKEN` still to add).
-Both build on push to main. The live site is still Webflow. Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
+https://rhmmed-preview.vercel.app (env `SANITY_PREVIEW=1`, `PREVIEW_COOKIE_SECRET`, `SANITY_VIEWER_TOKEN`, all Production).
+Both build on push to main (GitHub main = 255cd29 since 2026-11-25). **Publishing in Sanity rebuilds `rhmmed`**: Sanity webhook
+"Vercel rebuild (rhmmed)" (types page, article, author, blogCategory, solution, testimonial; create/update/delete, no drafts) →
+Vercel deploy hook "Sanity publish" (rhmmed, branch main). The preview project needs no rebuild (it reads Sanity per request).
+A manual Redeploy in RHM's Vercel asks for a 6-digit code emailed to support@rhmmed.net; pushes and the hook don't. The live site is still Webflow. Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
 **Sanity** (replacing the CSV-built content collections). Redirects live in `vercel.json`, generated from `docs/redirects.csv`.
 Staging tests so far ran on a Cloudflare Pages emulator; re-run them on a Vercel preview deployment. Launch status: `docs/launch-checklist.md` (with `docs/url-inventory.csv`, `docs/redirects.csv`,
 `docs/ui-audit.md`). Going live, DNS and pushing need Evgenii's OK, asked once with the checklist.
@@ -134,7 +137,8 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
   `node scripts/gen-page-schemas.mjs` from the page JSON (style switches sit in a collapsed "Layout" fieldset). Add a new block =
   build the component, add its `case` in `SectionPage.astro`, add it to the generator's TITLES, regenerate. The build reads pages
   via `sanityPagesLoader` (collection `pages`, keyed by path); `src/lib/page-codec.mjs` converts Sanity ⇄ page JSON (adds/strips
-  `_type`/`_key`, wraps compare-table rows and nullable cells) and must round-trip exactly. `src/data/{treatments,hubs,pages}/`
+  `_type`/`_key`, wraps compare-table rows and nullable cells, drops null object fields because Studio flags a stored null as
+  "Invalid property value") and must round-trip exactly (against the JSON with null fields dropped: checked byte-identical). `src/data/{treatments,hubs,pages}/`
   is now the frozen import snapshot (`node scripts/pages-to-sanity.mjs` → `cd studio && npm run import:pages` **replaces** the 29
   documents: only re-run before editors start). The Sanity build was byte-identical to the JSON build (all 456 files) on 2026-11-25.
   Not in the builder yet: the homepage, /contact, /scheduling (hand-built .astro).
@@ -145,10 +149,10 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
   or a block is added). Pages are listed by name (meta title before " | ") with the URL underneath. Preview: page routes render per request with
   click-to-edit; `PAGE_NO_STEGA` in `src/lib/content.ts` keeps markers out of HTML, paths, layout switches, empty strings and <head>.
 - Phase 1 keeps rich text as the Webflow HTML (bodies hold embeds: quizzes, FAQ JSON-LD) and images as site paths
-  (`/images/cms/...`). Portable Text, Sanity image assets, the treatment/hub/page JSON in `src/data/`, and a rebuild webhook are later phases.
+  (`/images/cms/...`). Portable Text and Sanity image assets are later phases.
 - `src/content/` is the frozen Webflow CSV snapshot the import came from (`node scripts/sanity-export.mjs` →
   `cd studio && npm run import`, which **replaces** the documents by id). Edit content in Sanity, not there.
-- **Editorial preview (built 2026-11-24, not deployed yet).** `SANITY_PREVIEW=1 npm run build` builds a server-rendered copy
+- **Editorial preview (live since 2026-11-25; Studio → Preview).** `SANITY_PREVIEW=1 npm run build` builds a server-rendered copy
   (`@astrojs/vercel`) for the Studio's Presentation tool (Studio tab "Preview", origin `https://rhmmed-preview.vercel.app` in
   `studio/sanity.config.ts`). Pages read CMS content through `src/lib/content.ts` (static build: content collections; preview:
   per-request Sanity fetch, drafts + stega click-to-edit when the draft cookie is set by `/api/draft-mode/enable`). Static pages

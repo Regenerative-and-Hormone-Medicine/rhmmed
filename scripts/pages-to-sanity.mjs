@@ -4,14 +4,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
-import { encodePage, decodePage } from '../src/lib/page-codec.mjs';
+import { encodePage, decodePage, dropNulls } from '../src/lib/page-codec.mjs';
 
 const dirs = ['src/data/treatments', 'src/data/hubs', 'src/data/pages'];
 const files = dirs.flatMap((d) => fs.readdirSync(d).filter((f) => f.endsWith('.json')).sort().map((f) => path.join(d, f)));
 const docs = files.map((f, i) => {
   const page = JSON.parse(fs.readFileSync(f, 'utf8'));
   const doc = encodePage(page, i);
-  if (!isDeepStrictEqual(decodePage(JSON.parse(JSON.stringify(doc))), page)) throw new Error(`${f}: does not round-trip`);
+  if (!isDeepStrictEqual(decodePage(JSON.parse(JSON.stringify(doc))), dropNulls(page))) throw new Error(`${f}: does not round-trip`);
   return doc;
 });
 fs.mkdirSync('.sanity-import', { recursive: true });
