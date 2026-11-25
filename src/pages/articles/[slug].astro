@@ -37,6 +37,10 @@ const related = section('insights');
 const cats = await list(Astro, 'blogCategories');
 const catNames = a.category.split(';').map((c) => c.trim()).filter(Boolean).map((c) => cats.find((x) => x.id === c)?.data.name ?? c);
 const author = a.author ? await one(Astro, 'authors', a.author) : undefined;
+// Share links work without JS too (canonical URL); the script swaps in the current URL and opens a popup.
+const shareUrl = encodeURIComponent(new URL(`/articles/${a.slug}`, Astro.site).href);
+const shareX = `https://twitter.com/intent/tweet?url=${shareUrl}&text=${encodeURIComponent(a.metaTitle || a.title)}`;
+const shareFb = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
 ---
 
 <Layout title={a.metaTitle || a.title} description={a.metaDescription} ogImage={a.image} ogType="article">
@@ -72,9 +76,9 @@ const author = a.author ? await one(Astro, 'authors', a.author) : undefined;
         <div class="sticky top-20 flex flex-col gap-8 max-lg:w-full">
           <p class="text-h5">Share This Articles</p>
           <div class="flex items-center gap-6">
-            <a data-share="x" href="#" class="flex size-6 items-center justify-center transition-colors duration-200 hover:text-blue" aria-label="Share on X"><ShareX width="100%" /></a>
-            <a data-share="facebook" href="#" class="flex size-6 items-center justify-center transition-colors duration-200 hover:text-blue" aria-label="Share on Facebook"><ShareFacebook width="100%" /></a>
-            <a data-share="copy" href="#" class="flex size-6 items-center justify-center transition-colors duration-200 hover:text-blue" aria-label="Copy link"><ShareLink width="100%" /></a>
+            <a data-share="x" href={shareX} target="_blank" rel="noopener" class="flex size-6 items-center justify-center transition-colors duration-200 hover:text-blue" aria-label="Share on X"><ShareX width="100%" /></a>
+            <a data-share="facebook" href={shareFb} target="_blank" rel="noopener" class="flex size-6 items-center justify-center transition-colors duration-200 hover:text-blue" aria-label="Share on Facebook"><ShareFacebook width="100%" /></a>
+            <button type="button" data-share="copy" class="flex size-6 cursor-pointer items-center justify-center transition-colors duration-200 hover:text-blue" aria-label="Copy link"><ShareLink width="100%" /></button>
           </div>
           <div class="h-px w-full bg-bg-dark"></div>
           <p class="text-h5">In this article</p>
@@ -129,17 +133,34 @@ const author = a.author ? await one(Astro, 'authors', a.author) : undefined;
     heads.forEach((h) => io.observe(h));
   }
 
-  // Share links (live site: Finsweet social share + copy-to-clipboard).
+  // Share links (live site: Finsweet social share + copy-to-clipboard). X/Facebook are real links (popup when JS runs);
+  // copy is a button, with a fallback where navigator.clipboard is missing (http, older browsers).
   const url = location.href.split('#')[0];
   const title = document.title;
-  document.querySelectorAll<HTMLAnchorElement>('[data-share]').forEach((el) => {
+  const copy = (text: string) => {
+    if (navigator.clipboard?.writeText) return navigator.clipboard.writeText(text).catch(() => legacyCopy(text));
+    legacyCopy(text);
+  };
+  const legacyCopy = (text: string) => {
+    const ta = Object.assign(document.createElement('textarea'), { value: text });
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    const active = document.activeElement as HTMLElement | null;
+    document.body.append(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch {}
+    ta.remove();
+    active?.focus();
+  };
+  document.querySelectorAll<HTMLElement>('[data-share]').forEach((el) => {
+    const kind = el.dataset.share;
+    if (kind === 'copy') return el.addEventListener('click', () => void copy(url));
+    const share = kind === 'x'
+      ? `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`
+      : `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+    (el as HTMLAnchorElement).href = share;
     el.addEventListener('click', (e) => {
       e.preventDefault();
-      const kind = el.dataset.share;
-      if (kind === 'copy') return void navigator.clipboard?.writeText(url);
-      const share = kind === 'x'
-        ? `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`
-        : `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
       window.open(share, '_blank', 'noopener,width=600,height=500');
     });
   });

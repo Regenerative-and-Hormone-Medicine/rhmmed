@@ -1,6 +1,7 @@
 // Astro content loader for the RHM Sanity project. It returns each document in the same shape the old
 // file/glob loaders produced from src/content/, so pages and components didn't change.
 import type { Loader } from 'astro/loaders';
+import { decodePage } from './page-codec.mjs';
 
 export const SANITY = { projectId: '9qg5x7wu', dataset: 'production', apiVersion: '2025-02-19' };
 
@@ -33,6 +34,21 @@ export function toEntry(type: string, d: any, withBody = false) {
   if (type === 'newsletter') data.releaseDate ??= null;
   if (!withBody && body !== undefined) data.body = body; // research has `body` as an ordinary field
   return { id: rawId(type, _id), data, body: withBody ? body ?? '' : undefined };
+}
+
+// Page-builder pages (Sanity `page` documents) → the page JSON SectionPage renders, keyed by path ("/men/pcos").
+export const PAGES_QUERY = '*[_type == "page"] | order(order asc)';
+export function sanityPagesLoader(): Loader {
+  return {
+    name: 'sanity-page',
+    load: async ({ store, generateDigest, logger }) => {
+      const docs = await query<any[]>(PAGES_QUERY, {});
+      if (!docs.length) throw new Error('Sanity returned no "page" documents; refusing to build without the pages.');
+      store.clear();
+      for (const d of docs) store.set({ id: d.path, data: decodePage(d), digest: generateDigest(d) });
+      logger.info(`${docs.length} page documents from Sanity`);
+    },
+  };
 }
 
 export function sanityLoader(type: string, opts: { withBody?: boolean } = {}): Loader {

@@ -1,17 +1,20 @@
 ---
-export const prerender = true;
-// /men/* and /women/* treatment pages, one per JSON file in src/data/treatments.
+// /men/* and /women/* treatment pages. Content: Sanity `page` documents.
+import { getCollection } from 'astro:content';
+import { page as loadPage } from '../../lib/content';
 import SectionPage from '../../layouts/SectionPage.astro';
 
-export function getStaticPaths() {
-  const files = import.meta.glob<{ default: any }>('../../data/treatments/*.json', { eager: true });
-  return Object.values(files).map(({ default: page }) => {
-    const [, group, slug] = page.path.split('/');
-    return { params: { group, slug }, props: { page } };
+export async function getStaticPaths() {
+  const pages = (await getCollection('pages')).filter((e) => e.id.split('/').length === 3);
+  return pages.map((e) => {
+    const [, group, slug] = e.id.split('/');
+    return { params: { group, slug }, props: { page: e.data } };
   });
 }
 
-const { page } = Astro.props;
+// Static build: from getStaticPaths. Preview build (SSR): fetched per request, drafts included.
+const page = Astro.props.page ?? (await loadPage(Astro, `/${Astro.params.group}/${Astro.params.slug}`))?.data;
+if (!page) return new Response(null, { status: 404 });
 ---
 
 <SectionPage page={page} />

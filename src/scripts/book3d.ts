@@ -178,7 +178,15 @@ function mount(el) {
       shadow.material.opacity = (.9 - (float + .06) * 2.5) * Math.min(1, ip * 1.6);
       shadow.scale.setScalar((1 - float * .8) * Math.min(1, pop));
       renderer.render(scene, camera);
-      if (first) { first = false; el.classList.add('is-3d'); if (fallback) fallback.setAttribute('aria-hidden', 'true'); }
+      if (first) {
+        first = false; el.classList.add('is-3d');
+        // The canvas takes over from the fallback image: hand its alt text over so the book keeps an accessible name.
+        if (fallback) {
+          fallback.setAttribute('aria-hidden', 'true');
+          const alt = fallback.getAttribute('alt');
+          if (alt) { canvas.setAttribute('role', 'img'); canvas.setAttribute('aria-label', alt); }
+        }
+      }
     });
   };
   img.onerror = reveal;

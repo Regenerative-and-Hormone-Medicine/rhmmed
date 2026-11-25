@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "sanity dev",
     "build": "sanity build",
-    "import": "sanity dataset import ../.sanity-import/rhm.ndjson production --replace"
+    "import": "sanity dataset import ../.sanity-import/rhm.ndjson production --replace",
+    "import:pages": "sanity dataset import ../.sanity-import/pages.ndjson --dataset production --replace"
   },
   "dependencies": {
     "@sanity/vision": "^6.24.0",

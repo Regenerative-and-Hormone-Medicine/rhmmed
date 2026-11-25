@@ -45,9 +45,9 @@ const sizes = Object.fromEntries(await Promise.all(articles.map(async (a) => [a.
   <section class="py-[7.5rem] max-sm:py-16">
     <div class="container-site flex flex-col gap-[3.125rem] max-sm:gap-8">
       <div class="filters mb-[15px] flex items-start gap-4 max-sm:flex-wrap" role="radiogroup" aria-label="Filter articles by category">
-        <button type="button" class="chip is-on -mt-[5px]" data-cat="" role="radio" aria-checked="true">All</button>
+        <button type="button" class="chip is-on -mt-[5px]" data-cat="" role="radio" aria-checked="true" tabindex="0">All</button>
         <div class="flex flex-wrap items-center max-sm:gap-4">
-          {cats.map((c) => <button type="button" class="chip" data-cat={c.id} role="radio" aria-checked="false">{c.data.name}</button>)}
+          {cats.map((c) => <button type="button" class="chip" data-cat={c.id} role="radio" aria-checked="false" tabindex="-1">{c.data.name}</button>)}
         </div>
       </div>
       <div class="grid grid-cols-[1fr_1fr] gap-6 max-lg:grid-cols-[1fr]">
@@ -91,9 +91,27 @@ const sizes = Object.fromEntries(await Promise.all(articles.map(async (a) => [a.
 <script>
   const chips = [...document.querySelectorAll<HTMLButtonElement>('.chip')];
   const cards = [...document.querySelectorAll<HTMLElement>('.card[data-cats]')];
-  chips.forEach((chip) => chip.addEventListener('click', () => {
+  // ARIA radio group: one tab stop (roving tabindex), arrow keys / Home / End move the selection.
+  const select = (chip: HTMLButtonElement) => {
     const cat = chip.dataset.cat ?? '';
-    chips.forEach((c) => { c.classList.toggle('is-on', c === chip); c.setAttribute('aria-checked', String(c === chip)); });
+    chips.forEach((c) => {
+      const on = c === chip;
+      c.classList.toggle('is-on', on);
+      c.setAttribute('aria-checked', String(on));
+      c.tabIndex = on ? 0 : -1;
+    });
     cards.forEach((card) => { card.hidden = !!cat && !card.dataset.cats!.split(' ').includes(cat); });
-  }));
+  };
+  chips.forEach((chip, i) => {
+    chip.addEventListener('click', () => select(chip));
+    chip.addEventListener('keydown', (e) => {
+      const n = chips.length;
+      const to = { ArrowRight: i + 1, ArrowDown: i + 1, ArrowLeft: i - 1, ArrowUp: i - 1, Home: 0, End: n - 1 }[e.key];
+      if (to === undefined) return;
+      e.preventDefault();
+      const next = chips[(to + n) % n];
+      select(next);
+      next.focus();
+    });
+  });
 </script>

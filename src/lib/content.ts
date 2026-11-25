@@ -55,6 +55,44 @@ async function fetchPreview(ctx: Ctx, coll: Coll): Promise<Entry[]> {
   });
 }
 
+// Page-builder fields that are markup, paths, URLs or layout switches the components compare against: never stega-encoded.
+const PAGE_NO_STEGA = /^(src|href|path|headerTheme|variant|cls|tag|kind|pad|extraOverlay|grid|spacers|icon|html|lines|cells|value|stat|num)$|Max$|Class$|Tag$|Style$|Kind$/;
+
+/** One page-builder page (treatment, hub or info page) by path, decoded to the JSON SectionPage renders. */
+export async function page(ctx: Ctx, path: string): Promise<{ data: any; edit?: (p: string) => Record<string, string> } | undefined> {
+  if (!isPreview) {
+    const e = await getEntry('pages', path);
+    return e ? { data: e.data } : undefined;
+  }
+  const { createClient } = await import('@sanity/client');
+  const { decodePage } = await import('./page-codec.mjs');
+  const drafts = inDraftMode(ctx);
+  const client = createClient({
+    projectId: SANITY.projectId,
+    dataset: SANITY.dataset,
+    apiVersion: SANITY.apiVersion,
+    useCdn: false,
+    perspective: drafts ? 'drafts' : 'published',
+    token: drafts ? process.env.SANITY_VIEWER_TOKEN : undefined,
+    stega: {
+      enabled: drafts,
+      studioUrl: STUDIO_URL,
+      filter: (p) => {
+        const last = String(p.sourcePath.filter((s) => typeof s === 'string').at(-1));
+        // Page-level fields (meta title/description, header theme) go into <head> and attributes, not visible text.
+        if (p.sourcePath.length === 1) return false;
+        // Empty strings stay empty: components test them (`body && <p>…`), and a marker would render an empty element.
+        if (!p.value.trim()) return false;
+        // HTML strings are rendered with set:html; keep markers out of their tags and attributes.
+        if (PAGE_NO_STEGA.test(last) || /<[a-z]/i.test(p.value)) return false;
+        return p.filterDefault(p);
+      },
+    },
+  });
+  const doc = await client.fetch<any>('*[_type == "page" && path == $path][0]', { path });
+  return doc ? { data: decodePage(doc) } : undefined;
+}
+
 export async function list(ctx: Ctx, coll: Coll): Promise<Entry[]> {
   if (isPreview) return fetchPreview(ctx, coll);
   return (await getCollection(coll)) as Entry[];

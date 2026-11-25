@@ -15,6 +15,17 @@ const types = ['text', 'email', 'tel'];
 <script is:inline>
   // Intro (live: head custom code): hide the hero copy, form and header until the 3D book pops in.
   (function () { var r = document.documentElement; if (matchMedia('(prefers-reduced-motion: reduce)').matches) return; r.classList.add('book-intro'); setTimeout(function () { if (r.classList.contains('book-intro')) { r.classList.remove('book-intro'); r.classList.add('book-revealed'); } }, 4000); })();
+  // While the intro hides them (opacity 0), the header, hero copy and form are also inert, so focus can't land on invisible
+  // controls. Released as soon as book-intro is removed (by the reveal or the 4s fallback).
+  (function () {
+    var r = document.documentElement; if (!r.classList.contains('book-intro')) return;
+    var sel = '[data-header], .bk-head, .bk-card';
+    var set = function (on) { document.querySelectorAll(sel).forEach(function (el) { el.inert = on; }); };
+    var release = function () { if (!r.classList.contains('book-intro')) { set(false); mo.disconnect(); return true; } };
+    var mo = new MutationObserver(release);
+    mo.observe(r, { attributes: true, attributeFilter: ['class'] });
+    document.addEventListener('DOMContentLoaded', function () { if (!release()) set(true); });
+  })();
 </script>
 
 <section id="reserve" class="book-hero relative overflow-hidden pt-32 pb-20 max-md:pt-28 max-md:pb-16">

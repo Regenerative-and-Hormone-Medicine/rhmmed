@@ -67,9 +67,13 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
       /men, /women, /telehealth didn't open on click (two scripts toggling each click) — one shared script now; collapsed
       answers are `inert` with `aria-controls`; skip link; `scroll-padding-top` under the fixed header; form `autocomplete`
       and `role="alert"` on errors; RHM column label in the compare table; reduced-motion CSS and paused background videos for
-      reduced-motion users. **Still open:** mobile menu Escape/rotation scroll lock, team bios by keyboard on desktop,
-      share buttons as real buttons, filter chips' radio semantics, carousel autoplay pause/A11y module, 3D book label,
-      /cheating-death intro focus. None of these change how the site looks.
+      reduced-motion users. **Fixed 2026-11-25** (no visual change, pixel-diff 0 vs the previous build on 7 routes at 1440/390):
+      mobile menu closes on Escape (focus to toggle) and releases the scroll lock when the viewport crosses 992px; team bios
+      open by keyboard on desktop (button named "Show bio" + provider, `aria-expanded`/`aria-controls`); copy link is a real
+      `<button>` (clipboard fallback), X/Facebook are real share links; filter chips are an ARIA radio group with roving
+      tabindex and arrow/Home/End keys; carousel has Swiper A11y, stops on hover/focus and doesn't autoplay under reduced
+      motion; 3D book canvas is `role="img"` with the fallback alt; /cheating-death header/copy/form are `inert` during the
+      intro. Behaviour deviations: MIGRATION.md "QA pass". Proposal (copy, needs Evgenii): an sr-only "Link copied" message.
 - [x] Interaction checks: `node scripts/interactions.mjs`, 17/17 pass on the fixed build (dropdowns, keyboard, mobile menu,
       accordion, filter, both forms; Formspark intercepted, nothing sent). Accordions click-tested on /men, /women,
       /telehealth, /why-us, /faq, /women/menopause, /.
@@ -83,7 +87,7 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
 - [ ] Platform: **Vercel** project (not created; the move to Vercel + Sanity was decided 2026-11-23). `vercel.json` has the
       redirects, `cleanUrls` and `trailingSlash: false`. Add `www.rhmmed.com` + apex redirect and SSL. DNS is on Cloudflare today,
       so either point the records at Vercel (proxy off) or move the nameservers.
-- [~] **Sanity**: phase 1 done 2026-11-24. The 7 Webflow CMS collections (77 documents) are in project `9qg5x7wu` and the build
+- [~] **Sanity**: phase 2 page builder done 2026-11-25: the 29 treatment/hub/info pages are `page` documents built from 31 section blocks (one per component); the build reads them from Sanity, byte-identical. Homepage, /contact, /scheduling not in the builder yet. Phase 1 done 2026-11-24. The 7 Webflow CMS collections (77 documents) are in project `9qg5x7wu` and the build
       reads them from there; output is byte-identical to the CSV build on all 58 pages and matches live as before. Open: Portable
       Text/images (phase 2), page JSON, Studio hosting, a Sanity → Vercel rebuild webhook, transfer to RHM's account at handover.
 - [x] 301s tested on staging: all 29 rules in `docs/redirects.csv` (24 redirects land on a 200 in one hop, 5 stay 404) + all 56 live URLs return 200 (no trailing-slash or `.html` hops

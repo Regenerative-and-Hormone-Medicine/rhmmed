@@ -488,3 +488,32 @@ Proposals only (headings are content; need Evgenii's OK): /articles and /schedul
 
 QA scripts: `scripts/qa-sweep.mjs` (every route × 5 widths: sideways scroll, console errors, failed requests, semantics,
 internal links) and `scripts/clip-check.mjs` (text cut off at the viewport edge; set `WS=320,360,375`).
+
+Accessibility follow-ups (2026-11-25, the "still open" items from `docs/ui-audit.md`; no visual change: base vs new build
+pixel-diff 0 on /, /why-us, /articles, /articles/pt-141, /cheating-death, /advance-home-testing, /men at 1440 and 390).
+Behaviour that deliberately differs from live:
+- Solutions carousel (/, /advance-home-testing): autoplay stops while the pointer is over the carousel or focus is inside it
+  (restarts when both leave; the bullet fill freezes with it), and doesn't run at all under `prefers-reduced-motion`. Live
+  autoplays forever (WCAG 2.2.2). Swiper's A11y module is on: bullets are focusable and named after their slide's title,
+  slides are labelled groups; arrows keep their "Previous"/"Next" labels.
+- Team bios (/why-us) ≥992: still hover on mouse (a mouse click does nothing, as live), but Enter/Space toggles the bio for
+  keyboard users; Escape or moving focus closes it.
+- Article X/Facebook share icons are real share URLs (work without JS, middle-click); copy link is a `<button>` with a
+  clipboard fallback. No "Link copied" message was added (it would be new copy; proposal only).
+- Mobile menu closes on Escape (focus back to the toggle) and when the viewport crosses to ≥992 (releases the scroll lock).
+- /articles filter chips: proper radio group (one tab stop, arrows/Home/End select).
+- /cheating-death: header, hero copy and form are `inert` during the book intro; the WebGL canvas gets `role="img"` and the
+  fallback image's alt once it replaces the image.
+
+## Sanity, phase 2: page builder (2026-11-25, Evgenii: "creating the component system in Sanity")
+
+- 29 `page` documents in project 9qg5x7wu (17 treatments, /men, /women, 10 info pages), 308 sections, imported from the page JSON
+  with `scripts/pages-to-sanity.mjs` (`cd studio && npm run import:pages`). Read back from the API they decode to the exact JSON
+  (deep-equal on all 29, nulls kept).
+- 31 block types, one per section component, generated into `studio/schemaTypes/sections.ts` by `scripts/gen-page-schemas.mjs`.
+  Shared `siteImage` (path + alt) and `button` types. Layout switches (theme, widths, grid classes, heading tags) are in a collapsed
+  "Layout (Webflow variant)" fieldset per block. Studio sidebar: Pages → Men's treatments / Women's treatments / Hubs / Info pages.
+- Site: `[page].astro` and `[group]/[slug].astro` read the `pages` collection (static) or Sanity per request (preview). Static
+  `dist/` from Sanity is byte-identical to the JSON build (456/456 files). Presentation: `page` locations + main-document routes.
+- Like phase 1: rich text stays HTML strings and images are site paths. Next: Portable Text + Sanity image assets, the homepage
+  as builder blocks, a publish webhook → Vercel deploy hook.

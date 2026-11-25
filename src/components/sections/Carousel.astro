@@ -19,7 +19,7 @@ const { heading, body, slides, after } = Astro.props;
           <p class="text-body-l text-ink-70" set:html={body} />
         </div>
       </div>
-      <div class="relative flex w-full flex-col items-center">
+      <div class="sol-carousel relative flex w-full flex-col items-center">
         <div class="swiper solutions w-full max-w-[48.75rem] !overflow-visible">
           <div class="swiper-wrapper">
             {slides.map((s) => (
@@ -64,24 +64,58 @@ const { heading, body, slides, after } = Astro.props;
     content: ''; position: absolute; inset: 0; width: 0; background: #050514; animation: bullet-grow 5s linear forwards;
   }
   @keyframes bullet-grow { to { width: 100%; } }
+  /* Autoplay stopped while the carousel is hovered or focused: freeze the fill with it. */
+  .sol-carousel.is-paused :global(.swiper-pagination-bullet-active)::before { animation-play-state: paused; }
 </style>
 
 <script>
   import Swiper from 'swiper';
-  import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+  import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules';
   import 'swiper/css';
+  import 'swiper/css/a11y';
 
   // Solutions carousel: only the active slide shows its text.
   const syncText = (s: Swiper) => s.slides.forEach((el, idx) => {
     (el.querySelector('.slide-text') as HTMLElement).style.opacity = idx === s.activeIndex ? '1' : '0';
   });
-  new Swiper('.swiper.solutions', {
-    modules: [Autoplay, Navigation, Pagination],
+  // Bullets are named after their slide's title (existing copy) instead of the A11y module's generic message.
+  const labelBullets = (s: Swiper) => s.pagination?.bullets?.forEach((b: HTMLElement, idx: number) => {
+    const t = s.slides[idx]?.querySelector('h3')?.textContent?.trim();
+    if (t) b.setAttribute('aria-label', t);
+  });
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const swiper = new Swiper('.swiper.solutions', {
+    modules: [A11y, Autoplay, Navigation, Pagination],
     speed: 600,
     spaceBetween: 56,
-    autoplay: { delay: 5000, disableOnInteraction: false },
+    // No autoplay for reduced-motion users (WCAG 2.2.2).
+    autoplay: reduce ? false : { delay: 5000, disableOnInteraction: false },
     pagination: { el: '.sol-pagination', clickable: true },
     navigation: { nextEl: '.sol-next', prevEl: '.sol-prev' },
-    on: { init: syncText, slideChange: syncText },
+    // The prev/next buttons keep their existing labels; no extra first/last announcements.
+    a11y: { prevSlideMessage: 'Previous', nextSlideMessage: 'Next', firstSlideMessage: null as any, lastSlideMessage: null as any },
+    on: { init: (s) => { syncText(s); labelBullets(s); }, slideChange: syncText, paginationUpdate: labelBullets },
   });
+
+  // Pause while the pointer is over the carousel (slides, arrows, bullets) or focus is inside it; restart when both leave.
+  const box = document.querySelector<HTMLElement>('.sol-carousel');
+  if (box && !reduce) {
+    const sync = () => {
+      const hold = box.matches(':hover') || box.contains(document.activeElement);
+      if (hold && swiper.autoplay.running) {
+        swiper.autoplay.stop();
+        box.classList.add('is-paused');
+      } else if (!hold && !swiper.autoplay.running) {
+        box.classList.remove('is-paused');
+        // Restart the bullet fill so it tracks the fresh 5s delay.
+        const b = box.querySelector<HTMLElement>('.swiper-pagination-bullet-active');
+        if (b) { b.classList.remove('swiper-pagination-bullet-active'); void b.offsetWidth; b.classList.add('swiper-pagination-bullet-active'); }
+        swiper.autoplay.start();
+      }
+    };
+    box.addEventListener('mouseenter', sync);
+    box.addEventListener('mouseleave', sync);
+    box.addEventListener('focusin', sync);
+    box.addEventListener('focusout', () => setTimeout(sync));
+  }
 </script>

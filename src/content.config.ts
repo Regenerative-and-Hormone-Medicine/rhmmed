@@ -1,5 +1,5 @@
 import { defineCollection } from 'astro:content';
-import { sanityLoader } from './lib/sanity-loader';
+import { sanityLoader, sanityPagesLoader } from './lib/sanity-loader';
 import { z } from 'astro/zod';
 
 // Content lives in Sanity (project 9qg5x7wu, dataset production; schemas in studio/). It was imported from the Webflow
@@ -60,4 +60,8 @@ const researches = defineCollection({
   }),
 });
 
-export const collections = { articles, authors, blogCategories, testimonials, solutions, newsletters, researches };
+// Page-builder pages (treatments, hubs, info pages): Sanity `page` documents decoded to the page JSON SectionPage renders
+// (src/lib/page-codec.mjs). Imported from src/data/{treatments,hubs,pages}/*.json, which are now a frozen snapshot.
+const pages = defineCollection({ loader: sanityPagesLoader() });
+
+export const collections = { pages, articles, authors, blogCategories, testimonials, solutions, newsletters, researches };

@@ -1,14 +1,17 @@
 ---
-export const prerender = true;
-// Single-segment pages rendered from extracted JSON: hubs (/men, /women) and info pages (src/data/pages).
+// Single-segment page-builder pages: hubs (/men, /women) and info pages. Content: Sanity `page` documents.
+import { getCollection } from 'astro:content';
+import { page as loadPage } from '../lib/content';
 import SectionPage from '../layouts/SectionPage.astro';
 
-export function getStaticPaths() {
-  const files = import.meta.glob<{ default: any }>(['../data/hubs/*.json', '../data/pages/*.json'], { eager: true });
-  return Object.values(files).map(({ default: page }) => ({ params: { page: page.path.slice(1) }, props: { page } }));
+export async function getStaticPaths() {
+  const pages = (await getCollection('pages')).filter((e) => e.id.split('/').length === 2);
+  return pages.map((e) => ({ params: { page: e.id.slice(1) }, props: { page: e.data } }));
 }
 
-const { page } = Astro.props;
+// Static build: from getStaticPaths. Preview build (SSR): fetched per request, drafts included.
+const page = Astro.props.page ?? (await loadPage(Astro, `/${Astro.params.page}`))?.data;
+if (!page) return new Response(null, { status: 404 });
 ---
 
 <SectionPage page={page} />

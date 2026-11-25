@@ -63,8 +63,8 @@ Section vertical padding on the source comes from this set: 3.75, 5, 6.25, 7.5, 
 | Route | File | Template / data |
 |---|---|---|
 | `/` | `src/pages/index.astro` | hand-built + Solutions collection |
-| `/men/*` (6), `/women/*` (11) | `src/pages/[group]/[slug].astro` | `SectionPage` layout, `src/data/treatments/*.json` |
-| `/men`, `/women`, `/why-us`, `/how-it-works`, `/telehealth`, `/patient-information`, `/location`, `/faq`, `/advance-home-testing`, `/cheating-death`, `/privacy-policy`, `/terms-of-use` | `src/pages/[page].astro` | `SectionPage` layout, `src/data/hubs/*.json`, `src/data/pages/*.json` |
+| `/men/*` (6), `/women/*` (11) | `src/pages/[group]/[slug].astro` | `SectionPage` layout, Sanity `page` documents |
+| `/men`, `/women`, `/why-us`, `/how-it-works`, `/telehealth`, `/patient-information`, `/location`, `/faq`, `/advance-home-testing`, `/cheating-death`, `/privacy-policy`, `/terms-of-use` | `src/pages/[page].astro` | `SectionPage` layout, Sanity `page` documents |
 | `/articles` | `src/pages/articles/index.astro` | Articles collection + `src/data/articles-index.json` |
 | `/articles/<slug>` (23) | `src/pages/articles/[slug].astro` | Articles/Authors/Categories + `src/data/articles/*.json` |
 | `/contact`, `/scheduling` | own `.astro` pages | forms / booking iframe |
@@ -76,9 +76,10 @@ Section vertical padding on the source comes from this set: 3.75, 5, 6.25, 7.5, 
 Layouts: `Layout.astro` (shell, header, footer, tracking) and `SectionPage.astro` (renders a JSON list of typed sections with
 `src/components/sections/*` and `treatment/*`). Nav lives in `src/data/nav.ts`.
 
-Content collections (`src/content.config.ts`, loaded from Sanity): articles, authors, blog-categories,
-testimonials, solutions, newsletters, researches. JSON under `src/data/` comes from `scripts/extract-treatments.py` (saved live HTML).
-To change copy on a treatment/info page, edit its JSON; on an article, edit it in Sanity (only when Evgenii asks).
+Content collections (`src/content.config.ts`, loaded from Sanity): pages (the page builder), articles, authors, blog-categories,
+testimonials, solutions, newsletters, researches. The page JSON under `src/data/{treatments,hubs,pages}` came from
+`scripts/extract-treatments.py` (saved live HTML) and is now only the import snapshot for Sanity `page` documents.
+To change copy on a treatment/hub/info page or an article, edit it in Sanity (only when Evgenii asks), not the JSON.
 
 **URLs are fixed.** Backlinks point at article URLs (e.g. `/articles/perimenopause-weight-gain`, `/articles/signs-you-need-hrt`).
 Never rename a route without a planned redirect.
@@ -126,6 +127,18 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
 - Astro reads Sanity at build time through `src/lib/sanity-loader.ts`, which returns the same entry shape the old file loaders
   did (ids without the type prefix, `category` as `a; b`, article `body` as raw HTML). Sort by `data.order` (the Webflow export
   order) where order matters; `getCollection()` doesn't keep it. A build with no Sanity documents fails on purpose.
+- **Page builder (phase 2, 2026-11-25, Evgenii asked for "the component system in Sanity").** The 29 section pages (17 treatments,
+  2 hubs, 10 info pages) are Sanity `page` documents (id `page-<path with - for />`, e.g. `page-men-hormone-therapy`). Each has
+  `path` (read-only: URLs are fixed), meta title/description, `headerTheme`, `footer` and an ordered `sections` array. Every
+  section block is one Astro component: the 31 block types in `studio/schemaTypes/sections.ts` are **generated** by
+  `node scripts/gen-page-schemas.mjs` from the page JSON (style switches sit in a collapsed "Layout" fieldset). Add a new block =
+  build the component, add its `case` in `SectionPage.astro`, add it to the generator's TITLES, regenerate. The build reads pages
+  via `sanityPagesLoader` (collection `pages`, keyed by path); `src/lib/page-codec.mjs` converts Sanity ⇄ page JSON (adds/strips
+  `_type`/`_key`, wraps compare-table rows and nullable cells) and must round-trip exactly. `src/data/{treatments,hubs,pages}/`
+  is now the frozen import snapshot (`node scripts/pages-to-sanity.mjs` → `cd studio && npm run import:pages` **replaces** the 29
+  documents: only re-run before editors start). The Sanity build was byte-identical to the JSON build (all 456 files) on 2026-11-25.
+  Not in the builder yet: the homepage, /contact, /scheduling (hand-built .astro). Preview: page routes render per request with
+  click-to-edit; `PAGE_NO_STEGA` in `src/lib/content.ts` keeps markers out of HTML, paths, layout switches, empty strings and <head>.
 - Phase 1 keeps rich text as the Webflow HTML (bodies hold embeds: quizzes, FAQ JSON-LD) and images as site paths
   (`/images/cms/...`). Portable Text, Sanity image assets, the treatment/hub/page JSON in `src/data/`, and a rebuild webhook are later phases.
 - `src/content/` is the frozen Webflow CSV snapshot the import came from (`node scripts/sanity-export.mjs` →

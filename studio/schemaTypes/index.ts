@@ -1,4 +1,6 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
+import { pageSchemaTypes } from './page';
+import { button, siteImage } from './sections';
 
 // Phase 1 of the Webflow → Sanity move: the seven Webflow CMS collections, field for field as exported
 // (src/content/ in the Astro repo, built from the Webflow CSVs by scripts/import-cms.py).
@@ -19,6 +21,7 @@ const common = [
 ];
 
 export const schemaTypes = [
+  ...pageSchemaTypes, siteImage, button,
   defineType({
     name: 'article',
     title: 'Article',
