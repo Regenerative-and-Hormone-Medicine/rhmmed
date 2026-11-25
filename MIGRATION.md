@@ -488,6 +488,10 @@ Proposals only (headings are content; need Evgenii's OK): /articles and /schedul
 
 QA scripts: `scripts/qa-sweep.mjs` (every route × 5 widths: sideways scroll, console errors, failed requests, semantics,
 internal links) and `scripts/clip-check.mjs` (text cut off at the viewport edge; set `WS=320,360,375`).
+Known, expected results (re-run 2026-11-25 on the page-builder build, 57 routes × 5 widths): 0 sideways scroll, 0 broken internal
+links, 0 failed requests. clip-check flags only the `/articles/lupus-rash-vs-rosacea` comparison table: it is 580px wide inside an
+`overflow-x:auto` box, identical on live, so it scrolls sideways and is not clipped. A `429` console line on /women/thyroid is a
+third-party embed rate-limiting the sweep; `website` with no label on /contact and /cheating-death is the honeypot field.
 
 Accessibility follow-ups (2026-11-25, the "still open" items from `docs/ui-audit.md`; no visual change: base vs new build
 pixel-diff 0 on /, /why-us, /articles, /articles/pt-141, /cheating-death, /advance-home-testing, /men at 1440 and 390).

@@ -84,12 +84,18 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
 - [~] Analytics: the same tags as live (GTM-MNGP32KD, GA4 G-D9VW2K0DPP, PostHog, Meta pixel 928258004184901, GHL),
       production builds only. Note: GA4 loads directly *and* GTM is present, the same as live; check GTM doesn't also fire GA4
       (double counting). No consent banner on live; none added. Search Console verification tag carried over.
-- [ ] Platform: **Vercel** project (not created; the move to Vercel + Sanity was decided 2026-11-23). `vercel.json` has the
-      redirects, `cleanUrls` and `trailingSlash: false`. Add `www.rhmmed.com` + apex redirect and SSL. DNS is on Cloudflare today,
-      so either point the records at Vercel (proxy off) or move the nameservers.
-- [~] **Sanity**: phase 2 page builder done 2026-11-25: the 29 treatment/hub/info pages are `page` documents built from 31 section blocks (one per component); the build reads them from Sanity, byte-identical. Homepage, /contact, /scheduling not in the builder yet. Phase 1 done 2026-11-24. The 7 Webflow CMS collections (77 documents) are in project `9qg5x7wu` and the build
-      reads them from there; output is byte-identical to the CSV build on all 58 pages and matches live as before. Open: Portable
-      Text/images (phase 2), page JSON, Studio hosting, a Sanity → Vercel rebuild webhook, transfer to RHM's account at handover.
+- [~] Platform: **Vercel** (Hobby, RHM's team `rhm16`): projects `rhmmed` (https://rhmmed.vercel.app; redirects and 404 checked)
+      and `rhmmed-preview` exist and build from GitHub main (2026-11-24). `vercel.json` has the redirects, `cleanUrls` and
+      `trailingSlash: false`. Open: push the page builder + a11y work to main (needs Evgenii's OK; GitHub main is behind),
+      `SANITY_VIEWER_TOKEN` on rhmmed-preview, then on go-live add `www.rhmmed.com` + apex redirect and SSL. DNS is at
+      **GoDaddy**: point the records at Vercel on launch day.
+- [~] **Sanity**: phase 2 page builder done 2026-11-25: the 29 treatment/hub/info pages are `page` documents built from 31 section
+      blocks (one per component); the build reads them from Sanity, byte-identical. Homepage, /contact, /scheduling not in the
+      builder yet. Phase 1 done 2026-11-24: the 7 Webflow CMS collections (77 documents) are in project `9qg5x7wu`. Studio hosted
+      at https://rhmmed.sanity.studio. Open: Portable Text/images, a Sanity publish → Vercel deploy-hook webhook, Admin role for
+      KHOD in RHM's Sanity org, then transfer of the project to RHM's org.
+- [x] QA re-run 2026-11-25 on the page-builder build (57 routes × 5 widths + clip check at 320/360/375): no sideways scroll, no
+      broken links, no failed requests; known results listed in MIGRATION.md "QA pass".
 - [x] 301s tested on staging: all 29 rules in `docs/redirects.csv` (24 redirects land on a 200 in one hop, 5 stay 404) + all 56 live URLs return 200 (no trailing-slash or `.html` hops
       except the intended 308 from `/men/` → `/men`).
 - [ ] Client review and sign-off (through Evgenii).
