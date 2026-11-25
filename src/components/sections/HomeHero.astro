@@ -1,0 +1,69 @@
+---
+// Homepage hero: heading with a rotating symptom word, full-width background video, intro line over it (source: .section_hero).
+// `words` roll in the heading (600ms slide, 2s hold); screen readers get them as one comma-separated list.
+// The <style> is is:inline: a rule only this page needs, kept out of the CSS bundle every builder page shares.
+interface Props {
+  before: string; words: string[]; after: string; body: string;
+  video: { poster: string; mp4: string; webm: string };
+}
+const { before, words, after, body, video } = Astro.props;
+---
+
+<section class="mx-auto flex max-w-[125rem] flex-col gap-[3.125rem]">
+  <div class="container-site flex items-end justify-between gap-8 pt-28 max-lg:flex-col max-lg:items-start max-md:gap-4 max-sm:pt-32">
+    <div class="flex w-full max-w-[48rem] flex-col gap-6">
+      <h1 class="rotation-heading text-h1 flex flex-wrap items-center gap-x-[10px] text-ink">
+        <span>{before}</span>
+        <span class="rotator relative inline-block h-[1.2em] overflow-hidden align-top" aria-hidden="true">
+          <span class="rotator-track flex flex-col will-change-transform">
+            {words.map((w) => <span class="flex h-[1.2em] items-center whitespace-nowrap text-slate">{w}</span>)}
+          </span>
+        </span>
+        <span class="sr-only">{words.join(', ')}</span>
+        <span>{after}</span>
+      </h1>
+    </div>
+  </div>
+  <div class="relative flex flex-col items-center overflow-hidden max-lg:px-6 max-md:flex-col-reverse max-md:gap-8 max-[450px]:px-0">
+    <div class="aspect-[2/1] w-full overflow-hidden max-lg:rounded-2xl max-[450px]:rounded-none">
+      <video aria-hidden="true" class="size-full object-cover" autoplay loop muted playsinline poster={video.poster}>
+        <source src={video.mp4} type="video/mp4" />
+        <source src={video.webm} type="video/webm" />
+      </video>
+    </div>
+    <div class="container-site absolute z-[1] max-md:relative max-md:flex max-md:flex-col max-md:pl-0 max-sm:pr-0">
+      <div class="pt-16 text-white max-lg:pt-8 max-md:pt-0 max-md:text-black max-sm:w-full max-sm:px-4">
+        <p class="text-body-l max-w-[34ch]" set:html={body} />
+      </div>
+    </div>
+    <div class="pointer-events-none absolute top-0 h-full w-full bg-gradient-to-b from-black/60 to-transparent max-lg:w-[calc(100%-3rem)] max-lg:rounded-2xl max-md:hidden max-[450px]:w-[calc(100%-2rem)]"></div>
+  </div>
+</section>
+
+<style is:inline>
+  @media (max-width: 767px) {
+    .rotation-heading { width: 100%; font-size: 2.5rem; letter-spacing: -0.04rem; }
+  }
+</style>
+
+<script>
+  // Rotating hero word (source: 600ms slide, 2s hold, starts after 1s, seamless loop via a clone).
+  const track = document.querySelector<HTMLElement>('.rotator-track');
+  if (track && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const SLIDE = 600, HOLD = 2000;
+    track.appendChild(track.firstElementChild!.cloneNode(true));
+    const real = track.children.length - 1;
+    let i = 0;
+    const go = (n: number, animate = true) => {
+      track.style.transition = animate ? `transform ${SLIDE}ms ease` : 'none';
+      track.style.transform = `translateY(-${n * (track.firstElementChild as HTMLElement).offsetHeight}px)`;
+    };
+    const next = () => {
+      i++;
+      go(i);
+      if (i === real) setTimeout(() => { i = 0; go(0, false); void track.offsetHeight; setTimeout(next, HOLD); }, SLIDE);
+      else setTimeout(next, SLIDE + HOLD);
+    };
+    setTimeout(() => setTimeout(next, HOLD), 1000);
+  }
+</script>

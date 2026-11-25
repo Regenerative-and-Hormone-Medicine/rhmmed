@@ -530,3 +530,11 @@ Behaviour that deliberately differs from live:
   site, `scripts/gen-block-thumbs.mjs` → `studio/static/block-previews/`), with a list view and search.
 - Pages are listed by their name (meta title up to " | ") with the URL as subtitle. Studio labels only: no site output changed.
 - Not like KHOD: KHOD's Studio is embedded in its site at /studio; RHM's is hosted at https://rhmmed.sanity.studio.
+
+### Homepage, /contact, /scheduling into the builder (2026-11-25)
+
+Converted to page JSON + 5 new blocks (homeHero, homeIntro, solutionsCarousel, contactForm, bookingEmbed). Not byte-identical to the
+hand-built pages: page-only CSS moved to `<style is:inline>` (no Astro scope attributes) and some rules now sit in the shared SectionPage
+bundle; /contact also loads the swiper CSS. Full-page screenshots of /, /contact, /scheduling, /men/hormone-therapy, /faq, /men at
+1440 and 390 are pixel-identical to before. No copy changed. Sanity import not run yet (needs review): the three pages build from
+the JSON snapshot until then.

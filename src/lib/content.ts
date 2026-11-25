@@ -56,7 +56,7 @@ async function fetchPreview(ctx: Ctx, coll: Coll): Promise<Entry[]> {
 }
 
 // Page-builder fields that are markup, paths, URLs or layout switches the components compare against: never stega-encoded.
-const PAGE_NO_STEGA = /^(src|href|path|headerTheme|variant|cls|tag|kind|pad|extraOverlay|grid|spacers|icon|html|lines|cells|value|stat|num)$|Max$|Class$|Tag$|Style$|Kind$/;
+const PAGE_NO_STEGA = /^(src|href|path|headerTheme|variant|cls|tag|kind|pad|extraOverlay|grid|spacers|icon|html|lines|cells|value|stat|num|poster|mp4|webm|tint|frameId)$|Max$|Class$|Tag$|Style$|Kind$/;
 
 /** One page-builder page (treatment, hub or info page) by path, decoded to the JSON SectionPage renders. */
 export async function page(ctx: Ctx, path: string): Promise<{ data: any; edit?: (p: string) => Record<string, string> } | undefined> {

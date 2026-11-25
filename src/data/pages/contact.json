@@ -1,0 +1,22 @@
+{
+  "path": "/contact",
+  "title": "Contact",
+  "sections": [
+    {
+      "type": "contactForm",
+      "label": "Contact",
+      "heading": "Questions About Treatment?",
+      "formHeading": "Send Us a Message",
+      "fields": [
+        { "label": "Name", "placeholder": "John Doe" },
+        { "label": "Email address", "placeholder": "johndoe@email.com" },
+        { "label": "Phone number", "placeholder": "+123 456 789" },
+        { "label": "Message", "placeholder": "Your Messaage" }
+      ],
+      "submit": "Contact us",
+      "done": "Thank you! Your submission has been received!",
+      "fail": "Oops! Something went wrong while submitting the form."
+    },
+    { "type": "reviewsBare", "pad": null }
+  ]
+}

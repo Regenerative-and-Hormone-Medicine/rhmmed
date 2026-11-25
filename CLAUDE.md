@@ -62,12 +62,12 @@ Section vertical padding on the source comes from this set: 3.75, 5, 6.25, 7.5, 
 
 | Route | File | Template / data |
 |---|---|---|
-| `/` | `src/pages/index.astro` | hand-built + Solutions collection |
+| `/` | `src/pages/index.astro` | `SectionPage`, Sanity `page` document `page-home` (+ Solutions collection) |
 | `/men/*` (6), `/women/*` (11) | `src/pages/[group]/[slug].astro` | `SectionPage` layout, Sanity `page` documents |
 | `/men`, `/women`, `/why-us`, `/how-it-works`, `/telehealth`, `/patient-information`, `/location`, `/faq`, `/advance-home-testing`, `/cheating-death`, `/privacy-policy`, `/terms-of-use` | `src/pages/[page].astro` | `SectionPage` layout, Sanity `page` documents |
 | `/articles` | `src/pages/articles/index.astro` | Articles collection + `src/data/articles-index.json` |
 | `/articles/<slug>` (23) | `src/pages/articles/[slug].astro` | Articles/Authors/Categories + `src/data/articles/*.json` |
-| `/contact`, `/scheduling` | own `.astro` pages | forms / booking iframe |
+| `/contact`, `/scheduling` | `src/pages/[page].astro` | `SectionPage`, Sanity `page` documents (contact form / booking iframe blocks) |
 | `/style-guide` | `src/pages/style-guide.astro` | tokens (not in the live sitemap) |
 | 404 | `src/pages/404.astro` | live copy; served with a real 404 |
 | `/sitemap.xml`, `/robots.txt` | `public/` | copied from live (`scripts/fetch-live-head.mjs`) |
@@ -141,7 +141,12 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
   "Invalid property value") and must round-trip exactly (against the JSON with null fields dropped: checked byte-identical). `src/data/{treatments,hubs,pages}/`
   is now the frozen import snapshot (`node scripts/pages-to-sanity.mjs` → `cd studio && npm run import:pages` **replaces** the 29
   documents: only re-run before editors start). The Sanity build was byte-identical to the JSON build (all 456 files) on 2026-11-25.
-  Not in the builder yet: the homepage, /contact, /scheduling (hand-built .astro).
+  Homepage, /contact and /scheduling moved into the builder 2026-11-25 (blocks homeHero, homeIntro, solutionsCarousel,
+  contactForm, bookingEmbed; 36 block types; JSON in `src/data/pages/{home,contact,scheduling}.json`; screenshots of 6 pages × 1440/390
+  pixel-identical to the hand-built pages). **Until `npm run import:pages` runs, those three come from the JSON snapshot**
+  (`NOT_YET_IMPORTED` in `src/lib/sanity-loader.ts`; Sanity wins once a document exists; empty the list after the import).
+  `PAGES_SOURCE=ndjson npm run build` builds from `.sanity-import/pages.ndjson` to check an import before running it.
+  Still to do after the import: block thumbnails for the 5 new blocks (`gen-block-thumbs.mjs`).
   **Studio look = KHOD's Studio (Evgenii, 2026-11-25):** sidebar Pages (Men's / Women's / Hubs / Info) · Content (articles,
   testimonials, solutions, newsletters, research) · Taxonomy · People; an `@sanity/icons` icon on every block (`ICONS` in the
   generator) and document type; "Add section" opens a thumbnail grid (`studio/static/block-previews/<type>.jpg`, one

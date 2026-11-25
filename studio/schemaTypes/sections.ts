@@ -2,7 +2,7 @@
 // The page builder: one block per section component in src/components (named in each block's description).
 // Text marked HTML is rendered as-is (Webflow markup, phase 1); images are site paths (/images/site/...).
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { BarChartIcon, BlockquoteIcon, BookIcon, ClipboardIcon, CommentIcon, ComponentIcon, DocumentTextIcon, DocumentsIcon, EarthGlobeIcon, HeartIcon, HelpCircleIcon, ImagesIcon, LaunchIcon, MobileDeviceIcon, OlistIcon, PinIcon, PresentationIcon, RocketIcon, SplitVerticalIcon, StarIcon, TextIcon, ThListIcon, ThumbsUpIcon, TrendUpwardIcon, UsersIcon, WarningOutlineIcon } from '@sanity/icons';
+import { BarChartIcon, BlockquoteIcon, BookIcon, CalendarIcon, ClipboardIcon, CommentIcon, ComponentIcon, DocumentTextIcon, DocumentsIcon, EarthGlobeIcon, EnvelopeIcon, HeartIcon, HelpCircleIcon, HomeIcon, ImagesIcon, LaunchIcon, MobileDeviceIcon, OlistIcon, PinIcon, PresentationIcon, RocketIcon, SparklesIcon, SplitVerticalIcon, StarIcon, TextIcon, ThListIcon, ThumbsUpIcon, TrendUpwardIcon, UsersIcon, WarningOutlineIcon } from '@sanity/icons';
 
 const strip = (s?: string) => (s ?? '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').trim();
 const itemPreview = {
@@ -323,7 +323,7 @@ export const sectionTypes = [
           defineField({ name: "body", type: 'string' }),
           defineField({ name: "image", type: 'siteImage' }),
         ], preview: itemPreview })] }),
-      defineField({ name: "after", title: "After the carousel", type: 'object', fields: [
+      defineField({ name: "after", title: "Heading after the rotating word", type: 'object', fields: [
         defineField({ name: "body", type: 'text', rows: 3 }),
         defineField({ name: "heading", type: 'string' }),
         defineField({ name: "buttons", type: 'array', of: [{ type: "button" }] }),
@@ -386,6 +386,22 @@ export const sectionTypes = [
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Book steps", subtitle: "Book steps" }) },
   }),
   defineType({
+    name: "contactForm", title: "Contact form", type: 'object', icon: EnvelopeIcon, description: "src/components/sections/ContactForm.astro",
+    fields: [
+      defineField({ name: "label", type: 'string' }),
+      defineField({ name: "heading", type: 'string' }),
+      defineField({ name: "formHeading", title: "Form heading", type: 'string' }),
+      defineField({ name: "fields", type: 'array', of: [defineArrayMember({ type: 'object', name: "formField", fields: [
+          defineField({ name: "label", type: 'string' }),
+          defineField({ name: "placeholder", type: 'string' }),
+        ], preview: itemPreview })] }),
+      defineField({ name: "submit", title: "Submit button text", type: 'string' }),
+      defineField({ name: "done", title: "Success message", type: 'string' }),
+      defineField({ name: "fail", title: "Error message", type: 'string' }),
+    ],
+    preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Contact form", subtitle: "Contact form" }) },
+  }),
+  defineType({
     name: "pageHero", title: "Page hero (text)", type: 'object', icon: StarIcon, description: "src/components/sections/PageHero.astro",
     fieldsets: layout,
     fields: [
@@ -413,6 +429,50 @@ export const sectionTypes = [
       ] }),
     ],
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "FAQ page list", subtitle: "FAQ page list" }) },
+  }),
+  defineType({
+    name: "homeHero", title: "Homepage hero (rotating words + video)", type: 'object', icon: HomeIcon, description: "src/components/sections/HomeHero.astro",
+    fields: [
+      defineField({ name: "before", title: "Heading before the rotating word", type: 'string' }),
+      defineField({ name: "words", title: "Rotating words", type: 'array', of: [{ type: 'string' }] }),
+      defineField({ name: "after", title: "Heading after the rotating word", type: 'string' }),
+      defineField({ name: "body", type: 'text', rows: 3 }),
+      defineField({ name: "video", type: 'object', fields: [
+        defineField({ name: "poster", type: 'string' }),
+        defineField({ name: "mp4", type: 'string' }),
+        defineField({ name: "webm", type: 'string' }),
+      ] }),
+    ],
+    preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Homepage hero (rotating words + video)", subtitle: "Homepage hero (rotating words + video)" }) },
+  }),
+  defineType({
+    name: "homeIntro", title: "Homepage intro (benefits + men/women cards)", type: 'object', icon: SparklesIcon, description: "src/components/sections/HomeIntro.astro",
+    fields: [
+      defineField({ name: "heading", type: 'text', rows: 2, description: 'HTML, rendered as-is.' }),
+      defineField({ name: "body", type: 'text', rows: 3 }),
+      defineField({ name: "benefits", type: 'array', of: [defineArrayMember({ type: 'object', name: "benefit", fields: [
+          defineField({ name: "icon", type: 'string' }),
+          defineField({ name: "label", type: 'string' }),
+          defineField({ name: "narrow", title: "Narrow label (tablet)", type: 'boolean' }),
+        ], preview: itemPreview })] }),
+      defineField({ name: "cards", type: 'array', of: [defineArrayMember({ type: 'object', name: "card", fields: [
+          defineField({ name: "href", type: 'string' }),
+          defineField({ name: "heading", type: 'string' }),
+          defineField({ name: "link", type: 'string' }),
+          defineField({ name: "image", type: 'siteImage' }),
+          defineField({ name: "tint", title: "Hover tint", type: 'string' }),
+          defineField({ name: "offset", title: "Lowered card (desktop)", type: 'boolean' }),
+        ], preview: itemPreview })] }),
+    ],
+    preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Homepage intro (benefits + men/women cards)", subtitle: "Homepage intro (benefits + men/women cards)" }) },
+  }),
+  defineType({
+    name: "solutionsCarousel", title: "Carousel (Solutions collection)", type: 'object', icon: PresentationIcon, description: "src/components/sections/SolutionsCarousel.astro",
+    fields: [
+      defineField({ name: "heading", type: 'string' }),
+      defineField({ name: "body", type: 'text', rows: 6, description: 'HTML, rendered as-is.' }),
+    ],
+    preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Carousel (Solutions collection)", subtitle: "Carousel (Solutions collection)" }) },
   }),
   defineType({
     name: "locations", title: "Locations", type: 'object', icon: PinIcon, description: "src/components/sections/Locations.astro",
@@ -458,6 +518,15 @@ export const sectionTypes = [
       defineField({ name: "html", title: "HTML", type: 'text', rows: 6, description: 'HTML, rendered as-is.' }),
     ],
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Legal text", subtitle: "Legal text" }) },
+  }),
+  defineType({
+    name: "bookingEmbed", title: "Booking calendar embed", type: 'object', icon: CalendarIcon, description: "src/components/sections/BookingEmbed.astro",
+    fields: [
+      defineField({ name: "src", type: 'string' }),
+      defineField({ name: "frameId", title: "Embed id", type: 'string', description: "The booking widget's own iframe id (its script looks it up). Leave as is." }),
+      defineField({ name: "title", type: 'string' }),
+    ],
+    preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Booking calendar embed", subtitle: "Booking calendar embed" }) },
   }),
   defineType({
     name: "access", title: "Access (telehealth)", type: 'object', icon: EarthGlobeIcon, description: "src/components/sections/Access.astro",

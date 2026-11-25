@@ -1,0 +1,12 @@
+{
+  "path": "/scheduling",
+  "title": "Scheduling",
+  "sections": [
+    {
+      "type": "bookingEmbed",
+      "src": "https://go.cogitare.vip/widget/booking/mkGc3OxkFOLw6issadzM",
+      "frameId": "mkGc3OxkFOLw6issadzM_1774369158001",
+      "title": "Book a VIP call"
+    }
+  ]
+}

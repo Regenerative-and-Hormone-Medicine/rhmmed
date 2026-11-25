@@ -1,0 +1,128 @@
+{
+  "path": "/",
+  "title": "Regenerative & Hormone Medicine | Feel Like Yourself",
+  "description": "Regenerative & Hormone Medicine helps uncover what’s driving low energy, poor sleep, weight, mood, and hormone changes. Book a VIP call.",
+  "sections": [
+    {
+      "type": "homeHero",
+      "before": "If you experience",
+      "words": ["low energy", "brain fog", "poor sleep", "no motivation", "fatigue", "weight gain", "muscle loss", "low sex drive", "depression", "anxiety", "moodiness", "hot flashes"],
+      "after": "there may be a deeper reason",
+      "body": "RHM's licensed medical providers look beyond numbers to uncover the root issues and provide you with personalized treatments.",
+      "video": {
+        "poster": "/images/site/6a50d131c2c6a7c912b6618d_RHM_Hero_720p_compressed_poster.0000000.jpg",
+        "mp4": "/images/site/6a50d131c2c6a7c912b6618d_RHM_Hero_720p_compressed_mp4.mp4",
+        "webm": "/images/site/6a50d131c2c6a7c912b6618d_RHM_Hero_720p_compressed_webm.webm"
+      }
+    },
+    {
+      "type": "homeIntro",
+      "heading": "Regenerative care designed <br>to restore hormone balance now and support long-term health",
+      "body": "When changes in energy, mood, sleep, or other symptoms occur there’s usually a deeper reason. RHM's medical providers partner with you to uncover the cause and help you feel like yourself again.",
+      "benefits": [
+        { "icon": "energy", "label": "Energy", "narrow": false },
+        { "icon": "balance", "label": "Hormone Balance", "narrow": true },
+        { "icon": "clarity", "label": "Clarity", "narrow": false },
+        { "icon": "confidence", "label": "Confidence", "narrow": false },
+        { "icon": "longevity", "label": "Longevity", "narrow": false }
+      ],
+      "cards": [
+        {
+          "href": "/women",
+          "heading": "Restore balance through every stage of life",
+          "link": "I’m a woman",
+          "image": {
+            "src": "/images/site/69c3bd3ea2d2aeab177f9f6c_da82ea9118ebbf326e7046e6228d5f85_Restore-Balance.avif",
+            "alt": "Woman feeling energized outdoors, representing women’s hormone balance and wellness care"
+          },
+          "tint": "brown",
+          "offset": false
+        },
+        {
+          "href": "/men",
+          "heading": "Optimize energy, performance, and health",
+          "link": "I’m a man",
+          "image": {
+            "src": "/images/site/69c3bd3e3bec8031638988c5_6273b1ed27c36e60e764182d9f6d8fb3_Optimize-Energy.avif",
+            "alt": "Man feeling energized outdoors, representing men’s hormone health, energy, and wellness care"
+          },
+          "tint": "slate",
+          "offset": true
+        }
+      ]
+    },
+    {
+      "type": "whyWork",
+      "heading": "Why people work with us",
+      "body": "When patients understand that medicine is not one-size-fits-all, they partner with us to find answers no one else has been able to explain.",
+      "buttons": [{ "text": "Book vip call", "href": "/scheduling" }],
+      "items": [
+        { "q": "Energy & Fatigue", "a": "Feeling drained, low on energy, or struggling to get through the day." },
+        { "q": "Mood & Mental Clarity", "a": "Brain fog, irritability, forgetfulness, or difficulty staying focused." },
+        { "q": "Sleep & Recovery", "a": "Trouble falling asleep, staying asleep, or waking up unrested." },
+        { "q": "Weight & Metabolism", "a": "Unexpected weight changes or difficulty maintaining a healthy weight." },
+        { "q": "Performance & Drive", "a": "Low motivation, decreased libido, reduced stamina, or feeling less driven than before." },
+        { "q": "Hormone Balance", "a": "When estrogen, testosterone, thyroid, and/or other hormones are not optimized you just don’t feel like yourself." }
+      ]
+    },
+    {
+      "type": "solutionsCarousel",
+      "heading": "Personalized physician-led medical care focused on root causes, not quick fixes",
+      "body": "Bioidentical Hormone Replacement Therapy    <br />Testosterone Replacement Therapy  <br /> Comprehensive Lab Testing  <br />Peptide Therapy • Weight Loss Management • Supplements "
+    },
+    {
+      "type": "telehealth",
+      "label": "Telehealth",
+      "heading": "Personalized care, available remotely",
+      "body": "Our telehealth services allow patients to access consultations, follow-ups, and ongoing care from home, making personalized treatment more accessible and convenient.",
+      "buttons": [{ "text": "Book VIP Call", "href": "/scheduling" }],
+      "image": {
+        "src": "/images/site/69c3c28af6489176c8dc87f7_personalized-care.avif",
+        "alt": "Doctor and patient using laptop, representing remote telehealth care, hormone treatment, and wellness support"
+      }
+    },
+    {
+      "type": "reviews",
+      "heading": "Real experiences from people we’ve helped",
+      "body": "Thoughtful, personalized care can make a meaningful difference. Here’s what patients have shared about their experience with Regenerative &amp; Hormone Medicine."
+    },
+    {
+      "type": "insights",
+      "heading": "Research & Insights",
+      "button": { "text": "View articles", "href": "/articles" },
+      "cards": [
+        {
+          "href": "/articles/best-birth-control-for-pcos",
+          "title": "Best Birth Control for PCOS — and the Treatment Options Beyond It",
+          "summary": "The pill isn't the only path with PCOS. A physician-led comparison of birth control options and what else actually helps — beyond the prescription pad.",
+          "category": "PCOS",
+          "date": "Jul 15, 2026",
+          "image": { "src": "/images/site/6abe41e0a85b393fd9f56249_card-best-birth-control-for-pcos-32.webp" }
+        },
+        {
+          "href": "/articles/peptides-vs-glp-1",
+          "title": "Peptides vs GLP-1: Which One Actually Fits Your Goals?",
+          "summary": "Peptides vs GLP-1: which one actually fits your goals — appetite, muscle, or metabolism? A physician-led comparison, not a sales pitch.",
+          "category": "Peptides",
+          "date": "Jul 30, 2026",
+          "image": { "src": "/images/site/6abe41e0fcb1e77cb74989d8_card-peptides-vs-glp-1-32.webp" }
+        },
+        {
+          "href": "/articles/pcos-belly-fat",
+          "title": "PCOS Belly Fat",
+          "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
+          "category": "PCOS",
+          "date": "Sep 11, 2026",
+          "image": { "src": "/images/site/6abe40c533fecde0b43c806d_card-pcos-belly-fat-32.webp" }
+        }
+      ]
+    },
+    {
+      "type": "finalCta",
+      "heading": "Start your journey to personalized, long-term health",
+      "points": ["Ongoing support focused on long-term health", "Advanced testing and clear next steps", "Physician-led care"],
+      "buttons": [{ "text": "Book VIP Call", "href": "/scheduling" }],
+      "topPad": false
+    }
+  ]
+}

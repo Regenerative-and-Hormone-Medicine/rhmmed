@@ -1,5 +1,5 @@
 ---
-// Renders any page extracted to JSON (treatments, hubs, info pages) as an ordered list of typed sections.
+// Renders any page-builder page (homepage, treatments, hubs, info pages, contact, scheduling) as an ordered list of typed sections.
 import Layout from './Layout.astro';
 import Hero from '../components/treatment/Hero.astro';
 import Symptom from '../components/treatment/Symptom.astro';
@@ -30,6 +30,11 @@ import BookHero from '../components/sections/BookHero.astro';
 import BookSteps from '../components/sections/BookSteps.astro';
 import Carousel from '../components/sections/Carousel.astro';
 import TelehealthCta from '../components/sections/TelehealthCta.astro';
+import HomeHero from '../components/sections/HomeHero.astro';
+import HomeIntro from '../components/sections/HomeIntro.astro';
+import SolutionsCarousel from '../components/sections/SolutionsCarousel.astro';
+import ContactForm from '../components/sections/ContactForm.astro';
+import BookingEmbed from '../components/sections/BookingEmbed.astro';
 import type { Theme } from '../components/treatment/types';
 
 interface Props { page: { path: string; title: string; description: string; sections: any[]; footer?: any } }
@@ -56,7 +61,8 @@ const headerTheme = page.headerTheme ?? 'dark';
       case 'bookHero': return <BookHero {...s} />;
       case 'bookSteps': return <BookSteps {...s} />;
       case 'carousel': return <Carousel heading={s.heading} body={s.body} slides={s.slides.map((x: any) => ({ title: x.title, body: x.body, image: x.image?.src, alt: x.image?.alt }))} after={s.after} />;
-      case 'reviewsBare': return <Reviews bare pad="py-32" />;
+      // pad "is-paddings" (the source class) = 8rem; null = the widget's default padding (/contact).
+      case 'reviewsBare': return <Reviews bare pad={s.pad ? 'py-32' : undefined} />;
       case 'telehealth': return <TelehealthCta label={s.label} heading={s.heading} body={s.body} image={s.image?.src} alt={s.image?.alt} buttons={s.buttons} />;
       case 'hormones': return <Hormones {...s} />;
       case 'whyWork': return <WhyWork {...s} />;
@@ -74,6 +80,11 @@ const headerTheme = page.headerTheme ?? 'dark';
       case 'insights': return <Insights heading={s.heading} button={s.button} cards={s.cards} tone={s.men ? 'mist' : 'grey'} />;
       case 'ctaBlock': return <CtaBlock {...s} />;
       case 'faq': return <Faq {...s} />;
+      case 'homeHero': return <HomeHero {...s} />;
+      case 'homeIntro': return <HomeIntro {...s} />;
+      case 'solutionsCarousel': return <SolutionsCarousel heading={s.heading} body={s.body} />;
+      case 'contactForm': return <ContactForm {...s} />;
+      case 'bookingEmbed': return <BookingEmbed {...s} />;
       default: return null;
     }
   })}

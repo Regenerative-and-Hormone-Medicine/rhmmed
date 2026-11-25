@@ -23,6 +23,9 @@ const TITLES = {
   faqPage: ['FAQ page list', 'sections/FaqPage'], locations: ['Locations', 'sections/Locations'],
   preparation: ['Preparation cards', 'sections/Preparation'], legalHero: ['Legal page title', 'sections/Legal'],
   legal: ['Legal text', 'sections/Legal'], access: ['Access (telehealth)', 'sections/Access'], team: ['Team', 'sections/Team'],
+  homeHero: ['Homepage hero (rotating words + video)', 'sections/HomeHero'], homeIntro: ['Homepage intro (benefits + men/women cards)', 'sections/HomeIntro'],
+  solutionsCarousel: ['Carousel (Solutions collection)', 'sections/SolutionsCarousel'], contactForm: ['Contact form', 'sections/ContactForm'],
+  bookingEmbed: ['Booking calendar embed', 'sections/BookingEmbed'],
 };
 // Section `type` → @sanity/icons icon for the block (the Studio shows it in the section list and the "Add section" menu).
 const ICONS = {
@@ -33,6 +36,7 @@ const ICONS = {
   insights: 'DocumentsIcon', hormones: 'TrendUpwardIcon', whyWork: 'HeartIcon', finalCta: 'RocketIcon',
   carousel: 'PresentationIcon', telehealth: 'MobileDeviceIcon', bookSteps: 'OlistIcon', locations: 'PinIcon',
   preparation: 'ClipboardIcon', legal: 'TextIcon', access: 'EarthGlobeIcon', team: 'UsersIcon',
+  homeHero: 'HomeIcon', homeIntro: 'SparklesIcon', solutionsCarousel: 'PresentationIcon', contactForm: 'EnvelopeIcon', bookingEmbed: 'CalendarIcon',
 };
 const FIELD_TITLES = {
   q: 'Question', a: 'Answer', cta: 'Button', crumb: 'Breadcrumb parent', current: 'Breadcrumb current page',
@@ -40,10 +44,13 @@ const FIELD_TITLES = {
   cls: 'Style class', oursImage: 'RHM column image', heads: 'Column heads', rows: 'Rows', cells: 'Cells',
   infos: 'Info rows', lines: 'Lines', num: 'Number', html: 'HTML', topPad: 'Top padding', after: 'After the carousel',
   done: 'Success message', fail: 'Error message', consent: 'Consent text', submit: 'Submit button text',
+  before: 'Heading before the rotating word', words: 'Rotating words', after: 'Heading after the rotating word',
+  formHeading: 'Form heading', frameId: 'Embed id', tint: 'Hover tint', offset: 'Lowered card (desktop)', narrow: 'Narrow label (tablet)',
 };
 const DESCRIPTIONS = {
   heading: null, // set per-field below when it holds HTML
   headerTheme: 'Header text colour before scrolling: light = white text over a dark hero image.',
+  frameId: 'The booking widget\'s own iframe id (its script looks it up). Leave as is.',
 };
 // Fields that only switch the Webflow layout variant; grouped as "Layout" and collapsed.
 const LAYOUT = /^(men|slate|big|grey|compact|solid|short|row|lightCards|signsGrid|stacked|headingFull|headingInCard|currentIsH1|topPad|accent|mist|reverse|two)$|Max$|Class$|Tag$|Style$|Kind$|^(variant|cls|tag|kind|pad|extraOverlay|grid|spacers)$/;

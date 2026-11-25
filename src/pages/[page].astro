@@ -1,11 +1,12 @@
 ---
-// Single-segment page-builder pages: hubs (/men, /women) and info pages. Content: Sanity `page` documents.
+// Single-segment page-builder pages: hubs (/men, /women), info pages, /contact, /scheduling. Content: Sanity `page` documents.
+// The homepage ("/") is src/pages/index.astro.
 import { getCollection } from 'astro:content';
 import { page as loadPage } from '../lib/content';
 import SectionPage from '../layouts/SectionPage.astro';
 
 export async function getStaticPaths() {
-  const pages = (await getCollection('pages')).filter((e) => e.id.split('/').length === 2);
+  const pages = (await getCollection('pages')).filter((e) => e.id !== '/' && e.id.split('/').length === 2);
   return pages.map((e) => ({ params: { page: e.id.slice(1) }, props: { page: e.data } }));
 }
 

@@ -12,6 +12,7 @@
 export const MEMBER = {
   buttons: 'button', bottomButtons: 'button', images: 'siteImage', cards: 'card', steps: 'step', items: 'item',
   quotes: 'quote', stats: 'stat', blocks: 'textBlock', slides: 'slide', fields: 'formField', checks: 'check', infos: 'info',
+  benefits: 'benefit',
 };
 
 export function encodeValue(v, field) {
@@ -38,7 +39,8 @@ function encodeObject(o) {
   return out;
 }
 
-export const pageId = (path) => `page-${path.slice(1).replace(/\//g, '-')}`;
+// "/men/pcos" → "page-men-pcos"; the homepage ("/") → "page-home".
+export const pageId = (path) => (path === '/' ? 'page-home' : `page-${path.slice(1).replace(/\//g, '-')}`);
 
 export function encodePage(page, order) {
   const { sections, ...rest } = page;

@@ -1,7 +1,9 @@
 // Astro content loader for the RHM Sanity project. It returns each document in the same shape the old
 // file/glob loaders produced from src/content/, so pages and components didn't change.
 import type { Loader } from 'astro/loaders';
+import fs from 'node:fs';
 import { decodePage } from './page-codec.mjs';
+import { snapshotPages } from './page-snapshot.mjs';
 
 export const SANITY = { projectId: '9qg5x7wu', dataset: 'production', apiVersion: '2025-02-19' };
 
@@ -38,11 +40,36 @@ export function toEntry(type: string, d: any, withBody = false) {
 
 // Page-builder pages (Sanity `page` documents) → the page JSON SectionPage renders, keyed by path ("/men/pcos").
 export const PAGES_QUERY = '*[_type == "page"] | order(order asc)';
+
+// Pages moved into the builder (2026-11-25) whose documents aren't imported into Sanity yet. Until they are, the build takes
+// them from the page JSON snapshot, encoded exactly as `npm run import:pages` would send them. Once Sanity has a document
+// for a path, Sanity wins. Empty this list after the import.
+const NOT_YET_IMPORTED = ['/', '/contact', '/scheduling'];
+
+// PAGES_SOURCE=ndjson: read every page from .sanity-import/pages.ndjson (the file `npm run import:pages` sends) instead of
+// Sanity, to check that the import renders the same site before running it.
+async function pageDocs(logger: { info: (m: string) => void; warn: (m: string) => void }): Promise<any[]> {
+  if (process.env.PAGES_SOURCE === 'ndjson') {
+    const docs = fs.readFileSync('.sanity-import/pages.ndjson', 'utf8').trim().split('\n').map((l) => JSON.parse(l));
+    logger.info(`${docs.length} page documents from .sanity-import/pages.ndjson (PAGES_SOURCE=ndjson)`);
+    return docs;
+  }
+  const docs = await query<any[]>(PAGES_QUERY, {});
+  const have = new Set(docs.map((d) => d.path));
+  const missing = NOT_YET_IMPORTED.filter((p) => !have.has(p));
+  if (missing.length) {
+    const snap = new Map(snapshotPages().map(({ doc }) => [doc.path, doc]));
+    for (const p of missing) docs.push(snap.get(p));
+    logger.warn(`not in Sanity yet, built from the page JSON snapshot: ${missing.join(', ')} (run npm run import:pages)`);
+  }
+  return docs;
+}
+
 export function sanityPagesLoader(): Loader {
   return {
     name: 'sanity-page',
     load: async ({ store, generateDigest, logger }) => {
-      const docs = await query<any[]>(PAGES_QUERY, {});
+      const docs = await pageDocs(logger);
       if (!docs.length) throw new Error('Sanity returned no "page" documents; refusing to build without the pages.');
       store.clear();
       for (const d of docs) store.set({ id: d.path, data: decodePage(d), digest: generateDigest(d) });

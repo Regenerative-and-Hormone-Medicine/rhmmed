@@ -1,0 +1,64 @@
+---
+// Homepage intro on grey: heading + copy, five benefit icons, and the two "I'm a woman / I'm a man" photo cards
+// (source: .section_designed). Cards round into pills, zoom and tint on hover.
+import Energy from '../../icons/energy.svg';
+import Balance from '../../icons/balance.svg';
+import Clarity from '../../icons/clarity.svg';
+import Confidence from '../../icons/confidence.svg';
+import Longevity from '../../icons/longevity.svg';
+import ArrowSm from '../../icons/arrow-sm.svg';
+
+const ICONS = { energy: Energy, balance: Balance, clarity: Clarity, confidence: Confidence, longevity: Longevity } as const;
+const TINTS = { brown: 'bg-brown', slate: 'bg-slate' } as const;
+
+interface Props {
+  heading: string; body: string;
+  /** `narrow`: the label wraps at 10ch on tablet and below (source: "Hormone Balance"). */
+  benefits: { icon: keyof typeof ICONS; label: string; narrow?: boolean }[];
+  /** `offset`: the card sits 6.25rem lower on desktop (source: the second card). */
+  cards: { href: string; heading: string; link: string; image: { src: string; alt: string }; tint: keyof typeof TINTS; offset?: boolean }[];
+}
+const { heading, body, benefits, cards } = Astro.props;
+---
+
+<section class="bg-bg-light">
+  <div class="mx-auto flex w-full max-w-[66.25rem] flex-col items-center gap-20 px-8 py-[7.5rem] text-center max-md:px-6 max-md:py-20 max-sm:gap-8 max-sm:px-4">
+    <div class="flex max-w-[46rem] flex-col items-center gap-6 max-sm:text-left">
+      <h2 set:html={heading} />
+      <p class="text-body-l text-ink-70" set:html={body} />
+    </div>
+    <ul class="flex flex-wrap items-start justify-center gap-20 max-lg:w-full max-lg:gap-[2.9rem] max-md:gap-8 max-sm:gap-x-[2.2rem] max-sm:gap-y-8">
+      {benefits.map(({ icon, label, narrow }) => {
+        const Icon = ICONS[icon];
+        return (
+          <li class="flex flex-col items-center gap-4 max-sm:min-w-[82px]">
+            {Icon && <Icon class="aspect-square w-8 text-ink" width="32" height="32" />}
+            <p class:list={['text-body-l', narrow ? 'max-lg:max-w-[10ch]' : 'max-w-[34ch]']}>{label}</p>
+          </li>
+        );
+      })}
+    </ul>
+    <div class="flex w-full items-start justify-center gap-8 max-md:flex-col">
+      {cards.map((p) => (
+        <a
+          href={p.href}
+          class:list={[
+            'path-card group relative flex aspect-[243/280] w-full max-w-[30.375rem] flex-col items-start justify-end overflow-hidden rounded-[24px] p-9 text-left text-white transition-all duration-400 hover:rounded-[300px]',
+            p.offset && 'mt-[6.25rem] max-md:mt-0',
+          ]}
+        >
+          <img src={p.image.src} alt={p.image.alt} class="absolute inset-x-0 bottom-0 z-0 w-full object-cover transition-transform duration-400 group-hover:scale-120 max-md:object-[50%_100%]" loading="lazy" />
+          <div class="absolute inset-0 z-[1] bg-gradient-to-b from-transparent to-black/80"></div>
+          <div class="absolute inset-0 z-[1] flex w-full flex-col items-start justify-end gap-6 p-8 transition-transform duration-350 group-hover:-translate-y-[33%]">
+            <h3 class="text-h3 text-white">{p.heading}</h3>
+            <div class="flex items-center justify-center gap-2 text-[.875rem] leading-[1.214] uppercase">
+              <div>{p.link}</div>
+              <ArrowSm class="size-3" width="12" height="12" />
+            </div>
+          </div>
+          <div class:list={['absolute inset-0 opacity-0 mix-blend-multiply transition-opacity duration-400 group-hover:opacity-100', TINTS[p.tint]]}></div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

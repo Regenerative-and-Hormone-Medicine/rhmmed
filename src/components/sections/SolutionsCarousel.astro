@@ -1,0 +1,14 @@
+---
+// The homepage carousel, filled from the Solutions collection (not copied into the page): heading and copy come from the
+// block, the slides are every Solutions document in Webflow's manual order.
+import { list } from '../../lib/content';
+import Carousel from './Carousel.astro';
+interface Props { heading: string; body: string }
+const { heading, body } = Astro.props;
+
+// Webflow's manual sort order for the Solutions collection (not present in the CSV export).
+const SOLUTIONS_ORDER = ['long-term-hormonal-support-5', 'supporting-body-function-4', 'energy-improvement-3', 'hormone-balance-2', 'personalized-hormone-care-1'];
+const solutions = (await list(Astro, 'solutions')).sort((a, b) => SOLUTIONS_ORDER.indexOf(a.id) - SOLUTIONS_ORDER.indexOf(b.id));
+---
+
+<Carousel heading={heading} body={body} slides={solutions.map((x) => ({ title: x.data.name, body: x.data.paragraph, image: x.data.image }))} />
