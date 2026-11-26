@@ -559,7 +559,7 @@
     "copyLink": "Copy the real article URL (user approved 2026-11-19)",
     "draftArticles": "All 3 Webflow-draft articles go live with exported text (user, 2026-11-19)",
     "hosting": "Vercel + Sanity + Astro (Evgenii, 2026-11-23); redirects in vercel.json",
-    "cms": "Sanity project 9qg5x7wu (KHOD org until handover), phase 1 2026-11-24: CMS collections in Sanity, HTML bodies and image paths kept; free plan only (trial until 2026-12-24)."
+    "cms": "Sanity project 9qg5x7wu (RHM org ogokh587b since 2026-11-26). Phase 1 2026-11-24 (collections), phase 2 2026-11-25 (page builder), phase 3 live 2026-11-27 (Portable Text, image assets on the CDN, CMS-driven cards/CTA/slider, JPG og:image). Free plan only (trial until 2026-12-24)."
   },
   "checks": [
     "3 articles (tirzepatide-peptide, pcos-belly-fat, trt-side-effects) had unpublished Webflow edits at export: the imported text may be newer than what is live. Confirm which version is correct."

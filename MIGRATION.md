@@ -575,7 +575,18 @@ Verification (2026-11-26, after merging main db3df57 into the branch):
   perimenopause-weight-gain 4.89 MB → 0.59 MB; first load 418 KB → 54 KB and 2.02 MB → 78 KB. Left over: the "related articles"
   cards read `/images/site/…` from `src/data/articles/*.json` (~0.7 MB per article), not from Sanity.
 
-### Portable Text cutover (needs Evgenii's OK; not done)
+### Portable Text cutover (DONE 2026-11-27, Evgenii: "Go with B then")
+
+Done in this order: production exported (113 documents, no drafts; backup kept outside the repo in RHM Site's home,
+`backups/production-2026-11-27.tar.gz`) → code to main (2e15ec9 = phase 3 + CMS components + JPG share images; on
+production data its build differed from the old main only by card/hero classes and the new homepage og:image) →
+`html-to-pt.mjs --dataset production` (57 documents, 273 images; `--check` had 48/48 rich-text fields identical) →
+`cms-components.mjs --dataset production` (38 documents) → guards restored → Studio deployed → webhook rebuilt the site.
+`node scripts/release-check.mjs https://www.rhmmed.com <pre-cutover build>`: 56/56 (23 articles same body text, body links
+and body images as before; the 7 asks; 24 og:image URLs 200 image/jpeg). The "Inflamation" category typo is still in the CMS
+(fixing it needs Evgenii's word). Rollback below still applies.
+
+Original plan:
 
 One window, editors told not to edit (Studio would show the old shapes as invalid in between). Order matters: the code goes
 first, because main's current loader can't read Portable Text, and every converter patch fires the publish webhook.
@@ -602,7 +613,7 @@ HTML/path documents; the uploaded assets stay, unused) and redeploy the old Stud
 `npx sanity deploy`). The code needs no revert: it renders the old shapes byte-identically. The import fires the webhook, which
 rebuilds the site from the restored data.
 
-## CMS-driven cards, article CTA and slider (2026-11-26, Evgenii; branch `cms-components`, on top of phase 3; not live)
+## CMS-driven cards, article CTA and slider (2026-11-26, Evgenii; live since the 2026-11-27 cutover)
 
 Evgenii: the homepage slider, the resource sections (every "Research & Insights" / "Related Articles" card row) and the
 article pages must be driven from Sanity; card images zoom slightly on hover and all have the same height; the broken

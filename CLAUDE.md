@@ -98,7 +98,7 @@ GA4/GSC/GTM access. Client asks: Notion "RHM website: moving off Webflow" (invit
 **Deploy (2026-11-24):** RHM's Vercel team `rhm16` (Hobby) builds https://github.com/Regenerative-and-Hormone-Medicine/rhmmed
 (public). Project `rhmmed` → https://rhmmed.vercel.app (static, no custom domain yet). Project `rhmmed-preview` →
 https://rhmmed-preview.vercel.app (env `SANITY_PREVIEW=1`, `PREVIEW_COOKIE_SECRET`, `SANITY_VIEWER_TOKEN`, all Production).
-Both build on push to main (GitHub main = db3df57 since 2026-11-26). **Publishing in Sanity rebuilds `rhmmed`**: Sanity webhook
+Both build on push to main (GitHub main = 2e15ec9 since 2026-11-27). **Publishing in Sanity rebuilds `rhmmed`**: Sanity webhook
 "Vercel rebuild (rhmmed)" (types page, article, author, blogCategory, solution, testimonial; create/update/delete, no drafts) →
 Vercel deploy hook "Sanity publish" (rhmmed, branch main). The preview project needs no rebuild (it reads Sanity per request).
 A manual Redeploy in RHM's Vercel asks for a 6-digit code emailed to support@rhmmed.net; pushes and the hook don't. **www.rhmmed.com is live on Vercel since 2026-11-26** (GoDaddy DNS points at Vercel; Webflow kept a week as rollback). Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
@@ -161,13 +161,17 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
   screenshot per block, made by `BASE=<preview url> node scripts/gen-block-thumbs.mjs`; re-run it when a block's look changes
   or a block is added). Pages are listed by name (meta title before " | ") with the URL underneath. Preview: page routes render per request with
   click-to-edit; `PAGE_NO_STEGA` in `src/lib/content.ts` keeps markers out of HTML, paths, layout switches, empty strings and <head>.
-- **CMS-driven cards/CTA/slider (2026-11-26, branch `cms-components`, goes live with the phase 3 cutover):** a "Related
+- **CMS-driven cards/CTA/slider (2026-11-26, live since the 2026-11-27 cutover):** a "Related
   articles" block stores article references (`articles`), the homepage carousel stores Solutions references (`solutions`);
   cards are built from the article (`src/lib/article-cards.ts`). Articles have `audience` (men → blue/slate end CTA,
   women/general → maroon), `relatedArticles`, optional `cardImage`; the CTAs are `articleCta-<audience>` documents. Never paste
   card copies into a page again. Card images: fixed 3:2 box, hover zoom. Details: MIGRATION.md.
-- Phase 1 keeps rich text as the Webflow HTML (bodies hold embeds: quizzes, FAQ JSON-LD) and images as site paths
-  (`/images/cms/...`). Portable Text and Sanity image assets are later phases.
+- **Phase 3 is live (cutover 2026-11-27, Evgenii: "Go with B then"):** rich text (article body/summary, author bio) is Portable
+  Text (embeds the editor can't hold, i.e. FAQ JSON-LD, quizzes, the table, stay `htmlEmbed` blocks with the source HTML) and
+  CMS/page-builder images are Sanity image assets served by the image CDN (`imgAttrs`). og:image = the hero image as a
+  1200×630 JPG from the CDN (`?w=1200&h=630&fit=crop&fm=jpg`, `shareImage` in Layout.astro); homepage = the hero video poster.
+  Never run `npm run import` / `import:pages` again (they would put back the old HTML/path shapes). Check a release with
+  `node scripts/release-check.mjs <base> <reference>` (articles vs reference, the 7 asks, og:image JPG).
 - `src/content/` is the frozen Webflow CSV snapshot the import came from (`node scripts/sanity-export.mjs` →
   `cd studio && npm run import`, which **replaces** the documents by id). Edit content in Sanity, not there.
 - **Editorial preview (live since 2026-11-25; Studio → Preview).** `SANITY_PREVIEW=1 npm run build` builds a server-rendered copy
