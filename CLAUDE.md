@@ -126,7 +126,8 @@ The `/style-guide` route renders every token. Update it when you add one.
 ## Content
 
 **CMS content lives in Sanity** (since 2026-11-24): project `9qg5x7wu` ("RHM"), dataset `production` (public, read without a
-token), in KHOD's Sanity org (oZlH5hGsr) until it is transferred to an RHM-owned account at handover. Collections: articles,
+token), owned by RHM's Sanity org "Regenerative and Hormone Medicine" (ogokh587b) since 2026-11-26 (transferred from KHOD's
+org oZlH5hGsr; project ID, Studio, webhook and tokens unchanged; evgenii@khod.io is Administrator there). Collections: articles,
 authors, blog-categories, testimonials, solutions, newsletters, researches. Newsletters and researches have no pages (by decision).
 
 - Schemas and Studio: `studio/` (`cd studio && npm install && npm run dev`). Hosted at https://rhmmed.sanity.studio (deployed 2026-11-24 at Evgenii's request; sign-in, project members only). Redeploy with `cd studio && npx sanity deploy`.

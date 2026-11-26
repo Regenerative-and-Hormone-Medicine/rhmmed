@@ -98,8 +98,8 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
       blocks (one per component); the build reads them from Sanity, byte-identical. Homepage, /contact, /scheduling imported
       2026-11-26 (32 page documents, 36 block types, thumbnails for all; Studio redeployed). Phase 1 done 2026-11-24: the 7 Webflow CMS collections (77 documents) are in project `9qg5x7wu`. Studio hosted
       at https://rhmmed.sanity.studio. Publish webhook → Vercel deploy hook live 2026-11-25 (tested: a
-      save triggered a `rhmmed` build). Open: Portable Text/images; evgenii@khod.io is a member of RHM's Sanity org (ogokh587b)
-      but needs Administrator there before the project can be transferred.
+      save triggered a `rhmmed` build). Project transferred to RHM's org (ogokh587b) 2026-11-26; webhook still enabled, 32 pages read fine.
+      Open: Portable Text/images (after go-live).
 - [x] QA re-run 2026-11-25 on the page-builder build (57 routes × 5 widths + clip check at 320/360/375): no sideways scroll, no
       broken links, no failed requests; known results listed in MIGRATION.md "QA pass".
 - [x] 301s tested on staging: all 29 rules in `docs/redirects.csv` (24 redirects land on a 200 in one hop, 5 stay 404) + all 56 live URLs return 200 (no trailing-slash or `.html` hops
