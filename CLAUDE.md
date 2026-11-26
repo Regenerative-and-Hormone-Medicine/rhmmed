@@ -116,6 +116,9 @@ Staging tests so far ran on a Cloudflare Pages emulator; re-run them on a Vercel
 - QA: `node scripts/qa-sweep.mjs out.json` (every route × 1440/991/767/390/320: sideways scroll, console errors, failed
   requests, semantics, internal links) and `WS=320,360,375 node scripts/clip-check.mjs <base>` (text cut off at the edge;
   `main` clips overflow, so the sweep can't see it). Run both after layout changes. Deliberate deviations from live: MIGRATION.md "QA pass".
+- Tracking (`src/components/Tracking.astro`): inline scripts must use `set:html={`...`}`. A `{`...`}` child prints the code as text
+  in Astro 7 (it broke GTM, the GA config, the Meta pixel and PostHog until 2026-11-26). GA4 counts 1 page_view per load (checked
+  2026-11-26, live and new): gtag ignores the repeated config from GTM; the extra google.com/g/collect hit is GA's normal ads copy.
 - `src/lib/img-size.ts` reads an image's intrinsic size at build time; spread it on `<img>` (`{...size}`) to prevent layout shift.
 
 The `/style-guide` route renders every token. Update it when you add one.
@@ -147,8 +150,11 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
   (`NOT_YET_IMPORTED` in `src/lib/sanity-loader.ts`; Sanity wins once a document exists; empty the list after the import).
   `PAGES_SOURCE=ndjson npm run build` builds from `.sanity-import/pages.ndjson` to check an import before running it.
   Still to do after the import: block thumbnails for the 5 new blocks (`gen-block-thumbs.mjs`).
-  **Studio look = KHOD's Studio (Evgenii, 2026-11-25):** sidebar Pages (Men's / Women's / Hubs / Info) · Content (articles,
-  testimonials, solutions, newsletters, research) · Taxonomy · People; an `@sanity/icons` icon on every block (`ICONS` in the
+  **Studio look = KHOD's Studio (Evgenii, 2026-11-25); sidebar = the site menu (Evgenii, 2026-11-26):** Home · Men · Women ·
+  Resources (articles, categories, authors) · About · How it Works · For Patients · Other pages (footer & links) · Homepage carousel
+  (Solutions), pages in menu order (lists in `studio/sanity.config.ts`; keep them in step with `src/data/nav.ts`). Testimonials,
+  newsletters and research are not in the sidebar: the site doesn't use them (reviews = the embedded Google reviews widget); their
+  documents stay in the dataset; an `@sanity/icons` icon on every block (`ICONS` in the
   generator) and document type; "Add section" opens a thumbnail grid (`studio/static/block-previews/<type>.jpg`, one
   screenshot per block, made by `BASE=<preview url> node scripts/gen-block-thumbs.mjs`; re-run it when a block's look changes
   or a block is added). Pages are listed by name (meta title before " | ") with the URL underneath. Preview: page routes render per request with
@@ -168,5 +174,8 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
 - The project started on Sanity's $0 Growth Trial (until 2026-12-24, then Free). No card on file; never add one or upgrade.
 
 ## Forms
+
+Verified 2026-11-26: both forms send the same payload as live (fields, `form_name`, Botpoison solution) to the same endpoints
+and show the same success state (request intercepted, nothing delivered). A real delivery test emails the client: only with Evgenii's OK.
 
 Formspark + Botpoison, same endpoints as the live site: contact `aQcnERsKm`, book `enYsqVsm7`.

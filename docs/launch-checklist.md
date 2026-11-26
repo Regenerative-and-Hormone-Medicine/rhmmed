@@ -79,9 +79,11 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
       /telehealth, /why-us, /faq, /women/menopause, /.
 - [~] Visual regression after today's changes: 11 routes re-scored identical to the previous run; pages touched by the fixes
       re-checked (see MIGRATION.md). Homepage 1440 varies with the hero video frame (known residual).
-- [-] Forms: real submission + delivery not tested. A real submit emails the client's inbox. Do one test submission per form
+- [~] Forms (2026-11-26): payload, endpoint, Botpoison and success state identical to live on /contact and /cheating-death
+      (intercepted, nothing sent). Real delivery not tested. A real submit emails the client's inbox. Do one test submission per form
       on the production URL on launch day, with the client warned, or route a test through Steve.
-- [~] Analytics: the same tags as live (GTM-MNGP32KD, GA4 G-D9VW2K0DPP, PostHog, Meta pixel 928258004184901, GHL),
+- [x] Analytics fixed 2026-11-26: the inline tags (GTM, GA config, Meta pixel, PostHog) were printed as text and never ran on the
+      Vercel build; now real scripts. GA4: 1 page_view per load on live and new (no double counting). Previously: the same tags as live (GTM-MNGP32KD, GA4 G-D9VW2K0DPP, PostHog, Meta pixel 928258004184901, GHL),
       production builds only. Note: GA4 loads directly *and* GTM is present, the same as live; check GTM doesn't also fire GA4
       (double counting). No consent banner on live; none added. Search Console verification tag carried over.
 - [~] Platform: **Vercel** (Hobby, RHM's team `rhm16`): projects `rhmmed` (https://rhmmed.vercel.app; redirects and 404 checked)
