@@ -19,6 +19,11 @@ const articles = (await list(Astro, 'articles')).sort((a, b) => {
   if (ra >= 0 && rb >= 0) return ra - rb;
   return (b.data.date ?? '').localeCompare(a.data.date ?? '');
 });
+// Filter chips: only categories that have articles (a chip that empties the list helps no one), with their article count.
+const catIds = (a: (typeof articles)[number]) => a.data.category.split(';').map((s: string) => s.trim()).filter(Boolean);
+const counts = new Map<string, number>();
+for (const a of articles) for (const id of catIds(a)) counts.set(id, (counts.get(id) ?? 0) + 1);
+const chipCats = cats.filter((c) => counts.get(c.id));
 const fmt = (d: string | null) => d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '';
 const strip = (h: string) => h.replace(/<[^>]+>/g, '').trim();
 const alts = page.cardAlts as Record<string, string>;
@@ -44,11 +49,9 @@ const sizes = Object.fromEntries(await Promise.all(articles.map(async (a) => [a.
 
   <section class="py-[7.5rem] max-sm:py-16">
     <div class="container-site flex flex-col gap-[3.125rem] max-sm:gap-8">
-      <div class="filters mb-[15px] flex items-start gap-4 max-sm:flex-wrap" role="radiogroup" aria-label="Filter articles by category">
-        <button type="button" class="chip is-on -mt-[5px]" data-cat="" role="radio" aria-checked="true" tabindex="0">All</button>
-        <div class="flex flex-wrap items-center max-sm:gap-4">
-          {cats.map((c) => <button type="button" class="chip" data-cat={c.id} role="radio" aria-checked="false" tabindex="-1">{c.data.name}</button>)}
-        </div>
+      <div class="filters flex flex-wrap items-center gap-2" role="radiogroup" aria-label="Filter articles by category">
+        <button type="button" class="chip is-on" data-cat="" role="radio" aria-checked="true" tabindex="0">All<span class="chip-n">{articles.length}</span></button>
+        {chipCats.map((c) => <button type="button" class="chip" data-cat={c.id} role="radio" aria-checked="false" tabindex="-1">{c.data.name}<span class="chip-n">{counts.get(c.id)}</span></button>)}
       </div>
       <div class="grid grid-cols-[1fr_1fr] gap-6 max-lg:grid-cols-[1fr]">
         {articles.map((a) => {
@@ -84,8 +87,19 @@ const sizes = Object.fromEntries(await Promise.all(articles.map(async (a) => [a.
 </Layout>
 
 <style>
-  .chip { position: relative; display: flex; align-items: center; border-radius: .5rem; background: #fff; padding: .625rem 1.5rem; }
-  .chip.is-on { background: #e3e3e3; }
+  /* Filter chips (Evgenii asked for a nicer filter, 2026-11-26): one wrapping row of pills, grey off, black on (like the
+     site's buttons), hover a shade darker, focus ring only for keyboard users. */
+  .chip {
+    display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; padding: .625rem 1.125rem;
+    background: var(--color-bg-light); color: var(--color-ink); font-size: 1rem; line-height: 1.25rem;
+    cursor: pointer; transition: background-color 200ms, color 200ms;
+  }
+  .chip:hover { background: var(--color-bg-dark); }
+  .chip.is-on { background: var(--color-black); color: var(--color-white); }
+  .chip:focus { outline: none; }
+  .chip:focus-visible { outline: 2px solid var(--color-blue); outline-offset: 2px; }
+  .chip-n { font-size: .75rem; line-height: 1; opacity: .55; font-variant-numeric: tabular-nums; }
+  .chip.is-on .chip-n { opacity: .7; }
 </style>
 
 <script>

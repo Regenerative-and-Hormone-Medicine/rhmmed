@@ -461,6 +461,13 @@ og:description, robots, canonical, H1, H2, all JSON-LD): 3 differences, all pres
 the rotating words as plain text in the build; /advance-home-testing has og:title/og:description in the build but not on live.
 sitemap.xml and robots.txt identical.
 
+## Article filter redesign (2026-11-26, Evgenii: "make this filtration a bit nicer")
+
+Deliberate deviation from live on `/articles`: the category filter is one wrapping row of pill chips (`bg-light` off,
+`bg-dark` hover, black/white when selected, keyboard-only focus ring), each with its article count; "All" sits in the
+row instead of its own column. Categories with no articles are hidden (live shows Menopause, Stress and Postmenopause,
+which lead to an empty list; they reappear when an article is tagged). Same ARIA radio group and keys as before.
+
 ## QA pass (2026-11-24, Evgenii: "dropdowns too far from the nav; QA everything incl. responsive; improve semantics")
 
 Header now matches live at every width (measured against www.rhmmed.com with Playwright):
