@@ -41,10 +41,10 @@ export function toEntry(type: string, d: any, withBody = false) {
 // Page-builder pages (Sanity `page` documents) → the page JSON SectionPage renders, keyed by path ("/men/pcos").
 export const PAGES_QUERY = '*[_type == "page"] | order(order asc)';
 
-// Pages moved into the builder (2026-11-25) whose documents aren't imported into Sanity yet. Until they are, the build takes
-// them from the page JSON snapshot, encoded exactly as `npm run import:pages` would send them. Once Sanity has a document
-// for a path, Sanity wins. Empty this list after the import.
-const NOT_YET_IMPORTED = ['/', '/contact', '/scheduling'];
+// Pages moved into the builder whose documents aren't imported into Sanity yet. Until they are, the build takes them from
+// the page JSON snapshot, encoded exactly as `npm run import:pages` would send them. Once Sanity has a document for a path,
+// Sanity wins. Empty this list after the import. (Home, /contact, /scheduling were imported 2026-11-26.)
+const NOT_YET_IMPORTED: string[] = [];
 
 // PAGES_SOURCE=ndjson: read every page from .sanity-import/pages.ndjson (the file `npm run import:pages` sends) instead of
 // Sanity, to check that the import renders the same site before running it.

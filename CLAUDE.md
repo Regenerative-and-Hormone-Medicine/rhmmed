@@ -98,7 +98,7 @@ GA4/GSC/GTM access. Client asks: Notion "RHM website: moving off Webflow" (invit
 **Deploy (2026-11-24):** RHM's Vercel team `rhm16` (Hobby) builds https://github.com/Regenerative-and-Hormone-Medicine/rhmmed
 (public). Project `rhmmed` → https://rhmmed.vercel.app (static, no custom domain yet). Project `rhmmed-preview` →
 https://rhmmed-preview.vercel.app (env `SANITY_PREVIEW=1`, `PREVIEW_COOKIE_SECRET`, `SANITY_VIEWER_TOKEN`, all Production).
-Both build on push to main (GitHub main = 255cd29 since 2026-11-25). **Publishing in Sanity rebuilds `rhmmed`**: Sanity webhook
+Both build on push to main (GitHub main = 7da3c14 since 2026-11-26). **Publishing in Sanity rebuilds `rhmmed`**: Sanity webhook
 "Vercel rebuild (rhmmed)" (types page, article, author, blogCategory, solution, testimonial; create/update/delete, no drafts) →
 Vercel deploy hook "Sanity publish" (rhmmed, branch main). The preview project needs no rebuild (it reads Sanity per request).
 A manual Redeploy in RHM's Vercel asks for a 6-digit code emailed to support@rhmmed.net; pushes and the hook don't. The live site is still Webflow. Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
@@ -146,10 +146,11 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
   documents: only re-run before editors start). The Sanity build was byte-identical to the JSON build (all 456 files) on 2026-11-25.
   Homepage, /contact and /scheduling moved into the builder 2026-11-25 (blocks homeHero, homeIntro, solutionsCarousel,
   contactForm, bookingEmbed; 36 block types; JSON in `src/data/pages/{home,contact,scheduling}.json`; screenshots of 6 pages × 1440/390
-  pixel-identical to the hand-built pages). **Until `npm run import:pages` runs, those three come from the JSON snapshot**
-  (`NOT_YET_IMPORTED` in `src/lib/sanity-loader.ts`; Sanity wins once a document exists; empty the list after the import).
-  `PAGES_SOURCE=ndjson npm run build` builds from `.sanity-import/pages.ndjson` to check an import before running it.
-  Still to do after the import: block thumbnails for the 5 new blocks (`gen-block-thumbs.mjs`).
+  pixel-identical to the hand-built pages). Imported into Sanity 2026-11-26 (only those 3 docs, `--missing`, so the 29 existing
+  documents and any editor changes were untouched); all 32 pages now come from Sanity, and that build is byte-identical to the
+  ndjson build. `NOT_YET_IMPORTED` in `src/lib/sanity-loader.ts` (now empty) is the fallback for a page added to the builder
+  before its import. `PAGES_SOURCE=ndjson npm run build` builds from `.sanity-import/pages.ndjson` to check an import before
+  running it. **Once editors work in Sanity, never run `import:pages` (`--replace`) again**: import single new docs with `--missing`.
   **Studio look = KHOD's Studio (Evgenii, 2026-11-25); sidebar = the site menu (Evgenii, 2026-11-26):** Home · Men · Women ·
   Resources (articles, categories, authors) · About · How it Works · For Patients · Other pages (footer & links) · Homepage carousel
   (Solutions), pages in menu order (lists in `studio/sanity.config.ts`; keep them in step with `src/data/nav.ts`). Testimonials,

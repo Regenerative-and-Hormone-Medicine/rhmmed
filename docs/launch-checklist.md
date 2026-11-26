@@ -88,12 +88,12 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
       (double counting). No consent banner on live; none added. Search Console verification tag carried over.
 - [~] Platform: **Vercel** (Hobby, RHM's team `rhm16`): projects `rhmmed` (https://rhmmed.vercel.app; redirects and 404 checked)
       and `rhmmed-preview` exist and build from GitHub main (2026-11-24). `vercel.json` has the redirects, `cleanUrls` and
-      `trailingSlash: false`. Page builder + a11y work pushed to main 2026-11-25 (255cd29); `SANITY_VIEWER_TOKEN` set on
+      `trailingSlash: false`. Page builder + a11y work pushed to main 2026-11-25 (255cd29); tracking fix + home/contact/scheduling blocks pushed 2026-11-26 (7da3c14); `SANITY_VIEWER_TOKEN` set on
       rhmmed-preview and the Studio Preview tab loads it. Open: on go-live add `www.rhmmed.com` + apex redirect and SSL. DNS is at
       **GoDaddy**: point the records at Vercel on launch day.
 - [~] **Sanity**: phase 2 page builder done 2026-11-25: the 29 treatment/hub/info pages are `page` documents built from 31 section
-      blocks (one per component); the build reads them from Sanity, byte-identical. Homepage, /contact, /scheduling not in the
-      builder yet. Phase 1 done 2026-11-24: the 7 Webflow CMS collections (77 documents) are in project `9qg5x7wu`. Studio hosted
+      blocks (one per component); the build reads them from Sanity, byte-identical. Homepage, /contact, /scheduling imported
+      2026-11-26 (32 page documents, 36 block types, thumbnails for all; Studio redeployed). Phase 1 done 2026-11-24: the 7 Webflow CMS collections (77 documents) are in project `9qg5x7wu`. Studio hosted
       at https://rhmmed.sanity.studio. Publish webhook → Vercel deploy hook live 2026-11-25 (tested: a
       save triggered a `rhmmed` build). Open: Portable Text/images; evgenii@khod.io is a member of RHM's Sanity org (ogokh587b)
       but needs Administrator there before the project can be transferred.
