@@ -564,7 +564,7 @@ Verification (2026-11-26, after merging main db3df57 into the branch):
 - `npm run build` (production dataset) vs main's build: byte-identical, 456/456 files.
 - `SANITY_DATASET=pt-staging npm run build` vs that: 455/456 files identical once `<img>` src/srcset/sizes/width/height and
   og:image are normalised and the HTML is re-serialised (parse5). The rest:
-  - og:image on 45 pages points at the Sanity original (`cdn.sanity.io/images/9qg5x7wu/<dataset>/…`) instead of
+  - og:image on 46 pages points at the Sanity original (`cdn.sanity.io/images/9qg5x7wu/<dataset>/…`) instead of
     `www.rhmmed.com/images/…`. Same image; a head change vs live, needs Evgenii's OK at cutover.
   - The Dr. Rand quote embed is re-serialised (double quotes, `&amp;`): same DOM.
   - /articles/trt-side-effects: 7 reference links with `target="_blank"` and no rel now get `rel="noopener"` (the article
