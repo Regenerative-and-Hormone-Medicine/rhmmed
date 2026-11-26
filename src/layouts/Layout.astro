@@ -60,6 +60,8 @@ const robots = isPreview ? 'noindex, nofollow' : live ? live.robots : 'index, fo
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-light.png" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href="/fonts/GeistVF.woff2" as="font" type="font/woff2" crossorigin />
+    {/* CMS images (hero/LCP on articles) come from Sanity's image CDN since 2026-11-27: open the connection early. */}
+    <link rel="preconnect" href="https://cdn.sanity.io" />
     <meta name="generator" content={Astro.generator} />
     {!isPreview && <Tracking />}
     <script is:inline>
