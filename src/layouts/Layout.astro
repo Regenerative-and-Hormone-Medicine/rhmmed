@@ -20,6 +20,13 @@ interface Props {
 }
 
 const { title, description, headerTheme = 'dark', chrome = true, ogImage, ogType = 'website', footer } = Astro.props;
+// Share image (Evgenii, 2026-11-27, "B"): LinkedIn, Facebook and Slack don't show AVIF, so Sanity images are served as a
+// 1200×630 JPG crop by the image CDN. Site paths (old data, the homepage video poster) are used as they are.
+const shareImage = (src: string) => {
+  const url = new URL(src, 'https://www.rhmmed.com');
+  if (url.hostname === 'cdn.sanity.io') url.search = 'w=1200&h=630&fit=crop&fm=jpg';
+  return url.href;
+};
 const SITE = 'https://www.rhmmed.com';
 // File output (dist/men.html): strip .html/index so the canonical stays https://www.rhmmed.com/men, as on live.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/(^|\/)index$/, '').replace(/\/$/, '');
@@ -43,7 +50,7 @@ const robots = isPreview ? 'noindex, nofollow' : live ? live.robots : 'index, fo
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
     <meta property="og:type" content={ogType} />
-    {ogImage && <meta property="og:image" content={new URL(ogImage, 'https://www.rhmmed.com').href} />}
+    {ogImage && <meta property="og:image" content={shareImage(ogImage)} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="google-site-verification" content="ri7Lby20xPl667ZCCyisSddlvqHr7EZ4EB5PSlt6xlo" />
     {path !== "/404" && <link rel="canonical" href={canonical} />}

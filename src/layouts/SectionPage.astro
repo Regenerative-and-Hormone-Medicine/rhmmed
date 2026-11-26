@@ -40,7 +40,9 @@ import type { Theme } from '../components/treatment/types';
 interface Props { page: { path: string; title: string; description: string; sections: any[]; footer?: any } }
 const { page } = Astro.props;
 const theme: Theme = page.path.startsWith('/men') ? 'men' : 'women';
-const heroImage = page.sections.find((s) => s.type === 'hero' || s.type === 'hubHero')?.image?.src;
+const heroImage = page.sections.find((s) => s.type === 'hero' || s.type === 'hubHero')?.image?.src
+  // Homepage (Evgenii, 2026-11-27): its share image is the hero video's poster frame (a JPG).
+  ?? page.sections.find((s) => s.type === 'homeHero')?.video?.poster;
 // Per-page header variant from the source (white text only where the live page sets it).
 const headerTheme = page.headerTheme ?? 'dark';
 ---
