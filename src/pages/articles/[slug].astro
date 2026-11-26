@@ -64,7 +64,7 @@ const shareFb = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
         </div>
       </div>
       <div class="w-full max-w-[43.875rem] overflow-hidden rounded-3xl">
-        <img src={a.image} alt={hero?.imageAlt ?? ''} class="size-full object-cover" />
+        <img src={a.image} alt={hero?.imageAlt ?? ''} class="size-full object-cover" fetchpriority="high" />
       </div>
     </div>
   </section>

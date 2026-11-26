@@ -545,3 +545,11 @@ hand-built pages: page-only CSS moved to `<style is:inline>` (no Astro scope att
 bundle; /contact also loads the swiper CSS. Full-page screenshots of /, /contact, /scheduling, /men/hormone-therapy, /faq, /men at
 1440 and 390 are pixel-identical to before. No copy changed. Sanity import not run yet (needs review): the three pages build from
 the JSON snapshot until then.
+
+## Speed pass after go-live (2026-11-26)
+
+Lighthouse mobile on live (Vercel): home 69, article 71 (desktop 99). The biggest cost was the GoHighLevel tracking script
+(`link.rhmmed.net/js/external-tracking.js`) loaded render-blocking in <head>: ~1.9 s of mobile first paint. Now `defer`
+(it still loads and posts its event to backend.leadconnectorhq.com; checked with Playwright). Also: preconnect to
+www.google-analytics.com, `fetchpriority="high"` on the article hero image. Local build after: home 97, article 88 (local
+numbers, not comparable 1:1 with live). Next: image sizes/formats through the Sanity image CDN (branch `sanity-portable-text`).
