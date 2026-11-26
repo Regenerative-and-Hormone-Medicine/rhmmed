@@ -1,5 +1,6 @@
 ---
 // Clinic cards: photo + name + address / hours / phone (source: .section.is-location).
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Button from '../Button.astro';
 import ArrowSm from '../../icons/arrow-sm.svg';
 interface Info { label: string; lines: string[]; link: { text: string; href: string } | null }
@@ -14,7 +15,7 @@ const p = Astro.props;
       {p.cards.map((c) => (
         <div class="flex justify-between gap-20 max-lg:flex-col-reverse max-md:gap-12">
           <div class="w-full max-w-[26.625rem] overflow-hidden rounded-2xl max-md:max-w-none">
-            {c.image && <img src={c.image.src} alt={c.image.alt} class="size-full object-cover" loading="lazy" />}
+            {c.image && <img {...imgAttrs(c.image.src, { sizes: '(max-width: 767px) calc(100vw - 3rem), 426px' })} alt={c.image.alt} class="size-full object-cover" loading="lazy" />}
           </div>
           <div class="flex w-full flex-col justify-between max-lg:gap-8">
             <div class="flex justify-between border-t border-bg-dark pt-6 max-sm:flex-col max-sm:gap-12">

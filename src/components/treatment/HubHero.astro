@@ -1,4 +1,5 @@
 ---
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Rich from '../Rich.astro';
 // Full-bleed image hero for /men and /women (source: .section.is-men_hero). Header is white over it.
 import Button from '../Button.astro';
@@ -35,7 +36,7 @@ const pos = p.imageClass.includes('is-men') ? 'max-md:object-[40%_50%] max-sm:ob
     </div>
   </div>
   <div class="absolute inset-0 rounded-[24px]">
-    {p.image && <img src={p.image.src} alt={p.image.alt} class:list={['absolute inset-0 w-full object-cover max-md:h-full', p.short ? 'h-full' : 'h-svh', pos]} />}
+    {p.image && <img {...imgAttrs(p.image.src, { sizes: '100vw' })} alt={p.image.alt} class:list={['absolute inset-0 w-full object-cover max-md:h-full', p.short ? 'h-full' : 'h-svh', pos]} />}
     <div class:list={['pointer-events-none absolute size-full', p.solid ? 'bg-black/30' : 'bg-gradient-to-b from-transparent to-black/60']}></div>
     {p.extraOverlay && <div class:list={['pointer-events-none absolute inset-0', p.extraOverlay === 'tint' ? 'bg-[#05051457]' : 'bg-gradient-to-b from-black/0 to-black/70']}></div>}
   </div>

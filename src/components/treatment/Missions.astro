@@ -1,5 +1,6 @@
 ---
 // Long-form statement with an image strip (source: .container.is-missions).
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import type { Img } from './types';
 type Block = { kind: 'h1' | 'body'; html: string } | { kind: 'images'; two: boolean; images: Img[] };
 interface Props { compact: boolean; label: string; blocks: Block[] }
@@ -19,7 +20,7 @@ const mobile = (two: boolean) => (two || p.compact ? 'max-sm:h-full' : 'max-md:h
           <div class:list={['grid min-h-[30.1875rem] w-full items-end gap-6', b.two ? 'grid-cols-2 max-sm:grid-cols-[auto]' : 'grid-cols-3 max-md:grid-cols-1']}>
             {b.images.map((im, i) => im && (
               <div class:list={['w-full overflow-hidden rounded-2xl', heights[i] ?? 'h-full', mobile(b.two)]}>
-                <img src={im.src} alt={im.alt} class="size-full object-cover" loading="lazy" />
+                <img {...imgAttrs(im.src, { sizes: b.two ? '(max-width: 479px) 100vw, 50vw' : '(max-width: 767px) 100vw, 33vw' })} alt={im.alt} class="size-full object-cover" loading="lazy" />
               </div>
             ))}
           </div>

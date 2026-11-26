@@ -1,6 +1,7 @@
 ---
 // Article detail (T6). Body, title, summary, author from the CMS collection; image alt text, CTA block and the
 // related-articles list come from the live page (src/data/articles/*.json) because the CSV export lacks them.
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import { getCollection } from 'astro:content';
 import { isPreview, list, one } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
@@ -64,7 +65,7 @@ const shareFb = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
         </div>
       </div>
       <div class="w-full max-w-[43.875rem] overflow-hidden rounded-3xl">
-        <img src={a.image} alt={hero?.imageAlt ?? ''} class="size-full object-cover" />
+        <img {...imgAttrs(a.image, { sizes: '(max-width: 991px) calc(100vw - 6rem), 702px' })} alt={hero?.imageAlt ?? ''} class="size-full object-cover" fetchpriority="high" />
       </div>
     </div>
   </section>
@@ -94,7 +95,7 @@ const shareFb = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
         {author && (
           <div class="flex flex-col gap-5 rounded-sm border border-bg-dark bg-bg-light p-6">
             <div class="flex items-center gap-2">
-              <img src={author.data.profile} alt="" class="aspect-square w-10 rounded-full object-cover" />
+              <img {...imgAttrs(author.data.profile, { sizes: '40px', widths: [40, 80], max: 120 })} alt="" class="aspect-square w-10 rounded-full object-cover" />
               <p class="text-h5">{author.data.name}</p>
             </div>
             <div class="summary-rte rich" set:html={noopener(author.data.bio)} {...(author.edit?.('bio') ?? {})} />

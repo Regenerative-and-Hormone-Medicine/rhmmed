@@ -1,6 +1,7 @@
 ---
 // Article index (T5): book-promo hero, category filter, all articles newest first.
 // Live site filters with Finsweet List Filter; here a small script does the same (an article matches any of its categories).
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import { list } from '../../lib/content';
 import Layout from '../../layouts/Layout.astro';
 import { imgSize } from '../../lib/img-size';
@@ -59,7 +60,7 @@ const sizes = Object.fromEntries(await Promise.all(articles.map(async (a) => [a.
           return (
             <div class="card group relative grid h-full min-h-[23.0625rem] grid-cols-[1fr] gap-8 rounded-3xl bg-bg-light p-4 max-md:auto-cols-fr max-md:grid-flow-col max-sm:flex max-sm:flex-col-reverse" data-cats={ids.join(' ')}>
               <div class="overflow-hidden rounded-2xl">
-                <img src={a.data.image} alt={alts[a.data.slug] ?? ''} {...sizes[a.data.slug]} class="size-full object-cover" loading="lazy" />
+                <img {...imgAttrs(a.data.image, { sizes: '(max-width: 767px) calc(100vw - 3rem), (max-width: 991px) 50vw, 420px' })} alt={alts[a.data.slug] ?? ''} {...sizes[a.data.slug]} class="size-full object-cover" loading="lazy" />
               </div>
               <div class="flex flex-col justify-between gap-6 max-md:gap-8">
                 <div class="flex flex-col items-start gap-4">

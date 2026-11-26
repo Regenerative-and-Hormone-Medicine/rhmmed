@@ -2,6 +2,7 @@
 // "Cheating Death" free-chapters hero: paper texture, book visual, inline signup (Formspark "Book" form + Botpoison).
 // The book is the live site's WebGL 3D book (src/scripts/book3d.ts); the static image shows until WebGL is ready,
 // and stays if WebGL is unavailable. On load the copy, form and header are hidden until the book pops in (as live).
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Rich from '../Rich.astro';
 interface Props {
   heading: string; body: string; image: { src: string; alt: string } | null; fields: { label: string; placeholder: string }[];
@@ -38,7 +39,7 @@ const types = ['text', 'email', 'tel'];
       <div class="book-visual relative mx-auto w-full max-w-[26rem]">
         <div class="-mt-10">
           <div class="book3d" data-book3d data-cover="/images/site/6ae8ce870c7058ec42ee2139_cheating-death-cover.jpg">
-            {p.image && <img src={p.image.src} alt={p.image.alt} width="520" height="546" class="book3d__fallback" fetchpriority="high" />}
+            {p.image && <img {...imgAttrs(p.image.src, { sizes: '(max-width: 767px) 100vw, 520px', dims: false })} alt={p.image.alt} width="520" height="546" class="book3d__fallback" fetchpriority="high" />}
           </div>
         </div>
       </div>
