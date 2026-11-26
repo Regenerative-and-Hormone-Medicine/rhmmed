@@ -89,8 +89,11 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
 - [~] Platform: **Vercel** (Hobby, RHM's team `rhm16`): projects `rhmmed` (https://rhmmed.vercel.app; redirects and 404 checked)
       and `rhmmed-preview` exist and build from GitHub main (2026-11-24). `vercel.json` has the redirects, `cleanUrls` and
       `trailingSlash: false`. Page builder + a11y work pushed to main 2026-11-25 (255cd29); tracking fix + home/contact/scheduling blocks pushed 2026-11-26 (7da3c14); `SANITY_VIEWER_TOKEN` set on
-      rhmmed-preview and the Studio Preview tab loads it. Open: on go-live add `www.rhmmed.com` + apex redirect and SSL. DNS is at
-      **GoDaddy**: point the records at Vercel on launch day.
+      rhmmed-preview and the Studio Preview tab loads it. Domains added to `rhmmed` 2026-11-26: `www.rhmmed.com` (Production) and `rhmmed.com` (308 → www); both "Invalid
+      Configuration" until DNS moves. **Launch-day change at GoDaddy** (DNS is GoDaddy; today it points at Webflow, TTL 3600):
+      `A @` 198.202.211.1 → **216.198.79.1**; `CNAME www` cdn.webflow.com → **ed818380e631dd17.vercel-dns-017.com**. Touch nothing
+      else: MX/autodiscover/SPF/MS verify/DMARC are Outlook email; `_webflow` TXT is harmless. SSL issues itself once DNS resolves.
+      Rollback = put the two old values back. Keep Webflow hosting a week after, then cancel.
 - [~] **Sanity**: phase 2 page builder done 2026-11-25: the 29 treatment/hub/info pages are `page` documents built from 31 section
       blocks (one per component); the build reads them from Sanity, byte-identical. Homepage, /contact, /scheduling imported
       2026-11-26 (32 page documents, 36 block types, thumbnails for all; Studio redeployed). Phase 1 done 2026-11-24: the 7 Webflow CMS collections (77 documents) are in project `9qg5x7wu`. Studio hosted
