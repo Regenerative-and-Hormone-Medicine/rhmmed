@@ -109,4 +109,12 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
 
 ## 5–7. Go live, post-live, after launch
 
-Not started. Needs Evgenii's go-ahead (section 4 last item).
+- [x] **Live on Vercel 2026-11-26.** Evgenii changed the two GoDaddy records (A @ 216.198.79.1, CNAME www → Vercel). Vercel shows
+      "Valid Configuration" for both domains; Let's Encrypt certs issued (www.rhmmed.com and rhmmed.com, valid to 2027-02-24).
+- [x] Post-live check 2026-11-26 (against Vercel's IPs, before every resolver had the new records): `server: Vercel`; all 56
+      sitemap URLs 200; `https://rhmmed.com/*` 308 → www; 24 redirects 301 in one hop, the 4 planned 404s stay 404 (same as Webflow);
+      real 404 page; robots.txt = live's; GTM-MNGP32KD, G-D9VW2K0DPP, Meta pixel and PostHog in the HTML. MX/SPF/MS verify unchanged.
+- [ ] Real form submission test (emails the client: only with Evgenii's OK).
+- [ ] Search Console: resubmit sitemap.xml; watch Coverage and 404s for 2 weeks. GA4 realtime shows traffic.
+- [ ] Cancel Webflow hosting about a week after launch (rollback until then = put the two old DNS values back).
+- [ ] 30-day review.

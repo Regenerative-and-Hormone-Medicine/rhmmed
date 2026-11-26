@@ -101,7 +101,7 @@ https://rhmmed-preview.vercel.app (env `SANITY_PREVIEW=1`, `PREVIEW_COOKIE_SECRE
 Both build on push to main (GitHub main = 7da3c14 since 2026-11-26). **Publishing in Sanity rebuilds `rhmmed`**: Sanity webhook
 "Vercel rebuild (rhmmed)" (types page, article, author, blogCategory, solution, testimonial; create/update/delete, no drafts) →
 Vercel deploy hook "Sanity publish" (rhmmed, branch main). The preview project needs no rebuild (it reads Sanity per request).
-A manual Redeploy in RHM's Vercel asks for a 6-digit code emailed to support@rhmmed.net; pushes and the hook don't. The live site is still Webflow. Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
+A manual Redeploy in RHM's Vercel asks for a 6-digit code emailed to support@rhmmed.net; pushes and the hook don't. **www.rhmmed.com is live on Vercel since 2026-11-26** (GoDaddy DNS points at Vercel; Webflow kept a week as rollback). Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
 **Sanity** (replacing the CSV-built content collections). Redirects live in `vercel.json`, generated from `docs/redirects.csv`.
 Staging tests so far ran on a Cloudflare Pages emulator; re-run them on a Vercel preview deployment. Launch status: `docs/launch-checklist.md` (with `docs/url-inventory.csv`, `docs/redirects.csv`,
 `docs/ui-audit.md`). Going live, DNS and pushing need Evgenii's OK, asked once with the checklist.
