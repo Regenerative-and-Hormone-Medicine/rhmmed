@@ -115,6 +115,7 @@ the head (schema, noindex, sitemap.xml, robots.txt, llms.txt, AEO proposals) was
       sitemap URLs 200; `https://rhmmed.com/*` 308 → www; 24 redirects 301 in one hop, the 4 planned 404s stay 404 (same as Webflow);
       real 404 page; robots.txt = live's; GTM-MNGP32KD, G-D9VW2K0DPP, Meta pixel and PostHog in the HTML. MX/SPF/MS verify unchanged.
 - [ ] Real form submission test (emails the client: only with Evgenii's OK).
-- [ ] Search Console: resubmit sitemap.xml; watch Coverage and 404s for 2 weeks. GA4 realtime shows traffic.
+- [x] Search Console: sitemap.xml resubmitted 2026-11-26 (read the same day, Success, 56 pages).
+- [ ] Search Console: watch Coverage and 404s for 2 weeks. GA4 realtime shows traffic.
 - [ ] Cancel Webflow hosting about a week after launch (rollback until then = put the two old DNS values back).
 - [ ] 30-day review.

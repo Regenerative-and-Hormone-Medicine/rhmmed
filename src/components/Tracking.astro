@@ -6,6 +6,7 @@ const enabled = import.meta.env.PROD;
 
 {enabled && (
   <Fragment>
+    <link rel="preconnect" href="https://www.google-analytics.com" />
     <script is:inline set:html={`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.agent='plwebflow';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '928258004184901');fbq('track', 'PageView');`}></script>
     <script is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -21,7 +22,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {/* GA4 (live site loads it through Webflow's first-party proxy; standard gtag.js here) */}
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-D9VW2K0DPP"></script>
     <script is:inline set:html={`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-D9VW2K0DPP');`}></script>
-    {/* GoHighLevel external tracking */}
-    <script is:inline src="https://link.rhmmed.net/js/external-tracking.js" data-tracking-id="tk_150b4f90463b40e4830926ad0b1248ca"></script>
+    {/* GoHighLevel external tracking. `defer` (2026-11-26): loaded blocking, it held first paint ~1.9 s on mobile
+        (Lighthouse); deferred it still runs on every page and still reads its data-tracking-id. */}
+    <script is:inline defer src="https://link.rhmmed.net/js/external-tracking.js" data-tracking-id="tk_150b4f90463b40e4830926ad0b1248ca"></script>
   </Fragment>
 )}
