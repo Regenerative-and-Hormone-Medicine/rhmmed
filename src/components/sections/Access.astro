@@ -1,5 +1,6 @@
 ---
 // "Your location shouldn't limit your health" — copy + check list + photo with blue US-map overlay (source: .section.is-access).
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Rich from '../Rich.astro';
 import Button from '../Button.astro';
 interface Props { heading: string; body: string; items: string[]; buttons: { text: string; href: string }[]; image: { src: string; alt: string } | null }
@@ -24,7 +25,7 @@ const p = Astro.props;
     </div>
     <div class="relative w-full max-w-[41.375rem] overflow-hidden rounded-3xl">
       <div class="max-md:size-full">
-        {p.image && <img src={p.image.src} alt={p.image.alt} class="size-full object-cover max-md:object-fill max-md:px-5" loading="lazy" />}
+        {p.image && <img {...imgAttrs(p.image.src, { sizes: '(max-width: 991px) 100vw, 662px' })} alt={p.image.alt} class="size-full object-cover max-md:object-fill max-md:px-5" loading="lazy" />}
       </div>
       <div class="access-overlay absolute inset-0"></div>
     </div>

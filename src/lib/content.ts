@@ -40,7 +40,9 @@ async function fetchPreview(ctx: Ctx, coll: Coll): Promise<Entry[]> {
     stega: {
       enabled: drafts,
       studioUrl: STUDIO_URL,
-      filter: (p) => (NO_STEGA.has(String(p.sourcePath.at(-1))) ? false : p.filterDefault(p)),
+      // Any segment, not just the last: inside a Portable Text body (body[3].children[0].text, htmlEmbed .html) nothing
+      // gets markers, as with the HTML string before, so embedded scripts and JSON-LD stay intact.
+      filter: (p) => (p.sourcePath.some((s) => NO_STEGA.has(String(s))) ? false : p.filterDefault(p)),
     },
   });
   const type = TYPES[coll];
@@ -90,7 +92,8 @@ export async function page(ctx: Ctx, path: string): Promise<{ data: any; edit?: 
     },
   });
   const doc = await client.fetch<any>('*[_type == "page" && path == $path][0]', { path });
-  return doc ? { data: decodePage(doc) } : undefined;
+  const { resolveImages } = await import('./portable-text.mjs');
+  return doc ? { data: decodePage(resolveImages(doc, SANITY)) } : undefined;
 }
 
 export async function list(ctx: Ctx, coll: Coll): Promise<Entry[]> {

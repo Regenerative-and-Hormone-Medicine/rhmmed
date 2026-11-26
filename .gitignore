@@ -38,3 +38,6 @@ dist-wip*/
 studio/dist/
 studio/.sanity/
 .vercel/
+
+# local screenshots (large PNGs, not committed)
+shots/

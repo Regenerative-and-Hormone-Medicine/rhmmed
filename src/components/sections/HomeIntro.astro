@@ -1,6 +1,7 @@
 ---
 // Homepage intro on grey: heading + copy, five benefit icons, and the two "I'm a woman / I'm a man" photo cards
 // (source: .section_designed). Cards round into pills, zoom and tint on hover.
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Energy from '../../icons/energy.svg';
 import Balance from '../../icons/balance.svg';
 import Clarity from '../../icons/clarity.svg';
@@ -47,7 +48,7 @@ const { heading, body, benefits, cards } = Astro.props;
             p.offset && 'mt-[6.25rem] max-md:mt-0',
           ]}
         >
-          <img src={p.image.src} alt={p.image.alt} class="absolute inset-x-0 bottom-0 z-0 w-full object-cover transition-transform duration-400 group-hover:scale-120 max-md:object-[50%_100%]" loading="lazy" />
+          <img {...imgAttrs(p.image.src, { sizes: '(max-width: 767px) calc(100vw - 3rem), 486px' })} alt={p.image.alt} class="absolute inset-x-0 bottom-0 z-0 w-full object-cover transition-transform duration-400 group-hover:scale-120 max-md:object-[50%_100%]" loading="lazy" />
           <div class="absolute inset-0 z-[1] bg-gradient-to-b from-transparent to-black/80"></div>
           <div class="absolute inset-0 z-[1] flex w-full flex-col items-start justify-end gap-6 p-8 transition-transform duration-350 group-hover:-translate-y-[33%]">
             <h3 class="text-h3 text-white">{p.heading}</h3>

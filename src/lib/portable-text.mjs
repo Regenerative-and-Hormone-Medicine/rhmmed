@@ -53,6 +53,30 @@ export function resolveImages(v, cfg) {
   return v;
 }
 
+// ---------- responsive <img> attributes ----------
+
+// A Sanity CDN image URL (what imageSrc / resolveImages produce): .../<sha1>-<w>x<h>.<ext>
+const CDN = /^https:\/\/cdn\.sanity\.io\/images\/[^/?#]+\/[^/?#]+\/[0-9a-f]+-(\d+)x(\d+)\.([a-z0-9]+)$/;
+const WIDTHS = [320, 480, 640, 800, 1080, 1280, 1600, 1920, 2400];
+
+/**
+ * Attributes for an <img>, spread where `src={...}` used to be: `<img {...imgAttrs(src, { sizes })} alt=... />`.
+ * - Site path (old shape) or any non-Sanity URL → `{ src }` only, so the production build stays byte-identical.
+ * - Sanity image URL → a resized src plus srcset (`?w=…&fit=max&auto=format`: WebP/AVIF where the browser takes it, never
+ *   upscaled), `sizes`, and the intrinsic width/height from the asset name (reserves the space: no layout shift).
+ *   `max` caps the largest candidate; `dims: false` when the template sets its own width/height.
+ * - SVG and GIF are left alone (`{ src }`): resizing would rasterise / drop the animation.
+ */
+export function imgAttrs(src, { sizes = '100vw', max = 2400, widths = WIDTHS, dims = true } = {}) {
+  const m = CDN.exec(src ?? '');
+  if (!m || m[3] === 'svg' || m[3] === 'gif') return { src };
+  const w = +m[1], h = +m[2];
+  const cap = Math.min(w, max);
+  const ws = [...widths.filter((x) => x < cap), cap];
+  const url = (x) => `${src}?w=${x}&fit=max&auto=format`;
+  return { src: url(cap), srcset: ws.map((x) => `${url(x)} ${x}w`).join(', '), sizes, ...(dims ? { width: w, height: h } : {}) };
+}
+
 // ---------- Portable Text → HTML ----------
 
 // Webflow wrote text with only & and < escaped and a non-breaking space as &nbsp;. Do the same so the output matches.
@@ -91,6 +115,9 @@ function inlineHtml(block) {
   return out;
 }
 
+// The article body column is at most 50rem (800px); below 992px it is the container width (side padding 2rem/1.5rem/1rem).
+const FIGURE_SIZES = '(max-width: 991px) calc(100vw - 3rem), 800px';
+
 const BLOCK_TAG = { normal: 'p', h2: 'h2', h3: 'h3', h4: 'h4', blockquote: 'blockquote' };
 
 function components(cfg) {
@@ -108,15 +135,18 @@ function components(cfg) {
       image: ({ value }) => {
         const i = imageInfo(value, cfg);
         if (!i) return '';
+        const r = imgAttrs(i.src, { sizes: FIGURE_SIZES, max: 1600 });
+        const resp = r.srcset ? ` srcset="${escAttr(r.srcset)}" sizes="${r.sizes}"` : '';
         const mw = value.maxWidth ? ` style="max-width:${escAttr(value.maxWidth)}"` : '';
         const dmw = value.maxWidth ? ` data-rt-max-width="${escAttr(value.maxWidth)}"` : '';
         const cap = value.caption ? `<figcaption>${escText(value.caption)}</figcaption>` : '';
-        return `<figure class="w-richtext-figure-type-image w-richtext-align-fullwidth"${mw} data-rt-type="image" data-rt-align="fullwidth"${dmw}><div><img alt="${escAttr(value.alt)}" src="${i.src}" loading="lazy" width="${i.width}" height="${i.height}"></div>${cap}</figure>`;
+        return `<figure class="w-richtext-figure-type-image w-richtext-align-fullwidth"${mw} data-rt-type="image" data-rt-align="fullwidth"${dmw}><div><img alt="${escAttr(value.alt)}" src="${escAttr(r.src)}"${resp} loading="lazy" width="${i.width}" height="${i.height}"></div>${cap}</figure>`;
       },
       // The doctor quote with a profile photo (was a Webflow HTML embed; same markup, now editable fields).
       quote: ({ value }) => {
         const p = imageInfo(value.photo, cfg);
-        const photo = p ? `<img src="${p.src}" loading="lazy" alt="${escAttr(value.photo.alt)}" class="profile_img" width="${p.width}" height="${p.height}">` : '';
+        const pr = p && imgAttrs(p.src, { sizes: '80px', widths: [80, 160], max: 240 });
+        const photo = p ? `<img src="${escAttr(pr.src)}"${pr.srcset ? ` srcset="${escAttr(pr.srcset)}" sizes="${pr.sizes}"` : ''} loading="lazy" alt="${escAttr(value.photo.alt)}" class="profile_img" width="${p.width}" height="${p.height}">` : '';
         return `<div data-rt-embed-type='true'><blockquote class="blockquote"><p><em>${escText(value.text)}</em></p><div class="blockquote_profile">${photo}<p class="body-m fw-500 color-dark">${escText(value.name)}</p></div></blockquote></div>`;
       },
       // Raw HTML kept verbatim: scripts / JSON-LD, the quiz, the table, style tags.

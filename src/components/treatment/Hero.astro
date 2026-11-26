@@ -1,4 +1,5 @@
 ---
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Rich from '../Rich.astro';
 // Treatment hero (source: .section.is-women-drop-hero). Women: breadcrumb + heading above an image panel with a card.
 // Men: everything inside the card, uppercase semibold heading with a slate accent span.
@@ -49,7 +50,7 @@ const Current = p.currentIsH1 ? 'h1' : 'span';
           )}
         </div>
       </div>
-      {p.image && <img src={p.image.src} alt={p.image.alt} class="absolute inset-0 z-0 size-full object-cover max-md:object-[100%_50%]" />}
+      {p.image && <img {...imgAttrs(p.image.src, { sizes: '100vw' })} alt={p.image.alt} class="absolute inset-0 z-0 size-full object-cover max-md:object-[100%_50%]" />}
     </div>
   </div>
 </section>

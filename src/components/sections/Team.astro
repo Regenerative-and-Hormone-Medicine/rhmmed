@@ -1,5 +1,6 @@
 ---
 // Provider cards: specialty pill, "+" reveals bio (hover on desktop, tap on tablet/mobile), photo, name (source: .container.is-team).
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Rich from '../Rich.astro';
 import Plus from '../../icons/plus.svg';
 interface Card { tag: string; bio: string; image: { src: string; alt: string } | null; name: string }
@@ -26,7 +27,7 @@ const p = Astro.props;
                 <Rich class="text-body-r" html={c.bio} />
               </div>
             </div>
-            {c.image && <img src={c.image.src} alt={c.image.alt} class="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full object-cover max-md:mx-auto max-md:max-h-[28rem] max-md:max-w-none max-md:object-contain" loading="lazy" />}
+            {c.image && <img {...imgAttrs(c.image.src, { sizes: '(max-width: 767px) calc(100vw - 3rem), (max-width: 991px) 50vw, 432px' })} alt={c.image.alt} class="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full object-cover max-md:mx-auto max-md:max-h-[28rem] max-md:max-w-none max-md:object-contain" loading="lazy" />}
           </div>
           <h3 id={`team-name-${i}`} class="text-h4 capitalize" set:html={c.name} />
         </div>

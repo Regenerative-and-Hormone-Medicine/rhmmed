@@ -1,4 +1,5 @@
 ---
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Rich from '../Rich.astro';
 // "Testosterone / Estrogen & Progesterone" explainer with icon checks and a chart (source: .section.is-testoteron).
 import type { Img } from './types';
@@ -16,14 +17,14 @@ const p = Astro.props;
       <div class="grid grid-cols-4 items-start gap-20 max-md:gap-8 max-sm:grid-cols-2">
         {p.checks.map((c) => (
           <div class="flex w-full max-w-[9.375rem] flex-col items-center gap-2.5">
-            {c.icon && <img src={c.icon.src} alt="" class="aspect-square w-8" />}
+            {c.icon && <img {...imgAttrs(c.icon.src, { sizes: '32px', widths: [32, 64], max: 96 })} alt="" class="aspect-square w-8" />}
             <Rich class="text-body-m" html={c.text} />
           </div>
         ))}
       </div>
     </div>
     <div class="flex w-full max-w-[55.375rem] flex-col gap-2.5 max-lg:max-w-none">
-      {p.image && <img src={p.image.src} alt={p.image.alt} loading="lazy" />}
+      {p.image && <img {...imgAttrs(p.image.src, { sizes: '(max-width: 991px) 100vw, 886px' })} alt={p.image.alt} loading="lazy" />}
     </div>
   </div>
 </section>

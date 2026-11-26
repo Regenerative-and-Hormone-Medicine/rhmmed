@@ -1,5 +1,6 @@
 ---
 // "Why standard care falls short" (source: .section.is-causes + variants).
+import { imgAttrs } from '../../lib/portable-text.mjs';
 interface Props {
   variant: 'slate' | 'blush' | 'mist' | 'brown' | 'white'; big?: boolean; lightCards?: boolean; label: string; heading: string; body: string; grid: string[];
   cards: { small: string; big: string; reverse?: boolean; icon?: { src: string; alt: string } | null }[]; signsGrid?: boolean; stacked?: boolean; headingMax?: string | null;
@@ -32,7 +33,7 @@ const grid = p.stacked
         <div class:list={['grid gap-6', grid]}>
           {p.cards.map((c) => (
             <div class:list={['flex justify-between rounded-[24px] p-[1.875rem] text-black', p.stacked && 'items-center text-center', p.lightCards ? 'bg-bg-light' : 'bg-white', c.reverse === false ? 'flex-col gap-[3.125rem]' : 'flex-col-reverse gap-[3.75rem]']}>
-              {c.icon ? <img src={c.icon.src} alt={c.icon.alt} class="w-full max-w-[7.5rem]" loading="lazy" /> : <div class="rich text-body-r" set:html={c.small} />}
+              {c.icon ? <img {...imgAttrs(c.icon.src, { sizes: '120px', widths: [120, 240], max: 360 })} alt={c.icon.alt} class="w-full max-w-[7.5rem]" loading="lazy" /> : <div class="rich text-body-r" set:html={c.small} />}
               <p class:list={['text-h4 capitalize', p.lightCards && 'max-w-[16.25rem]']} set:html={c.big} />
             </div>
           ))}

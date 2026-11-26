@@ -1,4 +1,5 @@
 ---
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Rich from '../Rich.astro';
 // 5-step process carousel with step indicator (source: .section.is-process). Autoplays every 5s, next slide
 // peeks in from the right on desktop, inactive slides dim to 30%.
@@ -25,7 +26,7 @@ const p = Astro.props;
           {p.steps.map((s) => (
             <div class="swiper-slide">
               <div class="slide-wrap relative flex min-h-[35rem] flex-col justify-end overflow-hidden rounded-3xl p-8 text-white transition-opacity duration-200">
-                {s.image && <img src={s.image.src} alt={s.image.alt} class="absolute inset-0 size-full object-cover" loading="lazy" />}
+                {s.image && <img {...imgAttrs(s.image.src, { sizes: '(max-width: 991px) 100vw, 680px' })} alt={s.image.alt} class="absolute inset-0 size-full object-cover" loading="lazy" />}
                 <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/0 to-black/80" />
                 <div class="relative z-[2] flex flex-col items-start gap-4">
                   <div class="text-label">{s.label}</div>

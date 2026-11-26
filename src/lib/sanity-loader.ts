@@ -4,8 +4,10 @@ import type { Loader } from 'astro/loaders';
 import fs from 'node:fs';
 import { decodePage } from './page-codec.mjs';
 import { snapshotPages } from './page-snapshot.mjs';
+import { richHtml, imageSrc, resolveImages } from './portable-text.mjs';
 
-export const SANITY = { projectId: '9qg5x7wu', dataset: 'production', apiVersion: '2025-02-19' };
+// SANITY_DATASET=pt-staging builds from the Portable Text staging dataset (phase 3); the default stays `production`.
+export const SANITY = { projectId: '9qg5x7wu', dataset: process.env.SANITY_DATASET || 'production', apiVersion: '2025-02-19' };
 
 // Published documents only (the dataset is public; drafts are never returned without a token anyway).
 async function query<T>(groq: string, params: Record<string, string>): Promise<T> {
@@ -26,6 +28,10 @@ const rawId = (type: string, id: string) => id.slice(type.length + 1);
 export function toEntry(type: string, d: any, withBody = false) {
   const { _id, _type, _rev, _createdAt, _updatedAt, _originalId, _system, body, ...fields } = d;
   const data: Record<string, any> = { ...fields, slug: d.slug?.current ?? '' };
+  // Phase 3 shapes (Portable Text, image assets) → the HTML strings and URLs the templates have always read. Old shapes
+  // (Webflow HTML strings, site paths) pass through unchanged, so `production` builds exactly as before.
+  for (const f of ['summary', 'bio']) if (f in data && (type === 'article' || type === 'author')) data[f] = richHtml(data[f], SANITY);
+  for (const f of ['image', 'profile']) if (f in data && ['article', 'author', 'solution'].includes(type)) data[f] = imageSrc(data[f], SANITY);
   if (type === 'article') {
     data.author = d.author?._ref ? rawId('author', d.author._ref) : '';
     data.category = (d.categories ?? []).map((c: any) => rawId('blogCategory', c._ref)).join('; ');
@@ -34,8 +40,9 @@ export function toEntry(type: string, d: any, withBody = false) {
     data.datePublished ??= null;
   }
   if (type === 'newsletter') data.releaseDate ??= null;
-  if (!withBody && body !== undefined) data.body = body; // research has `body` as an ordinary field
-  return { id: rawId(type, _id), data, body: withBody ? body ?? '' : undefined };
+  if (!withBody && body !== undefined) data.body = type === 'article' ? richHtml(body, SANITY) : body; // research has `body` as an ordinary field
+  const html = type === 'article' ? richHtml(body, SANITY) : body;
+  return { id: rawId(type, _id), data, body: withBody ? html ?? '' : undefined };
 }
 
 // Page-builder pages (Sanity `page` documents) → the page JSON SectionPage renders, keyed by path ("/men/pcos").
@@ -72,7 +79,7 @@ export function sanityPagesLoader(): Loader {
       const docs = await pageDocs(logger);
       if (!docs.length) throw new Error('Sanity returned no "page" documents; refusing to build without the pages.');
       store.clear();
-      for (const d of docs) store.set({ id: d.path, data: decodePage(d), digest: generateDigest(d) });
+      for (const d of docs) store.set({ id: d.path, data: decodePage(resolveImages(d, SANITY)), digest: generateDigest(d) });
       logger.info(`${docs.length} page documents from Sanity`);
     },
   };

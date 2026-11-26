@@ -553,3 +553,49 @@ Lighthouse mobile on live (Vercel): home 69, article 71 (desktop 99). The bigges
 (it still loads and posts its event to backend.leadconnectorhq.com; checked with Playwright). Also: preconnect to
 www.google-analytics.com, `fetchpriority="high"` on the article hero image. Local build after: home 97, article 88 (local
 numbers, not comparable 1:1 with live). Next: image sizes/formats through the Sanity image CDN (branch `sanity-portable-text`).
+
+## Sanity, phase 3: Portable Text + image assets (branch `sanity-portable-text`, 2026-11-26; not live)
+
+Rich text (article body/summary, author bio) becomes Portable Text and every CMS/page-builder image a Sanity image asset, served
+through the image CDN with `srcset`/`sizes`/intrinsic size (`imgAttrs`). Dataset `pt-staging` holds the converted copy
+(251 assets, 72 MB originals); `production` is untouched. The loader renders both shapes, so the code can ship before the data.
+
+Verification (2026-11-26, after merging main db3df57 into the branch):
+- `npm run build` (production dataset) vs main's build: byte-identical, 456/456 files.
+- `SANITY_DATASET=pt-staging npm run build` vs that: 455/456 files identical once `<img>` src/srcset/sizes/width/height and
+  og:image are normalised and the HTML is re-serialised (parse5). The rest:
+  - og:image on 46 pages points at the Sanity original (`cdn.sanity.io/images/9qg5x7wu/<dataset>/…`) instead of
+    `www.rhmmed.com/images/…`. Same image; a head change vs live, needs Evgenii's OK at cutover.
+  - The Dr. Rand quote embed is re-serialised (double quotes, `&amp;`): same DOM.
+  - /articles/trt-side-effects: 7 reference links with `target="_blank"` and no rel now get `rel="noopener"` (the article
+    template already adds it to every new-tab link; the single-quoted source markup slipped past its regex). Markup only.
+- Screenshots (full page, 1440 and 390@3x) of /articles/signs-you-need-hrt and /articles/perimenopause-weight-gain: same page
+  heights, 0.00–0.71% pixels differ (image re-encoding only). Local, in `shots/` (ignored).
+- Image bytes per article, 390 wide @3x, after scrolling the whole page (before → after): signs-you-need-hrt 6.75 MB → 1.00 MB,
+  perimenopause-weight-gain 4.89 MB → 0.59 MB; first load 418 KB → 54 KB and 2.02 MB → 78 KB. Left over: the "related articles"
+  cards read `/images/site/…` from `src/data/articles/*.json` (~0.7 MB per article), not from Sanity.
+
+### Portable Text cutover (needs Evgenii's OK; not done)
+
+One window, editors told not to edit (Studio would show the old shapes as invalid in between). Order matters: the code goes
+first, because main's current loader can't read Portable Text, and every converter patch fires the publish webhook.
+
+1. **Backup**: `cd studio && npx sanity dataset export production ../backups/production-<date>.tar.gz` (documents + assets),
+   kept outside the repo. Check for drafts with a token (`*[_id in path("drafts.**")]`): publish or discard them first, the
+   converter reads published documents only.
+2. **Code**: merge `sanity-portable-text` into main and push (Evgenii's OK for main). Proven no-op on production data
+   (byte-identical build), so this rebuild of `rhmmed` and `rhmmed-preview` changes nothing on the site.
+3. **Data**: change the production guard in `scripts/html-to-pt.mjs` (a code change, on purpose), run
+   `node scripts/html-to-pt.mjs --check`, then `--dataset production` with the admin token in an env var. It recomputes every
+   field from the current production HTML (so editor changes since pt-staging are kept) and uploads the images to production.
+4. **Studio**: `cd studio && npx sanity deploy` (the phase-3 schema, commit 043a145). Open a few articles, an author, a page:
+   no validation errors.
+5. **Rebuild**: the webhook already fired during step 3; let the last deploy finish (or trigger "Sanity publish" once).
+   Check live: the two articles above, /, /men/hormone-therapy, /articles, og:image, image requests go to cdn.sanity.io.
+6. After: never run `npm run import` / `import:pages` (they `--replace` with the old HTML/path shapes) or regenerate from
+   `src/content/`. Revert the guard.
+
+**Rollback**: `cd studio && npx sanity dataset import ../backups/production-<date>.tar.gz production --replace` (restores the
+HTML/path documents; the uploaded assets stay, unused) and redeploy the old Studio (`git checkout <pre-cutover main> -- studio`,
+`npx sanity deploy`). The code needs no revert: it renders the old shapes byte-identically. The import fires the webhook, which
+rebuilds the site from the restored data.

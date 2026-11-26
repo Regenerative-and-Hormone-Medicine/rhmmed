@@ -1,5 +1,6 @@
 ---
 // Grey section, white card + image (source: .container.is-telehealth).
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Button from '../Button.astro';
 interface Props {
   label?: string;
@@ -32,7 +33,7 @@ const {
       </div>
     </div>
     <div class="overflow-hidden rounded-lg">
-      <img src={image} alt={alt} class="size-full object-cover" loading="lazy" />
+      <img {...imgAttrs(image, { sizes: '(max-width: 767px) 100vw, (max-width: 1344px) 50vw, 672px' })} alt={alt} class="size-full object-cover" loading="lazy" />
     </div>
   </div>
 </section>

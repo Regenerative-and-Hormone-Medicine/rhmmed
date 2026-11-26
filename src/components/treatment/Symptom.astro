@@ -1,4 +1,5 @@
 ---
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Rich from '../Rich.astro';
 // "What you're experiencing" (source: .section.is-symptom).
 import Button from '../Button.astro';
@@ -23,7 +24,7 @@ const p = Astro.props;
       {p.box ? (
         <div class:list={['rich text-h4 capitalize rounded-2xl p-8 text-white', accent(p.theme), p.theme === 'men' && '[&_a]:underline']} set:html={p.box} />
       ) : p.image && (
-        <img src={p.image.src} alt={p.image.alt} class="size-full rounded-2xl object-cover" loading="lazy" />
+        <img {...imgAttrs(p.image.src, { sizes: '(max-width: 479px) 100vw, (max-width: 1344px) 50vw, 672px' })} alt={p.image.alt} class="size-full rounded-2xl object-cover" loading="lazy" />
       )}
     </div>
     <div class:list={['flex items-center justify-between rounded-full py-4 pr-4 pl-8 text-white max-lg:flex-col max-lg:items-start max-lg:gap-4 max-lg:rounded-[2rem] max-lg:pr-8 max-sm:rounded-2xl', accent(p.theme), p.theme === 'men' && 'gap-2']}>

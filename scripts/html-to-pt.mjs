@@ -203,9 +203,10 @@ function convertPageImages(v) {
 
 // ---------- round-trip check ----------
 // Normalise markup for comparison: image src → the file's SHA-1 (site path: hash of the file; CDN URL: the hash in the asset
-// name), and drop width/height on <img> (the new renderer adds the intrinsic size; Webflow had none).
+// name, resize query dropped), and drop width/height/srcset/sizes on <img> (the renderer adds the intrinsic size and the
+// responsive candidates; Webflow had none).
 function sha1Of(src) {
-  const m = /cdn\.sanity\.io\/images\/[^/]+\/[^/]+\/([0-9a-f]+)-/.exec(src);
+  const m = /cdn\.sanity\.io\/images\/[^/]+\/[^/]+\/([0-9a-f]+)-/.exec(src.replace(/&amp;/g, '&'));
   if (m) return m[1];
   if (sitePath(src)) return crypto.createHash('sha1').update(fs.readFileSync(fileOf(src))).digest('hex');
   return src;
@@ -215,7 +216,7 @@ function norm(html) {
   const ser = (n) => {
     if (n.nodeName === '#text') return n.value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/ /g, '&nbsp;');
     if (n.nodeName === '#comment') return `<!--${n.data}-->`;
-    const a = (n.attrs ?? []).filter((x) => !(n.nodeName === 'img' && (x.name === 'width' || x.name === 'height')))
+    const a = (n.attrs ?? []).filter((x) => !(n.nodeName === 'img' && ['width', 'height', 'srcset', 'sizes'].includes(x.name)))
       .map((x) => [x.name, x.name === 'src' && n.nodeName === 'img' ? sha1Of(x.value) : x.value])
       .sort(([x], [y]) => (x < y ? -1 : 1)).map(([k, v]) => ` ${k}="${v.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"`).join('');
     const kids = (n.nodeName === 'template' ? n.content : n).childNodes ?? [];
@@ -256,7 +257,7 @@ const diffs = [];
 const check = (where, oldHtml, pt) => {
   total++;
   const newHtml = richHtml(pt, cfg);
-  const dropDims = (h) => h.replace(/ width="\d+" height="\d+"/g, '');
+  const dropDims = (h) => h.replace(/ width="\d+" height="\d+"/g, '').replace(/ srcset="[^"]*" sizes="[^"]*"/g, '');
   if (norm(oldHtml) === norm(newHtml)) same++; else diffs.push(`${where} ${firstDiff(norm(oldHtml), norm(newHtml))}`);
   // Byte-exact apart from image src and the added width/height.
   const unsrc = (h) => h.replace(/(<img\b[^>]*?\bsrc=)(["'])([^"']+)\2/g, (_, p, q, s) => `${p}${q}${sha1Of(s)}${q}`);

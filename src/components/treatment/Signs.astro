@@ -1,4 +1,5 @@
 ---
+import { imgAttrs } from '../../lib/portable-text.mjs';
 import Rich from '../Rich.astro';
 // Symptom cards grid (source: .section.is-signs_w / .is-signs). Women: 3-col signs-grid with photo cards;
 // men: causes-grid is-3 with white / mist cards.
@@ -41,7 +42,7 @@ const grid = p.gridKind === 'causes'
               )}
             </div>
           </div>
-          {c.image && <img src={c.image.src} alt={c.image.alt} class="pointer-events-none absolute inset-0 size-full object-cover" loading="lazy" />}
+          {c.image && <img {...imgAttrs(c.image.src, { sizes: '(max-width: 767px) 100vw, (max-width: 991px) 50vw, 448px' })} alt={c.image.alt} class="pointer-events-none absolute inset-0 size-full object-cover" loading="lazy" />}
           {c.image && <div class="sign-shade pointer-events-none absolute inset-0 z-[1] bg-black/40 mix-blend-multiply transition-colors duration-400" />}
         </div>
       ))}
