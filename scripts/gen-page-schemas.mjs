@@ -4,7 +4,7 @@
 // node scripts/gen-page-schemas.mjs
 import fs from 'node:fs';
 import path from 'node:path';
-import { MEMBER } from '../src/lib/page-codec.mjs';
+import { MEMBER, REFS } from '../src/lib/page-codec.mjs';
 
 // Section `type` → Studio title and the component that renders it.
 const TITLES = {
@@ -45,12 +45,15 @@ const FIELD_TITLES = {
   infos: 'Info rows', lines: 'Lines', num: 'Number', html: 'HTML', topPad: 'Top padding', after: 'After the carousel',
   done: 'Success message', fail: 'Error message', consent: 'Consent text', submit: 'Submit button text',
   before: 'Heading before the rotating word', words: 'Rotating words', after: 'Heading after the rotating word',
+  articles: 'Articles', solutions: 'Slides',
   formHeading: 'Form heading', frameId: 'Embed id', tint: 'Hover tint', offset: 'Lowered card (desktop)', narrow: 'Narrow label (tablet)',
 };
 const DESCRIPTIONS = {
   heading: null, // set per-field below when it holds HTML
   headerTheme: 'Header text colour before scrolling: light = white text over a dark hero image.',
   frameId: 'The booking widget\'s own iframe id (its script looks it up). Leave as is.',
+  articles: 'The articles shown as cards, in this order (drag to reorder). Each card shows the article\'s title, summary, first category, date and card image (or main image).',
+  solutions: 'The Solutions shown as slides, in this order (drag to reorder). Edit a slide\'s text and image in Homepage carousel (Solutions).',
 };
 // Fields that only switch the Webflow layout variant; grouped as "Layout" and collapsed.
 const LAYOUT = /^(men|slate|big|grey|compact|solid|short|row|lightCards|signsGrid|stacked|headingFull|headingInCard|currentIsH1|topPad|accent|mist|reverse|two)$|Max$|Class$|Tag$|Style$|Kind$|^(variant|cls|tag|kind|pad|extraOverlay|grid|spacers)$/;
@@ -106,6 +109,10 @@ function fieldDef(name, sh, topLevel, indent) {
   const pad = ' '.repeat(indent);
   const fs_ = topLevel && LAYOUT.test(name) ? ", fieldset: 'layout'" : '';
   const base = `name: ${q(name)}${title(name)}${fs_}`;
+  if (REFS[name]) {
+    // Document references (page JSON: the ids), e.g. the articles a "Related articles" block shows.
+    return `${pad}defineField({ ${base}, type: 'array', of: [{ type: 'reference', to: [{ type: ${q(REFS[name])} }] }], description: ${q(DESCRIPTIONS[name])} }),`;
+  }
   if (sh.kinds.has('array')) {
     const it = sh.item;
     let of;

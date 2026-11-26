@@ -454,73 +454,13 @@
     "text": "View articles",
     "href": "/articles"
    },
-   "cards": [
-    {
-     "href": "/articles/pcos-belly-fat",
-     "title": "PCOS Belly Fat",
-     "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
-     "category": "PCOS",
-     "date": "Sep 11, 2026",
-     "image": {
-      "src": "/images/site/6abe6cafaca1c590f6b996b5_6aa2f72b165ff1135617bf3e_Hero.avif",
-      "alt": "Woman holding her belly in mirror"
-     }
-    },
-    {
-     "href": "/articles/metabolic-testing",
-     "title": "Metabolic Testing: What It Actually Checks",
-     "summary": "Metabolic testing can mean a lot of things. Here's what RHM actually checks — and why one number rarely tells the full story.",
-     "category": "Weight Loss Resistance",
-     "date": "Aug 28, 2026",
-     "image": {
-      "src": "/images/site/6a9040972679378ad02c9ccf_resting-metabolic-rate-breathing-test.avif",
-      "alt": "Man wearing mask during metabolic rate test"
-     }
-    },
-    {
-     "href": "/articles/insulin-resistance-test",
-     "title": "Insulin Resistance Test: What It Checks (and What \"Normal\" Can Miss)",
-     "summary": "Wondering how insulin resistance is actually tested? A physician-led look at what a real panel checks, at-home options, and what the results can mean.",
-     "category": "Weight Loss Resistance",
-     "date": "Aug 19, 2026",
-     "image": {
-      "src": "/images/site/6a79f35e46371376a406d3f2_insulin-resistance-test-results.avif",
-      "alt": "Woman reading lab results at table"
-     }
-    },
-    {
-     "href": "/articles/insulin-resistance-and-weight-loss",
-     "title": "Insulin Resistance and Weight Loss in Women",
-     "summary": "Insulin resistance and weight loss: why cutting calories won't move the scale, how high insulin blocks fat loss in women, and what to check with your doctor.",
-     "category": "Weight Loss Resistance",
-     "date": "Jul 9, 2026",
-     "image": {
-      "src": "/images/site/6a4fdb5b99bd0eb030dbad8b_22fd23ed-12f5-45d3-b72c-bbeb17693eef.avif",
-      "alt": "Two women walking and talking about Insuline Resistance"
-     }
-    },
-    {
-     "href": "/articles/not-losing-weight-on-ozempic",
-     "title": "Why am I Not Losing Weight on Ozempic? Why the Scale Stalls or Creeps Back",
-     "summary": "Not losing weight on Ozempic, or gaining it back? A physician-led look at why the scale stalls: metabolic adaptation, muscle loss, thyroid, and insulin.",
-     "category": "Weight Loss Resistance",
-     "date": "Jul 6, 2026",
-     "image": {
-      "src": "/images/site/6a47c669407108bc00b2e31c_weight.avif",
-      "alt": "Woman pinching belly fat in bedroom"
-     }
-    },
-    {
-     "href": "/articles/semaglutide-peptide",
-     "title": "Semaglutide Peptide: What It Is, and How It Works",
-     "summary": "Is semaglutide a peptide? Yes, and the GLP-1 behind Ozempic, Wegovy, and Rybelsus. A physician-led look at what it is, how it works, and who it's for. Book a call.",
-     "category": "Peptides",
-     "date": "Jul 2, 2026",
-     "image": {
-      "src": "/images/site/6a466c5303f24336305c94ee_semiglutide-2.avif",
-      "alt": "RHM semaglutide vial on stone surface"
-     }
-    }
+   "articles": [
+    "article-pcos-belly-fat",
+    "article-metabolic-testing",
+    "article-insulin-resistance-test",
+    "article-insulin-resistance-and-weight-loss",
+    "article-not-losing-weight-on-ozempic",
+    "article-semaglutide-peptide"
    ]
   },
   {

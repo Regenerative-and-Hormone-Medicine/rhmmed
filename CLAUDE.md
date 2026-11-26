@@ -161,6 +161,11 @@ authors, blog-categories, testimonials, solutions, newsletters, researches. News
   screenshot per block, made by `BASE=<preview url> node scripts/gen-block-thumbs.mjs`; re-run it when a block's look changes
   or a block is added). Pages are listed by name (meta title before " | ") with the URL underneath. Preview: page routes render per request with
   click-to-edit; `PAGE_NO_STEGA` in `src/lib/content.ts` keeps markers out of HTML, paths, layout switches, empty strings and <head>.
+- **CMS-driven cards/CTA/slider (2026-11-26, branch `cms-components`, goes live with the phase 3 cutover):** a "Related
+  articles" block stores article references (`articles`), the homepage carousel stores Solutions references (`solutions`);
+  cards are built from the article (`src/lib/article-cards.ts`). Articles have `audience` (men → blue/slate end CTA,
+  women/general → maroon), `relatedArticles`, optional `cardImage`; the CTAs are `articleCta-<audience>` documents. Never paste
+  card copies into a page again. Card images: fixed 3:2 box, hover zoom. Details: MIGRATION.md.
 - Phase 1 keeps rich text as the Webflow HTML (bodies hold embeds: quizzes, FAQ JSON-LD) and images as site paths
   (`/images/cms/...`). Portable Text and Sanity image assets are later phases.
 - `src/content/` is the frozen Webflow CSV snapshot the import came from (`node scripts/sanity-export.mjs` →

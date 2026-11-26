@@ -14,12 +14,12 @@ export const DRAFT_COOKIE = 'rhm-draft';
 type Ctx = Pick<AstroGlobal, 'cookies'>;
 type Entry = { id: string; data: any; body?: string; edit?: (path: string) => Record<string, string> };
 
-const TYPES = { articles: 'article', authors: 'author', blogCategories: 'blogCategory', solutions: 'solution' } as const;
+const TYPES = { articles: 'article', authors: 'author', blogCategories: 'blogCategory', solutions: 'solution', articleCtas: 'articleCta' } as const;
 type Coll = keyof typeof TYPES;
 
 // Fields that are HTML, URLs, image paths or ids: never stega-encoded (markers would break them). The body and summary
 // get a data-sanity attribute on their container instead (Entry.edit).
-const NO_STEGA = new Set(['body', 'summary', 'bio', 'paragraph', 'image', 'profile', 'link', 'heroBtnLink', 'current', 'metaTitle']);
+const NO_STEGA = new Set(['body', 'summary', 'bio', 'paragraph', 'image', 'profile', 'link', 'heroBtnLink', 'current', 'metaTitle', 'audience', 'theme', 'href', 'cardImage']);
 
 export function inDraftMode(ctx: Ctx) {
   const secret = process.env.PREVIEW_COOKIE_SECRET;
@@ -58,7 +58,7 @@ async function fetchPreview(ctx: Ctx, coll: Coll): Promise<Entry[]> {
 }
 
 // Page-builder fields that are markup, paths, URLs or layout switches the components compare against: never stega-encoded.
-const PAGE_NO_STEGA = /^(src|href|path|headerTheme|variant|cls|tag|kind|pad|extraOverlay|grid|spacers|icon|html|lines|cells|value|stat|num|poster|mp4|webm|tint|frameId)$|Max$|Class$|Tag$|Style$|Kind$/;
+const PAGE_NO_STEGA = /^(src|href|path|headerTheme|variant|cls|tag|kind|pad|extraOverlay|grid|spacers|icon|html|lines|cells|value|stat|num|poster|mp4|webm|tint|frameId|articles|solutions)$|Max$|Class$|Tag$|Style$|Kind$/;
 
 /** One page-builder page (treatment, hub or info page) by path, decoded to the JSON SectionPage renders. */
 export async function page(ctx: Ctx, path: string): Promise<{ data: any; edit?: (p: string) => Record<string, string> } | undefined> {

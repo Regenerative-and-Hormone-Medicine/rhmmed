@@ -33,6 +33,14 @@ export function toEntry(type: string, d: any, withBody = false) {
   for (const f of ['summary', 'bio']) if (f in data && (type === 'article' || type === 'author')) data[f] = richHtml(data[f], SANITY);
   for (const f of ['image', 'profile']) if (f in data && ['article', 'author', 'solution'].includes(type)) data[f] = imageSrc(data[f], SANITY);
   if (type === 'article') {
+    // CMS-driven cards and CTA (2026-11-26). Missing on documents that predate the fields (production before the cutover):
+    // the template then falls back to the live-page JSON (src/data/articles), so that build doesn't change.
+    data.audience = d.audience ?? '';
+    data.related = Array.isArray(d.relatedArticles) ? d.relatedArticles.map((r: any) => rawId('article', r._ref)) : null;
+    delete data.relatedArticles;
+    data.imageAlt = typeof d.image === 'object' && d.image ? d.image.alt ?? '' : '';
+    data.cardImage = d.cardImage ? imageSrc(d.cardImage, SANITY) : '';
+    data.cardImageAlt = d.cardImage?.alt ?? '';
     data.author = d.author?._ref ? rawId('author', d.author._ref) : '';
     data.category = (d.categories ?? []).map((c: any) => rawId('blogCategory', c._ref)).join('; ');
     delete data.categories;
@@ -40,6 +48,11 @@ export function toEntry(type: string, d: any, withBody = false) {
     data.datePublished ??= null;
   }
   if (type === 'newsletter') data.releaseDate ??= null;
+  if (type === 'articleCta') {
+    data.image = d.image ? { src: imageSrc(d.image, SANITY), alt: d.image.alt ?? '' } : null;
+    data.points ??= [];
+    data.button ??= null;
+  }
   if (!withBody && body !== undefined) data.body = type === 'article' ? richHtml(body, SANITY) : body; // research has `body` as an ordinary field
   const html = type === 'article' ? richHtml(body, SANITY) : body;
   return { id: rawId(type, _id), data, body: withBody ? html ?? '' : undefined };
@@ -85,12 +98,13 @@ export function sanityPagesLoader(): Loader {
   };
 }
 
-export function sanityLoader(type: string, opts: { withBody?: boolean } = {}): Loader {
+// `optional`: a type that may have no documents yet (articleCta before the cutover): an empty collection, not an error.
+export function sanityLoader(type: string, opts: { withBody?: boolean; optional?: boolean } = {}): Loader {
   return {
     name: `sanity-${type}`,
     load: async ({ store, parseData, generateDigest, logger }) => {
       const docs = await query<any[]>('*[_type == $type] | order(order asc)', { type });
-      if (!docs.length) throw new Error(`Sanity returned no "${type}" documents; refusing to build an empty collection.`);
+      if (!docs.length && !opts.optional) throw new Error(`Sanity returned no "${type}" documents; refusing to build an empty collection.`);
       store.clear();
       for (const d of docs) {
         const { id, data, body } = toEntry(type, d, opts.withBody);

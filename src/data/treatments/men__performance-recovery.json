@@ -383,40 +383,10 @@
     "text": "View articles",
     "href": "/articles"
    },
-   "cards": [
-    {
-     "href": "/articles/peptide-therapy-vs-trt",
-     "title": "Peptide Therapy vs TRT: Which One Do You Need?",
-     "summary": "Peptide therapy and TRT work differently and solve different problems. See how RHM decides which fits your labs, symptoms, and goals — not a template.",
-     "category": "Peptides",
-     "date": "Aug 27, 2026",
-     "image": {
-      "src": "/images/site/6abe3fc3338634b3c8fa9b17_card-peptide-therapy-vs-trt.avif",
-      "alt": "Peptide Therapy vs TRT: Which One Do You Need?"
-     }
-    },
-    {
-     "href": "/articles/metabolic-testing",
-     "title": "Metabolic Testing: What It Actually Checks",
-     "summary": "Metabolic testing can mean a lot of things. Here's what RHM actually checks — and why one number rarely tells the full story.",
-     "category": "Weight Loss Resistance",
-     "date": "Aug 28, 2026",
-     "image": {
-      "src": "/images/site/6abe3fc43170a825ee25620d_card-metabolic-testing.avif",
-      "alt": "Metabolic Testing: What It Actually Checks"
-     }
-    },
-    {
-     "href": "/articles/insulin-resistance-test",
-     "title": "Insulin Resistance Test: What It Checks (and What \"Normal\" Can Miss)",
-     "summary": "Wondering how insulin resistance is actually tested? A physician-led look at what a real panel checks, at-home options, and what the results can mean.",
-     "category": "Weight Loss Resistance",
-     "date": "Aug 19, 2026",
-     "image": {
-      "src": "/images/site/6abe40c5e506e0e036285958_card-insulin-resistance-test-32.webp",
-      "alt": "Insulin Resistance Test: What It Checks (and What \"Normal\" Can Miss)"
-     }
-    }
+   "articles": [
+    "article-peptide-therapy-vs-trt",
+    "article-metabolic-testing",
+    "article-insulin-resistance-test"
    ]
   },
   {

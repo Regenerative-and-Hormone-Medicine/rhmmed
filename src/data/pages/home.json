@@ -68,7 +68,8 @@
     {
       "type": "solutionsCarousel",
       "heading": "Personalized physician-led medical care focused on root causes, not quick fixes",
-      "body": "Bioidentical Hormone Replacement Therapy    <br />Testosterone Replacement Therapy  <br /> Comprehensive Lab Testing  <br />Peptide Therapy • Weight Loss Management • Supplements "
+      "body": "Bioidentical Hormone Replacement Therapy    <br />Testosterone Replacement Therapy  <br /> Comprehensive Lab Testing  <br />Peptide Therapy • Weight Loss Management • Supplements ",
+      "solutions": ["solution-long-term-hormonal-support-5", "solution-supporting-body-function-4", "solution-energy-improvement-3", "solution-hormone-balance-2", "solution-personalized-hormone-care-1"]
     },
     {
       "type": "telehealth",
@@ -90,32 +91,7 @@
       "type": "insights",
       "heading": "Research & Insights",
       "button": { "text": "View articles", "href": "/articles" },
-      "cards": [
-        {
-          "href": "/articles/best-birth-control-for-pcos",
-          "title": "Best Birth Control for PCOS — and the Treatment Options Beyond It",
-          "summary": "The pill isn't the only path with PCOS. A physician-led comparison of birth control options and what else actually helps — beyond the prescription pad.",
-          "category": "PCOS",
-          "date": "Jul 15, 2026",
-          "image": { "src": "/images/site/6abe41e0a85b393fd9f56249_card-best-birth-control-for-pcos-32.webp" }
-        },
-        {
-          "href": "/articles/peptides-vs-glp-1",
-          "title": "Peptides vs GLP-1: Which One Actually Fits Your Goals?",
-          "summary": "Peptides vs GLP-1: which one actually fits your goals — appetite, muscle, or metabolism? A physician-led comparison, not a sales pitch.",
-          "category": "Peptides",
-          "date": "Jul 30, 2026",
-          "image": { "src": "/images/site/6abe41e0fcb1e77cb74989d8_card-peptides-vs-glp-1-32.webp" }
-        },
-        {
-          "href": "/articles/pcos-belly-fat",
-          "title": "PCOS Belly Fat",
-          "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
-          "category": "PCOS",
-          "date": "Sep 11, 2026",
-          "image": { "src": "/images/site/6abe40c533fecde0b43c806d_card-pcos-belly-fat-32.webp" }
-        }
-      ]
+      "articles": ["article-best-birth-control-for-pcos", "article-peptides-vs-glp-1", "article-pcos-belly-fat"]
     },
     {
       "type": "finalCta",

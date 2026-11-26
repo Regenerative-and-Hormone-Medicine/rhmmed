@@ -588,7 +588,9 @@ first, because main's current loader can't read Portable Text, and every convert
 3. **Data**: change the production guard in `scripts/html-to-pt.mjs` (a code change, on purpose), run
    `node scripts/html-to-pt.mjs --check`, then `--dataset production` with the admin token in an env var. It recomputes every
    field from the current production HTML (so editor changes since pt-staging are kept) and uploads the images to production.
-4. **Studio**: `cd studio && npx sanity deploy` (the phase-3 schema, commit 043a145). Open a few articles, an author, a page:
+3b. **CMS components** (2026-11-26 request, below): same guard change in `scripts/cms-components.mjs`, `--check`, then
+   `--dataset production`. Must run after step 3 (the converter rewrites the page sections).
+4. **Studio**: `cd studio && npx sanity deploy` (the phase-3 schema, commit 043a145, plus the 2026-11-26 article/CTA fields). Open a few articles, an author, a page:
    no validation errors.
 5. **Rebuild**: the webhook already fired during step 3; let the last deploy finish (or trigger "Sanity publish" once).
    Check live: the two articles above, /, /men/hormone-therapy, /articles, og:image, image requests go to cdn.sanity.io.
@@ -599,3 +601,28 @@ first, because main's current loader can't read Portable Text, and every convert
 HTML/path documents; the uploaded assets stay, unused) and redeploy the old Studio (`git checkout <pre-cutover main> -- studio`,
 `npx sanity deploy`). The code needs no revert: it renders the old shapes byte-identically. The import fires the webhook, which
 rebuilds the site from the restored data.
+
+## CMS-driven cards, article CTA and slider (2026-11-26, Evgenii; branch `cms-components`, on top of phase 3; not live)
+
+Evgenii: the homepage slider, the resource sections (every "Research & Insights" / "Related Articles" card row) and the
+article pages must be driven from Sanity; card images zoom slightly on hover and all have the same height; the broken
+"Research now shows" link on /women/perimenopause gets a high-authority, non-competitor source; the article end CTA follows
+the article's audience (men → the men's blue CTA, women → the maroon CTA); inline article links get a desktop hover.
+
+- **Before:** slider = Solutions docs in a hard-coded order; card rows = card copies (title, summary, date, image) pasted into
+  each page block and into `src/data/articles/*.json`; article CTA, hero alt and related list = live-page JSON.
+- **Now (Sanity):** insights block `articles` = references (drag to reorder; the card is built from the article:
+  title, metaDescription, first category, date, `cardImage` or main image: `src/lib/article-cards.ts`). Homepage carousel
+  block `solutions` = references. Article: `audience` (men/women/general), `relatedArticles` (≤3 refs; empty = hidden),
+  `cardImage` (optional thumbnail; 10 articles have the "card-…" thumbnails the static sections used), hero alt = `image.alt`.
+  `articleCta-men` (slate, men's peptide page photo), `articleCta-women` and `articleCta-general` (brown, today's photo):
+  same copy as today's CTA. General = maroon, i.e. exactly today's CTA. Data: `node scripts/cms-components.mjs`.
+- **Fallbacks:** documents without the new fields (production until the cutover) render from the old shapes/JSON. Checked:
+  the branch built on production data differs from main only by the card classes (zoom/aspect).
+- **Cards:** image box `aspect-[3/2]` at every width (object-cover), `group-hover:scale-105` over 600ms ease-out-soft
+  (hover-capable devices only). Checked: equal image heights on 15 pages × 1440/991/767/390/320.
+- **Links:** `.blog-rte`/`.summary-rte` plain links at ≥992px with hover: brand blue, underline offset 2→4px, 200ms.
+- **Perimenopause link:** Coslov, Richardson & Woods, *Menopause* 2021;28(9):1012–25, PMC8549458 (women in the late
+  reproductive stage, still cycling, report menopause-type symptoms). New tab, rel="noopener".
+- **Deviation from live:** cards on page sections now use the article's data, so `/women/inflammation` shows the CMS category
+  name "Inflamation" (live's static card said "Inflammation"); article related cards now use the card thumbnails too.

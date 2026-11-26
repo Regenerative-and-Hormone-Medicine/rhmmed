@@ -247,14 +247,7 @@ export const sectionTypes = [
       defineField({ name: "men", title: "Men's theme", fieldset: 'layout', type: 'boolean' }),
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "button", type: 'button' }),
-      defineField({ name: "cards", type: 'array', of: [defineArrayMember({ type: 'object', name: "card", fields: [
-          defineField({ name: "href", type: 'string' }),
-          defineField({ name: "title", type: 'string' }),
-          defineField({ name: "summary", type: 'text', rows: 3 }),
-          defineField({ name: "category", type: 'string' }),
-          defineField({ name: "date", type: 'string' }),
-          defineField({ name: "image", type: 'siteImage' }),
-        ], preview: itemPreview })] }),
+      defineField({ name: "articles", title: "Articles", type: 'array', of: [{ type: 'reference', to: [{ type: "article" }] }], description: "The articles shown as cards, in this order (drag to reorder). Each card shows the article's title, summary, first category, date and card image (or main image)." }),
     ],
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Related articles", subtitle: "Related articles" }) },
   }),
@@ -472,6 +465,7 @@ export const sectionTypes = [
     fields: [
       defineField({ name: "heading", type: 'string' }),
       defineField({ name: "body", type: 'text', rows: 6, description: 'HTML, rendered as-is.' }),
+      defineField({ name: "solutions", title: "Slides", type: 'array', of: [{ type: 'reference', to: [{ type: "solution" }] }], description: "The Solutions shown as slides, in this order (drag to reorder). Edit a slide's text and image in Homepage carousel (Solutions)." }),
     ],
     preview: { select: { h: 'heading', l: 'label', x: 'html' }, prepare: ({ h, l, x }) => ({ title: strip(h || l || x).slice(0, 80) || "Carousel (Solutions collection)", subtitle: "Carousel (Solutions collection)" }) },
   }),

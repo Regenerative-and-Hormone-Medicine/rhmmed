@@ -1,6 +1,6 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import {
-  BlockquoteIcon, BulbOutlineIcon, CodeIcon, CommentIcon, DocumentTextIcon, EnvelopeIcon, ImageIcon, LinkIcon, SearchIcon, TagIcon, UserIcon,
+  BlockquoteIcon, BulbOutlineIcon, CodeIcon, LaunchIcon, CommentIcon, DocumentTextIcon, EnvelopeIcon, ImageIcon, LinkIcon, SearchIcon, TagIcon, UserIcon,
 } from '@sanity/icons';
 import { pageSchemaTypes } from './page';
 import { button, siteImage } from './sections';
@@ -116,11 +116,47 @@ export const schemaTypes = [
       defineField({ name: 'datePublished', title: 'Date published', type: 'date' }),
       rich('summary', 'Summary (key takeaways)'),
       rich('body', 'Body'),
+      // 2026-11-26 (Evgenii): the end-of-article CTA follows the audience; related articles and card images are CMS-driven.
+      defineField({
+        name: 'audience', type: 'string', initialValue: 'general', validation: (r) => r.required(),
+        options: { list: [{ title: 'Men', value: 'men' }, { title: 'Women', value: 'women' }, { title: 'General (everyone)', value: 'general' }], layout: 'radio', direction: 'horizontal' },
+        description: 'Who the article is for. Picks the CTA at the end of the article: Men = the blue men\'s CTA, Women and General = the maroon CTA (edit them under Resources → Article CTAs).',
+      }),
+      defineField({
+        name: 'relatedArticles', title: 'Related articles', type: 'array',
+        of: [defineArrayMember({ type: 'reference', to: [{ type: 'article' }] })], validation: (r) => r.max(3).unique(),
+        description: 'Up to 3 cards under "Related Articles" at the end of this article, in this order. Empty = the section is hidden.',
+      }),
+      image('cardImage', 'Card image (optional)', true, 'Thumbnail for this article\'s cards in "Research & Insights" / "Related Articles" sections. Empty = the main image. Cards crop images to 3:2.'),
       defineField({ name: 'webflowDraft', title: 'Had unpublished Webflow edits at export', type: 'boolean', initialValue: false }),
       defineField({ name: 'order', title: 'Sort order (Webflow export order)', type: 'number' }),
     ],
     orderings: [{ title: 'Date, newest', name: 'dateDesc', by: [{ field: 'date', direction: 'desc' }] }],
     preview: { select: { title: 'title', subtitle: 'slug.current' } },
+  }),
+  defineType({
+    name: 'articleCta', title: 'Article CTA', type: 'document', icon: LaunchIcon,
+    description: 'The CTA band at the end of every article whose audience matches.',
+    fields: [
+      defineField({
+        name: 'audience', type: 'string', readOnly: true, description: 'Articles with this audience show this CTA.',
+        options: { list: [{ title: 'Men', value: 'men' }, { title: 'Women', value: 'women' }, { title: 'General (everyone)', value: 'general' }] },
+      }),
+      defineField({
+        name: 'theme', title: 'Colour', type: 'string', validation: (r) => r.required(),
+        options: { list: [{ title: 'Blue (men\'s pages)', value: 'slate' }, { title: 'Maroon (women\'s pages)', value: 'brown' }], layout: 'radio' },
+      }),
+      defineField({ name: 'heading', type: 'string', validation: (r) => r.required() }),
+      defineField({ name: 'points', title: 'Checklist', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
+      defineField({ name: 'button', type: 'button' }),
+      image('image', 'Photo', true),
+    ],
+    preview: {
+      select: { audience: 'audience', heading: 'heading', media: 'image' },
+      prepare: ({ audience, heading, media }: { audience?: string; heading?: string; media?: any }) => ({
+        title: `${audience ? audience[0].toUpperCase() + audience.slice(1) : 'Article'} articles`, subtitle: heading, media,
+      }),
+    },
   }),
   defineType({
     name: 'author', title: 'Author', type: 'document', icon: UserIcon,

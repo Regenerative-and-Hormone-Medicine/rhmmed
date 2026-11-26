@@ -1,6 +1,8 @@
 ---
-// Article detail (T6). Body, title, summary, author from the CMS collection; image alt text, CTA block and the
-// related-articles list come from the live page (src/data/articles/*.json) because the CSV export lacks them.
+// Article detail (T6). Everything from Sanity: body, title, summary, author, hero alt text, the related-articles list and the
+// end CTA (picked by the article's audience: men → the men's blue/slate CTA, women and general → the maroon one; Evgenii,
+// 2026-11-26; the CTA copy and photos are the "Article CTA" documents). Documents from before those fields (production until
+// the cutover) fall back to the live-page JSON (src/data/articles/*.json), which renders exactly as before.
 import { imgAttrs } from '../../lib/portable-text.mjs';
 import { getCollection } from 'astro:content';
 import { isPreview, list, one } from '../../lib/content';
@@ -10,6 +12,7 @@ import Rich from '../../components/Rich.astro';
 import Button from '../../components/Button.astro';
 import CtaBlock from '../../components/treatment/CtaBlock.astro';
 import Insights from '../../components/sections/Insights.astro';
+import { articleCards } from '../../lib/article-cards';
 import ArrowBack from '../../icons/arrow-back.svg';
 import ShareX from '../../icons/share-x.svg';
 import ShareFacebook from '../../icons/share-facebook.svg';
@@ -33,8 +36,15 @@ const extrasFiles = import.meta.glob<{ default: any }>('../../data/articles/*.js
 const extras = extrasFiles[`../../data/articles/articles__${a.slug}.json`]?.default ?? { sections: [] };
 const section = (t: string) => extras.sections.find((s: any) => s.type === t);
 const hero = section('articleHero');
-const cta = section('ctaBlock');
-const related = section('insights');
+const heroAlt = a.imageAlt || hero?.imageAlt || '';
+const ctaDocs = await list(Astro, 'articleCtas');
+const ctaDoc = ctaDocs.find((c) => c.data.audience === (a.audience || 'general'))?.data;
+const cta = ctaDoc
+  ? { slate: ctaDoc.theme === 'slate', heading: ctaDoc.heading, points: ctaDoc.points, buttons: ctaDoc.button ? [ctaDoc.button] : [], image: ctaDoc.image }
+  : section('ctaBlock');
+const related = a.related
+  ? { heading: 'Related Articles', button: { text: 'View articles', href: '/articles' }, cards: await articleCards(Astro, a.related) }
+  : section('insights');
 const cats = await list(Astro, 'blogCategories');
 const catNames = a.category.split(';').map((c) => c.trim()).filter(Boolean).map((c) => cats.find((x) => x.id === c)?.data.name ?? c);
 const author = a.author ? await one(Astro, 'authors', a.author) : undefined;
@@ -65,7 +75,7 @@ const shareFb = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
         </div>
       </div>
       <div class="w-full max-w-[43.875rem] overflow-hidden rounded-3xl">
-        <img {...imgAttrs(a.image, { sizes: '(max-width: 991px) calc(100vw - 6rem), 702px' })} alt={hero?.imageAlt ?? ''} class="size-full object-cover" fetchpriority="high" />
+        <img {...imgAttrs(a.image, { sizes: '(max-width: 991px) calc(100vw - 6rem), 702px' })} alt={heroAlt} class="size-full object-cover" fetchpriority="high" />
       </div>
     </div>
   </section>

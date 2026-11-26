@@ -383,40 +383,10 @@
     "text": "View articles",
     "href": "/articles"
    },
-   "cards": [
-    {
-     "href": "/articles/insulin-resistance-test",
-     "title": "Insulin Resistance Test: What It Checks (and What \"Normal\" Can Miss)",
-     "summary": "Wondering how insulin resistance is actually tested? A physician-led look at what a real panel checks, at-home options, and what the results can mean.",
-     "category": "Weight Loss Resistance",
-     "date": "Aug 19, 2026",
-     "image": {
-      "src": "/images/site/6abe40c5e506e0e036285958_card-insulin-resistance-test-32.webp",
-      "alt": "Insulin Resistance Test: What It Checks (and What \"Normal\" Can Miss)"
-     }
-    },
-    {
-     "href": "/articles/metabolic-testing",
-     "title": "Metabolic Testing: What It Actually Checks",
-     "summary": "Metabolic testing can mean a lot of things. Here's what RHM actually checks — and why one number rarely tells the full story.",
-     "category": "Weight Loss Resistance",
-     "date": "Aug 28, 2026",
-     "image": {
-      "src": "/images/site/6abe3fc43170a825ee25620d_card-metabolic-testing.avif",
-      "alt": "Metabolic Testing: What It Actually Checks"
-     }
-    },
-    {
-     "href": "/articles/not-losing-weight-on-ozempic",
-     "title": "Why am I Not Losing Weight on Ozempic? Why the Scale Stalls or Creeps Back",
-     "summary": "Not losing weight on Ozempic, or gaining it back? A physician-led look at why the scale stalls: metabolic adaptation, muscle loss, thyroid, and insulin.",
-     "category": "Weight Loss Resistance",
-     "date": "Jul 6, 2026",
-     "image": {
-      "src": "/images/site/6abe3fc3c7d02b27c9bb1b93_card-not-losing-weight-on-ozempic.avif",
-      "alt": "Why am I Not Losing Weight on Ozempic? Why the Scale Stalls or Creeps Back"
-     }
-    }
+   "articles": [
+    "article-insulin-resistance-test",
+    "article-metabolic-testing",
+    "article-not-losing-weight-on-ozempic"
    ]
   },
   {

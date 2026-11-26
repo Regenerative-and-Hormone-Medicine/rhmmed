@@ -385,40 +385,10 @@
     "text": "View articles",
     "href": "/articles"
    },
-   "cards": [
-    {
-     "href": "/articles/lupus-rash-vs-rosacea",
-     "title": "Lupus Rash vs. Rosacea: How to Tell the Difference",
-     "summary": "Lupus rash vs. rosacea: learn the key differences in appearance, triggers, symptoms, and diagnosis—and when to see a doctor.",
-     "category": "Inflammation",
-     "date": "Aug 26, 2026",
-     "image": {
-      "src": "/images/site/6abe3fc3f88bf0f54ef3afd6_card-lupus-rash-vs-rosacea.avif",
-      "alt": "Lupus Rash vs. Rosacea: How to Tell the Difference"
-     }
-    },
-    {
-     "href": "/articles/pcos-belly-fat",
-     "title": "PCOS Belly Fat",
-     "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
-     "category": "PCOS",
-     "date": "Sep 11, 2026",
-     "image": {
-      "src": "/images/site/6abe40c533fecde0b43c806d_card-pcos-belly-fat-32.webp",
-      "alt": "PCOS Belly Fat"
-     }
-    },
-    {
-     "href": "/articles/metabolic-testing",
-     "title": "Metabolic Testing: What It Actually Checks",
-     "summary": "Metabolic testing can mean a lot of things. Here's what RHM actually checks — and why one number rarely tells the full story.",
-     "category": "Weight Loss Resistance",
-     "date": "Aug 28, 2026",
-     "image": {
-      "src": "/images/site/6abe3fc43170a825ee25620d_card-metabolic-testing.avif",
-      "alt": "Metabolic Testing: What It Actually Checks"
-     }
-    }
+   "articles": [
+    "article-lupus-rash-vs-rosacea",
+    "article-pcos-belly-fat",
+    "article-metabolic-testing"
    ]
   },
   {

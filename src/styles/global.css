@@ -204,6 +204,15 @@
   .blog-rte :where(li) { color: #050514b3; margin-bottom: 0; }
   .summary-rte :where(li) { color: #050514e6; margin-bottom: 0; }
   .blog-rte :where(a), .summary-rte :where(a) { color: #000; text-decoration: underline; }
+  /* Inline-link hover (Evgenii, 2026-11-26): desktop (≥992px) with a real pointer only; touch keeps the plain underline.
+     Plain text links only (:not([class])), so embed buttons (quiz) keep their own styles. */
+  @media (min-width: 992px) and (hover: hover) {
+    .blog-rte :where(a:not([class])), .summary-rte :where(a:not([class])) {
+      text-underline-offset: 2px;
+      transition: color 200ms var(--ease-out-soft), text-underline-offset 200ms var(--ease-out-soft);
+    }
+    .blog-rte :where(a:not([class])):hover, .summary-rte :where(a:not([class])):hover { color: var(--color-blue); text-underline-offset: 4px; }
+  }
   .blog-rte :where(img) { border-radius: 1.5rem; }
   /* Webflow rich-text figures */
   .blog-rte :where(figure) { margin: 2rem 0; position: relative; max-width: 60%; }

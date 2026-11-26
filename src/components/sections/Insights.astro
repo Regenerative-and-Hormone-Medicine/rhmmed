@@ -2,11 +2,14 @@
 // "Research & Insights" — heading, button, 3 article cards (source: .container.is-inner-resources).
 import Button from '../Button.astro';
 import ArticleCard from '../ArticleCard.astro';
-interface Card { href: string; title: string; summary: string; category: string; date: string; image: { src: string; alt: string } | null }
+import { articleCards, type Card } from '../../lib/article-cards';
 // `empty`: text of the live CMS list's empty state (Webflow `.w-dyn-empty`: #ddd box, 10px padding). Live keeps that section
 // in the HTML but hides it (display:none), so with no cards the section renders hidden.
-interface Props { heading?: string; button?: { text: string; href: string } | null; cards: Card[]; tone?: 'grey' | 'mist'; empty?: string }
-const { heading = 'Research & Insights', button = { text: 'View articles', href: '/articles' }, cards, tone = 'grey', empty } = Astro.props;
+// `articles`: article ids picked in Sanity (the CMS-driven shape); the cards are built from those articles. `cards`: the
+// old copied-card shape, still read for documents that predate it (production before the cutover).
+interface Props { heading?: string; button?: { text: string; href: string } | null; cards?: Card[]; articles?: string[]; tone?: 'grey' | 'mist'; empty?: string }
+const { heading = 'Research & Insights', button = { text: 'View articles', href: '/articles' }, articles, tone = 'grey', empty } = Astro.props;
+const cards = articles ? await articleCards(Astro, articles) : Astro.props.cards ?? [];
 ---
 
 <section class:list={[tone === 'mist' ? 'bg-mist' : 'bg-bg-light']} hidden={cards.length === 0}>

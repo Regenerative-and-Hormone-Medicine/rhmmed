@@ -408,40 +408,10 @@
     "text": "View articles",
     "href": "/articles"
    },
-   "cards": [
-    {
-     "href": "/articles/pt-141",
-     "title": "PT-141 (Bremelanotide): What It Does, Who It's For and What the Trials Show",
-     "summary": "What is PT-141? How bremelanotide works on desire, what the trials found, side effects, who it's approved for and why the cause of low libido comes first.",
-     "category": "Peptides",
-     "date": "Nov 9, 2026",
-     "image": {
-      "src": "/images/site/6af1d9daa0c33b4f3a47fb9d_6af1d9795912644224ed3b8d_pt141-bremelanotide-vial-hero-v2.jpeg",
-      "alt": "Vial labeled PT-141 bremelanotide injection on a stone tray beside an injector pen, in soft natural light"
-     }
-    },
-    {
-     "href": "/articles/peptide-therapy",
-     "title": "Peptide Therapy: The Complete Guide to What It Is, What It Can Do and Who It's For",
-     "summary": "What peptide therapy is, which peptides are FDA approved, what they can and can't do, side effects, cost and how to start safely, from RHM's physicians.",
-     "category": "Peptides",
-     "date": "Nov 9, 2026",
-     "image": {
-      "src": "/images/site/6af0b69262e0b52a668f75fc_6af0b67ceba8b1c755988867_man-reflecting-on-peptide-therapy-at-kitchen-table.jpeg",
-      "alt": "Middle-aged man holding a coffee mug at a kitchen table with an open journal, looking thoughtfully out the window"
-     }
-    },
-    {
-     "href": "/articles/peptide-therapy-vs-trt",
-     "title": "Peptide Therapy vs TRT: Which One Do You Need?",
-     "summary": "Peptide therapy and TRT work differently and solve different problems. See how RHM decides which fits your labs, symptoms, and goals — not a template.",
-     "category": "Peptides",
-     "date": "Aug 27, 2026",
-     "image": {
-      "src": "/images/site/6abe6cafaca1c590f6b996b8_6a90337cf141068a0b7100c0_man-experiencing-slower-workout-recovery.avif",
-      "alt": "Man resting on bench in home gym"
-     }
-    }
+   "articles": [
+    "article-pt-141",
+    "article-peptide-therapy",
+    "article-peptide-therapy-vs-trt"
    ]
   },
   {

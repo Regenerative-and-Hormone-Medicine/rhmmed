@@ -385,40 +385,10 @@
     "text": "View articles",
     "href": "/articles"
    },
-   "cards": [
-    {
-     "href": "/articles/perimenopause-weight-gain",
-     "title": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)",
-     "summary": "Perimenopause weight gain isn't about willpower. See the hormonal, metabolic, and physiological causes — and what individualized care can do.",
-     "category": "Perimenopause",
-     "date": "Aug 28, 2026",
-     "image": {
-      "src": "/images/site/6abe3fc3fcb1e77cb748ace7_card-perimenopause-weight-gain.avif",
-      "alt": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)"
-     }
-    },
-    {
-     "href": "/articles/perimenopause-brain-fog",
-     "title": "Perimenopause Brain Fog: Why It Happens and What Actually Helps",
-     "summary": "Perimenopause brain fog is real, common, and usually temporary — here's why it happens and what a full hormone evaluation can do about it.",
-     "category": "Perimenopause",
-     "date": "Aug 20, 2026",
-     "image": {
-      "src": "/images/site/6abe40c53170a825ee25a7ff_card-perimenopause-brain-fog-32.webp",
-      "alt": "Perimenopause Brain Fog: Why It Happens and What Actually Helps"
-     }
-    },
-    {
-     "href": "/articles/not-losing-weight-on-ozempic",
-     "title": "Why am I Not Losing Weight on Ozempic? Why the Scale Stalls or Creeps Back",
-     "summary": "Not losing weight on Ozempic, or gaining it back? A physician-led look at why the scale stalls: metabolic adaptation, muscle loss, thyroid, and insulin.",
-     "category": "Weight Loss Resistance",
-     "date": "Jul 6, 2026",
-     "image": {
-      "src": "/images/site/6abe3fc3c7d02b27c9bb1b93_card-not-losing-weight-on-ozempic.avif",
-      "alt": "Why am I Not Losing Weight on Ozempic? Why the Scale Stalls or Creeps Back"
-     }
-    }
+   "articles": [
+    "article-perimenopause-weight-gain",
+    "article-perimenopause-brain-fog",
+    "article-not-losing-weight-on-ozempic"
    ]
   },
   {

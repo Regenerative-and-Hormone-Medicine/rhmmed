@@ -1,14 +1,18 @@
 ---
 // The homepage carousel, filled from the Solutions collection (not copied into the page): heading and copy come from the
-// block, the slides are every Solutions document in Webflow's manual order.
+// block, the slides are Solutions documents. `solutions` = the solutions picked in the block, in the order set there (Sanity
+// references; editors reorder by dragging). Without it (documents from before 2026-11-26): every solution, in Webflow's order.
 import { list } from '../../lib/content';
 import Carousel from './Carousel.astro';
-interface Props { heading: string; body: string }
-const { heading, body } = Astro.props;
+interface Props { heading: string; body: string; solutions?: string[] }
+const { heading, body, solutions: picked } = Astro.props;
 
-// Webflow's manual sort order for the Solutions collection (not present in the CSV export).
+// Webflow's manual sort order for the Solutions collection (not present in the CSV export). Fallback only.
 const SOLUTIONS_ORDER = ['long-term-hormonal-support-5', 'supporting-body-function-4', 'energy-improvement-3', 'hormone-balance-2', 'personalized-hormone-care-1'];
-const solutions = (await list(Astro, 'solutions')).sort((a, b) => SOLUTIONS_ORDER.indexOf(a.id) - SOLUTIONS_ORDER.indexOf(b.id));
+const all = await list(Astro, 'solutions');
+const solutions = picked
+  ? picked.map((id) => all.find((x) => x.id === id.replace(/^solution-/, ''))).filter((x) => x !== undefined)
+  : all.sort((a, b) => SOLUTIONS_ORDER.indexOf(a.id) - SOLUTIONS_ORDER.indexOf(b.id));
 ---
 
 <Carousel heading={heading} body={body} slides={solutions.map((x) => ({ title: x.data.name, body: x.data.paragraph, image: x.data.image }))} />

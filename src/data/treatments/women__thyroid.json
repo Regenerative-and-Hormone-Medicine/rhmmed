@@ -418,40 +418,10 @@
     "text": "View articles",
     "href": "/articles"
    },
-   "cards": [
-    {
-     "href": "/articles/pcos-belly-fat",
-     "title": "PCOS Belly Fat",
-     "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
-     "category": "PCOS",
-     "date": "Sep 11, 2026",
-     "image": {
-      "src": "/images/site/6abe6cafaca1c590f6b996b5_6aa2f72b165ff1135617bf3e_Hero.avif",
-      "alt": "Woman holding her belly in mirror"
-     }
-    },
-    {
-     "href": "/articles/thyroid-supplements",
-     "title": "Thyroid Supplements: What Actually Helps (and Why Testing Comes First)",
-     "summary": "Thyroid supplements: what the research actually supports, what interacts with medication, and why testing comes before supplementing at RHM.",
-     "category": "Thyroid",
-     "date": "Aug 7, 2026",
-     "image": {
-      "src": "/images/site/6abe6cb0aca1c590f6b9970f_6a75f56f88c71972ca44ac94_thyroid.avif",
-      "alt": "Woman reading supplement bottle beside laptop"
-     }
-    },
-    {
-     "href": "/articles/thyroid-specialist-near-me",
-     "title": "Thyroid Specialist Near Me: What Matters (and Why \"Normal Labs\" Isn't the Finish Line)",
-     "summary": "A thyroid specialist isn't defined by title — it's defined by what they check. Here's what to look for when \"normal\" labs don't match how you feel.",
-     "category": "Thyroid",
-     "date": "Jul 20, 2026",
-     "image": {
-      "src": "/images/site/6a5e86ab271a77dddc61380f_thyroid_hero.avif",
-      "alt": "Two women talking over documents at table"
-     }
-    }
+   "articles": [
+    "article-pcos-belly-fat",
+    "article-thyroid-supplements",
+    "article-thyroid-specialist-near-me"
    ]
   },
   {

@@ -386,40 +386,10 @@
     "text": "View articles",
     "href": "/articles"
    },
-   "cards": [
-    {
-     "href": "/articles/perimenopause-brain-fog",
-     "title": "Perimenopause Brain Fog: Why It Happens and What Actually Helps",
-     "summary": "Perimenopause brain fog is real, common, and usually temporary — here's why it happens and what a full hormone evaluation can do about it.",
-     "category": "Perimenopause",
-     "date": "Aug 20, 2026",
-     "image": {
-      "src": "/images/site/6abe40c53170a825ee25a7ff_card-perimenopause-brain-fog-32.webp",
-      "alt": "Perimenopause Brain Fog: Why It Happens and What Actually Helps"
-     }
-    },
-    {
-     "href": "/articles/perimenopause-weight-gain",
-     "title": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)",
-     "summary": "Perimenopause weight gain isn't about willpower. See the hormonal, metabolic, and physiological causes — and what individualized care can do.",
-     "category": "Perimenopause",
-     "date": "Aug 28, 2026",
-     "image": {
-      "src": "/images/site/6abe3fc3fcb1e77cb748ace7_card-perimenopause-weight-gain.avif",
-      "alt": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)"
-     }
-    },
-    {
-     "href": "/articles/peptide-therapy-vs-trt",
-     "title": "Peptide Therapy vs TRT: Which One Do You Need?",
-     "summary": "Peptide therapy and TRT work differently and solve different problems. See how RHM decides which fits your labs, symptoms, and goals — not a template.",
-     "category": "Peptides",
-     "date": "Aug 27, 2026",
-     "image": {
-      "src": "/images/site/6abe3fc3338634b3c8fa9b17_card-peptide-therapy-vs-trt.avif",
-      "alt": "Peptide Therapy vs TRT: Which One Do You Need?"
-     }
-    }
+   "articles": [
+    "article-perimenopause-brain-fog",
+    "article-perimenopause-weight-gain",
+    "article-peptide-therapy-vs-trt"
    ]
   },
   {

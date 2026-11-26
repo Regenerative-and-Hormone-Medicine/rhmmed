@@ -239,7 +239,7 @@
    "blocks": [
     {
      "kind": "h1",
-     "html": "<p>This isn't your mother's timeline. A generation ago, perimenopause typically arrived in the mid to late 40s. <a href=\"#\">Research now shows</a> many women begin experiencing hormone-related symptoms years before menopause officially begins.</p>"
+     "html": "<p>This isn't your mother's timeline. A generation ago, perimenopause typically arrived in the mid to late 40s. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8549458/\" target=\"_blank\" rel=\"noopener\">Research now shows</a> many women begin experiencing hormone-related symptoms years before menopause officially begins.</p>"
     },
     {
      "kind": "images",
@@ -385,40 +385,10 @@
     "text": "View articles",
     "href": "/articles"
    },
-   "cards": [
-    {
-     "href": "/articles/estrogen-dominance",
-     "title": "Estrogen Dominance: Symptoms, Causes and What Your Labs May Be Missing",
-     "summary": "Heavy periods, bloating, mood swings, sore breasts? Learn what estrogen dominance means, what drives it, which labs show it and how it's treated.",
-     "category": "Hormone Replacement",
-     "date": "Nov 9, 2026",
-     "image": {
-      "src": "/images/site/6af1d9daa0c33b4f3a47fb9a_6af1d979f39ea09efb21de4f_estrogen-dominance-woman-reflecting-hero.jpeg",
-      "alt": "Woman in her forties in a cream sweater resting her chin on her hand by a sunny window, looking thoughtful"
-     }
-    },
-    {
-     "href": "/articles/perimenopause-weight-gain",
-     "title": "Perimenopause Weight Gain: Why It Happens (And What Actually Helps)",
-     "summary": "Perimenopause weight gain isn't about willpower. See the hormonal, metabolic, and physiological causes — and what individualized care can do.",
-     "category": "Perimenopause",
-     "date": "Aug 28, 2026",
-     "image": {
-      "src": "/images/site/6a903a7d69efe3355e9f5430_woman-noticing-perimenopause-weight-gain-in-mirror.avif",
-      "alt": "Woman sitting on bed looking out window"
-     }
-    },
-    {
-     "href": "/articles/perimenopause-brain-fog",
-     "title": "Perimenopause Brain Fog: Why It Happens and What Actually Helps",
-     "summary": "Perimenopause brain fog is real, common, and usually temporary — here's why it happens and what a full hormone evaluation can do about it.",
-     "category": "Perimenopause",
-     "date": "Aug 20, 2026",
-     "image": {
-      "src": "/images/site/6a82f7647a2ddf2fbc0c3da5_perimenopause_brain_fog_hero_img-1.avif",
-      "alt": "Woman rubbing temple while reading note"
-     }
-    }
+   "articles": [
+    "article-estrogen-dominance",
+    "article-perimenopause-weight-gain",
+    "article-perimenopause-brain-fog"
    ]
   },
   {

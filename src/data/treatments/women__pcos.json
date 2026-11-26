@@ -385,40 +385,10 @@
     "text": "View articles",
     "href": "/articles"
    },
-   "cards": [
-    {
-     "href": "/articles/pcos-belly-fat",
-     "title": "PCOS Belly Fat",
-     "summary": "PCOS belly fat isn't the same as everyday weight gain. Here's what actually drives it — and a physician-led way to find out what's driving yours.",
-     "category": "PCOS",
-     "date": "Sep 11, 2026",
-     "image": {
-      "src": "/images/site/6abe6cafaca1c590f6b996b5_6aa2f72b165ff1135617bf3e_Hero.avif",
-      "alt": "Woman holding her belly in mirror"
-     }
-    },
-    {
-     "href": "/articles/pcos-weight-loss",
-     "title": "How to Lose Weight With PCOS: What Actually Works, and Why It's Been Harder for You",
-     "summary": "How to lose weight with PCOS when standard advice hasn't worked: the physiology most plans miss, and a physician-led way to find what's driving it.",
-     "category": "PCOS",
-     "date": "Jul 31, 2026",
-     "image": {
-      "src": "/images/site/6abe6cb0aca1c590f6b99709_6a6a6a9c0a8ac199514d8921_losing_weight_pcos.avif",
-      "alt": "Woman doing dumbbell lunges at home"
-     }
-    },
-    {
-     "href": "/articles/best-birth-control-for-pcos",
-     "title": "Best Birth Control for PCOS — and the Treatment Options Beyond It",
-     "summary": "The pill isn't the only path with PCOS. A physician-led comparison of birth control options and what else actually helps — beyond the prescription pad.",
-     "category": "PCOS",
-     "date": "Jul 15, 2026",
-     "image": {
-      "src": "/images/site/6a58059cd7a2d781b8f9f424_birth_control_pills.avif",
-      "alt": "Birth control box and pill blister pack"
-     }
-    }
+   "articles": [
+    "article-pcos-belly-fat",
+    "article-pcos-weight-loss",
+    "article-best-birth-control-for-pcos"
    ]
   },
   {

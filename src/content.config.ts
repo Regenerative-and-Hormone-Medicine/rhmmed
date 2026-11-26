@@ -24,6 +24,26 @@ const articles = defineCollection({
     datePublished: z.string().nullable(),
     summary: z.string(),
     webflowDraft: z.boolean(),
+    // 2026-11-26: who the article is for (picks the end CTA), the related-articles list (article ids, null = field not set),
+    // hero alt text, and an optional card thumbnail for the "Research & Insights" cards.
+    audience: z.enum(['men', 'women', 'general', '']),
+    related: z.array(z.string()).nullable(),
+    imageAlt: z.string(),
+    cardImage: z.string(),
+    cardImageAlt: z.string(),
+  }),
+});
+
+// The end-of-article CTA, one document per audience (men / women / general). Empty until the cutover adds them.
+const articleCtas = defineCollection({
+  loader: sanityLoader('articleCta', { optional: true }),
+  schema: z.object({
+    audience: z.enum(['men', 'women', 'general']),
+    theme: z.enum(['slate', 'brown']),
+    heading: z.string(),
+    points: z.array(z.string()),
+    button: z.object({ text: z.string(), href: z.string() }).nullable(),
+    image: z.object({ src: z.string(), alt: z.string() }).nullable(),
   }),
 });
 
@@ -64,4 +84,4 @@ const researches = defineCollection({
 // (src/lib/page-codec.mjs). Imported from src/data/{treatments,hubs,pages}/*.json, which are now a frozen snapshot.
 const pages = defineCollection({ loader: sanityPagesLoader() });
 
-export const collections = { pages, articles, authors, blogCategories, testimonials, solutions, newsletters, researches };
+export const collections = { pages, articles, articleCtas, authors, blogCategories, testimonials, solutions, newsletters, researches };

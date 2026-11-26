@@ -15,10 +15,14 @@ export const MEMBER = {
   benefits: 'benefit',
 };
 
+/** Array field name → the document type its strings reference (page JSON holds the document ids, Sanity holds references). */
+export const REFS = { articles: 'article', solutions: 'solution' };
+
 export function encodeValue(v, field) {
   if (Array.isArray(v)) {
     return v.map((x, i) => {
       const _key = `k${i}`;
+      if (REFS[field] && typeof x === 'string') return { _type: 'reference', _key, _ref: x };
       if (Array.isArray(x)) return { _type: 'row', _key, cells: x.map((c) => encodeValue(c, 'cells')) };
       if (x && typeof x === 'object') {
         const m = MEMBER[field];
@@ -58,6 +62,7 @@ export function decodeValue(v) {
   if (v && typeof v === 'object') {
     if (v._type === 'row') return (v.cells ?? []).map(decodeValue);
     if (v._type === 'cell') return v.value ?? null;
+    if (v._type === 'reference' || (typeof v._ref === 'string' && Object.keys(v).every((k) => k.startsWith('_')))) return v._ref;
     const out = {};
     for (const [k, x] of Object.entries(v)) if (!k.startsWith('_') && x !== null) out[k] = decodeValue(x);
     return out;
