@@ -626,3 +626,6 @@ the article's audience (men → the men's blue CTA, women → the maroon CTA); i
   reproductive stage, still cycling, report menopause-type symptoms). New tab, rel="noopener".
 - **Deviation from live:** cards on page sections now use the article's data, so `/women/inflammation` shows the CMS category
   name "Inflamation" (live's static card said "Inflammation"); article related cards now use the card thumbnails too.
+- **/articles hero (same request):** text column centred against the book panel while side by side (>991px; 75px above and
+  below at 1440); stacked layout unchanged. The hero's wider box (max 1456px, vs the 1344px page container) is Webflow's
+  own `.container.is-blog-hero` (max-width 1456px, checked on rhmmed.webflow.io): matches the original, kept.
