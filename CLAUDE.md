@@ -186,3 +186,6 @@ Verified 2026-11-26: both forms send the same payload as live (fields, `form_nam
 and show the same success state (request intercepted, nothing delivered). A real delivery test emails the client: only with Evgenii's OK.
 
 Formspark + Botpoison, same endpoints as the live site: contact `aQcnERsKm`, book `enYsqVsm7`.
+Recipients (read in Formspark 2026-11-27): book (Formspark name "Cheating Death Form") → evgenii@khod.io, delivering (a test from
+the new site arrived 2026-11-26). Contact → contactus@rhmmed.com and robert@hackerconsulting.net, both still unconfirmed in Formspark, so
+no email goes out and submissions only sit in the dashboard. Fixing that is Evgenii's call; don't change Formspark.
