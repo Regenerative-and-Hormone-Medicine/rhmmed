@@ -554,6 +554,17 @@ Lighthouse mobile on live (Vercel): home 69, article 71 (desktop 99). The bigges
 www.google-analytics.com, `fetchpriority="high"` on the article hero image. Local build after: home 97, article 88 (local
 numbers, not comparable 1:1 with live). Next: image sizes/formats through the Sanity image CDN (branch `sanity-portable-text`).
 
+### Speed after the cutover (2026-11-27, Lighthouse 12.6.1 mobile on www.rhmmed.com, medians of 5)
+
+| Page | Before (score / LCP / image KB) | After + cdn.sanity.io preconnect (2579da6) |
+|---|---|---|
+| / | 92 / 2.92 s / 247 | 76 / 5.48 s / 178 |
+| /articles/signs-you-need-hrt | 80 / 4.71 s / 431 | 80 / 4.67 s / 48 (one set: 86 / 4.26 s) |
+
+Without the preconnect the article fell to 64 / 7.8 s (new origin on the LCP path). The homepage LCP element is the hero video
+poster (unchanged, www.rhmmed.com); its slowdown is not explained yet (runs right after the cutover had cold Vercel edge caches).
+Raw runs: RHM Site's home, `speed-1127/`.
+
 ## Sanity, phase 3: Portable Text + image assets (branch `sanity-portable-text`, 2026-11-26; not live)
 
 Rich text (article body/summary, author bio) becomes Portable Text and every CMS/page-builder image a Sanity image asset, served
