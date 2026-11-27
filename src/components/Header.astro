@@ -11,6 +11,8 @@ const { theme = 'dark' } = Astro.props;
 // build.format 'file' can report /index.html and /men.html; normalise to /, /men.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '').replace(/(.)\/$/, '$1') || '/';
 const isHome = path === '/';
+// No "Book VIP Call" button on the booking page itself (Michael Beattie, 2026-11-27).
+const showCta = path !== '/scheduling';
 const current = (href?: string) => (href === path ? 'page' : undefined);
 
 const toneHover = (t?: NavItem['tone']) =>
@@ -63,14 +65,14 @@ const toneHover = (t?: NavItem['tone']) =>
               <li class="flex h-full"><a href={item.href} aria-current={current(item.href)} class="text-nav flex h-full items-center px-[.875rem] whitespace-nowrap max-[1100px]:px-2">{item.label}</a></li>
             ),
           )}
-          {gi === 1 && <li class="flex"><Button href="/scheduling">Book VIP Call</Button></li>}
+          {gi === 1 && showCta && <li class="flex"><Button href="/scheduling">Book VIP Call</Button></li>}
         </ul>
       ))}
     </nav>
 
     <!-- Tablet / mobile -->
     <div class="hidden items-center gap-2 max-lg:flex max-sm:gap-1">
-      <Button href="/scheduling" size="sm">Book VIP Call</Button>
+      {showCta && <Button href="/scheduling" size="sm">Book VIP Call</Button>}
       <button type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu" class="p-[18px] max-sm:p-2.5">
         <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
@@ -104,7 +106,7 @@ const toneHover = (t?: NavItem['tone']) =>
             <li class="flex flex-col"><a href={item.href} aria-current={current(item.href)} class="text-nav px-[.875rem] py-4">{item.label}</a></li>
           ),
         )}
-        {gi === 1 && <li class="flex flex-col"><Button href="/scheduling" class="w-full">Book VIP Call</Button></li>}
+        {gi === 1 && showCta && <li class="flex flex-col"><Button href="/scheduling" class="w-full">Book VIP Call</Button></li>}
       </ul>
     ))}
   </nav>
