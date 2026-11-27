@@ -565,6 +565,10 @@ Without the preconnect the article fell to 64 / 7.8 s (new origin on the LCP pat
 poster (unchanged, www.rhmmed.com); its slowdown is not explained yet (runs right after the cutover had cold Vercel edge caches).
 Raw runs: RHM Site's home, `speed-1127/`.
 
+**Re-measured later on 2026-11-27 (main 324477a), same tool and settings: / 99 / 1.86 s, article 86 / 4.21 s.** No regression.
+The before and after waterfalls are the same (poster requested at ~180 ms in both, same TTFB ~40 ms); every set of 5 has slow
+outliers (60s–70s, render delay ~3.6 s) from load on the test Mac, and the 76 set had more of them. Use medians of ≥5 runs on a quiet machine.
+
 ## Sanity, phase 3: Portable Text + image assets (branch `sanity-portable-text`, 2026-11-26; not live)
 
 Rich text (article body/summary, author bio) becomes Portable Text and every CMS/page-builder image a Sanity image asset, served
