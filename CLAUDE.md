@@ -104,7 +104,9 @@ Vercel deploy hook "Sanity publish" (rhmmed, branch main). The preview project n
 **Build budget (Hobby):** every push to main builds BOTH projects, and every Sanity publish builds `rhmmed`; on 2026-11-27 the cutover's
 bulk patches hit Vercel's build rate limit (2 main builds refused). So only `main` deploys (`git.deploymentEnabled` in vercel.json;
 branches get no Vercel preview), and before any bulk Sanity script disable the webhook in Sanity Manage, run it, re-enable, then
-trigger one rebuild. A manual Redeploy in RHM's Vercel asks for a 6-digit code emailed to support@rhmmed.net; pushes and the hook don't. **www.rhmmed.com is live on Vercel since 2026-11-26** (GoDaddy DNS points at Vercel; Webflow kept a week as rollback). Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
+trigger one rebuild. **Deployment Storage (Hobby 10 GB, hit 100% on 2026-11-27)** is the tight meter: every deployment stores
+the whole output, mostly `public/images`. Past the limit Vercel deletes the oldest deployments (production stays). Keep `public/`
+lean: on 2026-11-27 the 65 images no page or Sanity document used were removed (143 → 74 MB per deployment). A manual Redeploy in RHM's Vercel asks for a 6-digit code emailed to support@rhmmed.net; pushes and the hook don't. **www.rhmmed.com is live on Vercel since 2026-11-26** (GoDaddy DNS points at Vercel; Webflow kept a week as rollback). Target (Evgenii, 2026-11-23): **Vercel**, with content moving to
 **Sanity** (replacing the CSV-built content collections). Redirects live in `vercel.json`, generated from `docs/redirects.csv`.
 Staging tests so far ran on a Cloudflare Pages emulator; re-run them on a Vercel preview deployment. Launch status: `docs/launch-checklist.md` (with `docs/url-inventory.csv`, `docs/redirects.csv`,
 `docs/ui-audit.md`). Going live, DNS and pushing need Evgenii's OK, asked once with the checklist.
