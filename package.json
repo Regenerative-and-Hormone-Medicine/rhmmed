@@ -29,5 +29,8 @@
     "pixelmatch": "^8.0.0",
     "playwright": "^1.65.1",
     "pngjs": "^7.0.0"
+  },
+  "overrides": {
+    "path-to-regexp@6": "6.3.0"
   }
 }

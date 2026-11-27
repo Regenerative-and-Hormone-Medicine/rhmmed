@@ -66,6 +66,12 @@ const p = Astro.props;
   .pag-step.is-active .pag-text { opacity: 1; }
   .pag-step.is-animating .pag-fill { animation: step-fill 5000ms linear forwards; }
   @keyframes step-fill { to { transform: scaleX(1); } }
+  /* Autoplay held (pointer or focus inside, WCAG 2.2.2): freeze the fill with it. Reduced motion: no autoplay, active bar full. */
+  .process.is-paused .pag-step.is-animating .pag-fill { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) {
+    .pag-step.is-animating .pag-fill { animation: none; }
+    .pag-step.is-active .pag-fill { transform: scaleX(1); }
+  }
 </style>
 
 <script>
@@ -80,20 +86,34 @@ const p = Astro.props;
     const setActive = (i: number) => {
       steps.forEach((s, j) => {
         s.classList.toggle('is-active', i === j);
+        if (i === j) s.setAttribute('aria-current', 'step'); else s.removeAttribute('aria-current');
         s.classList.remove('is-animating');
       });
       void steps[i]?.offsetWidth;
       steps[i]?.classList.add('is-animating');
       swiper.slides.forEach((sl, j) => sl.querySelector('.slide-wrap')?.classList.toggle('is-inactive', i !== j));
     };
+    // No autoplay for reduced-motion users; hold it while the pointer or keyboard focus is inside (WCAG 2.2.2).
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const held = () => root.matches(':hover') || root.contains(document.activeElement);
     const autoplay = () => {
       clearTimeout(timer);
+      if (reduce || held()) return;
       timer = setTimeout(() => swiper.slideTo(swiper.activeIndex + 1 >= swiper.slides.length ? 0 : swiper.activeIndex + 1), AUTOPLAY);
+    };
+    const holdSync = () => {
+      if (reduce) return;
+      if (held()) { clearTimeout(timer); root.classList.add('is-paused'); }
+      else if (root.classList.contains('is-paused')) { root.classList.remove('is-paused'); setActive(swiper.activeIndex); autoplay(); }
     };
     setActive(0);
     autoplay();
     steps.forEach((s, i) => s.addEventListener('click', () => swiper.slideTo(i)));
     swiper.on('slideChangeTransitionStart', () => { setActive(swiper.activeIndex); autoplay(); });
     swiper.on('touchEnd', autoplay);
+    root.addEventListener('mouseenter', holdSync);
+    root.addEventListener('mouseleave', holdSync);
+    root.addEventListener('focusin', holdSync);
+    root.addEventListener('focusout', () => setTimeout(holdSync));
   });
 </script>

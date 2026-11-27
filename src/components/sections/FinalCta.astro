@@ -13,10 +13,12 @@ const {
   points = ['Ongoing support focused on long-term health', 'Advanced testing and clear next steps', 'Physician-led care'],
   topPad = false,
 } = Astro.props;
+import VideoToggle from '../VideoToggle.astro';
 ---
 
 <section class:list={[topPad && 'pt-20']}>
-  <div class="relative min-h-[28rem] overflow-hidden bg-[#c0e5ff] py-20 max-md:py-12 max-sm:px-6 max-sm:py-10">
+  <div class="relative min-h-[28rem] overflow-hidden bg-[#c0e5ff] py-20 max-md:py-12 max-sm:px-6 max-sm:py-10" data-video-scope>
+    <VideoToggle class="absolute right-4 bottom-4 max-sm:right-3 max-sm:bottom-3" />
     <div
       class="absolute inset-x-0 bottom-0 h-[500px] w-full -scale-x-100 overflow-hidden bg-no-repeat mix-blend-lighten"
       style="background-image:url('/images/site/69932c6ce6a70f61027ebdda_2625-161232147-1.avif')"
@@ -24,7 +26,8 @@ const {
     >
       <video
         class="absolute inset-0 size-full object-cover"
-        autoplay
+        data-lazy-video
+        preload="none"
         loop
         muted
         playsinline
@@ -56,3 +59,18 @@ const {
     background: url('/images/site/6989f1f49e95bc8ff3f2bcfd_checkmark.svg') no-repeat 0 0.25rem / 1.125rem 1.125rem;
   }
 </style>
+
+<script>
+  // Below the fold on most pages: load and start the cloud video only when it nears the viewport (saves ~0.9 MB per page
+  // view on Vercel bandwidth). Reduced-motion users keep the poster; the pause button (VideoToggle) can still start it.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll<HTMLVideoElement>('video[data-lazy-video]').forEach((v) => {
+    if (reduce || !('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver((entries) => {
+      if (!entries.some((e) => e.isIntersecting)) return;
+      io.disconnect();
+      v.play().catch(() => {});
+    }, { rootMargin: '300px 0px' });
+    io.observe(v);
+  });
+</script>

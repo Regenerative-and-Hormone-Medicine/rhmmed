@@ -34,7 +34,9 @@ async function fetchPreview(ctx: Ctx, coll: Coll): Promise<Entry[]> {
     projectId: SANITY.projectId,
     dataset: SANITY.dataset,
     apiVersion: SANITY.apiVersion,
-    useCdn: false,
+    // Published views (no draft cookie: visitors and crawlers of the preview host) go through the API CDN, which has 4× the
+    // free request quota and caches; draft mode (Studio Presentation) stays on the live API so edits show at once.
+    useCdn: !drafts,
     perspective: drafts ? 'drafts' : 'published',
     token: drafts ? process.env.SANITY_VIEWER_TOKEN : undefined,
     stega: {
@@ -73,7 +75,9 @@ export async function page(ctx: Ctx, path: string): Promise<{ data: any; edit?: 
     projectId: SANITY.projectId,
     dataset: SANITY.dataset,
     apiVersion: SANITY.apiVersion,
-    useCdn: false,
+    // Published views (no draft cookie: visitors and crawlers of the preview host) go through the API CDN, which has 4× the
+    // free request quota and caches; draft mode (Studio Presentation) stays on the live API so edits show at once.
+    useCdn: !drafts,
     perspective: drafts ? 'drafts' : 'published',
     token: drafts ? process.env.SANITY_VIEWER_TOKEN : undefined,
     stega: {

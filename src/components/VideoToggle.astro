@@ -1,0 +1,38 @@
+---
+// Pause/play control for a looping background video (WCAG 2.2.2 Pause, Stop, Hide). Not on the Webflow source: added
+// 2026-11-27 at Evgenii's accessibility ask. It controls the first <video> inside the closest
+// [data-video-scope]; `label` names what it pauses. Reduced-motion users start paused (Layout.astro pauses autoplay videos), so the button reads "Play".
+interface Props { class?: string; label?: string }
+const { class: cls = '', label = 'background video' } = Astro.props;
+---
+
+<button
+  type="button"
+  data-video-toggle
+  aria-label={`Pause ${label}`}
+  data-label={label}
+  class:list={['video-toggle z-[3] flex size-10 cursor-pointer items-center justify-center rounded-pill bg-black/55 text-white transition-colors duration-200 hover:bg-black/75', cls]}
+>
+  <svg class="vt-pause size-4" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h2.5v11H4zM9.5 2.5H12v11H9.5z" fill="currentColor" /></svg>
+  <svg class="vt-play hidden size-4" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.5l9 5.5-9 5.5z" fill="currentColor" /></svg>
+</button>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-video-toggle]').forEach((btn) => {
+    const video = btn.closest('[data-video-scope]')?.querySelector('video');
+    if (!video) { btn.hidden = true; return; }
+    const sync = () => {
+      const paused = video.paused;
+      const what = btn.dataset.label || 'background video';
+      btn.setAttribute('aria-label', `${paused ? 'Play' : 'Pause'} ${what}`);
+      btn.querySelector('.vt-pause')?.classList.toggle('hidden', paused);
+      btn.querySelector('.vt-play')?.classList.toggle('hidden', !paused);
+    };
+    btn.addEventListener('click', () => { if (video.paused) video.play().catch(() => {}); else video.pause(); });
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+    // Layout's reduced-motion script runs before this; check again once the page settles.
+    sync();
+    setTimeout(sync, 0);
+  });
+</script>

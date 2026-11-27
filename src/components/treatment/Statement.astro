@@ -6,7 +6,7 @@ const p = Astro.props;
 
 <section class:list={['py-32 text-white max-md:py-16', p.slate ? 'bg-slate' : 'bg-brown']}>
   <div class="container-site flex flex-col gap-16">
-    <h2 class="text-h4 text-white/60" set:html={p.label} />
+    <h2 class="text-h4 text-white/80" set:html={p.label} />
     <div class="flex flex-col gap-20 max-md:gap-12">
       {p.blocks.map((b) => {
         const Tag = (b.tag === 'h3' ? 'h3' : b.tag === 'p' ? 'p' : 'div') as 'h3' | 'p' | 'div';

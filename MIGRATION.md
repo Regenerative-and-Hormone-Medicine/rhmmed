@@ -655,3 +655,32 @@ the article's audience (men → the men's blue CTA, women → the maroon CTA); i
 - **/articles hero (same request):** text column centred against the book panel while side by side (>991px; 75px above and
   below at 1440); stacked layout unchanged. The hero's wider box (max 1456px, vs the 1344px page container) is Webflow's
   own `.container.is-blog-hero` (max-width 1456px, checked on rhmmed.webflow.io): matches the original, kept.
+
+## Accessibility, SEO, security and resources pass (2026-11-27, Evgenii: "run the QA … make the site more accessible (don't go live)")
+
+Not pushed. Tools: `node scripts/a11y-axe.mjs <base> out.json <axe.min.js>` (axe-core 4.10, WCAG 2.0–2.2 A/AA + best practice,
+every sitemap route + 404 × 1440/390), `scripts/seo-crawl.mjs`, `scripts/qa-sweep.mjs`.
+
+**Accessibility, live before → this branch:** colour-contrast 572 nodes on 33 pages → 0; target-size 22 → 0. Deliberate
+deviations from the Webflow source (accessibility over pixel match):
+- Article table of contents links rgba(5,5,20,.4) → .62 (2.76:1 → ~5.6:1).
+- `Statement` label white/60 → white/80 (2.72 → ~3.5:1 on slate, large text); `Standard` body on slate white/70 → white,
+  on brown → white/80; `BookSteps` step numbers black/45 → black/60.
+- Homepage carousel dots 5px → 15px apart (24px target spacing, WCAG 2.5.8).
+- Pause/play button (`VideoToggle.astro`, bottom-right) on the homepage hero video (also stops the rotating word) and the
+  cloud CTA video (WCAG 2.2.2). Reduced-motion users start paused. The `Process` step slider now holds on hover/focus, has
+  no autoplay under reduced motion, and marks the active step `aria-current="step"`.
+- Still open (need Evgenii's word: headings/content): no h1 on /articles, /scheduling, 404; h1→h3 on privacy/terms; empty
+  `<th>` in the lupus-rash table and an unnamed quiz progressbar in signs-you-need-hrt (both Sanity `htmlEmbed` content).
+
+**Security:** `vercel.json` headers on every route: `X-Content-Type-Options: nosniff`, `Referrer-Policy:
+strict-origin-when-cross-origin`, `Permissions-Policy` (camera, mic, geolocation, usb, topics off), CSP limited to
+`frame-ancestors 'self' https://*.sanity.studio https://www.sanity.io http://localhost:3333` (the Studio frames the preview
+host), `base-uri 'self'`, `object-src 'none'`, `form-action 'self' https://submit-form.com`. No script-src CSP yet: GTM, Meta,
+PostHog, LeadConnector and the booking/review iframes would all need allow-listing (do it report-only first). HSTS stays
+without includeSubDomains (mail/autodiscover subdomains). `*.vercel.app` hosts get `X-Robots-Tag: noindex`. Deps: astro
+7.4.1 → 7.4.13 and `path-to-regexp@6` overridden to 6.3.0 (npm audit 4 → 0; static output unchanged apart from the generator
+tag and the CSS of the changes above).
+
+**Resources:** the cloud CTA video is `preload="none"` and starts when it nears the viewport (0.9 MB less per page view);
+the preview host reads published content through Sanity's API CDN (`useCdn: !drafts`; 1M vs 250k requests a month).

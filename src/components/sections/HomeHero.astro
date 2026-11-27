@@ -7,9 +7,10 @@ interface Props {
   video: { poster: string; mp4: string; webm: string };
 }
 const { before, words, after, body, video } = Astro.props;
+import VideoToggle from '../VideoToggle.astro';
 ---
 
-<section class="mx-auto flex max-w-[125rem] flex-col gap-[3.125rem]">
+<section class="mx-auto flex max-w-[125rem] flex-col gap-[3.125rem]" data-video-scope>
   <div class="container-site flex items-end justify-between gap-8 pt-28 max-lg:flex-col max-lg:items-start max-md:gap-4 max-sm:pt-32">
     <div class="flex w-full max-w-[48rem] flex-col gap-6">
       <h1 class="rotation-heading text-h1 flex flex-wrap items-center gap-x-[10px] text-ink">
@@ -25,7 +26,8 @@ const { before, words, after, body, video } = Astro.props;
     </div>
   </div>
   <div class="relative flex flex-col items-center overflow-hidden max-lg:px-6 max-md:flex-col-reverse max-md:gap-8 max-[450px]:px-0">
-    <div class="aspect-[2/1] w-full overflow-hidden max-lg:rounded-2xl max-[450px]:rounded-none">
+    <div class="relative aspect-[2/1] w-full overflow-hidden max-lg:rounded-2xl max-[450px]:rounded-none">
+      <VideoToggle label="video and animation" class="absolute right-4 bottom-4 max-sm:right-3 max-sm:bottom-3" />
       <video aria-hidden="true" class="size-full object-cover" autoplay loop muted playsinline poster={video.poster}>
         <source src={video.mp4} type="video/mp4" />
         <source src={video.webm} type="video/webm" />
@@ -58,7 +60,10 @@ const { before, words, after, body, video } = Astro.props;
       track.style.transition = animate ? `transform ${SLIDE}ms ease` : 'none';
       track.style.transform = `translateY(-${n * (track.firstElementChild as HTMLElement).offsetHeight}px)`;
     };
+    // The hero's pause button (VideoToggle) pauses the video; the word stops with it (WCAG 2.2.2).
+    const video = document.querySelector<HTMLVideoElement>('[data-video-scope] video');
     const next = () => {
+      if (video?.paused) { setTimeout(next, 500); return; }
       i++;
       go(i);
       if (i === real) setTimeout(() => { i = 0; go(0, false); void track.offsetHeight; setTimeout(next, HOLD); }, SLIDE);

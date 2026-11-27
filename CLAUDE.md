@@ -121,6 +121,10 @@ Staging tests so far ran on a Cloudflare Pages emulator; re-run them on a Vercel
   Never give a component its own copy: two copies on one page bind twice and the item opens and closes on the same click.
 - `src/components/LogoMark.astro` — the logo SVG with ids prefixed per instance (header + footer). Use it, not the raw
   `logo.svg` import, or the mask/pattern ids are duplicated on the page.
+- Accessibility: `node scripts/a11y-axe.mjs <base> out.json <path to axe.min.js>` (axe-core isn't a dependency; `npm i axe-core` in a
+  temp folder). Looping motion needs a pause control (`VideoToggle.astro`) and must stop under reduced motion.
+- Security headers live in `vercel.json` (`headers`); the preview host is framed by the Studio, so keep `frame-ancestors` allowing
+  `*.sanity.studio`.
 - QA: `node scripts/qa-sweep.mjs out.json` (every route × 1440/991/767/390/320: sideways scroll, console errors, failed
   requests, semantics, internal links) and `WS=320,360,375 node scripts/clip-check.mjs <base>` (text cut off at the edge;
   `main` clips overflow, so the sweep can't see it). Run both after layout changes. Deliberate deviations from live: MIGRATION.md "QA pass".
