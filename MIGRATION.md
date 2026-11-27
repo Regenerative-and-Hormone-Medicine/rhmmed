@@ -485,6 +485,8 @@ Deliberate deviations from live (live is broken here; ours is not):
   wouldn't fit; live keeps 40px and clips "GUESSING" below ~400px.
 - Legal pages: long words wrap (`overflow-wrap: anywhere`) instead of being clipped at 320px.
 - 992–1099px: nav labels don't wrap (nowrap + 8px side padding). Live wraps "Book VIP Call" onto 3 lines there.
+- /scheduling has no header "Book VIP Call" button (desktop, mobile bar, mobile menu): `showCta` in Header.astro.
+  Asked and approved by Michael Beattie (RHM) on 2026-11-27, after the Webflow cutover. The footer link stays.
 
 Semantics (no copy changes): nav groups and dropdowns are `<ul>/<li>`, footer columns are `<nav aria-labelledby>` lists,
 `aria-current="page"` on the current nav link, logo SVG ids unique per instance (`LogoMark.astro`; header + footer used to
